@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class ECore : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
+    [Header("Visual")]
+    [SerializeField] Image visualImage;
+
     private bool isDragging = false;
     private RectTransform rectTransform;
     private Canvas canvas;
@@ -29,6 +33,10 @@ public class ECore : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private void Start()
     {
         StartCoroutine(InitializePosition());
+        if (visualImage != null)
+        {
+            StartCoroutine(VisualEffect());
+        }
     }
 
     private IEnumerator InitializePosition()
@@ -50,6 +58,7 @@ public class ECore : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             {
                 previousSlot = slot;
                 previousSlot.SetHasCore(true);
+                transform.rotation = previousSlot.transform.rotation;
                 rectTransform.position = previousSlot.transform.position;
                 break;
             }
@@ -95,6 +104,7 @@ public class ECore : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         isDragging = true;
         originalPosition = rectTransform.position;
+        transform.rotation = Quaternion.identity;
         
         // 记录之前的slot
         previousSlot = GetOverlappingSlot();
@@ -121,6 +131,7 @@ public class ECore : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             // 停止闪烁并设置状态
             currentSlot.StopBlink();
             currentSlot.SetHasCore(true);
+            transform.rotation = currentSlot.transform.rotation;
             
             if (previousSlot != null)
             {
@@ -136,6 +147,7 @@ public class ECore : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             if (previousSlot != null)
             {
                 previousSlot.SetHasCore(true);
+                transform.rotation = previousSlot.transform.rotation;
                 rectTransform.position = previousSlot.transform.position;
             }
             else
@@ -186,5 +198,21 @@ public class ECore : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
         
         return null;
+    }
+
+    private IEnumerator VisualEffect()
+    {
+        float visualDiffer = Random.value * 5f;
+        print(visualDiffer);
+        var material = visualImage.materialForRendering;
+        visualImage.material = new Material(material);
+        material = visualImage.material;
+        while (true)
+        {
+            var time = Time.time + visualDiffer;
+            material.SetFloat("_NoiseScale", Mathf.Lerp(0.01f, 0.1f, Mathf.Sin(time * 1f)));
+            material.SetFloat("_y", Mathf.Lerp(-0.9f, 0.9f, Mathf.Tan(time * 0.5f)));
+            yield return null;
+        }
     }
 }

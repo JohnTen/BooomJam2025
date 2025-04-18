@@ -23,15 +23,6 @@ public class HoverTween : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     [SerializeField] private bool enableDownMove = false;
 
 
-    private void Start()
-    {
-        
-    }
-    private void Update()
-    {
-       
-    }
-
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (enableHoverScaleChange)
@@ -112,5 +103,17 @@ public class HoverTween : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         gameObject.transform.position = new Vector3(0f, lerpY, gameObject.transform.position.z);
 
     }
+
+    private void Start()
+    {
+        
+    }
+
+    private void Update()
+    {
+
+    }
+
+    
 
 }

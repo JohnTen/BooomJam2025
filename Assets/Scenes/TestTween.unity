@@ -181,8 +181,11 @@ MonoBehaviour:
   downPunchScale: 0.1
   downDuration: 0.2
   downPunchStrength: 10
+  downPunchOffset: 10
   enableHoverScaleChange: 0
   enableHoverPunch: 0
+  enableDownPunch: 0
+  enableDownMove: 0
 --- !u!1 &479208432
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +620,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906204789}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalPosition: {x: 0, y: 0, z: 99}
   m_LocalScale: {x: 0.009258378, y: 0.009258378, z: 0.009258378}
   m_ConstrainProportionsScale: 0
   m_Children:

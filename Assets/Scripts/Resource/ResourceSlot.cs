@@ -7,16 +7,29 @@ using UnityEngine;
 public class ResourceSlot : MonoBehaviour
 {
     [SerializeField] private string resourceId;
+    [SerializeField] private TMPro.TMP_Text resourceNameText;
     [SerializeField] private bool isInput;
     [SerializeField] private Transform resourceObjParent;
 
     private ResourceObj resourceObj;
     public ResourceObj ResourceInSlot
     {
-        get
+        get => resourceObj;
+    }
+
+    public string ResourceId
+    {
+        get => resourceId;
+        set
         {
-            return resourceObj;
+            resourceId = value;
+            resourceNameText.text = resourceId;
         }
+    }
+
+    void OnEnable()
+    {
+        resourceNameText.text = resourceId;
     }
 
     public void AddResource(int stack)

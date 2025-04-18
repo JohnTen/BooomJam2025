@@ -10,10 +10,12 @@ public class ECoreSlot : MonoBehaviour
     [SerializeField] UnityEvent<bool> OnCoreChanges;
     private Color greenColor = new Color(0, 1, 0, 1);
     private Color redColor = new Color(1, 0, 0, 1);
-    private bool hasCore = false;
     private Coroutine blinkCoroutine;
 
-    public bool HasCore => hasCore;
+    public bool HasCore => eCore != null;
+
+    private ECore eCore;
+    public ECore ECoreInSlot => eCore;
 
     private void Start()
     {
@@ -36,17 +38,18 @@ public class ECoreSlot : MonoBehaviour
             StopCoroutine(blinkCoroutine);
             blinkCoroutine = null;
         }
-        UpdateIndicator(hasCore);
+        UpdateIndicator(HasCore);
     }
 
-    public void SetHasCore(bool value)
+    public void SetCore(ECore eCore)
     {
-        if (hasCore != value)
+        if (this.eCore != eCore)
         {
-            hasCore = value;
-            OnCoreChanges.Invoke(hasCore);
+            this.eCore = eCore;
+            OnCoreChanges.Invoke(HasCore);
         }
-        UpdateIndicator(hasCore);
+
+        UpdateIndicator(HasCore);
     }
 
     private void UpdateIndicator(bool hasCore)

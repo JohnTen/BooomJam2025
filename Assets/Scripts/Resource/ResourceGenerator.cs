@@ -1,16 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using JTUtility;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ResourceGenerator : MonoBehaviour
 {
     [SerializeField] Image progressBar;
+    
+    [Header("Slot references")]
     [SerializeField] List<ResourceSlot> inputSlots;
     [SerializeField] List<ECoreSlot> eCoreSlots;
     [SerializeField] ResourceSlot outputSlot;
 
+    [Header("Convenient settings")]
+    [SerializeField] List<string> inputResourceids;
+    [SerializeField] string outputResourceid;
+
+    [Header("Generation conditions")]
     [SerializeField] List<int> inputAmounts;
     [SerializeField] List<float> generateTimesFactor;
     [SerializeField] int outputAmount;
@@ -22,6 +31,18 @@ public class ResourceGenerator : MonoBehaviour
     private void Start()
     {
         progressBar.fillAmount = 0;
+        if (!inputResourceids.IsNullOrEmpty())
+        {
+            for (int i = 0; i < inputResourceids.Count && i < inputSlots.Count; i++)
+            {
+                inputSlots[i].ResourceId = inputResourceids[i];
+            }
+        }
+
+        if (!string.IsNullOrEmpty(outputResourceid))
+        {
+            outputSlot.ResourceId = outputResourceid;
+        }
     }
 
     private void Update()

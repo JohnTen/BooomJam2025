@@ -80,10 +80,10 @@ public class ECore : MonoBehaviour
     {
         if (currentSlot != null)
         {
-            currentSlot.SetHasCore(false);
+            currentSlot.SetCore(null);
         }
         currentSlot = slot;
-        currentSlot.SetHasCore(true);
+        currentSlot.SetCore(this);
         currentSlot.StopBlink();
 
         transform.rotation = slot.transform.rotation;
@@ -95,7 +95,7 @@ public class ECore : MonoBehaviour
         previousSlot = currentSlot;
         if (currentSlot != null)
         {
-            currentSlot.SetHasCore(false);
+            currentSlot.SetCore(null);
             currentSlot = null;
         }
 

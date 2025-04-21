@@ -23,13 +23,13 @@ public class ResourceSlot : MonoBehaviour
         set
         {
             resourceId = value;
-            resourceNameText.text = resourceId;
+            resourceNameText.text = ResourceDatabase.Instance.GetTemplate(resourceId).name;
         }
     }
 
     void OnEnable()
     {
-        resourceNameText.text = resourceId;
+        resourceNameText.text = ResourceDatabase.Instance.GetTemplate(resourceId).name;
     }
 
     public void AddResource(int stack)

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
+using UnityEditor;
+using UnityEngine.Events;
 
 public class TextTyping : MonoBehaviour
 {
@@ -12,8 +14,12 @@ public class TextTyping : MonoBehaviour
 
     public float time=3f;
     public bool isScramble = true; // 是否使用打乱模式
-    public string content = "系统分析中。。。" +
-        "分析成功！"; // 要显示的文本内容
+    public string content = "系统分析中";  // 要显示的文本内容
+
+    [Header("Event")]
+    public bool nextEvent = false; 
+    public UnityEvent onCompleteEvent; 
+
 
     void Start()
     {
@@ -36,16 +42,20 @@ public class TextTyping : MonoBehaviour
         {
             tmp.DOText(content, time, true, ScrambleMode.All).OnComplete(() =>
             {
-                // 动画完成后的回调
-                Debug.Log("Typing effect completed!");
+                if (onCompleteEvent != null && nextEvent)
+                {
+                    onCompleteEvent.Invoke(); // 调用事件
+                }
             });
         }
         else
         {
             tmp.DOText(content, time).OnComplete(() =>
             {
-                // 动画完成后的回调
-                Debug.Log("Typing effect completed!");
+                if (onCompleteEvent != null && nextEvent)
+                {
+                    onCompleteEvent.Invoke(); // 调用事件
+                }
             });
         }
 

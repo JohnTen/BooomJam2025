@@ -4,6 +4,8 @@ using UnityEngine.EventSystems;
 
 public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
+    public bool CanDrag { get; set; } = true;
+
     private bool isDragging = false;
     private Vector3 dragOffset;
     private Camera mainCamera;
@@ -26,13 +28,14 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        if (!CanDrag) return;
         isDragging = true;
         
         // 创建一个与相机平行的平面
         dragPlane = new Plane(mainCamera.transform.forward, transform.position);
         
         // 计算鼠标射线与平面的交点
-        Ray ray = mainCamera.ScreenPointToRay(eventData.position);
+        Ray ray = mainCamera.ScreenPointToRay(VirtualCursor.ScreenPosition);
         float enter;
         if (dragPlane.Raycast(ray, out enter))
         {
@@ -50,7 +53,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
     {
         if (!isDragging) return;
 
-        Ray ray = mainCamera.ScreenPointToRay(eventData.position);
+        Ray ray = mainCamera.ScreenPointToRay(VirtualCursor.ScreenPosition);
         float enter;
         if (dragPlane.Raycast(ray, out enter))
         {
@@ -62,6 +65,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        if (!isDragging) return;
         isDragging = false;
         transform.SetParent(parent);
         OnDragEnd.Invoke();

@@ -79,11 +79,11 @@ public class ResourceGenerator : MonoBehaviour
             }
         }
 
-        // 检查是否有至少一个能量核心
-        bool hasECore = false;
+        // 检查是否有核心插槽或至少插入一个能量核心
+        bool hasECore = eCoreSlots.Count <= 0;
         foreach (var eCoreSlot in eCoreSlots)
         {
-            if (eCoreSlot.HasCore)
+            if (eCoreSlot.HasActiveCore)
             {
                 hasECore = true;
                 break;
@@ -95,7 +95,7 @@ public class ResourceGenerator : MonoBehaviour
 
     private float CalculateGenerationFactor()
     {
-        float totalFactor = generateTimesFactor[eCoreSlots.Count(slot => slot.HasCore)-1];
+        float totalFactor = generateTimesFactor[eCoreSlots.Count(slot => slot.HasActiveCore)-1];
         
         return totalFactor;
     }

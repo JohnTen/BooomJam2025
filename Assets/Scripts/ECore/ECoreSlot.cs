@@ -14,6 +14,8 @@ public class ECoreSlot : MonoBehaviour
 
     public bool HasCore => eCore != null;
 
+    public bool HasActiveCore => HasCore && !eCore.IsWarmUp && !eCore.IsBreakdown;
+
     private ECore eCore;
     public ECore ECoreInSlot => eCore;
 

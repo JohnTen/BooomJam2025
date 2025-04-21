@@ -30,7 +30,7 @@ public class ResourceSlotDetector : MonoBehaviour
         if (draggable.IsDragging)
         {
             var pointerEventData = new PointerEventData(EventSystem.current);
-            pointerEventData.position = Input.mousePosition;
+            pointerEventData.position = VirtualCursor.ScreenPosition;
 
             List<RaycastResult> results = new List<RaycastResult>();
             EventSystem.current.RaycastAll(pointerEventData, results);

@@ -24,7 +24,7 @@ public class RotateWithPointer : MonoBehaviour
     private void Update()
     {
         // 获取鼠标在屏幕上的位置
-        Vector2 mousePosition = Input.mousePosition;
+        Vector2 mousePosition = VirtualCursor.ScreenPosition;
         
         // 将鼠标位置归一化到 -0.5 到 0.5 的范围
         Vector2 normalizedPosition = new Vector2(

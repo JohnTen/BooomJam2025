@@ -38,7 +38,7 @@ public class DragDropDetector : MonoBehaviour
     public bool DetectComponent()
     {
         var pointerEventData = new PointerEventData(EventSystem.current);
-        pointerEventData.position = draggable.IsDragging ? Input.mousePosition : Camera.main.WorldToScreenPoint(transform.position);
+        pointerEventData.position = Camera.main.WorldToScreenPoint(transform.position);
 
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerEventData, results);

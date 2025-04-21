@@ -8,12 +8,17 @@ public class ECore : MonoBehaviour
 {
     [Header("Visual")]
     [SerializeField] Image visualImage;
+    [SerializeField] Image warmUpProgress;
 
     private Draggable draggable;
     private DragDropDetector eCoreSlotDetector;
 
     private ECoreSlot currentSlot;
     private ECoreSlot previousSlot;
+
+    public bool IsWarmUp { get; private set; }
+
+    public bool IsBreakdown { get; private set; }
 
     void OnEnable()
     {
@@ -78,10 +83,6 @@ public class ECore : MonoBehaviour
 
     public void SetSlot(ECoreSlot slot)
     {
-        if (currentSlot != null)
-        {
-            currentSlot.SetCore(null);
-        }
         currentSlot = slot;
         currentSlot.SetCore(this);
         currentSlot.StopBlink();
@@ -100,19 +101,31 @@ public class ECore : MonoBehaviour
         }
 
         transform.rotation = Quaternion.identity;
+        VirtualCursor.Instance.CursorSpeedMultiplier = GameManager.Instance.GameProperty.CoreDragSpeed;
     }
 
     private void OnDragEnd()
     {
-        if (eCoreSlotDetector.TargetComponent != null)
+        var slot = eCoreSlotDetector.TargetComponent as ECoreSlot;
+        if (slot != null && !slot.HasCore)
         {
-            var slot = eCoreSlotDetector.TargetComponent as ECoreSlot;
+            if (slot != previousSlot)
+            {
+                StartCoroutine(WarmUp());
+            }
             SetSlot(slot);
         }
         else
         {
             SetSlot(previousSlot);
         }
+        VirtualCursor.Instance.CursorSpeedMultiplier = 1f;
+    }
+
+    public void TriggerBreakdown()
+    {
+        print(name + " TriggerBreakdown");
+        StartCoroutine(Breakdown());
     }
 
     private IEnumerator InitializePosition()
@@ -125,6 +138,35 @@ public class ECore : MonoBehaviour
             var slot = eCoreSlotDetector.TargetComponent as ECoreSlot;
             SetSlot(slot);
         }
+    }
+
+    private IEnumerator Breakdown()
+    {
+        IsBreakdown = true;
+        draggable.CanDrag = false;
+        visualImage.material.SetColor("_MainColor", Color.red);
+        yield return new WaitForSeconds(GameManager.Instance.GameProperty.breakdownDuration);
+        visualImage.material.SetColor("_MainColor", Color.white);
+        IsBreakdown = false;
+        StartCoroutine(WarmUp());
+    }
+
+    private IEnumerator WarmUp()
+    {
+        warmUpProgress.fillAmount = 0;
+        draggable.CanDrag = false;
+        IsWarmUp = true;
+        while (warmUpProgress.fillAmount < 1)
+        {
+            if (!draggable.IsDragging)
+            {
+                warmUpProgress.fillAmount += Time.deltaTime * GameManager.Instance.GameProperty.WarmUpSpeed;
+                warmUpProgress.color = Color.Lerp(Color.red, Color.green, warmUpProgress.fillAmount);
+            }
+            yield return null;
+        }
+        draggable.CanDrag = true;
+        IsWarmUp = false;
     }
 
     private IEnumerator VisualEffect()

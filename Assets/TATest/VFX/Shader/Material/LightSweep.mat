@@ -24,6 +24,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _EmissionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _FXTexture:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -71,9 +75,9 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 1.9460304, g: 3.60376, b: 6.8831816, a: 0}
-    - _EffectColor: {r: 0, g: 0, b: 0, a: 0}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _MainColor: {r: 1.8662668, g: 3.9361691, b: 4.078851, a: 1}
+    - _EffectColor: {r: 0.0064454665, g: 0.9165145, b: 1.3664356, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
     - _MainColor1: {r: 0.17181383, g: 0.71620643, b: 0.9339623, a: 0}
     - _NoiseSpeed: {r: 0, g: 0.2, b: 0, a: 0}
     - _Vector0: {r: 0, g: 1, b: 0, a: 0}

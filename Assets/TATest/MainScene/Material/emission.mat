@@ -43,12 +43,14 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaCutoff: 0.5
+    - _Cyclic: 0
     - _NoiseScale: 0
+    - _Two: 0
     - _x: 0
     - _y: 0
     m_Colors:
     - _EffectColor: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MainColor: {r: 1.5157166, g: 1.5157166, b: 1.5157166, a: 0}
+    - _MainColor: {r: 0.2760929, g: 0.80491894, b: 1.1043715, a: 0}
     - _NoiseSpeed: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

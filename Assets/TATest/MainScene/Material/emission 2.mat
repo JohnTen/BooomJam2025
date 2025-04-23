@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: emission 1
+  m_Name: emission 2
   m_Shader: {fileID: 4800000, guid: 6eb3261ae63061048ad9778c69a6ca5f, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -43,14 +43,12 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaCutoff: 0.5
-    - _Cyclic: 0
     - _NoiseScale: 0
-    - _Two: 0
     - _x: 0
     - _y: 0
     m_Colors:
     - _EffectColor: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MainColor: {r: 1.2, g: 1.309804, b: 1.4980392, a: 0}
+    - _MainColor: {r: 1.5157166, g: 1.5157166, b: 1.5157166, a: 0}
     - _NoiseSpeed: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -5,14 +5,15 @@ using System.Collections.Generic;
 using JTUtility;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Rendering.UI;
-using Unity.VisualScripting;
+using UnityEngine.Events;
 using DG.Tweening;
 using DG.Tweening.Core;
 using JTUtility.Event;
 
 public class DialogueManager : MonoSingleton<DialogueManager>
 {
+    [Serializable] class StrEventPair : PairedValue<string, UnityEvent> {}
+
     [Serializable] class StrGOPair : PairedValue<string, GameObject> {}
 
     [SerializeField] private GameObject visualParent;
@@ -24,6 +25,8 @@ public class DialogueManager : MonoSingleton<DialogueManager>
     [SerializeField] private DialogueObject dialogueObjectPrefab;
 
     [SerializeField] private List<StrGOPair> gadgets;
+
+    [SerializeField] private List<StrEventPair> triggerUnityEvents;
 
     public bool IsPlaying => currentEntry != null;
 
@@ -178,10 +181,12 @@ public class DialogueManager : MonoSingleton<DialogueManager>
         if (!currentEntry.HasCondition)
         {
             currentEntry.started = true;
+            currentEntry.onDialogueEntryExecStart?.Invoke(currentEntry);
         }
         else if (currentEntry.waitForCondition(eventID, currentEntry, args))
         {
             currentEntry.started = true;
+            currentEntry.onDialogueEntryExecStart?.Invoke(currentEntry);
         }
 
         if (currentEntry.started == false)
@@ -347,6 +352,17 @@ public class DialogueManager : MonoSingleton<DialogueManager>
         }
 
         entry.onExecuting?.Invoke();
+        if (!entry.triggerUnityEvents.IsNullOrEmpty())
+        {
+            foreach (var eventID in entry.triggerUnityEvents)
+            {
+                var triggerEvent = triggerUnityEvents.Find(e => e.Key == eventID);
+                if (triggerEvent != null)
+                {
+                    triggerEvent.Value?.Invoke();
+                }
+            }
+        }
     }
 
     private void OnEntryExecEnd(DialogueEntry entry)

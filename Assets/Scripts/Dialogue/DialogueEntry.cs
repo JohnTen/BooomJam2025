@@ -69,6 +69,8 @@ public class DialogueEntry
     public Dictionary<string, object> variables;
     // 遮罩
     public List<MaskSetting> masks;
+    // 触发事件
+    public List<string> triggerUnityEvents;
     // 延迟
     public float delay;
 
@@ -150,6 +152,7 @@ public class DialogueEntry
         //entry.nextEntry = "测试1";
         entry.delay = 3f;
         entry.gadget = "testGadget";
+        entry.triggerUnityEvents = new List<string>{"124"};
         collections.Add(entry);
 
         return collections;

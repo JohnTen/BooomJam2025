@@ -6,8 +6,8 @@ public class Progresscell : RawImage {
     private Slider _Progresscell;
     
     // Define color thresholds
-    private const float HealthyThreshold = 8f;  // 80%
-    private const float WarningThreshold = 3f;   // 30%
+    public float HealthyThreshold = 8f;  // 80%
+    public float WarningThreshold = 3f;   // 30%
     
     // Define colors for different states
     private readonly Color HealthyColor = Color.green;
@@ -29,7 +29,7 @@ public class Progresscell : RawImage {
             float value = _Progresscell.value;
             
             // Update the UV rectangle to show the correct progress
-            uvRect = new Rect(0, 0, value - _Progresscell.minValue, 1);
+            uvRect = new Rect(0, 0, value, 1);
             
             // Change color based on the current value
             if (value > HealthyThreshold)

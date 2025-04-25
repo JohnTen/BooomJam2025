@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using JTUtility.Event;
 using UnityEngine;
 
+public enum CharacterType
+{
+    None,
+    Austronaut,
+    Explorer,
+    Worker,
+}
+
 public enum CharacterState
 {
     /// <summary>
@@ -33,7 +41,10 @@ public class Character : DraggableObj
 {
     [SerializeField] private string characterName;
     [SerializeField] private Sprite characterPortriat;
+    [SerializeField] private CharacterType characterType;
     [SerializeField] private CharacterState characterState;
+
+    public CharacterType CharacterType => characterType;
 
     public CharacterState CharacterState
     {
@@ -56,12 +67,12 @@ public class Character : DraggableObj
 
     public string CharacterName => characterName;
 
-    public override void SetSlot(ObjSlot slot)
+    public override void SetSlot(ObjSlot slot, bool force = false)
     {
         if (slot != previousSlot)
         {
             EventDispatcher<Character, ObjSlot>.Dispatch(EventConstant.OnCharacterSlotChanged, this, slot);
         }
-        base.SetSlot(slot);
+        base.SetSlot(slot, force);
     }
 }

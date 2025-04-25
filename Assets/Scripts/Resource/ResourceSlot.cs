@@ -11,6 +11,7 @@ public class ResourceSlot : ObjSlot
     [SerializeField] private TMPro.TMP_Text resourceNameText;
     [SerializeField] private bool isInput;
     [SerializeField] private Transform resourceObjParent;
+    [SerializeField] private int maxStack = -1;
 
     public ResourceObj ResourceInSlot
     {
@@ -51,11 +52,33 @@ public class ResourceSlot : ObjSlot
         var resourceObj = obj as ResourceObj;
         if (ResourceInSlot.IsNotNull())
         {
-            ResourceInSlot.Stack += resourceObj.Stack;
-            Destroy(resourceObj.gameObject);
+            if (maxStack <= 0)
+            {
+                ResourceInSlot.Stack += resourceObj.Stack;
+                resourceObj.Stack = 0;
+                Destroy(resourceObj.gameObject);
+            }
+            else
+            {
+                int toAdd = Mathf.Min(maxStack - ResourceInSlot.Stack, resourceObj.Stack);
+                ResourceInSlot.Stack += toAdd;
+                resourceObj.Stack -= toAdd;
+
+                if (resourceObj.Stack <= 0)
+                {
+                    Destroy(resourceObj.gameObject);
+                }
+            }
         }
         else
         {
+            if (maxStack > 0 && resourceObj.Stack > maxStack)
+            {
+                AddResource(maxStack);
+                resourceObj.Stack -= maxStack;
+                return;
+            }
+
             base.AddObj(obj);
         }
     }
@@ -73,6 +96,12 @@ public class ResourceSlot : ObjSlot
         }
         
         AddObj(obj);
+
+        if (maxStack > 0 && obj is ResourceObj resourceObj && resourceObj.Stack > maxStack)
+        {
+            return false;
+        }
+
         return true;
     }
 

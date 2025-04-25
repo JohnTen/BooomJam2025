@@ -28,13 +28,13 @@ public class ECore : DraggableObj
         }
     }
 
-    public override void SetSlot(ObjSlot slot)
+    public override void SetSlot(ObjSlot slot, bool force = false)
     {
         if (slot != previousSlot && slot is ECoreSlot)
         {
             warmUpCoroutine = StartCoroutine(WarmUp());
         }
-        base.SetSlot(slot);
+        base.SetSlot(slot, force);
     }
 
     protected override void OnDragStart()

@@ -67,20 +67,39 @@ public class DraggableObj : MonoBehaviour
         }
     }
 
-    public virtual void SetSlot(ObjSlot slot)
+    public virtual void SetSlot(ObjSlot slot, bool force = false)
     {
-        print("SetSlot: " + slot.name);
-        currentSlot = slot;
-        currentSlot.TryAddObj(this);
-        currentSlot.OnObjExit(this);
+        if (slot == null)
+        {
+            Debug.LogError("SetSlot: " + name + " to null slot");
+            return;
+        }
 
+        
+        slot.OnObjExit(this);
+        if (force)
+        {
+            slot.AddObj(this);
+        }
+        else if (!slot.TryAddObj(this))
+        {
+            if (slot == previousSlot)
+            {
+                Debug.LogError("SetSlot: " + name + " to same slot and failed");
+                return;
+            }
+
+            SetSlot(previousSlot, true);
+            return;
+        }
+
+        currentSlot = slot;
         transform.rotation = slot.transform.rotation;
         transform.position = slot.transform.position;
     }
 
     protected virtual void OnDragStart()
     {
-        print("OnDragStart: " + currentSlot.name);
         detectedSlot = currentSlot;
         previousSlot = currentSlot;
         if (currentSlot != null)
@@ -103,7 +122,7 @@ public class DraggableObj : MonoBehaviour
         var slot = slotDetector.TargetComponent as ObjSlot;
         if (slot == null || !slot.CanAdd(this))
         {
-            SetSlot(previousSlot);
+            SetSlot(previousSlot, true);
         }
         else
         {

@@ -54,9 +54,9 @@ public class ResourceObj : DraggableObj
         name = template.name;
     }
 
-    public override void SetSlot(ObjSlot slot)
+    public override void SetSlot(ObjSlot slot, bool force = false)
     {
-        base.SetSlot(slot);
         transform.SetParent(slot.transform);
+        base.SetSlot(slot, force);
     }
 }

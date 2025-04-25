@@ -29,7 +29,7 @@ public class Progresscell : RawImage {
             float value = _Progresscell.value;
             
             // Update the UV rectangle to show the correct progress
-            uvRect = new Rect(0, 0, value, 1);
+            uvRect = new Rect(0, 0, value - _Progresscell.minValue, 1);
             
             // Change color based on the current value
             if (value > HealthyThreshold)

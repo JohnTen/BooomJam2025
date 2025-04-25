@@ -102,7 +102,11 @@ public class GameManager : MonoSingleton<GameManager>
     void ChangeCorePercent(CoreSlotType coreSlotType, float percent)
     {
         corePercent[coreSlotType] = Mathf.Clamp01(corePercent[coreSlotType] + percent);
-        coreSlotPercentBars[coreSlotType].value = corePercent[coreSlotType];
+        coreSlotPercentBars[coreSlotType].value = 
+            Mathf.Lerp(
+                coreSlotPercentBars[coreSlotType].minValue, 
+                coreSlotPercentBars[coreSlotType].maxValue, 
+                corePercent[coreSlotType]);
         //coreSlotPercentBars[coreSlotType].color = Color.Lerp(Color.red, Color.green, corePercent[coreSlotType]);
     }
 

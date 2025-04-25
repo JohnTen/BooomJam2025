@@ -128,14 +128,15 @@ public class DialogueEntry
             return true;
         };
         entry.oneTimeOnly = true;
+        entry.delay = 0.5f;
         entry.nextEntry = "测试2";
         collections.Add(entry);
 
         entry = new DialogueEntry(
             "测试2", 
-            DialogueEntryType.ClickAnywhere, 
+            DialogueEntryType.Pass, 
             "test2", 
-            "Astra", 
+            "Core", 
             "对话2对话2对话2");
         entry.nextEntry = "测试3";
         collections.Add(entry);

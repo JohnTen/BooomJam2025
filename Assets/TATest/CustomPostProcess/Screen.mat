@@ -44,7 +44,7 @@ Material:
     m_Floats:
     - _AlphaCutoff: 0.5
     - _Float0: 1
-    - _Float1: 0.009
+    - _Float1: 0.029
     - _X: 0.1
     - _Y: 0.1
     m_Colors:

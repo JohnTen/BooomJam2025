@@ -52,8 +52,8 @@ public class GameManager : MonoSingleton<GameManager>
         }
     }
 
-    private class MainCoreCollection : EnumBasedCollection<CoreSlotType, ECoreSlot> {}
-    private MainCoreCollection mainCoreCollection;
+    public class MainCoreCollection : EnumBasedCollection<CoreSlotType, ECoreSlot> {}
+    public MainCoreCollection mainCoreCollection;
 
     void Awake()
     {
@@ -72,7 +72,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         foreach (CoreSlotType mainCore in Enum.GetValues(typeof(CoreSlotType)))
         {
-            if (!mainCoreCollection[mainCore].HasActiveCore)
+            if (!mainCoreCollection[mainCore].HasActiveObj)
             {
                 ChangeCorePercent(mainCore, -coreDegradeSpeed * Time.deltaTime);
             }

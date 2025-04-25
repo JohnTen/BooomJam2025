@@ -2,19 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using JTUtility;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class ResourceSlot : MonoBehaviour
+public class ResourceSlot : ObjSlot
 {
     [SerializeField] private string resourceId;
     [SerializeField] private TMPro.TMP_Text resourceNameText;
     [SerializeField] private bool isInput;
     [SerializeField] private Transform resourceObjParent;
 
-    private ResourceObj resourceObj;
     public ResourceObj ResourceInSlot
     {
-        get => resourceObj;
+        get => ObjInSlot as ResourceObj;
     }
 
     public string ResourceId
@@ -34,60 +34,69 @@ public class ResourceSlot : MonoBehaviour
 
     public void AddResource(int stack)
     {
-        if (resourceObj.IsNotNull())
+        if (ResourceInSlot.IsNotNull())
         {
-            resourceObj.Stack += stack;
+            ResourceInSlot.Stack += stack;
         }
         else
         {
-            resourceObj = Instantiate(PrefabHub.ResourceObjPrefab, resourceObjParent).GetComponent<ResourceObj>();
+            var resourceObj = Instantiate(PrefabHub.ResourceObjPrefab, resourceObjParent).GetComponent<ResourceObj>();
             resourceObj.Init(ResourceDatabase.Instance.GetTemplate(resourceId), stack, this);
+            resourceObj.SetSlot(this);
         }
     }
 
-    public bool TryAddResource(ResourceObj inputResourceObj, bool force = false)
+    public override void AddObj(Component obj)
     {
-        if (inputResourceObj.Template.uid != resourceId)
+        var resourceObj = obj as ResourceObj;
+        if (ResourceInSlot.IsNotNull())
         {
-            Debug.LogWarning("Trying to add resource to a slot with a different resource id");
-            return false;
+            ResourceInSlot.Stack += resourceObj.Stack;
+            Destroy(resourceObj.gameObject);
         }
-
-        if (!isInput && !force)
+        else
         {
-            Debug.LogWarning("Trying to add resource to a non-input slot");
+            base.AddObj(obj);
+        }
+    }
+
+    public override void ClearObj()
+    {
+        base.ClearObj();
+    }
+
+    public override bool TryAddObj(Component obj)
+    {
+        if (!CanAdd(obj))
+        {
             return false;
         }
         
-        if (resourceObj.IsNotNull())
-        {
-            resourceObj.Stack += inputResourceObj.Stack;
-            Destroy(inputResourceObj.gameObject);
-            return true;
-        }
-        else
-        {
-            resourceObj = inputResourceObj;
-            resourceObj.Slot = this;
-            resourceObj.transform.SetParent(resourceObjParent);
-            resourceObj.transform.localPosition = Vector3.zero;
-            return true;
-        }
+        AddObj(obj);
+        return true;
     }
 
-    public ResourceObj TakeResource()
+    public override bool CanAdd(Component obj)
     {
-        ResourceObj result;
-        if (resourceObj.IsNotNull())
+        return obj is ResourceObj resourceObj && resourceObj.Template.uid == resourceId && (isInput || resourceObj.CurrentSlot == this);
+    }
+
+    public override bool CanRemove(Component obj)
+    {
+        if (obj != ObjInSlot)
         {
-            result = resourceObj;
-            resourceObj = null;
-        }
-        else
-        {
-            result = null;
+            Debug.LogWarning("Trying to remove an object from a resource slot that is not the same as the object in the slot");
+            return false;
         }
 
-        return result;
+        return true;
+    }
+
+    public override void OnObjEnter(Component obj)
+    {
+    }
+    
+    public override void OnObjExit(Component obj)
+    {
     }
 }

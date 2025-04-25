@@ -30,7 +30,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
     {
         if (!CanDrag) return;
         isDragging = true;
-        
+
         // 创建一个与相机平行的平面
         dragPlane = new Plane(mainCamera.transform.forward, transform.position);
         

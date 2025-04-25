@@ -1,63 +1,94 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
-using UnityEditor;
+using DG.Tweening.Core;
+using DG.Tweening.Plugins.Options;
 using UnityEngine.Events;
 
 public class TextTyping : MonoBehaviour
 {
-    TextMeshProUGUI textMeshPro;
+    [SerializeField] private TextMeshProUGUI textMesh;
 
     [Header("Parameter")]
 
-    public float time=3f;
-    public bool isScramble = true; // ÊÇ·ñÊ¹ÓÃ´òÂÒÄ£Ê½
-    public string content = "ÏµÍ³·ÖÎöÖĞ";  // ÒªÏÔÊ¾µÄÎÄ±¾ÄÚÈİ
+    public float characterPerSecond = 3f;
+    public bool isScramble = true; // æ˜¯å¦ä½¿ç”¨æ‰“ä¹±æ¨¡å¼
+    public string content = "ç³»ç»Ÿåˆ†æä¸­";  // è¦æ˜¾ç¤ºçš„æ–‡æœ¬å†…å®¹
 
     [Header("Event")]
     public bool nextEvent = false; 
     public UnityEvent onCompleteEvent; 
 
+    private TweenerCore<string, string, StringOptions> typingHandle;
 
-    void Start()
+    public bool IsTyping => typingHandle != null && typingHandle.IsPlaying();
+
+
+    void Awake()
     {
-        textMeshPro = GetComponent<TextMeshProUGUI>();
-        if (textMeshPro == null)
+        if (textMesh == null)
+            textMesh = GetComponent<TextMeshProUGUI>();
+
+        if (textMesh == null)
         {
             Debug.LogError("TextMeshProUGUI component not found!");
             return;
         }
-        TypingEffect(textMeshPro, content, time); // µ÷ÓÃ TypingEffect ·½·¨
     }
 
-
-    public void TypingEffect(TextMeshProUGUI tmp, string content, float time)
+    void OnEnable()
     {
-        // ÉèÖÃÎÄ±¾ÄÚÈİÎª¿Õ
-        tmp.text = string.Empty;
+        TypingEffect(content);
+    }
+
+    public void TypingEffect()
+    {
+        TypingEffect(content);
+    }
+
+    public void TypingEffect(string content)
+    {
+        float time = content.Length / characterPerSecond;
+        TypingEffect(content, time);
+    }
+
+    public void TypingEffect(string content, float time)
+    {
+        // è®¾ç½®æ–‡æœ¬å†…å®¹ä¸ºç©º
+        textMesh.text = string.Empty;
+        this.content = content;
+
+        if (typingHandle != null && typingHandle.IsPlaying())
+            typingHandle.Kill();
 
         if (isScramble)
         {
-            tmp.DOText(content, time, true, ScrambleMode.All).OnComplete(() =>
+            typingHandle = textMesh.DOText(content, time, true, ScrambleMode.All).OnComplete(() =>
             {
                 if (onCompleteEvent != null && nextEvent)
                 {
-                    onCompleteEvent.Invoke(); // µ÷ÓÃÊÂ¼ş
+                    onCompleteEvent.Invoke(); // è°ƒç”¨äº‹ä»¶
                 }
             });
         }
         else
         {
-            tmp.DOText(content, time).OnComplete(() =>
+            typingHandle = textMesh.DOText(content, time).OnComplete(() =>
             {
                 if (onCompleteEvent != null && nextEvent)
                 {
-                    onCompleteEvent.Invoke(); // µ÷ÓÃÊÂ¼ş
+                    onCompleteEvent.Invoke(); // è°ƒç”¨äº‹ä»¶
                 }
             });
         }
+    }
 
+    public void SkipTyping()
+    {
+        if (IsTyping)
+        {
+            typingHandle.Kill();
+            textMesh.text = content;
+        }
     }
 }

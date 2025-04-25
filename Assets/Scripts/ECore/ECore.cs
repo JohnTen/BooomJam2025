@@ -4,44 +4,20 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(Draggable))]
 [RequireComponent(typeof(DragDropDetector))]
-public class ECore : MonoBehaviour
+public class ECore : DraggableObj
 {
     [Header("Visual")]
     [SerializeField] Image visualImage;
+    [SerializeField] Sprite normalSprite;
+    [SerializeField] Sprite breakdownSprite;
+    [SerializeField] Sprite warmUpSprite;
     [SerializeField] Image warmUpProgress;
 
-    private Draggable draggable;
-    private DragDropDetector eCoreSlotDetector;
-
-    private ECoreSlot currentSlot;
-    private ECoreSlot previousSlot;
+    private Coroutine warmUpCoroutine;
 
     public bool IsWarmUp { get; private set; }
 
     public bool IsBreakdown { get; private set; }
-
-    void OnEnable()
-    {
-        if (draggable == null)
-        {
-            draggable = GetComponent<Draggable>();
-        }
-
-        if (eCoreSlotDetector == null)
-        {
-            eCoreSlotDetector = GetComponent<DragDropDetector>();
-        }
-        eCoreSlotDetector.TargetComponentType = typeof(ECoreSlot);
-
-        draggable.OnDragStart.AddListener(OnDragStart);
-        draggable.OnDragEnd.AddListener(OnDragEnd);
-    }
-
-    void OnDisable()
-    {
-        draggable.OnDragStart.RemoveListener(OnDragStart);
-        draggable.OnDragEnd.RemoveListener(OnDragEnd);
-    }
 
     private void Start()
     {
@@ -51,74 +27,25 @@ public class ECore : MonoBehaviour
             StartCoroutine(VisualEffect());
         }
     }
-    
-    private void Update()
+
+    public override void SetSlot(ObjSlot slot)
     {
-        if (draggable.IsDragging)
+        if (slot != previousSlot && slot is ECoreSlot)
         {
-            // 处理slot的状态变化
-            if (eCoreSlotDetector.TargetComponent != null)
-            {
-                var slot = eCoreSlotDetector.TargetComponent as ECoreSlot;
-                if (slot != null && !slot.HasCore && currentSlot != slot)
-                {
-                    slot.StartBlink();
-                    if (currentSlot != null)
-                    {
-                        currentSlot.StopBlink();
-                    }
-                }
-                currentSlot = slot;
-            }
-            else
-            {
-                if (currentSlot != null)
-                {
-                    currentSlot.StopBlink();
-                    currentSlot = null;
-                }
-            }
+            warmUpCoroutine = StartCoroutine(WarmUp());
         }
+        base.SetSlot(slot);
     }
 
-    public void SetSlot(ECoreSlot slot)
+    protected override void OnDragStart()
     {
-        currentSlot = slot;
-        currentSlot.SetCore(this);
-        currentSlot.StopBlink();
-
-        transform.rotation = slot.transform.rotation;
-        transform.position = slot.transform.position;
-    }
-
-    private void OnDragStart()
-    {
-        previousSlot = currentSlot;
-        if (currentSlot != null)
-        {
-            currentSlot.SetCore(null);
-            currentSlot = null;
-        }
-
-        transform.rotation = Quaternion.identity;
+        base.OnDragStart();
         VirtualCursor.Instance.CursorSpeedMultiplier = GameManager.Instance.GameProperty.CoreDragSpeed;
     }
 
-    private void OnDragEnd()
+    protected override void OnDragEnd()
     {
-        var slot = eCoreSlotDetector.TargetComponent as ECoreSlot;
-        if (slot != null && !slot.HasCore)
-        {
-            if (slot != previousSlot)
-            {
-                StartCoroutine(WarmUp());
-            }
-            SetSlot(slot);
-        }
-        else
-        {
-            SetSlot(previousSlot);
-        }
+        base.OnDragEnd();
         VirtualCursor.Instance.CursorSpeedMultiplier = 1f;
     }
 
@@ -131,24 +58,24 @@ public class ECore : MonoBehaviour
     private IEnumerator InitializePosition()
     {
         yield return null;
-        yield return null;
-        yield return null;
-        if (eCoreSlotDetector.DetectComponent())
+        if (slotDetector.DetectComponent())
         {
-            var slot = eCoreSlotDetector.TargetComponent as ECoreSlot;
+            var slot = slotDetector.TargetComponent as ObjSlot;
+            previousSlot = slot;
             SetSlot(slot);
         }
     }
 
     private IEnumerator Breakdown()
     {
+        InterruptWarmUp();
         IsBreakdown = true;
         draggable.CanDrag = false;
-        visualImage.material.SetColor("_MainColor", Color.red);
+        visualImage.sprite = breakdownSprite;
         yield return new WaitForSeconds(GameManager.Instance.GameProperty.breakdownDuration);
-        visualImage.material.SetColor("_MainColor", Color.white);
+        visualImage.sprite = normalSprite;
         IsBreakdown = false;
-        StartCoroutine(WarmUp());
+        warmUpCoroutine = StartCoroutine(WarmUp());
     }
 
     private IEnumerator WarmUp()
@@ -156,17 +83,30 @@ public class ECore : MonoBehaviour
         warmUpProgress.fillAmount = 0;
         draggable.CanDrag = false;
         IsWarmUp = true;
+        visualImage.sprite = warmUpSprite;
         while (warmUpProgress.fillAmount < 1)
         {
             if (!draggable.IsDragging)
             {
                 warmUpProgress.fillAmount += Time.deltaTime * GameManager.Instance.GameProperty.WarmUpSpeed;
-                warmUpProgress.color = Color.Lerp(Color.red, Color.green, warmUpProgress.fillAmount);
             }
             yield return null;
         }
         draggable.CanDrag = true;
         IsWarmUp = false;
+        visualImage.sprite = normalSprite;
+    }
+
+    private void InterruptWarmUp()
+    {
+        IsWarmUp = false;
+        draggable.CanDrag = true;
+        visualImage.sprite = normalSprite;
+        warmUpProgress.fillAmount = 0;
+        if (warmUpCoroutine != null)
+        {
+            StopCoroutine(warmUpCoroutine);
+        }
     }
 
     private IEnumerator VisualEffect()

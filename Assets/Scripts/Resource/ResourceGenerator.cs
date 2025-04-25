@@ -83,7 +83,7 @@ public class ResourceGenerator : MonoBehaviour
         bool hasECore = eCoreSlots.Count <= 0;
         foreach (var eCoreSlot in eCoreSlots)
         {
-            if (eCoreSlot.HasActiveCore)
+            if (eCoreSlot.HasActiveObj)
             {
                 hasECore = true;
                 break;
@@ -95,7 +95,7 @@ public class ResourceGenerator : MonoBehaviour
 
     private float CalculateGenerationFactor()
     {
-        float totalFactor = generateTimesFactor[eCoreSlots.Count(slot => slot.HasActiveCore)-1];
+        float totalFactor = generateTimesFactor[eCoreSlots.Count(slot => slot.HasActiveObj)-1];
         
         return totalFactor;
     }

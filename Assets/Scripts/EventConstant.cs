@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class EventConstant : MonoBehaviour
+public static class EventConstant
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private const int mask = 100000000;
+    private const int offset = 100000;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    #region GameFlow
+    
+
+    #endregion
+    public const int ResourceRequirementMet = 2 * offset + 1;
+    public const int OnCharacterStateChanged = 2 * offset + 2;
+    public const int OnCharacterSlotChanged = 2 * offset + 3;
 }

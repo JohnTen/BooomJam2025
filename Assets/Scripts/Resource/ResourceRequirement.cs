@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using JTUtility;
+using JTUtility.Event;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class ResourceRequirement : MonoBehaviour
 {
+    [SerializeField] private string requirementID;
     [Header("Slot references")]
     [SerializeField] List<ResourceSlot> inputSlots;
     [SerializeField] List<ECoreSlot> eCoreSlots;
@@ -19,8 +21,8 @@ public class ResourceRequirement : MonoBehaviour
     [SerializeField] List<int> inputAmounts;
 
     [Header("Events")]
-    [SerializeField] UnityEvent onRequirementMet;
-    [SerializeField] UnityEvent onRequirementNotMet;
+    public UnityEvent onRequirementMet;
+    public UnityEvent onRequirementNotMet;
 
     private void Start()
     {
@@ -39,6 +41,7 @@ public class ResourceRequirement : MonoBehaviour
         {
             ConsumeResources();
             onRequirementMet.Invoke();
+            EventDispatcher<string>.Dispatch(EventConstant.ResourceRequirementMet, requirementID);
         }
         else
         {
@@ -61,7 +64,7 @@ public class ResourceRequirement : MonoBehaviour
             for (int i = 0; i < eCoreSlots.Count; i++)
             {
                 var core = eCoreSlots[i].ECoreInSlot;
-                eCoreSlots[i].SetCore(null);
+                eCoreSlots[i].TryRemoveObj(core);
                 Destroy(core.gameObject);
             }
         }
@@ -79,7 +82,7 @@ public class ResourceRequirement : MonoBehaviour
 
         for (int i = 0; i < eCoreSlots.Count; i++)
         {
-            if (!eCoreSlots[i].HasCore)
+            if (!eCoreSlots[i].HasObj)
             {
                 return false;
             }

@@ -246,8 +246,8 @@ public class DialogueManager : MonoSingleton<DialogueManager>
     {
         if (visualParentTween != null && visualParentTween.IsPlaying())
             visualParentTween.Kill();
-
-        visualParent.transform.localPosition = -visualParentOriginalPosition;
+        
+        visualParent.transform.localPosition = visualParentOriginalPosition.AlterX(-visualParentOriginalPosition.x);
         visualParentTween = visualParent.transform.DOLocalMoveX(visualParentOriginalPosition.x, 0.5f).SetEase(Ease.OutCubic);
     }
 

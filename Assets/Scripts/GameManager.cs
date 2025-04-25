@@ -27,11 +27,11 @@ public struct GameProperty
 public class GameManager : MonoSingleton<GameManager>
 {
     [Serializable] private class CoreSlotCollection : EnumBasedCollection<CoreSlotType, ECoreSlot> {}
-    [Serializable] private class CoreSlotImageCollection : EnumBasedCollection<CoreSlotType, Image> {}
+    [Serializable] private class CoreSlotSliderCollection : EnumBasedCollection<CoreSlotType, Slider> {}
     [Serializable] public class CorePercentCollection : EnumBasedCollection<CoreSlotType, float> {}
 
     [SerializeField] private CoreSlotCollection coreSlots;
-    [SerializeField] private CoreSlotImageCollection coreSlotPercentBars;
+    [SerializeField] private CoreSlotSliderCollection coreSlotPercentBars;
     [SerializeField] private float coreDegradeSpeed;
     [SerializeField] private float coreRestoreSpeed;
     [SerializeField] private float breakdownCheckInterval;
@@ -102,8 +102,8 @@ public class GameManager : MonoSingleton<GameManager>
     void ChangeCorePercent(CoreSlotType coreSlotType, float percent)
     {
         corePercent[coreSlotType] = Mathf.Clamp01(corePercent[coreSlotType] + percent);
-        coreSlotPercentBars[coreSlotType].fillAmount = corePercent[coreSlotType];
-        coreSlotPercentBars[coreSlotType].color = Color.Lerp(Color.red, Color.green, corePercent[coreSlotType]);
+        coreSlotPercentBars[coreSlotType].value = corePercent[coreSlotType];
+        //coreSlotPercentBars[coreSlotType].color = Color.Lerp(Color.red, Color.green, corePercent[coreSlotType]);
     }
 
     void CheckBreakdown()

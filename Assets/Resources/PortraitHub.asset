@@ -19,3 +19,7 @@ MonoBehaviour:
     value: {fileID: 21300000, guid: e8b05d1a982f87440996a1462b6dd5cf, type: 3}
   - key: test3
     value: {fileID: 21300000, guid: 46e2439a97060164d916c0a26439283f, type: 3}
+  - key: Astra
+    value: {fileID: 21300000, guid: f62f5e44e8bd5ae4db95883f64b1c47d, type: 3}
+  - key: unknown
+    value: {fileID: 21300000, guid: 028913cea48ef234cb51e3808c663fce, type: 3}

@@ -23,6 +23,8 @@ public class TextTyping : MonoBehaviour
 
     public bool IsTyping => typingHandle != null && typingHandle.IsPlaying();
 
+    private GibberishText gibberishText;
+
 
     void Awake()
     {
@@ -33,6 +35,12 @@ public class TextTyping : MonoBehaviour
         {
             Debug.LogError("TextMeshProUGUI component not found!");
             return;
+        }
+
+        gibberishText = GetComponent<GibberishText>();
+        if (gibberishText != null)
+        {
+            gibberishText.AutoUpdate = false;
         }
     }
 
@@ -54,6 +62,11 @@ public class TextTyping : MonoBehaviour
 
     public void TypingEffect(string content, float time)
     {
+        if (gibberishText != null)
+        {
+            content = gibberishText.ConvertToGibberish(content);
+        }
+
         // 设置文本内容为空
         textMesh.text = string.Empty;
         this.content = content;

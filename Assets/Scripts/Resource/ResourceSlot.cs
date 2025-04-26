@@ -28,6 +28,8 @@ public class ResourceSlot : ObjSlot
         }
     }
 
+    public override Transform ObjParent => resourceObjParent;
+
     void OnEnable()
     {
         resourceNameText.text = ResourceDatabase.Instance.GetTemplate(resourceId).name;

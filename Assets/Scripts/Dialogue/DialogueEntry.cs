@@ -149,7 +149,7 @@ public class DialogueEntry
             "test3", 
             "Astra", 
             "对话3对话3对话3");
-        //entry.nextEntry = "测试1";
+        entry.nextEntry = "测试1";
         entry.delay = 2.5f;
         entry.gadget = "testGadget";
         entry.triggerUnityEvents = new List<string>{"124"};

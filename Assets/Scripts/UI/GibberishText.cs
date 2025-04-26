@@ -51,6 +51,8 @@ public class GibberishText : MonoBehaviour
 
     private int seed = 0;
 
+    public bool AutoUpdate = true;
+
     private void Awake()
     {
         if (text == null)
@@ -77,6 +79,8 @@ public class GibberishText : MonoBehaviour
         {
             gibberishLevel = 1 - GameManager.Instance.corePercent[CoreSlotType.MemoryCore];
         }
+
+        if (!AutoUpdate) return;
 
         if (text != null && !isProcessing)
         {
@@ -140,8 +144,13 @@ public class GibberishText : MonoBehaviour
         lastProcessedText = text.text;
     }
 
-    private string ConvertToGibberish(string input)
+    public string ConvertToGibberish(string input)
     {
+        if (levelFromGameManager)
+        {
+            gibberishLevel = 1 - GameManager.Instance.corePercent[CoreSlotType.MemoryCore];
+        }
+        
         if (string.IsNullOrEmpty(input)) return input;
         if (gibberishLevel <= 0) return input;
 

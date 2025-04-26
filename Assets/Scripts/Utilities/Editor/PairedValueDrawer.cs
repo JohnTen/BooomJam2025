@@ -46,11 +46,9 @@ namespace JTUtility.Editor
             var top = position.yMin;
             var width = position.width;
 
-            var l_width = EditorGUIUtility.labelWidth;
-            var l_Left = left;
-            var k_width = (width - gapBetweenKeyNValue - l_width) / 2;
-            var k_left = left + l_width;
-            var v_width = k_width;
+            var k_width = Mathf.Min((width - gapBetweenKeyNValue) / 2, 150);
+            var k_left = left;
+            var v_width = width - k_width - gapBetweenKeyNValue;
             var v_left = k_left + k_width + gapBetweenKeyNValue;
 
             top += EditorGUIUtility.standardVerticalSpacing;
@@ -66,8 +64,6 @@ namespace JTUtility.Editor
             }
             keyExpanded = key.isExpanded;
             valueExpanded = value.isExpanded;
-
-            EditorGUI.LabelField(new Rect(l_Left, top, l_width, lineHeight), property.displayName);
 
             if (keyExpanded)
             {

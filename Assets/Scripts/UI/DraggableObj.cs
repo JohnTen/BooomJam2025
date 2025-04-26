@@ -94,8 +94,8 @@ public class DraggableObj : MonoBehaviour
         }
 
         currentSlot = slot;
-        transform.rotation = slot.transform.rotation;
-        transform.position = slot.transform.position;
+        transform.rotation = slot.ObjParent.rotation;
+        transform.position = slot.ObjParent.position;
     }
 
     protected virtual void OnDragStart()

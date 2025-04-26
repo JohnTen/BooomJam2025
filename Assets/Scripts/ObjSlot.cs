@@ -11,6 +11,8 @@ public abstract class ObjSlot : MonoBehaviour
 
     public virtual Component ObjInSlot => obj;
 
+    public virtual Transform ObjParent => transform;
+
     public virtual void AddObj(Component obj)
     {
         this.obj = obj;

@@ -56,7 +56,7 @@ public class ResourceObj : DraggableObj
 
     public override void SetSlot(ObjSlot slot, bool force = false)
     {
-        transform.SetParent(slot.transform);
+        transform.SetParent(slot.ObjParent);
         base.SetSlot(slot, force);
     }
 }

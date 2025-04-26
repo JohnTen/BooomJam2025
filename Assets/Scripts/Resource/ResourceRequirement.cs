@@ -24,6 +24,9 @@ public class ResourceRequirement : MonoBehaviour
     [Header("Events")]
     public UnityEvent onRequirementMet;
     public UnityEvent onRequirementNotMet;
+    public UnityEvent onRequirementFinished;
+
+    bool requirementHasMet = false;
 
     private void Start()
     {
@@ -48,13 +51,30 @@ public class ResourceRequirement : MonoBehaviour
     {
         if (RequirementMet())
         {
-            ConsumeResources();
-            onRequirementMet.Invoke();
-            EventDispatcher<string>.Dispatch(EventConstant.ResourceRequirementMet, requirementID);
+            if (!requirementHasMet)
+            {
+                onRequirementMet.Invoke();
+                EventDispatcher<string>.Dispatch(EventConstant.ResourceRequirementMet, requirementID);
+                requirementHasMet = true;
+            }
         }
         else
         {
-            onRequirementNotMet.Invoke();
+            if (requirementHasMet)
+            {
+                onRequirementNotMet.Invoke();
+                requirementHasMet = false;
+            }
+        }
+    }
+
+    public void FinishRequirement()
+    {
+        if (RequirementMet())
+        {
+            ConsumeResources();
+            onRequirementFinished.Invoke();
+            EventDispatcher<string>.Dispatch(EventConstant.ResourceRequirementFinished, requirementID);
         }
     }
 

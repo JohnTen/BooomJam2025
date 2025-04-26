@@ -65,6 +65,7 @@ public class DialogueManager : MonoSingleton<DialogueManager>
     void OnEnable()
     {
         EventRegister<string>.Register(EventConstant.ResourceRequirementMet, OnResourceRequirementMet);
+        EventRegister<string>.Register(EventConstant.ResourceRequirementFinished, OnResourceRequirementFinished);
         EventRegister<Character>.Register(EventConstant.OnCharacterStateChanged, OnCharacterStateChanged);
         EventRegister<Character, ObjSlot>.Register(EventConstant.OnCharacterSlotChanged, OnCharacterSlotChanged);
         EventRegister<string>.Register(EventConstant.ResourceGeneratorStarted, OnResourceGeneratorStarted);
@@ -74,6 +75,7 @@ public class DialogueManager : MonoSingleton<DialogueManager>
     void OnDisable()
     {
         EventRegister<string>.UnRegister(EventConstant.ResourceRequirementMet, OnResourceRequirementMet);
+        EventRegister<string>.UnRegister(EventConstant.ResourceRequirementFinished, OnResourceRequirementFinished);
         EventRegister<Character>.UnRegister(EventConstant.OnCharacterStateChanged, OnCharacterStateChanged);
         EventRegister<Character, ObjSlot>.UnRegister(EventConstant.OnCharacterSlotChanged, OnCharacterSlotChanged);
         EventRegister<string>.UnRegister(EventConstant.ResourceGeneratorStarted, OnResourceGeneratorStarted);
@@ -116,6 +118,9 @@ public class DialogueManager : MonoSingleton<DialogueManager>
                 continue;
 
             if (entry.oneTimeOnly && entry.playedTimes > 0)
+                continue;
+
+            if (entry.condition == null)
                 continue;
 
             if (!entry.condition(eventID, entry, args))
@@ -418,6 +423,11 @@ public class DialogueManager : MonoSingleton<DialogueManager>
     private void OnResourceRequirementMet(string requirementID)
     {
         UpdateEntries(EventConstant.ResourceRequirementMet, new object[] { requirementID });
+    }
+
+    private void OnResourceRequirementFinished(string requirementID)
+    {
+        UpdateEntries(EventConstant.ResourceRequirementFinished, new object[] { requirementID });
     }
 
     private void OnCharacterStateChanged(Character character)

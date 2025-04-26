@@ -21,7 +21,12 @@ public class DialogueObject : MonoBehaviour
     public void Init(DialogueEntry entry)
     {
         this.entry = entry;
-        portrait.sprite = PortraitHub.GetPortrait(entry.portriat);
+        var portraitSprite = PortraitHub.GetPortrait(entry.portriat);
+        if (portraitSprite != null)
+        {
+            portrait.sprite = portraitSprite;
+        }
+        
         nameText.text = entry.actorName;
         text.text = entry.text;
         if (entry.useTyping)

@@ -30,7 +30,7 @@ public class ECore : DraggableObj
 
     public override void SetSlot(ObjSlot slot, bool force = false)
     {
-        if (slot != previousSlot && slot is ECoreSlot)
+        if (slot != previousSlot && slot is ECoreSlot eCoreSlot && !eCoreSlot.NoWarmUp)
         {
             warmUpCoroutine = StartCoroutine(WarmUp());
         }

@@ -9,6 +9,8 @@ public class ECoreSlot : ObjSlot
 {
     [SerializeField] Image indicator;
     [SerializeField] UnityEvent<bool> OnCoreChanges;
+    [SerializeField] private bool blinkIndicator = true;
+    [SerializeField] private bool noWarmUp = false;
     private Color greenColor = new Color(0, 1, 0, 1);
     private Color redColor = new Color(1, 0, 0, 1);
     private Coroutine blinkCoroutine;
@@ -16,6 +18,8 @@ public class ECoreSlot : ObjSlot
     public ECore ECoreInSlot => ObjInSlot as ECore;
 
     public override bool HasActiveObj => base.HasActiveObj && !ECoreInSlot.IsWarmUp && !ECoreInSlot.IsBreakdown;
+
+    public bool NoWarmUp => noWarmUp;
 
     private void Start()
     {
@@ -52,7 +56,10 @@ public class ECoreSlot : ObjSlot
 
     private void UpdateIndicator(bool hasObj)
     {
-        indicator.color = hasObj ? greenColor : redColor;
+        if (blinkIndicator)
+        {
+            indicator.color = hasObj ? greenColor : redColor;
+        }
     }
 
     private IEnumerator BlinkIndicator()
@@ -82,7 +89,11 @@ public class ECoreSlot : ObjSlot
         {
             StopCoroutine(blinkCoroutine);
         }
-        blinkCoroutine = StartCoroutine(BlinkIndicator());
+
+        if (blinkIndicator)
+        {
+            blinkCoroutine = StartCoroutine(BlinkIndicator());
+        }
     }
     
     public override void OnObjExit(Component obj)
@@ -92,6 +103,7 @@ public class ECoreSlot : ObjSlot
             StopCoroutine(blinkCoroutine);
             blinkCoroutine = null;
         }
+
         UpdateIndicator(HasObj);
     }
 }

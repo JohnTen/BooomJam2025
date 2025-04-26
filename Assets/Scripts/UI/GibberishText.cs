@@ -149,8 +149,9 @@ public class GibberishText : MonoBehaviour
         if (levelFromGameManager)
         {
             gibberishLevel = 1 - GameManager.Instance.corePercent[CoreSlotType.MemoryCore];
+            lastLevel = gibberishLevel;
         }
-        
+
         if (string.IsNullOrEmpty(input)) return input;
         if (gibberishLevel <= 0) return input;
 

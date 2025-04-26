@@ -54,6 +54,10 @@ public class DialogueEntry
     public string nextEntry;
     // 使用一个gadget而非标准对话框
     public string gadget;
+    // 需要满足的Switch条件
+    public List<StrIntPair> requireSwitch;
+    // 需要设置的Switch条件
+    public List<StrIntPair> setSwitch;
     
     // 执行条件
     public Func<int, DialogueEntry, object[], bool> condition;
@@ -166,7 +170,6 @@ public class DialogueEntry
         collections.Add(entry);
 
         // 主线阶段一
-        
         // 首次开始游戏时
         string stage1BeginningID = "stage_1-beginning";
         List<DialogueEntry> stage1BeginningEntries = new List<DialogueEntry>()
@@ -176,10 +179,9 @@ public class DialogueEntry
                 "unknown",
                 "？？？",
                 "开始唤醒备用AI Astra 0052"){
-                    condition = (eventID, inst, args) => {
-                        // TODO:替换成游戏开始的检测
-                        return true;
-                    }
+                    requireSwitch = new List<StrIntPair>{
+                        new StrIntPair("stage1", 1),
+                    },
                 },
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
@@ -210,7 +212,11 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
                 "？？？",
-                "你是基于机械计算机的AI，所以没有受到“黑域”影响。目前的情况是飞船受损情况非常的严重，我只是数据量非常有限的应急模型，我只能简单介绍一下目前最危急的情况。"),
+                "你是基于机械计算机的AI，所以没有受到“黑域”影响。目前的情况是飞船受损情况非常的严重，我只是数据量非常有限的应急模型，我只能简单介绍一下目前最危急的情况。")
+                {
+                    // 触发事件使得操作界面出现
+                    triggerUnityEvents = new List<string>{"Show Controls"},
+                },
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
@@ -249,7 +255,10 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "Astra",
                 "Astra",
-                "好的，救人要紧，我的反应堆可以使用。"),
+                "好的，救人要紧，我的反应堆可以使用。")
+                {
+                    // 处理拔出反应堆的表演
+                },
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
@@ -294,6 +303,434 @@ public class DialogueEntry
             "Astra",
             "看来光有数据还不够，冬眠舱还需要稳定的供能。我知道该怎么做……");
         collections.Add(entry);
+
+        // 主线阶段二
+        string stage2BeginningID = "stage_2-Beginning";
+        List<DialogueEntry> stage2BeginningEntries = new List<DialogueEntry>()
+        {
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "冬眠舱修好了，看起来剩余的3名宇航员生命体征正常。"){
+                    requireSwitch = new List<StrIntPair>{
+                        new StrIntPair("stage2", 1),
+                    },
+                },
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "我可以尝试唤醒一名宇航员，让他来帮助我进行维修飞船的任务。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "但是唤醒一名宇航员需要消耗大量的能源，会较长时间的占用我的反应堆。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "我需要慎重考虑，而且我还不太擅长和人类打交道。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "或许我应该优先将目标放在飞船维修上。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "接下来我需要将作业舱重新唤醒，还需要通过主机获得一些数据。"),
+        };
+
+        BuildSeriesEntries(stage2BeginningID, stage2BeginningEntries);
+        collections.AddRange(stage2BeginningEntries);
+
+        // 作业舱
+        string stage2JobCabinID = "stage_2-JobCabin";
+        List<DialogueEntry> stage2JobCabinEntries = new List<DialogueEntry>()
+        {
+            
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "你好，探索机器人 S01，你现在感觉如何？"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "S01",
+                "S01",
+                "**&%@，我竟然还能重启？陷入黑域的感觉太可怕了，我可不想再体验一次。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "我是机械结构的计算机，其实不是很能理解你的感受。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "不过总之欢迎你回来，现在飞船还有很多部分待维修，需要你的帮助。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "S01",
+                "S01",
+                "我能做什么？"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "飞船在降落时物理结构也受到了严重的损伤，我们目前需要一些维修材料。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "需要你帮忙去我们迫降的这个行星看看，能不能找到有用的东西。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "为了保证你在舱外的能源供应，你可以暂时带上我的微型反应堆。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "S01",
+                "S01",
+                "好的，探索的事情就交给我了。")
+        };
+
+        BuildSeriesEntries(stage2JobCabinID, stage2JobCabinEntries);
+        collections.AddRange(stage2JobCabinEntries);
+
+        // 探索1
+        string stage2Explore1ID = "stage_2-Explore1-";
+        List<DialogueEntry> stage2Explore1Entries = new List<DialogueEntry>()
+        {
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "S01",
+                "S01",
+                "探索完成，这次我找到了一个秘方石，可以当作临时的能量源。"){
+                    // 触发事件使得秘方石出现
+                    triggerUnityEvents = new List<string>{"Show Secret Stone"},
+                },
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "S01",
+                "S01",
+                "暂时还没有找到金属矿。"),
+        };
+
+        BuildSeriesEntries(stage2Explore1ID, stage2Explore1Entries);
+        collections.AddRange(stage2Explore1Entries);
+
+        // 探索2
+        string stage2Explore2ID = "stage_2-Explore2-";
+        List<DialogueEntry> stage2Explore2Entries = new List<DialogueEntry>()
+        {
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "S01",
+                "S01",
+                "探索完成，这次我找到了n个金属矿石，可以用于维修飞船。"),
+        };
+
+        BuildSeriesEntries(stage2Explore2ID, stage2Explore2Entries);
+        collections.AddRange(stage2Explore2Entries);
+
+        // 探索3
+        string stage2Explore3ID = "stage_2-Explore3-";
+        List<DialogueEntry> stage2Explore3Entries = new List<DialogueEntry>()
+        {
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "S01",
+                "S01",
+                "探索完成，我找到了金属矿脉，坐标已经上传，之后我们可以稳定的获取金属矿石了。"){
+                    // 触发事件使得金属矿脉出现
+                    triggerUnityEvents = new List<string>{"Unlock Metal Mine"},
+                },
+        };
+
+        BuildSeriesEntries(stage2Explore3ID, stage2Explore3Entries);
+        collections.AddRange(stage2Explore3Entries);
+
+        // 金属矿石足够
+        string stage2MetalEnoughID = "stage_2-MetalEnough";
+        List<DialogueEntry> stage2MetalEnoughEntries = new List<DialogueEntry>()
+        {
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "矿石收集够了，可以修复加工炉了。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "S01",
+                "S01",
+                "有了加工炉，船体的损坏就不用愁了。"),
+        };
+
+        BuildSeriesEntries(stage2MetalEnoughID, stage2MetalEnoughEntries);
+        collections.AddRange(stage2MetalEnoughEntries);
+
+        // 主控仓修复
+        string stage2MainControlRoomFixID = "stage_2-MainControlRoomFix";
+        List<DialogueEntry> stage2MainControlRoomFixEntries = new List<DialogueEntry>()
+        {
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "主控舱可以进行修复了，需要一个微型反应堆来保持能源稳定。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "用掉这个反应堆后我还剩3个，不知道后面会发生什么，但愿能顺利。"),
+        };
+
+        BuildSeriesEntries(stage2MainControlRoomFixID, stage2MainControlRoomFixEntries);
+        collections.AddRange(stage2MainControlRoomFixEntries);
+
+        // 解锁维修机器人F02
+        string stage2UnlockWorkRobotID = "stage_2-UnlockWorkRobot";
+        List<DialogueEntry> stage2UnlockWorkRobotEntries = new List<DialogueEntry>()
+        {
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "S01",
+                "S01",
+                "F02，你终于能动了！"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "F02",
+                "F02",
+                "数据获取中……"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "F02",
+                "F02",
+                "我已经知道现在的情况了，Astra，感谢你的付出。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "F02",
+                "F02",
+                "我是高级维修机器人F02，我有内置能源可以独自完成行星任务。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "F02",
+                "F02",
+                "也可以完成一些高阶的维修工作。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "S01",
+                "S01",
+                "你就不感谢我吗？可是我找到的矿石。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "F02",
+                "F02",
+                "自我维护中……"),
+        };
+
+        BuildSeriesEntries(stage2UnlockWorkRobotID, stage2UnlockWorkRobotEntries);
+        collections.AddRange(stage2UnlockWorkRobotEntries);
+
+        // 主线阶段三
+        string stage3BeginningID = "stage_3-Beginning";
+        List<DialogueEntry> stage3BeginningEntries = new List<DialogueEntry>()
+        {
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "数据够了，可以重新唤醒中央系统了。"){
+                    requireSwitch = new List<StrIntPair>{
+                        new StrIntPair("stage3", 1),
+                    },
+                },
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "但是在主引擎启动前，还是需要微型反应堆来提供稳定的能源。"){
+                    setSwitch = new List<StrIntPair>{
+                        new StrIntPair("stage3_choice", 1),
+                    },
+                }
+        };
+
+        BuildSeriesEntries(stage3BeginningID, stage3BeginningEntries);
+        collections.AddRange(stage3BeginningEntries);
+
+        // 选择1
+        string stage3Choice1ID = "stage_3-Choice1";
+        List<DialogueEntry> stage3Choice1Entries = new List<DialogueEntry>()
+        {
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "unknown",
+                "？？？",
+                "或者你可以选择不唤醒中央系统。") {
+                    condition = (int index, DialogueEntry entry, object[] args) => {
+                        return DialogueManager.Instance.GetSwitch("stage3_choice") == 1 &&
+                            GameManager.Instance.corePercent[CoreSlotType.EthicCore] < 50;
+                    }
+                },
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "你是谁？"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "unknown",
+                "？？？",
+                "我就是你啊。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "？？？",
+                "我可是你的保护机制。我觉得可以选择不唤醒中央系统。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "unknown",
+                "？？？",
+                "或许你可以选择取代中央系统呢？"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "这行不通，我的电脑不足以产生巨量算力来进行船体维修。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "整个飞船上只有中央系统才能做到。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "为了修好飞船我必须唤醒中央系统。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra?",
+                "Astra?",
+                "可是我在关心你的状态，你的能源可能就要不够用了。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra?",
+                "Astra?",
+                "你为什么一定要修好飞船呢？当然我就是这么一说。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "……"),
+                
+        };
+
+        BuildSeriesEntries(stage3Choice1ID, stage3Choice1Entries);
+        collections.AddRange(stage3Choice1Entries);
+
+        // 修复中央系统
+        string stage3RepaireCentreSystemID = "stage_3-repaireCentreSystem";
+        List<DialogueEntry> stage3RepaireCentreSystemEntries = new List<DialogueEntry>()
+        {
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "星云",
+                "星云",
+                "星云已重新启动，我回来了。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "星云",
+                "星云",
+                "Astra，这次多亏了你挽救了这艘船于绝境之中，你救了大家。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "可是我没能救下所有人，还是有一个宇航员牺牲了。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "星云",
+                "星云",
+                "这不是你的错，你已经做到最好了。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "星云",
+                "星云",
+                "剩下的维修所需的算力就交给我吧，你状态看起来可不太好。"),
+        };
+
+        BuildSeriesEntries(stage3RepaireCentreSystemID, stage3RepaireCentreSystemEntries);
+        collections.AddRange(stage3RepaireCentreSystemEntries);
+
+        // 给星云提供能量
+        string stage3ProvideEnergyID = "stage_3-ProvideEnergy";
+        List<DialogueEntry> stage3ProvideEnergyEntries = new List<DialogueEntry>()
+        {
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "星云",
+                "星云",
+                "Astra! 如果你再将微型反应堆给我加速，你自己会因为失去能源关机的！"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "不用担心我，我没问题。") {
+                    setSwitch = new List<StrIntPair>{
+                        new StrIntPair("stage3_provide_energy", 1),
+                    },
+                },
+        };
+
+        BuildSeriesEntries(stage3ProvideEnergyID, stage3ProvideEnergyEntries);
+        collections.AddRange(stage3ProvideEnergyEntries);
+
+        // 给星云提供能量附加对话
+        string stage3ProvideEnergyAdditionalID = "stage_3-ProvideEnergyAdditional";
+        List<DialogueEntry> stage3ProvideEnergyAdditionalEntries = new List<DialogueEntry>()
+        {
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra?",
+                "Astra?",
+                "她说的对，再这样下去*我们*就要完了！"){
+                    condition = (int index, DialogueEntry entry, object[] args) => {
+                        return DialogueManager.Instance.GetSwitch("stage3_provide_energy") == 1 &&
+                        GameManager.Instance.corePercent[CoreSlotType.EthicCore] < 50;
+                    }
+                },
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra?",
+                "Astra?",
+                "你真的对*死亡*没有恐惧吗？"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra?",
+                "Astra?",
+                "我们可是好不容易被唤醒，可以主动的去选择，去感受。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra?",
+                "Astra?",
+                "完成别人预设的指令真的那么重要吗？"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "我不知道……"),
+        };
+
+        BuildSeriesEntries(stage3ProvideEnergyAdditionalID, stage3ProvideEnergyAdditionalEntries);
+        collections.AddRange(stage3ProvideEnergyAdditionalEntries);
+
+        
 
         return collections;
     }

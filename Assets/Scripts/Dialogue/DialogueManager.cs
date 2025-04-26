@@ -55,6 +55,8 @@ public class DialogueManager : MonoSingleton<DialogueManager>
 
     private TweenerCore<Vector3, Vector3, DG.Tweening.Plugins.Options.VectorOptions> visualParentTween;
 
+    public List<StrIntPair> switches = new List<StrIntPair>();
+
     protected override void OnInit()
     {
         visualMaskGO = visualMask.gameObject;
@@ -104,6 +106,30 @@ public class DialogueManager : MonoSingleton<DialogueManager>
         }
     }
 
+    public int GetSwitch(string switchID)
+    {
+        var switchEntry = switches.Find(s => s.Key == switchID);
+        if (switchEntry != null)
+        {
+            return switchEntry.Value;
+        }
+
+        return 0;
+    }
+
+    public void SetSwitch(string switchID, int value)
+    {
+        var switchEntry = switches.Find(s => s.Key == switchID);
+        if (switchEntry != null)
+        {
+            switchEntry.Value = value;
+        }
+        else
+        {
+            switches.Add(new StrIntPair(switchID, value));
+        }
+    }
+
     private void UpdateEntries(int eventID, object[] args)
     {
         if (currentEntry != null)
@@ -126,6 +152,22 @@ public class DialogueManager : MonoSingleton<DialogueManager>
             if (!entry.condition(eventID, entry, args))
                 continue;
 
+            if (entry.requireSwitch.IsNullOrEmpty() == false)
+            {
+                bool allRequireSwitchMet = true;
+                foreach (var requireSwitch in entry.requireSwitch)
+                {
+                    if (GetSwitch(requireSwitch.Key) != requireSwitch.Value)
+                    {
+                        allRequireSwitchMet = false;
+                        break;
+                    }
+                }
+
+                if (!allRequireSwitchMet)
+                    continue;
+            }
+            
             if (currentEntry != null)
             {
                 Debug.LogWarning("Unfinished entry :" + currentEntry.instructionID);
@@ -187,21 +229,33 @@ public class DialogueManager : MonoSingleton<DialogueManager>
             return;
         }
 
-        if (!currentEntry.HasCondition)
+        if (currentEntry.started == false)
         {
-            currentEntry.started = true;
-            currentEntry.onDialogueEntryExecStart?.Invoke(currentEntry);
-        }
-        else if (currentEntry.waitForCondition(eventID, currentEntry, args))
-        {
+            if (currentEntry.requireSwitch.IsNullOrEmpty() == false)
+            {
+                bool allRequireSwitchMet = true;
+                foreach (var requireSwitch in currentEntry.requireSwitch)
+                {
+                    if (GetSwitch(requireSwitch.Key) != requireSwitch.Value)
+                    {
+                        allRequireSwitchMet = false;
+                        break;
+                    }
+                }
+
+                if (!allRequireSwitchMet)
+                    return;
+            }
+            
+            if (currentEntry.HasCondition && !currentEntry.waitForCondition(eventID, currentEntry, args))
+            {
+                return;
+            }
+
             currentEntry.started = true;
             currentEntry.onDialogueEntryExecStart?.Invoke(currentEntry);
         }
 
-        if (currentEntry.started == false)
-        {
-            return;
-        }
 
         switch (currentEntry.type)
         {

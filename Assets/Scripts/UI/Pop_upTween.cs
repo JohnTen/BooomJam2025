@@ -10,7 +10,9 @@ public class Pop_upTween : MonoBehaviour
     public RectTransform windowRT;
 
     [Header("TweenSeting")]
+    public bool isStart = true; 
     public float fadeTime = 0.4f;
+    public bool isOutBack = true;
 
     public bool enableUnfold = true;
     public bool enableScaleUp = false;
@@ -18,6 +20,15 @@ public class Pop_upTween : MonoBehaviour
 
     [ConditionalField("enableMove")]
     public Vector3 moveTarget = new Vector3(10, 10, 0);
+
+
+    private void OnEnable()
+    {
+        if (isStart)
+        {
+            ShowPopUp();
+        }
+    }
 
     public void ShowPopUp()
     {
@@ -27,7 +38,7 @@ public class Pop_upTween : MonoBehaviour
         if (enableUnfold)
         {
             windowRT.localScale = new Vector3(1f, 0f, 1f);
-            windowRT.DOScaleY(1f, fadeTime).SetEase(Ease.OutBack);
+            windowRT.DOScaleY(1f, fadeTime).SetEase(isOutBack?Ease.OutBack:Ease.OutSine);
         }
         else if (enableScaleUp)
         {
@@ -41,6 +52,30 @@ public class Pop_upTween : MonoBehaviour
             windowRT.DOAnchorPos(origin,fadeTime,true).SetEase(Ease.OutSine);
         }
     }
+
+    public void HidePopup()
+    {
+        windowRT.localScale = Vector3.one;
+        
+        if (enableUnfold)
+        {
+            windowRT.DOScaleY(0, fadeTime).SetEase(isOutBack ? Ease.OutBack : Ease.OutSine).OnComplete(() => { window.SetActive(false); });
+        }
+        else if (enableScaleUp)
+        {
+            Debug.Log("ScaleUp is not enabled, using default scale animation.");
+            windowRT.DOScale(Vector3.zero, fadeTime).SetEase(Ease.OutSine).OnComplete(() => { window.SetActive(false); });
+        }
+
+        if (enableMove)
+        {
+            Vector3 origin = windowRT.localPosition;
+            windowRT.DOAnchorPos(origin-moveTarget, fadeTime, true).SetEase(Ease.OutSine).OnComplete(() => { windowRT.localPosition = origin; window.SetActive(false); });
+            
+        }
+        
+    }
+
 
 
     [System.AttributeUsage(System.AttributeTargets.Field, AllowMultiple = true)]

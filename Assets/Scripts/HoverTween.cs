@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using Unity.VisualScripting;
 
 public class HoverTween : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {   
@@ -22,6 +23,10 @@ public class HoverTween : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     [SerializeField] private bool enableDownPunch = false;
     [SerializeField] private bool enableDownMove = false;
 
+    private void Start()
+    {
+
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -34,6 +39,7 @@ public class HoverTween : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         {
             HoverPunch();
         }
+
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -102,11 +108,6 @@ public class HoverTween : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
         gameObject.transform.position = new Vector3(0f, lerpY, gameObject.transform.position.z);
 
-    }
-
-    private void Start()
-    {
-        
     }
 
     private void Update()

@@ -136,7 +136,7 @@ public class DialogueEntry
 
         entry = new DialogueEntry(
             "测试2", 
-            DialogueEntryType.Pass, 
+            DialogueEntryType.ClickAnywhere, 
             "test2", 
             "Core", 
             "对话2对话2对话2");
@@ -145,12 +145,12 @@ public class DialogueEntry
 
         entry = new DialogueEntry(
             "测试3", 
-            DialogueEntryType.ClickAnywhere, 
+            DialogueEntryType.Pass, 
             "test3", 
             "Astra", 
             "对话3对话3对话3");
         //entry.nextEntry = "测试1";
-        entry.delay = 3f;
+        entry.delay = 2.5f;
         entry.gadget = "testGadget";
         entry.triggerUnityEvents = new List<string>{"124"};
         collections.Add(entry);

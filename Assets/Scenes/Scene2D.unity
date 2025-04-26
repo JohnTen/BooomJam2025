@@ -1287,7 +1287,7 @@ PrefabInstance:
     - target: {fileID: 1461453998537710288, guid: e027feaa24c601a49b378dc0f89bc49a,
         type: 3}
       propertyPath: m_UVRect.width
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e027feaa24c601a49b378dc0f89bc49a, type: 3}
@@ -1793,6 +1793,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 250360622}
     m_Modifications:
+    - target: {fileID: 236349798578022506, guid: ed34a03b323f5d543b926d630af328ad,
+        type: 3}
+      propertyPath: maxStack
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4419740911173527180, guid: ed34a03b323f5d543b926d630af328ad,
         type: 3}
       propertyPath: m_Name
@@ -2174,7 +2179,7 @@ PrefabInstance:
     - target: {fileID: 1461453998537710288, guid: e027feaa24c601a49b378dc0f89bc49a,
         type: 3}
       propertyPath: m_UVRect.width
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e027feaa24c601a49b378dc0f89bc49a, type: 3}
@@ -4366,7 +4371,7 @@ PrefabInstance:
     - target: {fileID: 1461453998537710288, guid: e027feaa24c601a49b378dc0f89bc49a,
         type: 3}
       propertyPath: m_UVRect.width
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e027feaa24c601a49b378dc0f89bc49a, type: 3}
@@ -4730,7 +4735,7 @@ PrefabInstance:
     - target: {fileID: 1461453998537710288, guid: e027feaa24c601a49b378dc0f89bc49a,
         type: 3}
       propertyPath: m_UVRect.width
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e027feaa24c601a49b378dc0f89bc49a, type: 3}
@@ -5112,7 +5117,7 @@ PrefabInstance:
     - target: {fileID: 1461453998537710288, guid: e027feaa24c601a49b378dc0f89bc49a,
         type: 3}
       propertyPath: m_UVRect.width
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e027feaa24c601a49b378dc0f89bc49a, type: 3}
@@ -6076,7 +6081,7 @@ PrefabInstance:
     - target: {fileID: 1461453998537710288, guid: e027feaa24c601a49b378dc0f89bc49a,
         type: 3}
       propertyPath: m_UVRect.width
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e027feaa24c601a49b378dc0f89bc49a, type: 3}

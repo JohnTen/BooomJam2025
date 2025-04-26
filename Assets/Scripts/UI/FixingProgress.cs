@@ -23,5 +23,10 @@ public class FixingProgress : MonoBehaviour
         }
     }
 
+    public void ResetBar()
+    { 
+        once=true;
+    }
+
     
 }

@@ -8,6 +8,7 @@ using UnityEngine.Events;
 public class ResourceRequirement : MonoBehaviour
 {
     [SerializeField] private string requirementID;
+    [SerializeField] private bool autoCheck = true;
     [Header("Slot references")]
     [SerializeField] List<ResourceSlot> inputSlots;
     [SerializeField] List<ECoreSlot> eCoreSlots;
@@ -23,6 +24,9 @@ public class ResourceRequirement : MonoBehaviour
     [Header("Events")]
     public UnityEvent onRequirementMet;
     public UnityEvent onRequirementNotMet;
+    public UnityEvent onRequirementFinished;
+
+    bool requirementHasMet = false;
 
     private void Start()
     {
@@ -35,17 +39,42 @@ public class ResourceRequirement : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (autoCheck)
+        {
+            CheckRequirement();
+        }
+    }
+
     public void CheckRequirement()
     {
         if (RequirementMet())
         {
-            ConsumeResources();
-            onRequirementMet.Invoke();
-            EventDispatcher<string>.Dispatch(EventConstant.ResourceRequirementMet, requirementID);
+            if (!requirementHasMet)
+            {
+                onRequirementMet.Invoke();
+                EventDispatcher<string>.Dispatch(EventConstant.ResourceRequirementMet, requirementID);
+                requirementHasMet = true;
+            }
         }
         else
         {
-            onRequirementNotMet.Invoke();
+            if (requirementHasMet)
+            {
+                onRequirementNotMet.Invoke();
+                requirementHasMet = false;
+            }
+        }
+    }
+
+    public void FinishRequirement()
+    {
+        if (RequirementMet())
+        {
+            ConsumeResources();
+            onRequirementFinished.Invoke();
+            EventDispatcher<string>.Dispatch(EventConstant.ResourceRequirementFinished, requirementID);
         }
     }
 

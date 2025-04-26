@@ -8,6 +8,7 @@ using UnityEngine.Events;
 public class ResourceRequirement : MonoBehaviour
 {
     [SerializeField] private string requirementID;
+    [SerializeField] private bool autoCheck = true;
     [Header("Slot references")]
     [SerializeField] List<ResourceSlot> inputSlots;
     [SerializeField] List<ECoreSlot> eCoreSlots;
@@ -32,6 +33,14 @@ public class ResourceRequirement : MonoBehaviour
             {
                 inputSlots[i].ResourceId = inputResourceids[i];
             }
+        }
+    }
+
+    private void Update()
+    {
+        if (autoCheck)
+        {
+            CheckRequirement();
         }
     }
 

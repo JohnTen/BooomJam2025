@@ -112,7 +112,7 @@ public class DialogueManager : MonoSingleton<DialogueManager>
             else
             {
                 currentEntry = entry;
-                StartDialogue();
+                ShowDialoguePanel();
                 BuildDialogueObject();
             }
         }
@@ -154,7 +154,7 @@ public class DialogueManager : MonoSingleton<DialogueManager>
         {
             var dialogueID = dialogueQueue.Dequeue();
             currentEntry = entries.Find(e => e.instructionID == dialogueID);
-            StartDialogue();
+            ShowDialoguePanel();
             BuildDialogueObject();
             return;
         }
@@ -195,7 +195,7 @@ public class DialogueManager : MonoSingleton<DialogueManager>
             }
 
             currentEntry = entry;
-            StartDialogue();
+            ShowDialoguePanel();
             BuildDialogueObject();
             break;
         }
@@ -331,22 +331,27 @@ public class DialogueManager : MonoSingleton<DialogueManager>
         BuildDialogueObject();
     }
 
-    private void StartDialogue()
+    public void ShowDialoguePanel()
     {
         if (visualParentTween != null && visualParentTween.IsPlaying())
             visualParentTween.Kill();
         
-        visualParent.transform.localPosition = visualParentOriginalPosition.AlterX(-visualParentOriginalPosition.x);
+        //visualParent.transform.localPosition = visualParentOriginalPosition.AlterX(-visualParentOriginalPosition.x);
         visualParentTween = visualParent.transform.DOLocalMoveX(visualParentOriginalPosition.x, 0.5f).SetEase(Ease.OutCubic);
     }
 
-    private void FinishDialogue()
+    public void HideDialoguePanel()
     {
         if (visualParentTween != null && visualParentTween.IsPlaying())
             visualParentTween.Kill();
 
-        visualParent.transform.localPosition = visualParentOriginalPosition;
+        //visualParent.transform.localPosition = visualParentOriginalPosition;
         visualParentTween = visualParent.transform.DOLocalMoveX(-visualParentOriginalPosition.x, 0.5f).SetEase(Ease.InCubic);
+    }
+
+    private void FinishDialogue()
+    {
+        HideDialoguePanel();
         visualParentTween.onComplete = () =>
         {
             foreach (var dialogueObject in dialogueObjects)

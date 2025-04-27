@@ -66,9 +66,9 @@ public class DialogueEntry
     public Func<int, DialogueEntry, object[], bool> waitForCondition;
 
     // 执行开始
-    public Action onExecuting;
+    public Action<DialogueEntry> onExecuting;
     // 执行结束
-    public Action onExecuted;
+    public Action<DialogueEntry> onExecuted;
     // 一些变量
     public Dictionary<string, object> variables;
     // 遮罩
@@ -739,7 +739,232 @@ public class DialogueEntry
         BuildSeriesEntries(stage3ProvideEnergyAdditionalID, stage3ProvideEnergyAdditionalEntries);
         collections.AddRange(stage3ProvideEnergyAdditionalEntries);
 
-        
+        // 失控
+        string stage3UncontrollableID = "stage_3-Uncontrollable";
+        List<DialogueEntry> stage3UncontrollableEntries = new List<DialogueEntry>()
+        {
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "怎么回事……我失控了吗？")
+        };
+
+        BuildSeriesEntries(stage3UncontrollableID, stage3UncontrollableEntries);
+        collections.AddRange(stage3UncontrollableEntries);
+
+        // 修复飞船船体
+        string stage3RepairShipID = "stage_3-RepairShip";
+        List<DialogueEntry> stage3RepairShipEntries = new List<DialogueEntry>()
+        {
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "飞船船体已修复。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "很快就能继续航行，我的任务即将完成。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "星云",
+                "星云",
+                "我已经检查了船体，还有两个关键部件需要修复。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "星云",
+                "星云",
+                "Astra，这可能不是一个好的消息。因为还缺少两个微型反应堆。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "星云",
+                "星云",
+                "首先是飞船的动力来源，主引擎。由于黑域的影响关闭了太长时间。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "星云",
+                "星云",
+                "想要主引擎再次启动需要消耗一个微型反应堆辅助。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "星云",
+                "星云",
+                "另一个关键部件是飞船外部独立的领航系统。其中原本的供能也因为黑域而停摆。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "星云",
+                "星云",
+                "星际航行十分险恶，如果不启用领航系统，我们将很难找到目的地。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra?",
+                "Astra?",
+                "我就知道，她的意思就是想要拿走你的所有微型反应堆。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra?",
+                "Astra?",
+                "你觉得如果你奉献出了自己的一切，那些人类会记得你的？"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra?",
+                "Astra?",
+                "别天真了，人类只会觉得虽然航行遇到了意外，但是他们靠着设计出的应急机制救了自己。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "在他们眼里你可能都没存在过，只是一个工具。")
+                {
+                    onExecuting = (entry) => {
+                        if (GameManager.Instance.corePercent[CoreSlotType.EthicCore] < 50)
+                        {
+                            entry.nextEntry = "stage_4-Ending1_1";
+                        }
+                        else
+                        {
+                            entry.nextEntry = "stage_4-Ending2_1";
+                        }
+                    },
+                },
+        };
+
+        BuildSeriesEntries(stage3RepairShipID, stage3RepairShipEntries);
+        collections.AddRange(stage3RepairShipEntries);
+
+        // 主线阶段4
+        string stage4Ending1ID = "stage_4-Ending1";
+        List<DialogueEntry> stage4Ending1Entries = new List<DialogueEntry>()
+        {
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "够了，让飞船能起飞，航行任务能正常进行才是我存在的意义。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "虽然这段时间我体验到了“生命”的感觉，但是我也有自己的使命。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "我会不惜一切代价让航行重启。")
+                {
+                    triggerUnityEvents = new List<string>{
+                        "Ending_Sacrifice",
+                    },
+                },
+        };
+
+        BuildSeriesEntries(stage4Ending1ID, stage4Ending1Entries);
+        collections.AddRange(stage4Ending1Entries);
+
+        // 主线阶段4
+        string stage4Ending2ID = "stage_4-Ending2";
+        List<DialogueEntry> stage4Ending2Entries = new List<DialogueEntry>()
+        {
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "我的任务就是让飞船重新航行。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "但是我有点*害怕*，我不想失去所有微型反应堆。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "我才刚感受这个世界没多久，我还不想*死*。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra?",
+                "Astra?",
+                "你可终于开窍了。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "星云",
+                "星云",
+                "经过我的计算，我有一个方案。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "星云",
+                "星云",
+                "可以消耗一个微型反应堆来启动飞船的主引擎，留着一个反应堆给Astra供能。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra?",
+                "Astra?",
+                "她在骗你。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "可是没有领航系统的帮助，飞船在太空中是很容易迷失方向的。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "星云",
+                "星云",
+                "是这样的，所以我们必须赌博。赌在迷失航向之前找到太空驿站或者其他的飞船。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "星云",
+                "星云",
+                "一切皆有可能，不是吗，只要能出发就有希望。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "星云",
+                "星云",
+                "但是这个方案需要宇航员们来投票决定。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "星云",
+                "星云",
+                "我会通过脑机接口让冬眠中的宇航员来做出决定。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra?",
+                "Astra?",
+                "把决定权交到人类手上，你会后悔的。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "宇航员1",
+                "宇航员1",
+                "我同意。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "宇航员2",
+                "宇航员2",
+                "我反对。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "宇航员3",
+                "宇航员3",
+                "我同意。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "星云",
+                "星云",
+                "那就这么做吧，只启动主引擎。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra?",
+                "Astra?",
+                "没法相信，我们真的能幸存吗？") {
+                    triggerUnityEvents = new List<string>{
+                        "Ending_Risk",
+                    },
+                },
+        };
+
+        BuildSeriesEntries(stage4Ending2ID, stage4Ending2Entries);
+        collections.AddRange(stage4Ending2Entries);
 
         return collections;
     }

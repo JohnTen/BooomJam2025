@@ -435,7 +435,7 @@ public class DialogueManager : MonoSingleton<DialogueManager>
             Time.timeScale = 0;
         }
 
-        entry.onExecuting?.Invoke();
+        entry.onExecuting?.Invoke(entry);
         if (!entry.triggerUnityEvents.IsNullOrEmpty())
         {
             foreach (var eventID in entry.triggerUnityEvents)
@@ -471,7 +471,7 @@ public class DialogueManager : MonoSingleton<DialogueManager>
             Time.timeScale = 1;
         }
 
-        entry.onExecuted?.Invoke();
+        entry.onExecuted?.Invoke(entry);
         entry.onDialogueEntryExecInit -= OnEntryExecInit;
         entry.onDialogueEntryExecStart -= OnEntryExecStart;
         entry.onDialogueEntryExecEnd -= OnEntryExecEnd;

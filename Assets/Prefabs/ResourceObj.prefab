@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccbcc938c2fafbf43b3cc2ed5c0a7d46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initOnEnable: 0
   icon: {fileID: 7083789821204970603}
   stackText: {fileID: 754974642558653098}
   stack: 0

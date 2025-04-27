@@ -6,6 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(DragDropDetector))]
 public class DraggableObj : MonoBehaviour
 {
+    [SerializeField] protected bool initOnEnable = true;
+
     protected Draggable draggable;
     protected DragDropDetector slotDetector;
 
@@ -30,6 +32,18 @@ public class DraggableObj : MonoBehaviour
 
         draggable.OnDragStart.AddListener(OnDragStart);
         draggable.OnDragEnd.AddListener(OnDragEnd);
+
+        if (initOnEnable && previousSlot == null && currentSlot == null)
+        {
+            if (slotDetector.DetectComponent())
+            {
+                var slot = slotDetector.TargetComponent as ObjSlot;
+                if (slot != null && slot.CanAdd(this))
+                {
+                    SetSlot(slot);
+                }
+            }
+        }
     }
 
     protected virtual void OnDisable()

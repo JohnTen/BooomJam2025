@@ -73,7 +73,10 @@ public class Character : DraggableObj
         {
             EventDispatcher<Character, ObjSlot>.Dispatch(EventConstant.OnCharacterSlotChanged, this, slot);
         }
-        transform.SetParent(slot.transform);
+        if (slot != null)
+        {
+            transform.SetParent(slot.transform);
+        }
         base.SetSlot(slot, force);
     }
 }

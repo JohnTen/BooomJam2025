@@ -11,6 +11,7 @@ public class ResourceObj : DraggableObj
     [SerializeField] Image icon;
     [SerializeField] TMPro.TMP_Text stackText;
     [SerializeField] int stack;
+    [SerializeField] string templateID;
 
     private ResourceTemplate template;
     public ResourceTemplate Template
@@ -41,6 +42,20 @@ public class ResourceObj : DraggableObj
             {
                 Destroy(gameObject);
                 print ("ResourceObj " + template.name + " is destroyed");
+            }
+        }
+    }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+
+        if (!string.IsNullOrEmpty(templateID))
+        {
+            var template = ResourceDatabase.Instance.GetTemplate(templateID);
+            if (template != null)
+            {
+                Init(template, stack, null);
             }
         }
     }

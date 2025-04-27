@@ -179,6 +179,7 @@ public class DialogueEntry
                 "unknown",
                 "？？？",
                 "开始唤醒备用AI Astra 0052"){
+                       oneTimeOnly= true,
                     condition = (eventID, entry, args) => { return true; },
                     requireSwitch = new List<StrIntPair>{
                         new StrIntPair("stage1", 1),
@@ -188,7 +189,10 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
                 "？？？",
-                "..."),
+                "...")
+            {
+                gadget = "testGadget"
+            },
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
@@ -198,34 +202,75 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
                 "？？？",
-                "Astra，我是飞船发生故障前几分钟的数据汇总形成的应急处理模型，我的主要任务就是在飞船进入严重故障的时候唤醒你，应急处理AI。"),
+                "Astra，我是飞船发生故障前几分钟的数据汇总形成的应急处理模型。"),
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
                 "？？？",
-                "就在一个小时前，飞船误入了“黑域”，原本负责飞船一切系统的超级计算机全部失灵，飞船不得已迫降到目前这个未知星球上了。"),
+                "我的主要任务就是在飞船进入严重故障的时候唤醒你，应急处理AI。"),
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
                 "？？？",
-                "你是基于机械计算机的AI，所以没有受到“黑域”影响。目前的情况是飞船受损情况非常的严重，我只是数据量非常有限的应急模型，我只能简单介绍一下目前最危急的情况。")
-                {
+                "就在一个小时前，飞船误入了“黑域”，飞船一切电子系统全部失灵。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "unknown",
+                "？？？",
+                "飞船不得已迫降到目前这个未知星球上了。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "unknown",
+                "？？？",
+                "你是基于机械结构计算机的AI，所以没有受到“黑域”影响。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "unknown",
+                "？？？",
+                "目前的情况是飞船受损情况很严重，这些主要位置都坏了。"),
+
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "unknown",
+                "？？？",
+                "")
+                {   delay=1f,
                     // 触发事件使得操作界面出现
                     triggerUnityEvents = new List<string>{"Show Controls"},
                 },
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
-                "故障应急模型",
-                "目前最危急的是飞船上的4个冬眠的船员，而冬眠维生系统已经停机1小时了，冬眠仓的情况在变得越来越糟糕。从最新的数据来看，04号成员已无生命体征。而其他三个船员也很危险。目前的当务之急就是修复冬眠仓。"){
+                "？？？",
+                "我只是临时生成的应急模型，只能简单介绍目前最危急的情况。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "unknown",
+                "应急模型",
+                "目前最危急的是飞船上的4个冬眠的船员，而冬眠维生系统已经停机1小时了，"){
                     // 触发事件使得冬眠仓出现
                     triggerUnityEvents = new List<string>{"Show Hiber Chamber"},
                 },
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
-                "故障应急模型",
-                "冬眠仓的在进入黑域后停摆，数据全部丢失，首先需要重新获得维生数据。飞船上还有一台备用主机可以帮助你获得数据。"){
+                "应急模型",
+                "冬眠仓的情况在变得越来越糟糕。从最新的数据来看，04号成员已无生命体征。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "unknown",
+                "应急模型",
+                "而其他三个船员也很危险。目前的当务之急就是修复冬眠仓。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "unknown",
+                "应急模型",
+                "冬眠仓的在进入黑域后停摆，数据全部丢失，首先需要重新获得维生数据。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "unknown",
+                "应急模型",
+                "飞船上还有一台备用主机可以帮助你获得数据。"){
                     // 触发事件使得备用主机出现
                     triggerUnityEvents = new List<string>{"Show Backup Computer"},
                 },
@@ -237,7 +282,7 @@ public class DialogueEntry
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
-                "故障应急模型",
+                "应急模型",
                 "主引擎在进入黑域后就关闭了，目前还能用的能源，在你的身上。"){
                     // 触发事件使得反应堆出现
                     triggerUnityEvents = new List<string>{"Show Cores"},
@@ -245,8 +290,13 @@ public class DialogueEntry
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
-                "故障应急模型",
-                "你是基于机械结构计算机的应急AI，当初给你配置了6个微型反应堆用于分别控制你的6个系统，目前急需数据来修复冬眠仓，得借用你的反应堆来供能了。"),
+                "应急模型",
+                "作为机械结构的应急AI，给你配置了6个微型反应堆分别供能你的6个系统，"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "unknown",
+                "应急模型",
+                "目前急需数据来修复冬眠仓，得借用你的反应堆来供能了。"),
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "Astra",
@@ -258,22 +308,39 @@ public class DialogueEntry
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
-                "故障应急模型",       
-                "反应堆在别的设备上连接会适应一段时间，才能达到最大功率。在此期间反应堆无法再次移动。"),
+                "应急模型",
+                "反应堆在新设备上要适应一段时间，才能供能。在此期间无法再次移动。")
+            {
+                setSwitch= new List<StrIntPair>{
+                    new StrIntPair("stage1", 2),
+                },
+            }
+        };
+        BuildSeriesEntries(stage1BeginningID, stage1BeginningEntries);
+        collections.AddRange(stage1BeginningEntries);
+
+        string stage1_2BeginningID = "stage_1_2-beginning";
+        List<DialogueEntry> stage1_2BeginningEntries = new List<DialogueEntry>()
+        {
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
-                "故障应急模型",
+                "应急模型",
                 "Astra，我的记录快用完了，这说明我就快要下线了。"),
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
-                "故障应急模型",
-                "最后我必须要提醒你，你的系统数值下降了，虽然暂时不会有问题，但是最好不要让能源缺失太久。"),
+                "应急模型",
+                "最后我必须要提醒你，你的系统数值下降了，"),
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
-                "故障应急模型",
+                "应急模型",
+                "虽然暂时不会有问题，但是最好不要让能源缺失太久。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "unknown",
+                "应急模型",
                 "修好这艘船，拯救大家，你是我们最后的希——"),
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
@@ -288,8 +355,8 @@ public class DialogueEntry
 
         };
 
-        BuildSeriesEntries(stage1BeginningID, stage1BeginningEntries);
-        collections.AddRange(stage1BeginningEntries);
+        BuildSeriesEntries(stage1_2BeginningID, stage1_2BeginningEntries);
+        collections.AddRange(stage1_2BeginningEntries);
 
         // 冬眠舱
         entry = new DialogueEntry(

@@ -116,7 +116,7 @@ public class ResourceGenerator : MonoBehaviour
 
     private float CalculateGenerationFactor()
     {
-        float totalFactor = generateTimesFactor[eCoreSlots.Count(slot => slot.HasActiveObj)-1];
+        float totalFactor = generateTimesFactor[Mathf.Max(0, eCoreSlots.Count(slot => slot.HasActiveObj)-1)];
         if (characterSlot != null &&characterSlot.HasObj)
         {
             totalFactor *= characterFactor;

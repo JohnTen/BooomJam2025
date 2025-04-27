@@ -576,6 +576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visualParent: {fileID: 7358191535653293141}
   contentParent: {fileID: 7358191534486759743}
+  contentLayoutGroup: {fileID: 7358191534486759742}
   visualMask: {fileID: 7358191535053126818}
   unmaskPrefab: {fileID: 7358191534642605741}
   dialogueObjectPrefab: {fileID: 8993681783404997830, guid: 89e276c3b4cce3d4e83970768fdf9c54,
@@ -583,6 +584,36 @@ MonoBehaviour:
   gadgets:
   - key: testGadget
     value: {fileID: 847364128246467389, guid: efa1383a3ddc50c4ab723a29c3f8a4d8, type: 3}
+  triggerUnityEvents:
+  - key: Show Controls
+    value:
+      m_PersistentCalls:
+        m_Calls: []
+  - key: Show Hiber Chamber
+    value:
+      m_PersistentCalls:
+        m_Calls: []
+  - key: Show Backup Computer
+    value:
+      m_PersistentCalls:
+        m_Calls: []
+  - key: Show Cores
+    value:
+      m_PersistentCalls:
+        m_Calls: []
+  - key: Show Cores
+    value:
+      m_PersistentCalls:
+        m_Calls: []
+  - key: Show ECrystal
+    value:
+      m_PersistentCalls:
+        m_Calls: []
+  - key: Unlock Metal Mine
+    value:
+      m_PersistentCalls:
+        m_Calls: []
+  switches: []
 --- !u!114 &7358191535737956819
 MonoBehaviour:
   m_ObjectHideFlags: 0

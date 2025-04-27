@@ -15,9 +15,25 @@ public class ECoreSlot : ObjSlot
     private Color redColor = new Color(1, 0, 0, 1);
     private Coroutine blinkCoroutine;
 
-    public ECore ECoreInSlot => ObjInSlot as ECore;
+    public ECrystal ECoreInSlot => ObjInSlot as ECrystal;
 
-    public override bool HasActiveObj => base.HasActiveObj && !ECoreInSlot.IsWarmUp && !ECoreInSlot.IsBreakdown;
+    public override bool HasActiveObj
+    {
+        get
+        {
+            if (!HasObj)
+            {
+                return false;
+            }
+
+            if (ECoreInSlot is ECore eCore)
+            {
+                return !eCore.IsWarmUp && !eCore.IsBreakdown;
+            }
+
+            return true;
+        }   
+    }
 
     public bool NoWarmUp => noWarmUp;
 
@@ -75,12 +91,12 @@ public class ECoreSlot : ObjSlot
 
     public override bool CanAdd(Component obj)
     {
-        return obj is ECore && !HasObj;
+        return obj is ECrystal && !HasObj;
     }
 
     public override bool CanRemove(Component obj)
     {
-        return obj is ECore && obj == ObjInSlot;
+        return obj is ECrystal && obj == ObjInSlot;
     }
 
     public override void OnObjEnter(Component obj)

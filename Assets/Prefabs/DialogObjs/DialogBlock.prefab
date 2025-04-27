@@ -384,7 +384,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   window: {fileID: 2244420044532447608}
   windowRT: {fileID: 3127413360019834172}
+  isStart: 0
   fadeTime: 0.3
+  isOutBack: 1
   enableUnfold: 0
   enableScaleUp: 1
   enableMove: 1
@@ -581,3 +583,4 @@ MonoBehaviour:
   gibberishLevel: 0
   levelFromGameManager: 1
   useRandomSeed: 1
+  AutoUpdate: 1

@@ -33,7 +33,7 @@ public class InventorySlot : ObjSlot
             return true;
         }
 
-        if (obj is ECore)
+        if (obj is ECrystal)
         {
             AddObj(obj);
             return true;
@@ -72,7 +72,7 @@ public class InventorySlot : ObjSlot
             return true;
         }
 
-        if (component is ResourceObj || component is ECore)
+        if (component is ResourceObj || component is ECrystal)
         {
             return true;
         }

@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceObjPrefab: {fileID: 2796212453383535229, guid: 901f3749ed5048d438f6e5d3c1f639ea,
     type: 3}
+  eCrystalObjPrefab: {fileID: 7275556366076848276, guid: adea0f13b1ac53b419a8657ce80260a1,
+    type: 3}

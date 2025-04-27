@@ -18,6 +18,7 @@ public class DialogueManager : MonoSingleton<DialogueManager>
 
     [SerializeField] private GameObject visualParent;
     [SerializeField] private RectTransform contentParent;
+    [SerializeField] private LayoutGroup contentLayoutGroup;
     [SerializeField] private Image visualMask;
     [SerializeField] private RectTransform unmaskPrefab;
 
@@ -56,6 +57,8 @@ public class DialogueManager : MonoSingleton<DialogueManager>
     private TweenerCore<Vector3, Vector3, DG.Tweening.Plugins.Options.VectorOptions> visualParentTween;
 
     public List<StrIntPair> switches = new List<StrIntPair>();
+
+    private Queue<string> dialogueQueue = new Queue<string>();
 
     protected override void OnInit()
     {
@@ -100,9 +103,16 @@ public class DialogueManager : MonoSingleton<DialogueManager>
         var entry = entries.Find(e => e.instructionID == dialogueID);
         if (entry != null)
         {
-            currentEntry = entry;
-            StartDialogue();
-            BuildDialogueObject();
+            if (currentEntry != null)
+            {
+                dialogueQueue.Enqueue(dialogueID);
+            }
+            else
+            {
+                currentEntry = entry;
+                StartDialogue();
+                BuildDialogueObject();
+            }
         }
     }
 
@@ -135,6 +145,15 @@ public class DialogueManager : MonoSingleton<DialogueManager>
         if (currentEntry != null)
         {
             UpdateCurrentEntry(eventID, args);
+            return;
+        }
+
+        if (dialogueQueue.Count > 0)
+        {
+            var dialogueID = dialogueQueue.Dequeue();
+            currentEntry = entries.Find(e => e.instructionID == dialogueID);
+            StartDialogue();
+            BuildDialogueObject();
             return;
         }
 

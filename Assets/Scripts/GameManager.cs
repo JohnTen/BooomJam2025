@@ -37,6 +37,8 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField] private float breakdownCheckInterval;
     [SerializeField] private GameProperty coreFullGameProperty;
     [SerializeField] private GameProperty coreEmptyGameProperty;
+
+    public List<InventorySlot> inventorySlots;
     
     private float breakdownCheckTimer;
 
@@ -122,5 +124,36 @@ public class GameManager : MonoSingleton<GameManager>
                 eCores[UnityEngine.Random.Range(0, eCores.Count)].TriggerBreakdown();
             }
         }
+    }
+
+    public InventorySlot GetEmptyInventorySlot()
+    {
+        foreach (var slot in inventorySlots)
+        {
+            if (slot.HasObj == false)
+            {
+                return slot;
+            }
+        }
+
+        return null;
+    }
+
+    public InventorySlot GetStackableInventorySlot(string resourceID)
+    {
+        foreach (var slot in inventorySlots)
+        {
+            if (slot.HasObj && slot.ObjInSlot is ResourceObj resourceObj && resourceObj.Template.uid == resourceID)
+            {
+                return slot;
+            }
+        }
+
+        if (resourceID == "ECrystal")
+        {
+            
+        }
+
+        return null;
     }
 }

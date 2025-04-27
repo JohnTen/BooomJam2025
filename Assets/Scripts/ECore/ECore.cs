@@ -2,9 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Draggable))]
-[RequireComponent(typeof(DragDropDetector))]
-public class ECore : DraggableObj
+public class ECore : ECrystal
 {
     [Header("Visual")]
     [SerializeField] Image visualImage;
@@ -35,18 +33,6 @@ public class ECore : DraggableObj
             warmUpCoroutine = StartCoroutine(WarmUp());
         }
         base.SetSlot(slot, force);
-    }
-
-    protected override void OnDragStart()
-    {
-        base.OnDragStart();
-        VirtualCursor.Instance.CursorSpeedMultiplier = GameManager.Instance.GameProperty.CoreDragSpeed;
-    }
-
-    protected override void OnDragEnd()
-    {
-        base.OnDragEnd();
-        VirtualCursor.Instance.CursorSpeedMultiplier = 1f;
     }
 
     public void TriggerBreakdown()

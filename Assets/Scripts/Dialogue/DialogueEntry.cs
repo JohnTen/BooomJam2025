@@ -179,6 +179,7 @@ public class DialogueEntry
                 "unknown",
                 "？？？",
                 "开始唤醒备用AI Astra 0052"){
+                    condition = (eventID, entry, args) => { return true; },
                     requireSwitch = new List<StrIntPair>{
                         new StrIntPair("stage1", 1),
                     },
@@ -403,7 +404,7 @@ public class DialogueEntry
         collections.AddRange(stage2JobCabinEntries);
 
         // 探索1
-        string stage2Explore1ID = "stage_2-Explore1-";
+        string stage2Explore1ID = "stage_2-Explore1";
         List<DialogueEntry> stage2Explore1Entries = new List<DialogueEntry>()
         {
             new DialogueEntry("",
@@ -412,7 +413,7 @@ public class DialogueEntry
                 "S01",
                 "探索完成，这次我找到了一个秘方石，可以当作临时的能量源。"){
                     // 触发事件使得秘方石出现
-                    triggerUnityEvents = new List<string>{"Show Secret Stone"},
+                    triggerUnityEvents = new List<string>{"Show ECrystal"},
                 },
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
@@ -425,7 +426,7 @@ public class DialogueEntry
         collections.AddRange(stage2Explore1Entries);
 
         // 探索2
-        string stage2Explore2ID = "stage_2-Explore2-";
+        string stage2Explore2ID = "stage_2-Explore2";
         List<DialogueEntry> stage2Explore2Entries = new List<DialogueEntry>()
         {
             new DialogueEntry("",
@@ -439,7 +440,7 @@ public class DialogueEntry
         collections.AddRange(stage2Explore2Entries);
 
         // 探索3
-        string stage2Explore3ID = "stage_2-Explore3-";
+        string stage2Explore3ID = "stage_2-Explore3";
         List<DialogueEntry> stage2Explore3Entries = new List<DialogueEntry>()
         {
             new DialogueEntry("",

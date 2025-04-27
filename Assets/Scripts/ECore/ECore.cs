@@ -19,7 +19,6 @@ public class ECore : ECrystal
 
     private void Start()
     {
-        StartCoroutine(InitializePosition());
         if (visualImage != null)
         {
             StartCoroutine(VisualEffect());
@@ -39,17 +38,6 @@ public class ECore : ECrystal
     {
         print(name + " TriggerBreakdown");
         StartCoroutine(Breakdown());
-    }
-
-    private IEnumerator InitializePosition()
-    {
-        yield return null;
-        if (slotDetector.DetectComponent())
-        {
-            var slot = slotDetector.TargetComponent as ObjSlot;
-            previousSlot = slot;
-            SetSlot(slot);
-        }
     }
 
     private IEnumerator Breakdown()

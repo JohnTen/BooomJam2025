@@ -39,6 +39,4 @@ public class PortraitHub : ScriptableObject
         }
         return portrait;
     }
-
-
 }

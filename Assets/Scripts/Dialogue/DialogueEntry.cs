@@ -428,7 +428,20 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "S01",
                 "S01",
-                "探索完成，这次我找到了n个金属矿石，可以用于维修飞船。"),
+                "探索完成，这次我找到了n个金属矿石，可以用于维修飞船。") {
+                    condition = (int index, DialogueEntry entry, object[] args) => {
+                        if (index == EventConstant.OnExploreResult)
+                        {
+                            var resources = args[0] as List<StrIntPair>;
+                            var metal = resources.Find(resource => resource.Key == "Metal");
+                            if (metal != null)
+                            {
+                                entry.text =  $"探索完成，这次我找到了{metal.Value}个金属矿石，可以用于维修飞船。";
+                            }
+                        }
+                        return false;
+                    }
+                },
         };
 
         BuildSeriesEntries(stage2Explore2ID, stage2Explore2Entries);

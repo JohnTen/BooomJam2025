@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ECrystal : DraggableObj
 {
+    [SerializeField] private float effectiveTime = 5f;
+
     protected override void OnDragStart()
     {
         base.OnDragStart();
@@ -20,5 +22,18 @@ public class ECrystal : DraggableObj
     {
         transform.SetParent(slot.transform);
         base.SetSlot(slot, force);
+
+        if (slot is ECoreSlot && effectiveTime > 0)
+        {
+            StartCoroutine(Effective());
+        }
+    }
+
+    private IEnumerator Effective()
+    {
+        draggable.CanDrag = false;
+        yield return new WaitForSeconds(effectiveTime);
+        this.CurrentSlot.TryRemoveObj(this);
+        Destroy(gameObject);
     }
 }

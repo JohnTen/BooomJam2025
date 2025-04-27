@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JTUtility;
+using JTUtility.Event;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,6 +12,8 @@ public class ExploreResult
     public string id;
     public List<string> resources;
     public List<int> resourceAmounts;
+    public bool randomAmount;
+    public List<Vector2Int> randomRanges;
     public string dialogueID;
     public float weight;
     public bool oneTimeOnly = false;
@@ -72,6 +76,7 @@ public class ExploreNode : MonoBehaviour
     
     private void ApplyExploreResult(ExploreResult result)
     {
+        List<StrIntPair> resourcesGained = new List<StrIntPair>();
         for (int i = 0; i < result.resources.Count; i++)
         {
             var resource = result.resources[i];
@@ -91,15 +96,23 @@ public class ExploreNode : MonoBehaviour
             if (resource != "ECrystal")
             {
                 var resourceObj = Instantiate(PrefabHub.ResourceObjPrefab, inventorySlot.transform).GetComponent<ResourceObj>();
-                resourceObj.Init(ResourceDatabase.Instance.GetTemplate(resource), result.resourceAmounts[i], null);
+                var amount = result.randomAmount ? 
+                    UnityEngine.Random.Range(result.randomRanges[i].x, result.randomRanges[i].y) : 
+                    result.resourceAmounts[i];
+
+                resourcesGained.Add(new StrIntPair(resource, amount));
+                resourceObj.Init(ResourceDatabase.Instance.GetTemplate(resource), amount, null);
                 inventorySlot.TryAddObj(resourceObj);
             }
             else
             {
                 var eCrystalObj = Instantiate(PrefabHub.ECrystalObjPrefab, inventorySlot.transform).GetComponent<ECrystal>();
                 inventorySlot.TryAddObj(eCrystalObj);
+                resourcesGained.Add(new StrIntPair(resource, 1));
             }
         }
+
+        EventDispatcher<List<StrIntPair>>.Dispatch(EventConstant.OnExploreResult, resourcesGained);
 
         if (result.dialogueID != null)
         {

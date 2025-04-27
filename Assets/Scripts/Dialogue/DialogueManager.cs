@@ -75,6 +75,7 @@ public class DialogueManager : MonoSingleton<DialogueManager>
         EventRegister<Character, ObjSlot>.Register(EventConstant.OnCharacterSlotChanged, OnCharacterSlotChanged);
         EventRegister<string>.Register(EventConstant.ResourceGeneratorStarted, OnResourceGeneratorStarted);
         EventRegister<string>.Register(EventConstant.ResourceGeneratorStopped, OnResourceGeneratorStopped);
+        EventRegister<List<StrIntPair>>.Register(EventConstant.OnExploreResult, OnExploreResult);
     }
 
     void OnDisable()
@@ -85,6 +86,7 @@ public class DialogueManager : MonoSingleton<DialogueManager>
         EventRegister<Character, ObjSlot>.UnRegister(EventConstant.OnCharacterSlotChanged, OnCharacterSlotChanged);
         EventRegister<string>.UnRegister(EventConstant.ResourceGeneratorStarted, OnResourceGeneratorStarted);
         EventRegister<string>.UnRegister(EventConstant.ResourceGeneratorStopped, OnResourceGeneratorStopped);
+        EventRegister<List<StrIntPair>>.UnRegister(EventConstant.OnExploreResult, OnExploreResult);
     }
 
     private void Start()
@@ -307,7 +309,7 @@ public class DialogueManager : MonoSingleton<DialogueManager>
 
     private void FinishCurrentEntry()
     {
-        currentEntry.done = true;
+        //currentEntry.done = true;
         try
         {
             currentEntry.onDialogueEntryExecEnd?.Invoke(currentEntry);
@@ -521,6 +523,11 @@ public class DialogueManager : MonoSingleton<DialogueManager>
     private void OnResourceGeneratorStopped(string generatorId)
     {
         UpdateEntries(EventConstant.ResourceGeneratorStopped, new object[] { generatorId });
+    }
+
+    private void OnExploreResult(List<StrIntPair> resources)
+    {
+        UpdateEntries(EventConstant.OnExploreResult, new object[] { resources });
     }
 
     #endregion

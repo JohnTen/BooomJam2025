@@ -17,15 +17,15 @@ MonoBehaviour:
     name: "\u6570\u636E"
     description: 
     icon: {fileID: 21300000, guid: 51a864e79f39d7148894dae1d01048b7, type: 3}
-  - uid: Ore
-    name: "\u94DD\u77FF"
+  - uid: Metal
+    name: "\u91D1\u5C5E\u77FF\u77F3"
     description: 
-    icon: {fileID: 2747690628134850419, guid: a9716c16a44a94eed9b5c90fbf4d9bdd, type: 3}
-  - uid: Ingot
-    name: "\u94DD\u952D"
+    icon: {fileID: 21300000, guid: 6e605c567ca2df54b828d42f2aa3efff, type: 3}
+  - uid: Material
+    name: "\u91D1\u5C5E\u6750\u6599"
     description: 
-    icon: {fileID: 21300000, guid: 0ae2b74b1edd14bb18dd7b65ae916a54, type: 3}
+    icon: {fileID: 21300000, guid: ef0d843f87d481344970bd24af7fd51b, type: 3}
   - uid: CompPower
     name: "\u7B97\u529B"
     description: 
-    icon: {fileID: 21300000, guid: 5b7f664b515582d458717c354f6be292, type: 3}
+    icon: {fileID: 21300000, guid: a8e31679401d0444fa6a353b4c783983, type: 3}

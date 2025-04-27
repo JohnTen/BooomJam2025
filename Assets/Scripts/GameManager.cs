@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using JTUtility;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -37,6 +38,9 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField] private float breakdownCheckInterval;
     [SerializeField] private GameProperty coreFullGameProperty;
     [SerializeField] private GameProperty coreEmptyGameProperty;
+
+    public CharacterSlot defaultExplorerSlot;
+    public CharacterSlot defaultWorkerSlot;
 
     public List<InventorySlot> inventorySlots;
     
@@ -151,7 +155,7 @@ public class GameManager : MonoSingleton<GameManager>
 
         if (resourceID == "ECrystal")
         {
-            
+
         }
 
         return null;

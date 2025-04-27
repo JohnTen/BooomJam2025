@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class ObjSlot : MonoBehaviour
 {
-    protected Component obj;
+    [SerializeField]protected Component obj;
 
     public virtual bool HasObj => obj.IsNotNull();
 

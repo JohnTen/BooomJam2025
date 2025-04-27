@@ -35,8 +35,6 @@ public enum CharacterState
     Dead,
 }
 
-[RequireComponent(typeof(Draggable))]
-[RequireComponent(typeof(DragDropDetector))]
 public class Character : DraggableObj
 {
     [SerializeField] private string characterName;

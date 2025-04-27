@@ -12,11 +12,13 @@ public class ResourceRequirement : MonoBehaviour
     [Header("Slot references")]
     [SerializeField] List<ResourceSlot> inputSlots;
     [SerializeField] List<ECoreSlot> eCoreSlots;
+    [SerializeField] List<CharacterSlot> characterSlots;
 
     [Header("Convenient settings")]
     [SerializeField] List<string> inputResourceids;
     [SerializeField] bool consumeInputResources;
     [SerializeField] bool consumeECore;
+    [SerializeField] bool consumeCharacter;
 
     [Header("Conditions")]
     [SerializeField] List<int> inputAmounts;
@@ -97,6 +99,33 @@ public class ResourceRequirement : MonoBehaviour
                 Destroy(core.gameObject);
             }
         }
+
+        if (consumeCharacter)
+        {
+            for (int i = 0; i < characterSlots.Count; i++)
+            {
+                if (characterSlots[i].HasObj)
+                {
+                    characterSlots[i].TryRemoveObj(characterSlots[i].ObjInSlot);
+                    Destroy(characterSlots[i].ObjInSlot.gameObject);
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < characterSlots.Count; i++)
+            {
+                var character = characterSlots[i].ObjInSlot as Character;
+                if (character.CharacterType == CharacterType.Explorer)
+                {
+                    character.SetSlot(GameManager.Instance.defaultExplorerSlot);
+                }
+                else if (character.CharacterType == CharacterType.Worker)
+                {
+                    character.SetSlot(GameManager.Instance.defaultWorkerSlot);
+                }
+            }
+        }
     }   
     
     private bool RequirementMet()
@@ -112,6 +141,14 @@ public class ResourceRequirement : MonoBehaviour
         for (int i = 0; i < eCoreSlots.Count; i++)
         {
             if (!eCoreSlots[i].HasObj)
+            {
+                return false;
+            }
+        }
+
+        for (int i = 0; i < characterSlots.Count; i++)
+        {
+            if (!characterSlots[i].HasObj)
             {
                 return false;
             }

@@ -373,7 +373,7 @@ public class DialogueManager : MonoSingleton<DialogueManager>
                 Debug.LogError("Gadget not found: " + currentEntry.gadget);
             }
         }
-        else
+        else if (!string.IsNullOrEmpty(currentEntry.text))
         {
             currentObject = Instantiate(dialogueObjectPrefab, contentParent);
             currentObject.Init(currentEntry);

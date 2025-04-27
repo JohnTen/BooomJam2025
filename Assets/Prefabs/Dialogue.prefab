@@ -601,10 +601,6 @@ MonoBehaviour:
     value:
       m_PersistentCalls:
         m_Calls: []
-  - key: Show Cores
-    value:
-      m_PersistentCalls:
-        m_Calls: []
   - key: Show ECrystal
     value:
       m_PersistentCalls:

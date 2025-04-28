@@ -68,7 +68,7 @@ public class GibberishText : MonoBehaviour
         if (text != null)
         {
             lastProcessedText = text.text;
-            originalText = RemoveHtmlTags(text.text);
+            originalText = text.text;
             UpdateGibberishText();
         }
     }
@@ -95,18 +95,11 @@ public class GibberishText : MonoBehaviour
         }
     }
 
-    private string RemoveHtmlTags(string input)
-    {
-        if (string.IsNullOrEmpty(input)) return input;
-        // 移除所有HTML标签，包括<sprite>标签
-        return Regex.Replace(input, "<[^>]*>", "");
-    }
-
     public void SetText(string newText)
     {
         if (string.IsNullOrEmpty(newText)) return;
         
-        originalText = RemoveHtmlTags(newText);
+        originalText = newText;
         if (updateCoroutine != null)
         {
             StopCoroutine(updateCoroutine);
@@ -188,11 +181,32 @@ public class GibberishText : MonoBehaviour
         StringBuilder result = new StringBuilder();
         int totalChars = 0;
         int convertedChars = 0;
+        bool isInTag = false;
+        StringBuilder currentTag = new StringBuilder();
 
         for (int i = 0; i < input.Length; i++)
         {
             char currentChar = input[i];
             
+            if (currentChar == '<')
+            {
+                isInTag = true;
+                currentTag.Clear();
+                currentTag.Append(currentChar);
+                continue;
+            }
+            
+            if (isInTag)
+            {
+                currentTag.Append(currentChar);
+                if (currentChar == '>')
+                {
+                    isInTag = false;
+                    result.Append(currentTag.ToString());
+                }
+                continue;
+            }
+
             // 跳过空格和标点符号
             if (char.IsWhiteSpace(currentChar) || char.IsPunctuation(currentChar))
             {

@@ -14,4 +14,7 @@ public static class EventConstant
     public const int ResourceGeneratorStopped = 2 * offset + 6;
     public const int AustronautAwaked = 2 * offset + 7;
     public const int OnExploreResult = 2 * offset + 8;
+
+    public const int AsyncSceneActivating = 3 * offset + 1;
+    public const int AsyncSceneActivated = 3 * offset + 2;
 }

@@ -26,24 +26,7 @@ public class VirtualCursor : MonoSingleton<VirtualCursor>
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
 
-        if (mainCamera == null)
-        {
-            mainCamera = Camera.main;
-        }
-
-        if (canvas == null)
-        {
-            var canvas = GetComponentInParent<Canvas>();
-        }
-        
-        if (canvas != null)
-        {
-            canvasRectTransform = canvas.GetComponent<RectTransform>();
-            if (canvas.worldCamera == null)
-            {
-                canvas.worldCamera = mainCamera;
-            }
-        }
+        VerifyComponents();
     }
 
     void OnDisable()
@@ -52,8 +35,35 @@ public class VirtualCursor : MonoSingleton<VirtualCursor>
         Cursor.lockState = CursorLockMode.None;
     }
 
+    void VerifyComponents()
+    {
+        if (mainCamera.IsNull())
+        {
+            mainCamera = Camera.main;
+        }
+
+        if (canvas.IsNull())
+        {
+            canvas = GetComponentInParent<Canvas>();
+        }
+        
+        if (canvas.IsNotNull())
+        {
+            if (canvasRectTransform.IsNull())
+            {
+                canvasRectTransform = canvas.GetComponent<RectTransform>();
+            }
+
+            if (canvas.worldCamera.IsNull())
+            {
+                canvas.worldCamera = mainCamera;
+            }
+        }
+    }
+
     void Update()
     {
+        VerifyComponents();
         var newPosition = cursor.anchoredPosition + new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")) * (CursorSpeedMultiplier * cursorSpeed);
         cursor.anchoredPosition = new Vector2(Mathf.Clamp(newPosition.x, 0, canvasRectTransform.rect.width), Mathf.Clamp(newPosition.y, 0, canvasRectTransform.rect.height));
         screenPosition = mainCamera.WorldToScreenPoint(cursor.position);

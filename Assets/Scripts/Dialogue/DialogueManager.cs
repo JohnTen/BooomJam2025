@@ -440,6 +440,14 @@ public class DialogueManager : MonoSingleton<DialogueManager>
             Time.timeScale = 0;
         }
 
+        if (entry.setSwitch.IsNullOrEmpty() == false)
+        {
+            foreach (var switchPair in entry.setSwitch)
+            {
+                SetSwitch(switchPair.Key, switchPair.Value);
+            }
+        }
+
         entry.onExecuting?.Invoke(entry);
         if (!entry.triggerUnityEvents.IsNullOrEmpty())
         {

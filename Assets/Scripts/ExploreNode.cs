@@ -27,6 +27,7 @@ public class ExploreNode : MonoBehaviour
     [SerializeField] List<ExploreResult> exploreResults;
 
     [SerializeField] UnityEvent onExploreReady;
+    [SerializeField] UnityEvent onExploreNotReady;
 
     bool isExploreReady = false;
 
@@ -57,6 +58,7 @@ public class ExploreNode : MonoBehaviour
         else if (isExploreReady && (!characterSlot.HasObj || !eCoreSlot.HasObj))
         {
             isExploreReady = false;
+            onExploreNotReady.Invoke();
         }
     }
 
@@ -110,12 +112,12 @@ public class ExploreNode : MonoBehaviour
 
                 resourcesGained.Add(new StrIntPair(resource, amount));
                 resourceObj.Init(ResourceDatabase.Instance.GetTemplate(resource), amount, null);
-                inventorySlot.TryAddObj(resourceObj);
+                resourceObj.SetSlot(inventorySlot);
             }
             else
             {
                 var eCrystalObj = Instantiate(PrefabHub.ECrystalObjPrefab, inventorySlot.transform).GetComponent<ECrystal>();
-                inventorySlot.TryAddObj(eCrystalObj);
+                eCrystalObj.SetSlot(inventorySlot);
                 resourcesGained.Add(new StrIntPair(resource, 1));
             }
         }

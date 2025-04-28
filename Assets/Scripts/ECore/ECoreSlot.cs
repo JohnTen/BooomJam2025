@@ -11,6 +11,7 @@ public class ECoreSlot : ObjSlot
     [SerializeField] UnityEvent<bool> OnCoreChanges;
     [SerializeField] private bool blinkIndicator = true;
     [SerializeField] private bool noWarmUp = false;
+    [SerializeField] private bool ecoreOnly = false;
     private Color greenColor = new Color(0, 1, 0, 1);
     private Color redColor = new Color(1, 0, 0, 1);
     private Coroutine blinkCoroutine;
@@ -91,7 +92,14 @@ public class ECoreSlot : ObjSlot
 
     public override bool CanAdd(Component obj)
     {
-        return obj is ECrystal && !HasObj;
+        if (ecoreOnly)
+        {
+            return obj is ECore && !HasObj;
+        }
+        else
+        {
+            return obj is ECrystal && !HasObj;
+        }
     }
 
     public override bool CanRemove(Component obj)

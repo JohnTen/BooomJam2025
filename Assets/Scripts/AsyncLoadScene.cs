@@ -11,11 +11,16 @@ public class AsyncLoadScene : MonoBehaviour
 
     private AsyncOperation asyncOperation;
 
-    string sceneName;
+    public string sceneName;
 
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        LoadSceneAsync(sceneName);
     }
 
     public void LoadSceneAsync(string sceneName)

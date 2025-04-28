@@ -227,6 +227,14 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
                 "？？？",
+                "")
+                {   // 触发事件使得操作界面出现
+                    triggerUnityEvents = new List<string>{"Show Controls"},
+                },
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "unknown",
+                "？？？",
                 "目前的情况是飞船受损情况很严重，这些主要位置都坏了。"),
 
             new DialogueEntry("",
@@ -234,10 +242,8 @@ public class DialogueEntry
                 "unknown",
                 "？？？",
                 "")
-                {   delay=1f,
-                    // 触发事件使得操作界面出现
-                    triggerUnityEvents = new List<string>{"Show Controls"},
-                },
+                { delay=1f },
+                
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",

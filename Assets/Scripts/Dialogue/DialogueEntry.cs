@@ -186,13 +186,21 @@ public class DialogueEntry
                     },
                 },
             new DialogueEntry("",
-                DialogueEntryType.ClickAnywhere,
+                DialogueEntryType.Pass,
                 "unknown",
                 "？？？",
                 "...")
             {
                 gadget = "testGadget"
             },
+
+            new DialogueEntry("",
+                DialogueEntryType.Pass,
+                "unknown",
+                "？？？",
+                "")
+                { delay=2f },
+
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
@@ -224,7 +232,7 @@ public class DialogueEntry
                 "？？？",
                 "你是基于机械结构计算机的AI，所以没有受到“黑域”影响。"),
             new DialogueEntry("",
-                DialogueEntryType.ClickAnywhere,
+                DialogueEntryType.Pass,
                 "unknown",
                 "？？？",
                 "")
@@ -232,17 +240,17 @@ public class DialogueEntry
                     triggerUnityEvents = new List<string>{"Show Controls"},
                 },
             new DialogueEntry("",
-                DialogueEntryType.ClickAnywhere,
+                DialogueEntryType.Pass,
                 "unknown",
                 "？？？",
                 "目前的情况是飞船受损情况很严重，这些主要位置都坏了。"),
 
             new DialogueEntry("",
-                DialogueEntryType.ClickAnywhere,
+                DialogueEntryType.Pass,
                 "unknown",
                 "？？？",
                 "")
-                { delay=1f },
+                { delay=2f },
                 
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
@@ -267,11 +275,22 @@ public class DialogueEntry
                 "unknown",
                 "应急模型",
                 "而其他三个船员也很危险。目前的当务之急就是修复冬眠仓。"),
+
+            new DialogueEntry("",
+                DialogueEntryType.Pass,
+                "unknown",
+                "应急模型",
+                ""){
+                    // 触发事件使得冬眠仓出现
+                    triggerUnityEvents = new List<string>{"Show Fix Cab"},
+                },
+
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
                 "应急模型",
                 "冬眠仓的在进入黑域后停摆，数据全部丢失，首先需要重新获得维生数据。"),
+
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
@@ -289,15 +308,31 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
                 "应急模型",
-                "主引擎在进入黑域后就关闭了，目前还能用的能源，在你的身上。"){
+                "主引擎在进入黑域后就关闭了，目前还能用的能源，在你的身上。"),
+
+            new DialogueEntry("",
+                DialogueEntryType.Pass,
+                "unknown",
+                "？？？",
+                ""){
                     // 触发事件使得反应堆出现
-                    triggerUnityEvents = new List<string>{"Show Cores"},
-                },
+                    triggerUnityEvents = new List<string>{"Show Cores"}},
+
+            new DialogueEntry("",
+                DialogueEntryType.Pass,
+                "unknown",
+                "？？？",
+                "")
+                { delay=5f, },
+
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
                 "应急模型",
-                "作为机械结构的应急AI，给你配置了6个微型反应堆分别供能你的6个系统，"),
+                "作为机械结构的应急AI，给你配置了6个微型反应堆分别供能你的6个系统，")
+                {
+                    // 触发事件使得反应堆出现
+                    triggerUnityEvents = new List<string>{"Hide Shell"}},
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
@@ -309,7 +344,7 @@ public class DialogueEntry
                 "Astra",
                 "好的，救人要紧，我的反应堆可以使用。")
                 {
-                    // 处理拔出反应堆的表演
+                    // 处理拔出反应堆的表演，提示将反应堆放入备用主机
                 },
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
@@ -381,11 +416,7 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "Astra",
                 "Astra",
-                "冬眠舱修好了，看起来剩余的3名宇航员生命体征正常。"){
-                    requireSwitch = new List<StrIntPair>{
-                        new StrIntPair("stage2", 1),
-                    },
-                },
+                "冬眠舱修好了，看起来剩余的3名宇航员生命体征正常。"),
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "Astra",
@@ -471,6 +502,15 @@ public class DialogueEntry
         BuildSeriesEntries(stage2JobCabinID, stage2JobCabinEntries);
         collections.AddRange(stage2JobCabinEntries);
 
+        // 没找到金属矿
+        entry =
+        new DialogueEntry("not_find_mine",
+                DialogueEntryType.ClickAnywhere,
+                "S01",
+                "S01",
+                "暂时还没有找到金属矿。");
+        collections.Add(entry);
+
         // 探索1
         string stage2Explore1ID = "stage_2-Explore1";
         List<DialogueEntry> stage2Explore1Entries = new List<DialogueEntry>()
@@ -479,15 +519,21 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "S01",
                 "S01",
-                "探索完成，这次我找到了一个秘方石，可以当作临时的能量源。"){
-                    // 触发事件使得秘方石出现
-                    triggerUnityEvents = new List<string>{"Show ECrystal"},
-                },
-            new DialogueEntry("",
-                DialogueEntryType.ClickAnywhere,
-                "S01",
-                "S01",
-                "暂时还没有找到金属矿。"),
+                "探索完成，这次我找到了一个秘方石，可以当作临时的能量源。")
+            {
+                onExecuting = (entry) =>
+                {
+                    if (DialogueManager.Instance.GetSwitch("foundMine") == 1)
+                    {
+                        entry.nextEntry = "";
+                    }
+                    else
+                    {
+                        entry.nextEntry = "not_find_mine";
+                    }
+                }
+            },
+            
         };
 
         BuildSeriesEntries(stage2Explore1ID, stage2Explore1Entries);
@@ -502,6 +548,17 @@ public class DialogueEntry
                 "S01",
                 "S01",
                 "探索完成，这次我找到了n个金属矿石，可以用于维修飞船。") {
+                     onExecuting = (entry) =>
+                    {
+                        if (DialogueManager.Instance.GetSwitch("foundMine") == 1)
+                        {
+                            entry.nextEntry = "";
+                        }
+                        else
+                        {
+                            entry.nextEntry = "not_find_mine";
+                        }
+                    },
                     condition = (int index, DialogueEntry entry, object[] args) => {
                         if (index == EventConstant.OnExploreResult)
                         {
@@ -531,6 +588,9 @@ public class DialogueEntry
                 "探索完成，我找到了金属矿脉，坐标已经上传，之后我们可以稳定的获取金属矿石了。"){
                     // 触发事件使得金属矿脉出现
                     triggerUnityEvents = new List<string>{"Unlock Metal Mine"},
+                    setSwitch = new List<StrIntPair>{
+                        new StrIntPair("foundMine", 1),
+                    },
                 },
         };
 

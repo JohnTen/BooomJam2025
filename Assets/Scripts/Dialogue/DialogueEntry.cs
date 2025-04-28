@@ -598,23 +598,44 @@ public class DialogueEntry
         collections.AddRange(stage2Explore3Entries);
 
         // 金属矿石足够
-        string stage2MetalEnoughID = "stage_2-MetalEnough";
-        List<DialogueEntry> stage2MetalEnoughEntries = new List<DialogueEntry>()
-        {
-            new DialogueEntry("",
+        entry =
+            new DialogueEntry("enough_metal",
                 DialogueEntryType.ClickAnywhere,
                 "Astra",
                 "Astra",
-                "矿石收集够了，可以修复加工炉了。"),
-            new DialogueEntry("",
-                DialogueEntryType.ClickAnywhere,
-                "S01",
-                "S01",
-                "有了加工炉，船体的损坏就不用愁了。"),
-        };
+                "矿石收集够了，可以修复加工炉了。")
+            {
+                oneTimeOnly = true,
+                condition = (int index, DialogueEntry entry, object[] args) => {
+                    var resources = GameObject.FindObjectsByType(typeof(ResourceObj), FindObjectsSortMode.None);
+                    var sum = 0;
+                    foreach (var resource in resources)
+                    {
+                        var res = resource as ResourceObj;
+                        if (res != null && res.Template.uid == "Metal")
+                        {
+                            sum += res.Stack;
+                        }
+                    }
 
-        BuildSeriesEntries(stage2MetalEnoughID, stage2MetalEnoughEntries);
-        collections.AddRange(stage2MetalEnoughEntries);
+                    return sum >= 200;
+
+
+                },
+                
+            };
+        collections.Add(entry);
+
+        //修复加工炉
+        entry =
+        new DialogueEntry("fixed_PF",
+                DialogueEntryType.ClickAnywhere,
+                "S01",
+                "S01",
+                "有了加工炉，就可以生产金属材料，船体修复就能加快了。");
+        collections.Add(entry);
+
+
 
         // 主控仓修复
         string stage2MainControlRoomFixID = "stage_2-MainControlRoomFix";
@@ -624,7 +645,29 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "Astra",
                 "Astra",
-                "主控舱可以进行修复了，需要一个微型反应堆来保持能源稳定。"),
+                "主控舱可以进行修复了，需要一个微型反应堆来保持能源稳定。")
+             {
+                oneTimeOnly = true,
+                condition = (int index, DialogueEntry entry, object[] args) => {
+                    var resources = GameObject.FindObjectsByType(typeof(ResourceObj), FindObjectsSortMode.None);
+                    var sum = 0;
+                    var data_sum= 0;
+                    foreach (var resource in resources)
+                    {
+                        var res = resource as ResourceObj;
+                        if (res != null && res.Template.uid == "Material")
+                        {
+                            sum += res.Stack;
+                        }
+                        if (res != null && res.Template.uid == "Data")
+                        {
+                            data_sum+= res.Stack;
+                        }
+                    }
+
+                    return sum >= 100&&data_sum>=100;
+                },
+                },
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "Astra",

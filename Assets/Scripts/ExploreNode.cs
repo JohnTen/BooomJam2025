@@ -30,15 +30,23 @@ public class ExploreNode : MonoBehaviour
 
     bool isExploreReady = false;
 
+    DraggableObj draggable;
+
     void Update()
     {
         if (characterSlot.HasObj)
         {
             eCoreSlot.gameObject.SetActive(true);
         }
-        else if (!eCoreSlot.HasObj)
+        else if (!eCoreSlot.HasObj && draggable.IsNotNull() && draggable.CurrentSlot != null)
         {
             eCoreSlot.gameObject.SetActive(false);
+            draggable = null;
+        }
+
+        if (eCoreSlot.HasObj && draggable != eCoreSlot.ObjInSlot)
+        {
+            draggable = eCoreSlot.ObjInSlot as DraggableObj;
         }
 
         if (!isExploreReady && characterSlot.HasObj && eCoreSlot.HasObj)

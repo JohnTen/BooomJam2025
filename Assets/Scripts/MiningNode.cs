@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using JTUtility;
 
 public class MiningNode : MonoBehaviour
 {
@@ -14,6 +14,8 @@ public class MiningNode : MonoBehaviour
 
     float miningTimer;
 
+    DraggableObj draggable;
+
     private void Update()
     {
         if (eCoreSlot.HasObj || 
@@ -21,9 +23,15 @@ public class MiningNode : MonoBehaviour
         {
             eCoreSlot.gameObject.SetActive(true);
         }
-        else
+        else if (!eCoreSlot.HasObj && draggable.IsNotNull() && draggable.CurrentSlot != null)
         {
             eCoreSlot.gameObject.SetActive(false);
+            draggable = null;
+        }
+
+        if (eCoreSlot.HasObj && draggable != eCoreSlot.ObjInSlot)
+        {
+            draggable = eCoreSlot.ObjInSlot as DraggableObj;
         }
 
         if (CanMine())

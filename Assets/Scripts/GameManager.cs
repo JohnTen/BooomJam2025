@@ -27,11 +27,11 @@ public struct GameProperty
 
 public class GameManager : MonoSingleton<GameManager>
 {
-    [Serializable] private class CoreSlotCollection : EnumBasedCollection<CoreSlotType, ECoreSlot> {}
+    [Serializable] public class CoreSlotCollection : EnumBasedCollection<CoreSlotType, ECoreSlot> {}
     [Serializable] private class CoreSlotSliderCollection : EnumBasedCollection<CoreSlotType, Slider> {}
     [Serializable] public class CorePercentCollection : EnumBasedCollection<CoreSlotType, float> {}
 
-    [SerializeField] private CoreSlotCollection coreSlots;
+    [SerializeField] public CoreSlotCollection coreSlots;
     [SerializeField] private CoreSlotSliderCollection coreSlotPercentBars;
     [SerializeField] private float coreDegradeSpeed;
     [SerializeField] private float coreRestoreSpeed;

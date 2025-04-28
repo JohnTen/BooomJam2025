@@ -252,22 +252,6 @@ public class DialogueManager : MonoSingleton<DialogueManager>
 
         if (currentEntry.started == false)
         {
-            if (currentEntry.requireSwitch.IsNullOrEmpty() == false)
-            {
-                bool allRequireSwitchMet = true;
-                foreach (var requireSwitch in currentEntry.requireSwitch)
-                {
-                    if (GetSwitch(requireSwitch.Key) != requireSwitch.Value)
-                    {
-                        allRequireSwitchMet = false;
-                        break;
-                    }
-                }
-
-                if (!allRequireSwitchMet)
-                    return;
-            }
-            
             if (currentEntry.HasCondition && !currentEntry.waitForCondition(eventID, currentEntry, args))
             {
                 return;

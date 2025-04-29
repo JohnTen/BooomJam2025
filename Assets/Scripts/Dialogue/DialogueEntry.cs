@@ -58,7 +58,7 @@ public class DialogueEntry
     public List<StrIntPair> requireSwitch;
     // 需要设置的Switch条件
     public List<StrIntPair> setSwitch;
-    
+
     // 执行条件
     public Func<int, DialogueEntry, object[], bool> condition;
 
@@ -138,10 +138,10 @@ public class DialogueEntry
         DialogueEntry entry = null;
 
         entry = new DialogueEntry(
-            "测试1", 
-            DialogueEntryType.ClickAnywhere, 
-            "test1", 
-            "Astra", 
+            "测试1",
+            DialogueEntryType.ClickAnywhere,
+            "test1",
+            "Astra",
             "对话1对话1对话1");
         entry.oneTimeOnly = true;
         entry.delay = 0.5f;
@@ -149,24 +149,24 @@ public class DialogueEntry
         collections.Add(entry);
 
         entry = new DialogueEntry(
-            "测试2", 
-            DialogueEntryType.ClickAnywhere, 
-            "test2", 
-            "Core", 
+            "测试2",
+            DialogueEntryType.ClickAnywhere,
+            "test2",
+            "Core",
             "对话2对话2对话2");
         entry.nextEntry = "测试3";
         collections.Add(entry);
 
         entry = new DialogueEntry(
-            "测试3", 
-            DialogueEntryType.Pass, 
-            "test3", 
-            "Astra", 
+            "测试3",
+            DialogueEntryType.Pass,
+            "test3",
+            "Astra",
             "对话3对话3对话3");
         //entry.nextEntry = "测试1";
         entry.delay = 2.5f;
         entry.gadget = "testGadget";
-        entry.triggerUnityEvents = new List<string>{"124"};
+        entry.triggerUnityEvents = new List<string> { "124" };
         collections.Add(entry);
 
         // 主线阶段一
@@ -251,7 +251,7 @@ public class DialogueEntry
                 "？？？",
                 "")
                 { delay=2f },
-                
+
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
@@ -264,6 +264,9 @@ public class DialogueEntry
                 "目前最危急的是飞船上的4个冬眠的船员，而冬眠维生系统已经停机1小时了，"){
                     // 触发事件使得冬眠仓出现
                     triggerUnityEvents = new List<string>{"Show Hiber Chamber"},
+                    masks = new List<MaskSetting>{
+                        new MaskSetting(new Vector2(86.873f, 349.232f), new Vector2(335.745f, 199.537f)),
+                    },
                 },
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
@@ -451,7 +454,7 @@ public class DialogueEntry
         string stage2JobCabinID = "stage_2-JobCabin";
         List<DialogueEntry> stage2JobCabinEntries = new List<DialogueEntry>()
         {
-            
+
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "Astra",
@@ -533,7 +536,7 @@ public class DialogueEntry
                     }
                 }
             },
-            
+
         };
 
         BuildSeriesEntries(stage2Explore1ID, stage2Explore1Entries);
@@ -606,7 +609,8 @@ public class DialogueEntry
                 "矿石收集够了，可以修复加工炉了。")
             {
                 oneTimeOnly = true,
-                condition = (int index, DialogueEntry entry, object[] args) => {
+                condition = (int index, DialogueEntry entry, object[] args) =>
+                {
                     var resources = GameObject.FindObjectsByType(typeof(ResourceObj), FindObjectsSortMode.None);
                     var sum = 0;
                     foreach (var resource in resources)
@@ -622,7 +626,7 @@ public class DialogueEntry
 
 
                 },
-                
+
             };
         collections.Add(entry);
 
@@ -813,7 +817,7 @@ public class DialogueEntry
                 "Astra",
                 "Astra",
                 "……"),
-                
+
         };
 
         BuildSeriesEntries(stage3Choice1ID, stage3Choice1Entries);

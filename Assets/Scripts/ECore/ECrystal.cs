@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JTUtility;
 using UnityEngine;
 
 public class ECrystal : DraggableObj
@@ -20,7 +21,9 @@ public class ECrystal : DraggableObj
 
     public override void SetSlot(ObjSlot slot, bool force = false)
     {
-        transform.SetParent(slot.transform);
+        if(slot.IsNotNull())
+            transform.SetParent(slot.transform);
+            
         base.SetSlot(slot, force);
 
         if (slot is ECoreSlot && effectiveTime > 0)

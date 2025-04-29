@@ -35,19 +35,8 @@ public class VirtualCursorVisual : MonoBehaviour
 
     void Update()
     {
-        var results = new List<RaycastResult>();
-        var pointerEventData = new PointerEventData(EventSystem.current);
-        pointerEventData.position = VirtualCursor.ScreenPosition;
-        EventSystem.current.RaycastAll(pointerEventData, results);
-        foreach (var result in results)
-        {
-            if (result.gameObject.TryGetComponent(out draggable))
-            {
-                break;
-            }
-        }
+        draggable = VirtualCursor.Instance.FirstResult.gameObject?.GetComponent<Draggable>();
 
-        var delta = (VirtualCursor.ScreenPosition - lastPosition).magnitude;
         var targetCoreSizeDelta = coreSizeDelta;
         var targetRingSizeDelta = ringSizeDelta;
         var targetColor = coreColor;

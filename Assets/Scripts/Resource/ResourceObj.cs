@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JTUtility;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -71,6 +72,7 @@ public class ResourceObj : DraggableObj
 
     public override void SetSlot(ObjSlot slot, bool force = false)
     {
+        if (slot.IsNotNull())
         transform.SetParent(slot.ObjParent);
         base.SetSlot(slot, force);
     }

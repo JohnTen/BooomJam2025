@@ -234,7 +234,7 @@ public class DialogueManager : MonoSingleton<DialogueManager>
 
         if (IsDialogueObject && currentObject.isTyping)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) || Input.GetKey(KeyCode.Backspace))
             {
                 currentObject.SkipTyping();
                 return;
@@ -247,6 +247,12 @@ public class DialogueManager : MonoSingleton<DialogueManager>
             {
                 delayTimer += Time.unscaledDeltaTime;
             }
+
+            if (Input.GetKey(KeyCode.Backspace))
+            {
+                delayTimer = currentEntry.delay;
+            }
+
             return;
         }
 
@@ -268,7 +274,7 @@ public class DialogueManager : MonoSingleton<DialogueManager>
                 FinishCurrentEntry();
                 break;
             case DialogueEntryType.ClickAnywhere:
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0) || Input.GetKey(KeyCode.Backspace))
                 {
                     FinishCurrentEntry();
                 }
@@ -276,6 +282,12 @@ public class DialogueManager : MonoSingleton<DialogueManager>
             case DialogueEntryType.ClickMaskArea:
                 if (!Input.GetMouseButtonDown(0))
                 {
+                    return;
+                }
+
+                if (Input.GetKey(KeyCode.Backspace))
+                {
+                    FinishCurrentEntry();
                     return;
                 }
                 

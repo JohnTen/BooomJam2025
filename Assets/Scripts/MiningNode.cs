@@ -18,8 +18,7 @@ public class MiningNode : MonoBehaviour
 
     private void Update()
     {
-        if (eCoreSlot.HasObj || 
-        (characterSlot.HasObj && characterSlot.ObjInSlot is Character character && character.CharacterType != CharacterType.Worker))
+        if (characterSlot.HasObj && characterSlot.ObjInSlot is Character character && character.CharacterType != CharacterType.Worker)
         {
             eCoreSlot.gameObject.SetActive(true);
         }

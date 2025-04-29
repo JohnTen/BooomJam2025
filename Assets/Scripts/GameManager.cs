@@ -36,7 +36,12 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField] private float coreDegradeSpeed;
     [SerializeField] private float coreRestoreSpeed;
     [SerializeField] private float breakdownCheckInterval;
-    [SerializeField] private GameProperty coreFullGameProperty;
+    [SerializeField] private float coreGreenPercent;
+    [SerializeField] private float coreYellowPercent;
+    [SerializeField] private float coreRedPercent;
+    [SerializeField] private GameProperty coreGreenGameProperty;
+    [SerializeField] private GameProperty coreYellowGameProperty;
+    [SerializeField] private GameProperty coreRedGameProperty;
     [SerializeField] private GameProperty coreEmptyGameProperty;
 
     public CharacterSlot defaultExplorerSlot;
@@ -88,10 +93,60 @@ public class GameManager : MonoSingleton<GameManager>
             }
         }
 
-        modifiedGameProperty.breakdownChance = Mathf.Lerp(coreEmptyGameProperty.breakdownChance, coreFullGameProperty.breakdownChance, corePercent[CoreSlotType.CoolingCore]);
-        modifiedGameProperty.breakdownDuration = Mathf.Lerp(coreEmptyGameProperty.breakdownDuration, coreFullGameProperty.breakdownDuration, corePercent[CoreSlotType.CoolingCore]);
-        modifiedGameProperty.WarmUpSpeed = Mathf.Lerp(coreEmptyGameProperty.WarmUpSpeed, coreFullGameProperty.WarmUpSpeed, corePercent[CoreSlotType.ControlCore]);
-        modifiedGameProperty.CoreDragSpeed = Mathf.Lerp(coreEmptyGameProperty.CoreDragSpeed, coreFullGameProperty.CoreDragSpeed, corePercent[CoreSlotType.MotionCore]);
+        if (corePercent[CoreSlotType.CoolingCore] >= coreGreenPercent)
+        {
+            modifiedGameProperty.breakdownChance = coreGreenGameProperty.breakdownChance;
+            modifiedGameProperty.breakdownDuration = coreGreenGameProperty.breakdownDuration;
+        }
+        else if (corePercent[CoreSlotType.CoolingCore] >= coreYellowPercent)
+        {
+            modifiedGameProperty.breakdownChance = coreYellowGameProperty.breakdownChance;
+            modifiedGameProperty.breakdownDuration = coreYellowGameProperty.breakdownDuration;
+        }
+        else if (corePercent[CoreSlotType.CoolingCore] > coreRedPercent)
+        {
+            modifiedGameProperty.breakdownChance = coreRedGameProperty.breakdownChance;
+            modifiedGameProperty.breakdownDuration = coreRedGameProperty.breakdownDuration;
+        }
+        else
+        {
+            modifiedGameProperty.breakdownChance = coreEmptyGameProperty.breakdownChance;
+            modifiedGameProperty.breakdownDuration = coreEmptyGameProperty.breakdownDuration;
+        }
+
+        if (corePercent[CoreSlotType.ControlCore] >= coreGreenPercent)
+        {
+            modifiedGameProperty.WarmUpSpeed = coreGreenGameProperty.WarmUpSpeed;
+        }
+        else if (corePercent[CoreSlotType.ControlCore] >= coreYellowPercent)
+        {
+            modifiedGameProperty.WarmUpSpeed = coreYellowGameProperty.WarmUpSpeed;
+        }
+        else if (corePercent[CoreSlotType.ControlCore] > coreRedPercent)
+        {
+            modifiedGameProperty.WarmUpSpeed = coreRedGameProperty.WarmUpSpeed;
+        }
+        else
+        {
+            modifiedGameProperty.WarmUpSpeed = coreEmptyGameProperty.WarmUpSpeed;
+        }
+        
+        if (corePercent[CoreSlotType.MotionCore] >= coreGreenPercent)
+        {
+            modifiedGameProperty.CoreDragSpeed = coreGreenGameProperty.CoreDragSpeed;
+        }
+        else if (corePercent[CoreSlotType.MotionCore] >= coreYellowPercent)
+        {
+            modifiedGameProperty.CoreDragSpeed = coreYellowGameProperty.CoreDragSpeed;
+        }
+        else if (corePercent[CoreSlotType.MotionCore] > coreRedPercent)
+        {
+            modifiedGameProperty.CoreDragSpeed = coreRedGameProperty.CoreDragSpeed;
+        }
+        else
+        {
+            modifiedGameProperty.CoreDragSpeed = coreEmptyGameProperty.CoreDragSpeed;
+        }
 
         for (int i = 0; i < eCores.Count; i++)
         {

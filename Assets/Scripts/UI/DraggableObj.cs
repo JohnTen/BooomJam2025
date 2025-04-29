@@ -123,6 +123,7 @@ public class DraggableObj : MonoBehaviour
         currentSlot = slot;
         transform.rotation = slot.ObjParent.rotation;
         transform.position = slot.ObjParent.position;
+        transform.localScale = Vector3.one;
     }
 
     protected virtual void OnDragStart()

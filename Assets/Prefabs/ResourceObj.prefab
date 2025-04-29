@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 8649422351024866382}
   - component: {fileID: 6354800470033088588}
   - component: {fileID: 3824210746207274178}
+  - component: {fileID: 7923649913135860573}
   m_Layer: 5
   m_Name: ResourceObj
   m_TagString: Untagged
@@ -195,6 +196,7 @@ MonoBehaviour:
   icon: {fileID: 7083789821204970603}
   stackText: {fileID: 754974642558653098}
   stack: 0
+  templateID: 
 --- !u!222 &8925629973702033951
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -267,6 +269,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetComponent: {fileID: 0}
+--- !u!114 &7923649913135860573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2796212453383535229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6df22d5587e671145be4acff8f06e83d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: 
+  description: 
+  isResource: 1
 --- !u!1 &3698679245098148706
 GameObject:
   m_ObjectHideFlags: 0

@@ -1013,7 +1013,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   window: {fileID: 190233346}
   windowRT: {fileID: 190233347}
+  isStart: 1
   fadeTime: 0.25
+  isOutBack: 1
   enableUnfold: 0
   enableScaleUp: 1
   enableMove: 1
@@ -1713,7 +1715,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   window: {fileID: 268791841}
   windowRT: {fileID: 268791842}
+  isStart: 1
   fadeTime: 0.25
+  isOutBack: 1
   enableUnfold: 0
   enableScaleUp: 1
   enableMove: 1
@@ -1975,7 +1979,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   window: {fileID: 598493511}
   windowRT: {fileID: 598493512}
+  isStart: 1
   fadeTime: 0.25
+  isOutBack: 1
   enableUnfold: 0
   enableScaleUp: 1
   enableMove: 1
@@ -2756,7 +2762,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f986e61a7e0e540a6359d6ca34a856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 2
+  textMesh: {fileID: 0}
+  characterPerSecond: 3
   isScramble: 0
   content: "\u5F00\u59CB\u5524\u9192\u5907\u7528AI Astra 0052\u3002"
   nextEvent: 0
@@ -3289,7 +3296,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   window: {fileID: 1561903506}
   windowRT: {fileID: 1561903507}
+  isStart: 1
   fadeTime: 0.25
+  isOutBack: 1
   enableUnfold: 0
   enableScaleUp: 1
   enableMove: 1
@@ -3513,7 +3522,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   window: {fileID: 2046276913}
   windowRT: {fileID: 2046276914}
+  isStart: 1
   fadeTime: 0.25
+  isOutBack: 1
   enableUnfold: 0
   enableScaleUp: 1
   enableMove: 1
@@ -4085,6 +4096,8 @@ MonoBehaviour:
     y: 0
     width: 14
     height: 1
+  HealthyThreshold: 8
+  WarningThreshold: 3
 --- !u!222 &503087100
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5796,7 +5809,7 @@ Camera:
   m_GameObject: {fileID: 672152353}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -9949,7 +9962,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   window: {fileID: 850453664}
   windowRT: {fileID: 850453665}
+  isStart: 1
   fadeTime: 0.25
+  isOutBack: 1
   enableUnfold: 0
   enableScaleUp: 1
   enableMove: 1
@@ -10006,7 +10021,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   window: {fileID: 1957531010}
   windowRT: {fileID: 1957531011}
+  isStart: 1
   fadeTime: 0.3
+  isOutBack: 1
   enableUnfold: 0
   enableScaleUp: 1
   enableMove: 1
@@ -10425,7 +10442,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f986e61a7e0e540a6359d6ca34a856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 3
+  textMesh: {fileID: 0}
+  characterPerSecond: 3
   isScramble: 1
   content: "\u7CFB\u7EDF\u5206\u6790\u4E2D"
   nextEvent: 1
@@ -11091,6 +11109,8 @@ MonoBehaviour:
     y: 0
     width: 10
     height: 1
+  HealthyThreshold: 8
+  WarningThreshold: 3
 --- !u!222 &1422504020
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12510,7 +12530,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   window: {fileID: 1583105421}
   windowRT: {fileID: 1583105422}
+  isStart: 1
   fadeTime: 0.3
+  isOutBack: 1
   enableUnfold: 0
   enableScaleUp: 1
   enableMove: 1
@@ -12809,7 +12831,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f986e61a7e0e540a6359d6ca34a856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 2
+  textMesh: {fileID: 0}
+  characterPerSecond: 3
   isScramble: 1
   content: "Astra 0052\u521D\u59CB\u5316\u5B8C\u6210\u3002"
   nextEvent: 0
@@ -13849,7 +13872,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f986e61a7e0e540a6359d6ca34a856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 3
+  textMesh: {fileID: 0}
+  characterPerSecond: 3
   isScramble: 0
   content: ... ... ...
   nextEvent: 0
@@ -14094,7 +14118,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   window: {fileID: 85171780}
   windowRT: {fileID: 85171781}
+  isStart: 1
   fadeTime: 0.25
+  isOutBack: 1
   enableUnfold: 0
   enableScaleUp: 1
   enableMove: 1
@@ -14817,7 +14843,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f986e61a7e0e540a6359d6ca34a856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 2
+  textMesh: {fileID: 0}
+  characterPerSecond: 3
   isScramble: 0
   content: "\u5DF2\u5B8C\u6210\u5524\u9192\u3002"
   nextEvent: 0
@@ -16476,7 +16503,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   window: {fileID: 1473793405}
   windowRT: {fileID: 1473793406}
+  isStart: 1
   fadeTime: 0.25
+  isOutBack: 1
   enableUnfold: 0
   enableScaleUp: 1
   enableMove: 1
@@ -16649,7 +16678,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   window: {fileID: 2092565435}
   windowRT: {fileID: 2092565436}
+  isStart: 1
   fadeTime: 0.3
+  isOutBack: 1
   enableUnfold: 0
   enableScaleUp: 1
   enableMove: 1
@@ -16748,7 +16779,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   window: {fileID: 2096878163}
   windowRT: {fileID: 2096878164}
+  isStart: 1
   fadeTime: 0.3
+  isOutBack: 1
   enableUnfold: 0
   enableScaleUp: 1
   enableMove: 1

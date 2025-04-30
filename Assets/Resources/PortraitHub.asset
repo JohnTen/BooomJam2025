@@ -20,6 +20,22 @@ MonoBehaviour:
   - key: test3
     value: {fileID: 21300000, guid: 46e2439a97060164d916c0a26439283f, type: 3}
   - key: Astra
-    value: {fileID: 21300000, guid: f62f5e44e8bd5ae4db95883f64b1c47d, type: 3}
+    value: {fileID: 21300000, guid: 7dbae9b6d15a778469401c4ba7b97937, type: 3}
   - key: unknown
-    value: {fileID: 21300000, guid: 028913cea48ef234cb51e3808c663fce, type: 3}
+    value: {fileID: 21300000, guid: fc7bc9d8c7aec4745b2cc7049ee03183, type: 3}
+  - key: S01
+    value: {fileID: 21300000, guid: d5a7bbff3908bc84e966a0dd1f7e4213, type: 3}
+  - key: F01
+    value: {fileID: 21300000, guid: 116b95df2f08f6944a86bfcb6167cb16, type: 3}
+  - key: XY
+    value: {fileID: 21300000, guid: ce9211d9f5e5bdf4ebaca8f6a05b64a1, type: 3}
+  - key: Astra?
+    value: {fileID: 21300000, guid: 39bd808177cfa6140adbed696ce09f55, type: 3}
+  - key: f1
+    value: {fileID: 21300000, guid: 4f17bbd921d04234d99fb90d1a79c94b, type: 3}
+  - key: f2
+    value: {fileID: 21300000, guid: 57cacaa201eb04a44931c8dfc962b8da, type: 3}
+  - key: m1
+    value: {fileID: 21300000, guid: a5f6a716f06a7a348bde7000f21060da, type: 3}
+  - key: m2
+    value: {fileID: 21300000, guid: f1ea6439641a5ca468a56dbfc40cb83e, type: 3}

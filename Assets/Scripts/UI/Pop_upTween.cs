@@ -6,6 +6,7 @@ using UnityEditor;
 
 public class Pop_upTween : MonoBehaviour
 {
+    public Vector3 originSize;
     public GameObject window;
     public RectTransform windowRT;
 
@@ -21,13 +22,20 @@ public class Pop_upTween : MonoBehaviour
     [ConditionalField("enableMove")]
     public Vector3 moveTarget = new Vector3(10, 10, 0);
 
-
+    
     private void OnEnable()
     {
+        originSize = windowRT.localScale;
+
         if (isStart)
         {
             ShowPopUp();
         }
+    }
+
+    private void Start()
+    {
+        
     }
 
     public void ShowPopUp()
@@ -37,12 +45,12 @@ public class Pop_upTween : MonoBehaviour
         window.SetActive(true);
         if (enableUnfold)
         {
-            windowRT.localScale = new Vector3(1f, 0f, 1f);
-            windowRT.DOScaleY(1f, fadeTime).SetEase(isOutBack?Ease.OutBack:Ease.OutSine);
+            windowRT.localScale = new Vector3(originSize.x, 0f, 1f);
+            windowRT.DOScaleY(originSize.y, fadeTime).SetEase(isOutBack?Ease.OutBack:Ease.OutSine);
         }
         else if (enableScaleUp)
         {
-            windowRT.DOScale(Vector3.one, fadeTime).SetEase(Ease.OutSine);
+            windowRT.DOScale(originSize, fadeTime).SetEase(Ease.OutSine);
         }
 
         if (enableMove)
@@ -55,7 +63,7 @@ public class Pop_upTween : MonoBehaviour
 
     public void HidePopup()
     {
-        windowRT.localScale = Vector3.one;
+        windowRT.localScale = originSize;
         
         if (enableUnfold)
         {

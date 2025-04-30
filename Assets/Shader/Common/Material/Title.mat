@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LightSweep
+  m_Name: Title
   m_Shader: {fileID: 4800000, guid: 6eb3261ae63061048ad9778c69a6ca5f, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -37,14 +37,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex1:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Scale: {x: 1.03, y: 1}
+        m_Offset: {x: -0.03, y: 0}
     - _Mask:
-        m_Texture: {fileID: 2800000, guid: 72dae09090358ce47a95d7f0468b3faa, type: 3}
+        m_Texture: {fileID: 2800000, guid: a000995ad3030bc41ad72741e3e5e501, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Noise:
@@ -56,7 +52,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureSample0:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 1f6c20f3e40002047969993159e3cb2e, type: 3}
         m_Scale: {x: 0, y: 0}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -82,8 +78,8 @@ Material:
     - _Cyclic: 0
     - _Float0: 0
     - _Float2: 0
-    - _GlitchScale: 0
-    - _GlitchSpeed: 0
+    - _GlitchScale: 0.034
+    - _GlitchSpeed: 0.04
     - _NoiseScale: 0.034
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -96,8 +92,8 @@ Material:
     - _X: 0
     - _Y: 0
     - _energy: 0
-    - _x: -1
-    - _y: -1
+    - _x: 1
+    - _y: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 1.9460304, g: 3.60376, b: 6.8831816, a: 0}

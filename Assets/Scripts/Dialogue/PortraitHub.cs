@@ -32,6 +32,11 @@ public class PortraitHub : ScriptableObject
 
     public static Sprite GetPortrait(string name)
     {
+        if (instance == null)
+        {
+            instance = Resources.Load<PortraitHub>("PortraitHub");
+        }
+        
         var portrait = instance.portraits.Find(pair => pair.Key == name)?.Value;
         if (portrait == null)
         {

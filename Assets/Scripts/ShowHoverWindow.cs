@@ -13,6 +13,14 @@ public class ShowHoverWindow : MonoBehaviour
     public string Title => isResource ? resourceObj.Template.name : title;
     public string Description => isResource ? resourceObj.Template.description : description;
 
+    private void OnEnable()
+    {
+        if (isResource && resourceObj == null)
+        {
+            resourceObj = GetComponent<ResourceObj>();
+        }
+    }
+
     void Update()
     {
         if (isResource && resourceObj == null)

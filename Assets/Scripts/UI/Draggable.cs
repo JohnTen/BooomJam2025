@@ -24,7 +24,6 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
     {
         mainCamera = Camera.main;
         canvas = GetComponentInParent<Canvas>();
-        print(mainCamera);
     }
 
     public void OnPointerDown(PointerEventData eventData)

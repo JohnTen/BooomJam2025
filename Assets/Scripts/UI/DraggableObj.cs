@@ -49,6 +49,7 @@ public class DraggableObj : MonoBehaviour
     {
         yield return null;
         yield return null;
+        yield return null;
         if (slotDetector.DetectComponent())
         {
             var slot = slotDetector.TargetComponent as ObjSlot;
@@ -137,6 +138,7 @@ public class DraggableObj : MonoBehaviour
         }
 
         transform.rotation = Quaternion.identity;
+        transform.localScale = Vector3.one;
     }
 
     protected virtual void OnDragEnd()

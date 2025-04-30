@@ -13,6 +13,8 @@ public class ECore : ECrystal
     [SerializeField] Image warmUpProgress;
 
     private Coroutine warmUpCoroutine;
+    private Material visualMaterial;
+
 
     public bool IsWarmUp { get; private set; }
 
@@ -24,6 +26,10 @@ public class ECore : ECrystal
         {
             StartCoroutine(VisualEffect());
         }
+
+        visualMaterial = visualImage.materialForRendering;
+        visualImage.material = new Material(visualMaterial);
+        visualMaterial = visualImage.material;
     }
 
     public override void SetSlot(ObjSlot slot, bool force = false)
@@ -55,18 +61,22 @@ public class ECore : ECrystal
 
     private IEnumerator WarmUp()
     {
-        warmUpProgress.fillAmount = 0;
+        var fillAmount = 0f;
+        warmUpProgress.fillAmount = fillAmount;
         draggable.CanDrag = false;
         IsWarmUp = true;
         visualImage.sprite = warmUpSprite;
-        while (warmUpProgress.fillAmount < 1)
+        while (fillAmount < 1)
         {
             if (!draggable.IsDragging)
             {
-                warmUpProgress.fillAmount += Time.deltaTime * GameManager.Instance.GameProperty.WarmUpSpeed;
+                fillAmount += Time.deltaTime * GameManager.Instance.GameProperty.WarmUpSpeed;
+                warmUpProgress.fillAmount = fillAmount;
+                visualMaterial.SetFloat("_energy", fillAmount);
             }
             yield return null;
         }
+        visualMaterial.SetFloat("_energy", 0.9999f);
         draggable.CanDrag = true;
         IsWarmUp = false;
         visualImage.sprite = normalSprite;
@@ -87,15 +97,13 @@ public class ECore : ECrystal
     private IEnumerator VisualEffect()
     {
         float visualDiffer = Random.value * 5f;
+        yield return new WaitForSeconds(visualDiffer);
         
-        var material = visualImage.materialForRendering;
-        visualImage.material = new Material(material);
-        material = visualImage.material;
         while (true)
         {
             var time = Time.time + visualDiffer;
-            material.SetFloat("_NoiseScale", Mathf.Lerp(0.01f, 0.1f, Mathf.Sin(time * 1f)));
-            material.SetFloat("_y", Mathf.Lerp(-0.9f, 0.9f, Mathf.Tan(time * 0.5f)));
+            visualMaterial.SetFloat("_NoiseScale", Mathf.Lerp(0.01f, 0.1f, Mathf.Sin(time * 1f)));
+            visualMaterial.SetFloat("_y", Mathf.Lerp(-0.9f, 0.9f, Mathf.Tan(time * 0.5f)));
             yield return null;
         }
     }

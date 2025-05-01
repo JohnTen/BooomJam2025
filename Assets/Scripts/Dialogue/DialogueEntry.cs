@@ -951,7 +951,35 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "星云",
                 "星云",
-                "我已经检查了船体，还有两个关键部件需要修复。"),
+                "领航系统就绪，主引擎就绪。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "一切都准备就绪了，准备重返航线。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra?",
+                "Astra?",
+                "但愿能如此顺利吧。")
+        };
+            BuildSeriesEntries(stage3RepairShipID, stage3RepairShipEntries);
+            collections.AddRange(stage3RepairShipEntries);
+
+        // 启动失败
+        string stage3LaunchFailID = "stage_3-LaunchFail";
+        List<DialogueEntry> stage3LaunchFailEntries = new List<DialogueEntry>()
+        {
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "怎么回事？启动失败了？"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "星云",
+                "星云",
+                "我扫描了一遍全部系统，已经定位了问题。"),
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "星云",
@@ -961,17 +989,22 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "星云",
                 "星云",
-                "首先是飞船的动力来源，主引擎。由于黑域的影响关闭了太长时间。"),
+                "首先是主引擎由于黑域的影响关闭了太长时间。"),
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "星云",
                 "星云",
-                "想要主引擎再次启动需要消耗一个微型反应堆辅助。"),
+                "主引擎需要消耗一个反应堆辅助才能重新点燃。"),
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "星云",
                 "星云",
-                "另一个关键部件是飞船外部独立的领航系统。其中原本的供能也因为黑域而停摆。"),
+                "另一个问题是因为领航系统是飞船外部独立的。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "星云",
+                "星云",
+                "其中原本的供能也因为黑域而停摆，需要能源。"),
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "星云",
@@ -994,8 +1027,8 @@ public class DialogueEntry
                 "别天真了，人类只会觉得虽然航行遇到了意外，但是他们靠着设计出的应急机制救了自己。"),
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
-                "Astra",
-                "Astra",
+                "Astra?",
+                "Astra?",
                 "在他们眼里你可能都没存在过，只是一个工具。")
                 {
                     onExecuting = (entry) => {
@@ -1011,8 +1044,8 @@ public class DialogueEntry
                 },
         };
 
-        BuildSeriesEntries(stage3RepairShipID, stage3RepairShipEntries);
-        collections.AddRange(stage3RepairShipEntries);
+        BuildSeriesEntries(stage3LaunchFailID, stage3LaunchFailEntries);
+        collections.AddRange(stage3LaunchFailEntries);
 
         // 主线阶段4
         string stage4Ending1ID = "stage_4-Ending1";

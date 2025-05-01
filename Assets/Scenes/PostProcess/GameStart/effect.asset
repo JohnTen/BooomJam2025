@@ -1,5 +1,45 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8988552649738038347
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfbdbb87d3286943a057f7791b43141, type: 3}
+  m_Name: ChannelMixer
+  m_EditorClassIdentifier: 
+  active: 1
+  redOutRedIn:
+    m_OverrideState: 1
+    m_Value: 34
+  redOutGreenIn:
+    m_OverrideState: 1
+    m_Value: 34
+  redOutBlueIn:
+    m_OverrideState: 1
+    m_Value: 34
+  greenOutRedIn:
+    m_OverrideState: 1
+    m_Value: 34
+  greenOutGreenIn:
+    m_OverrideState: 1
+    m_Value: 34
+  greenOutBlueIn:
+    m_OverrideState: 1
+    m_Value: 34
+  blueOutRedIn:
+    m_OverrideState: 1
+    m_Value: 34
+  blueOutGreenIn:
+    m_OverrideState: 1
+    m_Value: 34
+  blueOutBlueIn:
+    m_OverrideState: 1
+    m_Value: 34
 --- !u!114 &-7481588233756965240
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -21,7 +61,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.63
   smoothness:
     m_OverrideState: 1
     m_Value: 1
@@ -44,6 +84,24 @@ MonoBehaviour:
   - {fileID: -7481588233756965240}
   - {fileID: 6945104832651148167}
   - {fileID: 5856222163336116316}
+  - {fileID: 4683777607717757440}
+  - {fileID: -8988552649738038347}
+--- !u!114 &4683777607717757440
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81180773991d8724ab7f2d216912b564, type: 3}
+  m_Name: ChromaticAberration
+  m_EditorClassIdentifier: 
+  active: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.15
 --- !u!114 &5856222163336116316
 MonoBehaviour:
   m_ObjectHideFlags: 3

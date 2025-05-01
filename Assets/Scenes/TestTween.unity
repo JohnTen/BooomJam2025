@@ -5024,6 +5024,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196729675}
   m_CullTransparentMesh: 1
+--- !u!1 &199859382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 199859384}
+  - component: {fileID: 199859383}
+  m_Layer: 0
+  m_Name: ScreenEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &199859383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199859382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 0
+  sharedProfile: {fileID: 11400000, guid: 960d8a5cdb0c8ad4f9ed6bec1bc84ded, type: 2}
+--- !u!4 &199859384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199859382}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -36.297413, y: 9.265682, z: 364.19626}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &213708146 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4472562694670541213, guid: 467e2e841c5d8b84e9a664ca8f6717c0,
@@ -11157,8 +11206,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 527933550}
+  m_Children: []
   m_Father: {fileID: 1906204793}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11849,13 +11897,14 @@ GameObject:
   - component: {fileID: 527933550}
   - component: {fileID: 527933552}
   - component: {fileID: 527933551}
+  - component: {fileID: 527933553}
   m_Layer: 5
   m_Name: DangerFilter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &527933550
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11868,8 +11917,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 479208433}
-  m_RootOrder: 0
+  m_Father: {fileID: 1906204793}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11889,8 +11938,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -11914,6 +11963,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527933549}
   m_CullTransparentMesh: 1
+--- !u!114 &527933553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527933549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa12d2be8563e34b9035cee1233dfd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overheatWarningImage: {fileID: 527933551}
+  greenFlashRange: {x: 0, y: 0}
+  yellowFlashRange: {x: 0.1, y: 0.3}
+  redFlashRange: {x: 0.3, y: 0.6}
+  zeroFlashRange: {x: 0.6, y: 1}
+  flashSpeed: 2
 --- !u!1 &528751327
 GameObject:
   m_ObjectHideFlags: 0
@@ -31464,21 +31531,28 @@ MonoBehaviour:
     CoreDragSpeed: 1
     breakdownChance: 0
     breakdownDuration: 5
+    screenEffectWeight: 0
   coreYellowGameProperty:
     WarmUpSpeed: 1
     CoreDragSpeed: 1
     breakdownChance: 0
     breakdownDuration: 5
+    screenEffectWeight: 0.33
   coreRedGameProperty:
     WarmUpSpeed: 1
     CoreDragSpeed: 1
     breakdownChance: 0
     breakdownDuration: 5
+    screenEffectWeight: 0.66
   coreEmptyGameProperty:
     WarmUpSpeed: 0.1
     CoreDragSpeed: 0.3
     breakdownChance: 0.1
     breakdownDuration: 5
+    screenEffectWeight: 1
+  screenEffectVolume: {fileID: 199859383}
+  screenEffectTransitionTime: 3
+  overheatWarning: {fileID: 527933553}
   defaultExplorerSlot: {fileID: 1190205908}
   defaultWorkerSlot: {fileID: 565278330}
   inventorySlots:
@@ -31492,6 +31566,7 @@ MonoBehaviour:
     CoreDragSpeed: 0
     breakdownChance: 0
     breakdownDuration: 0
+    screenEffectWeight: 0
   corePercent:
     keys: 000000000100000002000000030000000400000005000000
     vals:
@@ -41956,6 +42031,7 @@ RectTransform:
   - {fileID: 1979356638}
   - {fileID: 905814270}
   - {fileID: 1189207790}
+  - {fileID: 527933550}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JTUtility.Event;
 using UnityEngine;
 
 [RequireComponent(typeof(Draggable))]
@@ -139,6 +140,7 @@ public class DraggableObj : MonoBehaviour
 
         transform.rotation = Quaternion.identity;
         transform.localScale = Vector3.one;
+        EventDispatcher<DraggableObj>.Dispatch(EventConstant.OnDragStart, this);
     }
 
     protected virtual void OnDragEnd()
@@ -158,5 +160,6 @@ public class DraggableObj : MonoBehaviour
         {
             SetSlot(slot);
         }
+        EventDispatcher<DraggableObj>.Dispatch(EventConstant.OnDragEnd, this);
     }
 }

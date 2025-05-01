@@ -15,7 +15,7 @@ public class ResourceGenerator : MonoBehaviour
     [Header("Slot references")]
     [SerializeField] List<ResourceSlot> inputSlots;
     [SerializeField] List<ECoreSlot> eCoreSlots;
-    [SerializeField] CharacterSlot characterSlot;
+    [SerializeField] CharacterSlot accCharacterSlot;
     [SerializeField] ResourceSlot outputSlot;
 
     [Header("Convenient settings")]
@@ -115,7 +115,7 @@ public class ResourceGenerator : MonoBehaviour
     private float CalculateGenerationFactor()
     {
         float totalFactor = generateTimesFactor[Mathf.Max(0, eCoreSlots.Count(slot => slot.HasActiveObj)-1)];
-        if (characterSlot != null &&characterSlot.HasObj)
+        if (accCharacterSlot != null &&accCharacterSlot.HasObj)
         {
             totalFactor *= characterFactor;
         }

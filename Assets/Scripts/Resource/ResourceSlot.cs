@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using JTUtility;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ResourceSlot : ObjSlot
 {
@@ -12,6 +13,7 @@ public class ResourceSlot : ObjSlot
     [SerializeField] private bool isInput;
     [SerializeField] private Transform resourceObjParent;
     [SerializeField] private int maxStack = -1;
+    [SerializeField] private UnityEvent reachedMaxStack;
 
     public ResourceObj ResourceInSlot
     {
@@ -69,6 +71,7 @@ public class ResourceSlot : ObjSlot
                 if (resourceObj.Stack <= 0)
                 {
                     Destroy(resourceObj.gameObject);
+                    reachedMaxStack.Invoke();
                 }
             }
         }
@@ -78,6 +81,7 @@ public class ResourceSlot : ObjSlot
             {
                 AddResource(maxStack);
                 resourceObj.Stack -= maxStack;
+                reachedMaxStack.Invoke();
                 return;
             }
 

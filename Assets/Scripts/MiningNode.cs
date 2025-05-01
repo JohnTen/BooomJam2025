@@ -8,9 +8,12 @@ public class MiningNode : MonoBehaviour
     [SerializeField] CharacterSlot characterSlot;
     [SerializeField] ECoreSlot eCoreSlot;
     [SerializeField] ResourceSlot outputSlot;
+    [SerializeField] CharacterSlot accCharacterSlot;
 
     [SerializeField] float miningTime;
     [SerializeField] int outputAmount;
+    [SerializeField] float accMiningTime;
+    [SerializeField] int accOutputAmount;
 
     float miningTimer;
 
@@ -36,10 +39,12 @@ public class MiningNode : MonoBehaviour
         if (CanMine())
         {
             miningTimer += Time.deltaTime;
-            if (miningTimer >= miningTime)
+            var time = accCharacterSlot.HasObj ? accMiningTime : miningTime;
+            var output = accCharacterSlot.HasObj ? accOutputAmount : outputAmount;
+            if (miningTimer >= time)
             {
-                miningTimer -= miningTime;
-                outputSlot.AddResource(outputAmount);
+                miningTimer -= time;
+                outputSlot.AddResource(output);
             }
         }
         else

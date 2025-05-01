@@ -23,11 +23,17 @@ public class ExploreNode : MonoBehaviour
 {
     [SerializeField] CharacterSlot characterSlot;
     [SerializeField] ECoreSlot eCoreSlot;
+    [SerializeField] CharacterSlot accCharacterSlot;
 
     [SerializeField] List<ExploreResult> exploreResults;
 
     [SerializeField] UnityEvent onExploreReady;
     [SerializeField] UnityEvent onExploreNotReady;
+
+    [SerializeField] FixingProgress fixingProgress;
+
+    [SerializeField] float exploreSpeed;
+    [SerializeField] float accExploreSpeed;
 
     bool isExploreReady = false;
 
@@ -43,6 +49,15 @@ public class ExploreNode : MonoBehaviour
         {
             eCoreSlot.gameObject.SetActive(false);
             draggable = null;
+        }
+
+        if (accCharacterSlot.HasObj)
+        {
+            fixingProgress.speed = accExploreSpeed;
+        }
+        else
+        {
+            fixingProgress.speed = exploreSpeed;
         }
 
         if (eCoreSlot.HasObj && draggable != eCoreSlot.ObjInSlot)

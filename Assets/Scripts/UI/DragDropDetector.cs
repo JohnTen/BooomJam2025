@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class DragDropDetector : MonoBehaviour
 {
     [SerializeField] private Component targetComponent;
+    [SerializeField] private bool detectTopMost = false;
     public Component TargetComponent
     {
         get
@@ -47,6 +48,10 @@ public class DragDropDetector : MonoBehaviour
         foreach (var result in results)
         {
             if (result.gameObject.TryGetComponent(TargetComponentType, out targetComponent))
+            {
+                break;
+            }
+            if (detectTopMost)
             {
                 break;
             }

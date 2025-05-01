@@ -17,4 +17,7 @@ public static class EventConstant
 
     public const int AsyncSceneActivating = 3 * offset + 1;
     public const int AsyncSceneActivated = 3 * offset + 2;
+
+    public const int OnDragStart = 4 * offset + 1;
+    public const int OnDragEnd = 4 * offset + 2;
 }

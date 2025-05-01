@@ -13,11 +13,9 @@ public class RotateWithPointer : MonoBehaviour
     private Vector3 currentMovement;
     private Vector3 rotation;
     private Vector3 currentRotation;
-    private Camera mainCamera;
 
     private void Start()
     {
-        mainCamera = Camera.main;
         currentRotation = transform.eulerAngles;
     }
 

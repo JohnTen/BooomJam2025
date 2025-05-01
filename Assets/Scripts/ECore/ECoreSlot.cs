@@ -50,11 +50,6 @@ public class ECoreSlot : ObjSlot
             return false;
         }
 
-        if (obj != ObjInSlot)
-        {
-            OnCoreChanges.Invoke(HasObj);
-        }
-
         AddObj(obj);
         return true;
     }
@@ -62,11 +57,19 @@ public class ECoreSlot : ObjSlot
     public override void AddObj(Component obj)
     {
         base.AddObj(obj);
+        if (HasObj)
+        {
+            OnCoreChanges.Invoke(true);
+        }
         UpdateIndicator(HasObj);
     }
 
     public override void ClearObj()
     {
+        if (HasObj)
+        {
+            OnCoreChanges.Invoke(false);
+        }
         base.ClearObj();
         UpdateIndicator(HasObj);
     }

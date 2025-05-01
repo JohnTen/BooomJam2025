@@ -378,6 +378,14 @@ public class DialogueManager : MonoSingleton<DialogueManager>
         }
         else if (!string.IsNullOrEmpty(currentEntry.text))
         {
+            if (currentObject != null)
+            {
+                currentObject.gameObject.SetActive(false);
+            }
+            if (currentGadgetObject != null)
+            {
+                currentGadgetObject.SetActive(false);
+            }
             currentObject = Instantiate(dialogueObjectPrefab, contentParent);
             currentObject.Init(currentEntry);
             dialogueObjects.Add(currentObject);

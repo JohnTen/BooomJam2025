@@ -22,20 +22,20 @@ public class Pop_upTween : MonoBehaviour
     [ConditionalField("enableMove")]
     public Vector3 moveTarget = new Vector3(10, 10, 0);
 
-    
+    private bool inited;
+
     private void OnEnable()
     {
-        originSize = windowRT.localScale;
+        if (!inited)
+        {
+            originSize = windowRT.localScale;
+            inited = true;
+        }
 
         if (isStart)
         {
             ShowPopUp();
         }
-    }
-
-    private void Start()
-    {
-        
     }
 
     public void ShowPopUp()
@@ -81,7 +81,6 @@ public class Pop_upTween : MonoBehaviour
             windowRT.DOAnchorPos(origin-moveTarget, fadeTime, true).SetEase(Ease.OutSine).OnComplete(() => { windowRT.localPosition = origin; window.SetActive(false); });
             
         }
-        
     }
 
 

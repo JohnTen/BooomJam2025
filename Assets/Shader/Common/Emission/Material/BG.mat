@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: emission
+  m_Name: BG
   m_Shader: {fileID: 4800000, guid: 6eb3261ae63061048ad9778c69a6ca5f, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -64,20 +64,19 @@ Material:
     - _AlphaCutoff: 0.5
     - _Cyclic: 0
     - _GlitchScale: 0
-    - _GlitchSpeed: 0.8435949
-    - _NoiseScale: 0
+    - _GlitchSpeed: 0.628
+    - _NoiseScale: 0.46
     - _QueueControl: 0
     - _QueueOffset: 0
     - _StepScale: 0.3046487
-    - _Two: 0
     - _energy: 0
-    - _x: 0
-    - _y: 0
+    - _x: 0.09
+    - _y: 0.39
     m_Colors:
     - _EffectColor: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlitchColor: {r: 0, g: 0, b: 0, a: 0}
-    - _MainColor: {r: 0.2760929, g: 0.80491894, b: 1.1043715, a: 0}
+    - _MainColor: {r: 0.7490197, g: 0.7490197, b: 0.7490197, a: 0}
     - _NoiseSpeed: {r: 0, g: 0, b: 0, a: 0}
     - _PixelateTilling: {r: 10, g: 10, b: 0, a: 0}
   m_BuildTextureStacks: []

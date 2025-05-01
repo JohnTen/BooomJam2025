@@ -280,6 +280,21 @@ MonoBehaviour:
   isInput: 1
   resourceObjParent: {fileID: 4110179526671272754}
   maxStack: 100
+  reachedMaxStack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3461273699466166192}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &2722220444806210575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1872,6 +1887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f161d6d7055b0a41b638f52f2d55dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  originSize: {x: 0, y: 0, z: 0}
   window: {fileID: 5217591218356609565}
   windowRT: {fileID: 5217591218356609566}
   isStart: 1
@@ -2891,6 +2907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f161d6d7055b0a41b638f52f2d55dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  originSize: {x: 0, y: 0, z: 0}
   window: {fileID: 5217591219341897806}
   windowRT: {fileID: 5217591219341897807}
   isStart: 1
@@ -3150,6 +3167,21 @@ MonoBehaviour:
   isInput: 1
   resourceObjParent: {fileID: 5217591219406520611}
   maxStack: 100
+  reachedMaxStack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5217591218218238012}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &5217591219414359565
 MonoBehaviour:
   m_ObjectHideFlags: 0

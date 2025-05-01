@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using JTUtility;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public enum CoreSlotType
@@ -23,6 +24,7 @@ public struct GameProperty
     public float CoreDragSpeed;
     public float breakdownChance;
     public float breakdownDuration;
+    public float screenEffectWeight;
 }
 
 public class GameManager : MonoSingleton<GameManager>
@@ -43,6 +45,10 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField] private GameProperty coreYellowGameProperty;
     [SerializeField] private GameProperty coreRedGameProperty;
     [SerializeField] private GameProperty coreEmptyGameProperty;
+    [SerializeField] private Volume screenEffectVolume;
+    [SerializeField] private float screenEffectTransitionTime;
+
+    [SerializeField] private OverheatWarning overheatWarning;
 
     public CharacterSlot defaultExplorerSlot;
     public CharacterSlot defaultWorkerSlot;
@@ -97,21 +103,25 @@ public class GameManager : MonoSingleton<GameManager>
         {
             modifiedGameProperty.breakdownChance = coreGreenGameProperty.breakdownChance;
             modifiedGameProperty.breakdownDuration = coreGreenGameProperty.breakdownDuration;
+            overheatWarning.SetOverheatLevel(0);
         }
         else if (corePercent[CoreSlotType.CoolingCore] >= coreYellowPercent)
         {
             modifiedGameProperty.breakdownChance = coreYellowGameProperty.breakdownChance;
             modifiedGameProperty.breakdownDuration = coreYellowGameProperty.breakdownDuration;
+            overheatWarning.SetOverheatLevel(1);
         }
         else if (corePercent[CoreSlotType.CoolingCore] > coreRedPercent)
         {
             modifiedGameProperty.breakdownChance = coreRedGameProperty.breakdownChance;
             modifiedGameProperty.breakdownDuration = coreRedGameProperty.breakdownDuration;
+            overheatWarning.SetOverheatLevel(2);
         }
         else
         {
             modifiedGameProperty.breakdownChance = coreEmptyGameProperty.breakdownChance;
             modifiedGameProperty.breakdownDuration = coreEmptyGameProperty.breakdownDuration;
+            overheatWarning.SetOverheatLevel(3);
         }
 
         if (corePercent[CoreSlotType.ControlCore] >= coreGreenPercent)
@@ -148,6 +158,30 @@ public class GameManager : MonoSingleton<GameManager>
             modifiedGameProperty.CoreDragSpeed = coreEmptyGameProperty.CoreDragSpeed;
         }
 
+        var lastScreenEffectWeight = modifiedGameProperty.screenEffectWeight;
+        if (corePercent[CoreSlotType.SensorCore] >= coreGreenPercent)
+        {
+            modifiedGameProperty.screenEffectWeight = coreGreenGameProperty.screenEffectWeight;
+        }
+        else if (corePercent[CoreSlotType.SensorCore] >= coreYellowPercent)
+        {
+            modifiedGameProperty.screenEffectWeight = coreYellowGameProperty.screenEffectWeight;
+        }
+        else if (corePercent[CoreSlotType.SensorCore] > coreRedPercent)
+        {
+            modifiedGameProperty.screenEffectWeight = coreRedGameProperty.screenEffectWeight;
+        }
+        else
+        {
+            modifiedGameProperty.screenEffectWeight = coreEmptyGameProperty.screenEffectWeight;
+        }
+
+        if (lastScreenEffectWeight != modifiedGameProperty.screenEffectWeight)
+        {
+            StartCoroutine(ScreenEffect(modifiedGameProperty.screenEffectWeight, screenEffectTransitionTime));
+        }
+
+
         for (int i = 0; i < eCores.Count; i++)
         {
             if (eCores[i].IsNull() || !eCores[i].isActiveAndEnabled)
@@ -182,6 +216,18 @@ public class GameManager : MonoSingleton<GameManager>
                 print("Breakdown");
                 eCores[UnityEngine.Random.Range(0, eCores.Count)].TriggerBreakdown();
             }
+        }
+    }
+
+    IEnumerator ScreenEffect(float newWeight, float duration)
+    {
+        float currentWeight = screenEffectVolume.weight;
+        float time = 0;
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            screenEffectVolume.weight = Mathf.Lerp(currentWeight, newWeight, time / duration);
+            yield return null;
         }
     }
 

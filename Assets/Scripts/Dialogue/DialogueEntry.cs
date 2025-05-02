@@ -1064,7 +1064,7 @@ public class DialogueEntry
                 "我会不惜一切代价让航行重启。")
                 {
                     triggerUnityEvents = new List<string>{
-                        "Ending_Sacrifice",
+                        "End1",
                     },
                 },
         };
@@ -1167,7 +1167,7 @@ public class DialogueEntry
                 "Astra?",
                 "没法相信，我们真的能幸存吗？") {
                     triggerUnityEvents = new List<string>{
-                        "Ending_Risk",
+                        "End2",
                     },
                 },
         };

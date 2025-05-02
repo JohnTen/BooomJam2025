@@ -421,7 +421,6 @@ GameObject:
   - component: {fileID: 5636519335751560113}
   - component: {fileID: 4192199536915159129}
   - component: {fileID: 635011111691647925}
-  - component: {fileID: 5728822466346364574}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -567,21 +566,3 @@ MonoBehaviour:
   onCompleteEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5728822466346364574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5631548413806537284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c98ab825c5eeee648b9641531f7bafc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 4192199536915159129}
-  updateDelay: 0.1
-  gibberishLevel: 0
-  levelFromGameManager: 1
-  useRandomSeed: 1
-  AutoUpdate: 1

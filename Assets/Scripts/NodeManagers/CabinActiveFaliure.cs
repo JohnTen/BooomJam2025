@@ -11,7 +11,7 @@ public class CabinActiveFaliure : MonoBehaviour
 
     public float duration = 0.3f;
     public float strength = 10f;
-    public float vibrato = 20f;
+    public int vibrato = 20;
     public float delayTime = 1f;
 
     public UnityEvent unityEvent;
@@ -25,13 +25,18 @@ public class CabinActiveFaliure : MonoBehaviour
     }
     public void ActiveFaliure()
     {
-        RT.DOShakeAnchorPos(duration, 10, 20, 90, true, true);
+        RT.DOShakeAnchorPos(duration, strength, vibrato, 90, true, true);
         unityEvent.Invoke();
 
         DOVirtual.DelayedCall(delayTime, () =>
         {
             delayEvent.Invoke();
         });
+    }
+
+    public void JustShake()
+    {
+        RT.DOShakeAnchorPos(2f, 10, 30, 90, true, true);
     }
 
 }

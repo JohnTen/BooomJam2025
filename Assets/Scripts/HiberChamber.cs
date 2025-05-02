@@ -42,8 +42,8 @@ public class HiberChamber : MonoBehaviour
         }
         else
         {
-            timer = 0;
-            progressSlider.value = 0;
+            //timer = 0;
+            //progressSlider.value = 0;
         }
 
         if (timer >= timeToUnlock)

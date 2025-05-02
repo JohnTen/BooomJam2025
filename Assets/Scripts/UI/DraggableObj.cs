@@ -34,6 +34,7 @@ public class DraggableObj : MonoBehaviour
         draggable.OnDragStart.AddListener(OnDragStart);
         draggable.OnDragEnd.AddListener(OnDragEnd);
 
+        print("OnEnable: " + name + " initOnEnable: " + initOnEnable + " previousSlot: " + previousSlot + " currentSlot: " + currentSlot);
         if (initOnEnable && previousSlot == null && currentSlot == null)
         {
             StartCoroutine(InitializePosition());
@@ -51,14 +52,21 @@ public class DraggableObj : MonoBehaviour
         yield return null;
         yield return null;
         yield return null;
-        if (slotDetector.DetectComponent())
+
+        while (true)
         {
-            var slot = slotDetector.TargetComponent as ObjSlot;
-            if (slot != null && slot.CanAdd(this))
+            print("InitializePosition: " + name + " " + slotDetector.DetectComponent());
+            if (slotDetector.DetectComponent())
             {
-                previousSlot = slot;
-                SetSlot(slot);
+                var slot = slotDetector.TargetComponent as ObjSlot;
+                if (slot != null && slot.CanAdd(this))
+                {
+                    previousSlot = slot;
+                    SetSlot(slot);
+                    break;
+                }
             }
+            yield return null;
         }
     }
 

@@ -623,8 +623,6 @@ public class DialogueEntry
                     }
 
                     return sum >= 200;
-
-
                 },
 
             };
@@ -638,8 +636,6 @@ public class DialogueEntry
                 "S01",
                 "有了加工炉，就可以生产金属材料，船体修复就能加快了。");
         collections.Add(entry);
-
-
 
         // 主控仓修复
         string stage2MainControlRoomFixID = "stage_2-MainControlRoomFix";
@@ -963,8 +959,8 @@ public class DialogueEntry
                 "Astra?",
                 "但愿能如此顺利吧。")
         };
-            BuildSeriesEntries(stage3RepairShipID, stage3RepairShipEntries);
-            collections.AddRange(stage3RepairShipEntries);
+        BuildSeriesEntries(stage3RepairShipID, stage3RepairShipEntries);
+        collections.AddRange(stage3RepairShipEntries);
 
         // 启动失败
         string stage3LaunchFailID = "stage_3-LaunchFail";

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using JTUtility;
+using JTUtility.Event;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -32,6 +33,7 @@ public class GameManager : MonoSingleton<GameManager>
     [Serializable] public class CoreSlotCollection : EnumBasedCollection<CoreSlotType, ECoreSlot> {}
     [Serializable] private class CoreSlotSliderCollection : EnumBasedCollection<CoreSlotType, Slider> {}
     [Serializable] public class CorePercentCollection : EnumBasedCollection<CoreSlotType, float> {}
+    [Serializable] public class CoreStageCollection : EnumBasedCollection<CoreSlotType, int> {}
 
     [SerializeField] public CoreSlotCollection coreSlots;
     [SerializeField] private CoreSlotSliderCollection coreSlotPercentBars;
@@ -69,6 +71,8 @@ public class GameManager : MonoSingleton<GameManager>
         }
     }
 
+    public CoreStageCollection coreStage;
+
     public class MainCoreCollection : EnumBasedCollection<CoreSlotType, ECoreSlot> {}
     public MainCoreCollection mainCoreCollection;
 
@@ -83,6 +87,11 @@ public class GameManager : MonoSingleton<GameManager>
 
         eCores = new List<ECore>();
         eCores.AddRange(FindObjectsByType<ECore>(FindObjectsInactive.Include, FindObjectsSortMode.None));
+        coreStage = new CoreStageCollection();
+        foreach (CoreSlotType coreSlotType in Enum.GetValues(typeof(CoreSlotType)))
+        {
+            coreStage[coreSlotType] = 0;
+        }
     }
 
     void Update()
@@ -99,88 +108,168 @@ public class GameManager : MonoSingleton<GameManager>
             }
         }
 
+        var lastCoreStage = coreStage[CoreSlotType.CoolingCore];
         if (corePercent[CoreSlotType.CoolingCore] >= coreGreenPercent)
         {
             modifiedGameProperty.breakdownChance = coreGreenGameProperty.breakdownChance;
             modifiedGameProperty.breakdownDuration = coreGreenGameProperty.breakdownDuration;
             overheatWarning.SetOverheatLevel(0);
+            coreStage[CoreSlotType.CoolingCore] = 0;
         }
         else if (corePercent[CoreSlotType.CoolingCore] >= coreYellowPercent)
         {
             modifiedGameProperty.breakdownChance = coreYellowGameProperty.breakdownChance;
             modifiedGameProperty.breakdownDuration = coreYellowGameProperty.breakdownDuration;
             overheatWarning.SetOverheatLevel(1);
+            coreStage[CoreSlotType.CoolingCore] = 1;
         }
         else if (corePercent[CoreSlotType.CoolingCore] > coreRedPercent)
         {
             modifiedGameProperty.breakdownChance = coreRedGameProperty.breakdownChance;
             modifiedGameProperty.breakdownDuration = coreRedGameProperty.breakdownDuration;
             overheatWarning.SetOverheatLevel(2);
+            coreStage[CoreSlotType.CoolingCore] = 2;
         }
         else
         {
             modifiedGameProperty.breakdownChance = coreEmptyGameProperty.breakdownChance;
             modifiedGameProperty.breakdownDuration = coreEmptyGameProperty.breakdownDuration;
             overheatWarning.SetOverheatLevel(3);
+            coreStage[CoreSlotType.CoolingCore] = 3;
         }
 
+        if (lastCoreStage != coreStage[CoreSlotType.CoolingCore])
+        {
+            EventDispatcher<CoreSlotType, int>.Dispatch(EventConstant.CoreStageChanged, CoreSlotType.CoolingCore, coreStage[CoreSlotType.CoolingCore]);
+        }
+
+        lastCoreStage = coreStage[CoreSlotType.ControlCore];
         if (corePercent[CoreSlotType.ControlCore] >= coreGreenPercent)
         {
             modifiedGameProperty.WarmUpSpeed = coreGreenGameProperty.WarmUpSpeed;
+            coreStage[CoreSlotType.ControlCore] = 0;
         }
         else if (corePercent[CoreSlotType.ControlCore] >= coreYellowPercent)
         {
             modifiedGameProperty.WarmUpSpeed = coreYellowGameProperty.WarmUpSpeed;
+            coreStage[CoreSlotType.ControlCore] = 1;
         }
         else if (corePercent[CoreSlotType.ControlCore] > coreRedPercent)
         {
             modifiedGameProperty.WarmUpSpeed = coreRedGameProperty.WarmUpSpeed;
+            coreStage[CoreSlotType.ControlCore] = 2;
         }
         else
         {
             modifiedGameProperty.WarmUpSpeed = coreEmptyGameProperty.WarmUpSpeed;
+            coreStage[CoreSlotType.ControlCore] = 3;
         }
-        
+
+        if (lastCoreStage != coreStage[CoreSlotType.ControlCore])
+        {
+            EventDispatcher<CoreSlotType, int>.Dispatch(EventConstant.CoreStageChanged, CoreSlotType.ControlCore, coreStage[CoreSlotType.ControlCore]);
+        }
+
+        lastCoreStage = coreStage[CoreSlotType.MotionCore];
         if (corePercent[CoreSlotType.MotionCore] >= coreGreenPercent)
         {
             modifiedGameProperty.CoreDragSpeed = coreGreenGameProperty.CoreDragSpeed;
+            coreStage[CoreSlotType.MotionCore] = 0;
         }
         else if (corePercent[CoreSlotType.MotionCore] >= coreYellowPercent)
         {
             modifiedGameProperty.CoreDragSpeed = coreYellowGameProperty.CoreDragSpeed;
+            coreStage[CoreSlotType.MotionCore] = 1;
         }
         else if (corePercent[CoreSlotType.MotionCore] > coreRedPercent)
         {
             modifiedGameProperty.CoreDragSpeed = coreRedGameProperty.CoreDragSpeed;
+            coreStage[CoreSlotType.MotionCore] = 2;
         }
         else
         {
             modifiedGameProperty.CoreDragSpeed = coreEmptyGameProperty.CoreDragSpeed;
+            coreStage[CoreSlotType.MotionCore] = 3;
         }
 
-        var lastScreenEffectWeight = modifiedGameProperty.screenEffectWeight;
+        if (lastCoreStage != coreStage[CoreSlotType.MotionCore])
+        {
+            EventDispatcher<CoreSlotType, int>.Dispatch(EventConstant.CoreStageChanged, CoreSlotType.MotionCore, coreStage[CoreSlotType.MotionCore]);
+        }
+
+        lastCoreStage = coreStage[CoreSlotType.SensorCore];
         if (corePercent[CoreSlotType.SensorCore] >= coreGreenPercent)
         {
             modifiedGameProperty.screenEffectWeight = coreGreenGameProperty.screenEffectWeight;
+            coreStage[CoreSlotType.SensorCore] = 0;
         }
         else if (corePercent[CoreSlotType.SensorCore] >= coreYellowPercent)
         {
             modifiedGameProperty.screenEffectWeight = coreYellowGameProperty.screenEffectWeight;
+            coreStage[CoreSlotType.SensorCore] = 1;
         }
         else if (corePercent[CoreSlotType.SensorCore] > coreRedPercent)
         {
             modifiedGameProperty.screenEffectWeight = coreRedGameProperty.screenEffectWeight;
+            coreStage[CoreSlotType.SensorCore] = 2;
         }
         else
         {
             modifiedGameProperty.screenEffectWeight = coreEmptyGameProperty.screenEffectWeight;
+            coreStage[CoreSlotType.SensorCore] = 3;
         }
 
-        if (lastScreenEffectWeight != modifiedGameProperty.screenEffectWeight)
+        if (lastCoreStage != coreStage[CoreSlotType.SensorCore])
         {
+            EventDispatcher<CoreSlotType, int>.Dispatch(EventConstant.CoreStageChanged, CoreSlotType.SensorCore, coreStage[CoreSlotType.SensorCore]);
             StartCoroutine(ScreenEffect(modifiedGameProperty.screenEffectWeight, screenEffectTransitionTime));
         }
 
+        lastCoreStage = coreStage[CoreSlotType.MemoryCore];
+        if (corePercent[CoreSlotType.MemoryCore] >= coreGreenPercent)
+        {
+            coreStage[CoreSlotType.MemoryCore] = 0;
+        }
+        else if (corePercent[CoreSlotType.MemoryCore] >= coreYellowPercent)
+        {
+            coreStage[CoreSlotType.MemoryCore] = 1;
+        }
+        else if (corePercent[CoreSlotType.MemoryCore] > coreRedPercent)
+        {
+            coreStage[CoreSlotType.MemoryCore] = 2;
+        }
+        else
+        {
+            coreStage[CoreSlotType.MemoryCore] = 3;
+        }
+
+        if (lastCoreStage != coreStage[CoreSlotType.MemoryCore])
+        {
+            EventDispatcher<CoreSlotType, int>.Dispatch(EventConstant.CoreStageChanged, CoreSlotType.MemoryCore, coreStage[CoreSlotType.MemoryCore]);
+        }
+
+        lastCoreStage = coreStage[CoreSlotType.EthicCore];
+        if (corePercent[CoreSlotType.EthicCore] >= coreGreenPercent)
+        {
+            coreStage[CoreSlotType.EthicCore] = 0;
+        }
+        else if (corePercent[CoreSlotType.EthicCore] >= coreYellowPercent)
+        {
+            coreStage[CoreSlotType.EthicCore] = 1;
+        }
+        else if (corePercent[CoreSlotType.EthicCore] > coreRedPercent)
+        {
+            coreStage[CoreSlotType.EthicCore] = 2;
+        }
+        else
+        {
+            coreStage[CoreSlotType.EthicCore] = 3;
+        }
+
+        if (lastCoreStage != coreStage[CoreSlotType.EthicCore])
+        {
+            EventDispatcher<CoreSlotType, int>.Dispatch(EventConstant.CoreStageChanged, CoreSlotType.EthicCore, coreStage[CoreSlotType.EthicCore]);
+        }
 
         for (int i = 0; i < eCores.Count; i++)
         {

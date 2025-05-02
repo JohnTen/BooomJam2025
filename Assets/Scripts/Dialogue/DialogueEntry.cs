@@ -265,7 +265,7 @@ public class DialogueEntry
                     // 触发事件使得冬眠仓出现
                     triggerUnityEvents = new List<string>{"Show Hiber Chamber"},
                     masks = new List<MaskSetting>{
-                        new MaskSetting(new Vector2(86.873f, 349.232f), new Vector2(335.745f, 199.537f)),
+                        new MaskSetting(new Vector2(31.87f, 283.766f), new Vector2(277.275f, 161.08f)),
                     },
                 },
             new DialogueEntry("",

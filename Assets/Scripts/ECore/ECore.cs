@@ -6,30 +6,26 @@ using UnityEngine.UI;
 public class ECore : ECrystal
 {
     [Header("Visual")]
-    [SerializeField] Image visualImage;
     [SerializeField] Sprite normalSprite;
     [SerializeField] Sprite breakdownSprite;
     [SerializeField] Sprite warmUpSprite;
     [SerializeField] Image warmUpProgress;
 
     private Coroutine warmUpCoroutine;
-    private Material visualMaterial;
 
 
     public bool IsWarmUp { get; private set; }
 
     public bool IsBreakdown { get; private set; }
 
-    private void Start()
+    protected override void Start()
     {
         if (visualImage != null)
         {
             StartCoroutine(VisualEffect());
         }
-
-        visualMaterial = visualImage.materialForRendering;
-        visualImage.material = new Material(visualMaterial);
-        visualMaterial = visualImage.material;
+        
+        base.Start();
     }
 
     public override void SetSlot(ObjSlot slot, bool force = false)
@@ -72,11 +68,11 @@ public class ECore : ECrystal
             {
                 fillAmount += Time.deltaTime * GameManager.Instance.GameProperty.WarmUpSpeed;
                 warmUpProgress.fillAmount = fillAmount;
-                visualMaterial.SetFloat("_energy", fillAmount);
+                material.SetFloat("_energy", fillAmount);
             }
             yield return null;
         }
-        visualMaterial.SetFloat("_energy", 0.9999f);
+        material.SetFloat("_energy", 0.9999f);
         draggable.CanDrag = true;
         IsWarmUp = false;
         visualImage.sprite = normalSprite;
@@ -102,8 +98,8 @@ public class ECore : ECrystal
         while (true)
         {
             var time = Time.time + visualDiffer;
-            visualMaterial.SetFloat("_NoiseScale", Mathf.Lerp(0.01f, 0.1f, Mathf.Sin(time * 1f)));
-            visualMaterial.SetFloat("_y", Mathf.Lerp(-0.9f, 0.9f, Mathf.Tan(time * 0.5f)));
+            material.SetFloat("_NoiseScale", Mathf.Lerp(0.01f, 0.1f, Mathf.Sin(time * 1f)));
+            material.SetFloat("_y", Mathf.Lerp(-0.9f, 0.9f, Mathf.Tan(time * 0.5f)));
             yield return null;
         }
     }

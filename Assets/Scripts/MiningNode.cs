@@ -25,10 +25,13 @@ public class MiningNode : MonoBehaviour
         {
             eCoreSlot.gameObject.SetActive(true);
         }
-        else if (!eCoreSlot.HasObj && draggable.IsNotNull() && draggable.CurrentSlot != null)
+        else if (!eCoreSlot.HasObj)
         {
-            eCoreSlot.gameObject.SetActive(false);
-            draggable = null;
+            if (draggable.IsNull() || draggable.CurrentSlot.IsNotNull())
+            {
+                eCoreSlot.gameObject.SetActive(false);
+                draggable = null;
+            }
         }
 
         if (eCoreSlot.HasObj && draggable != eCoreSlot.ObjInSlot)

@@ -47,7 +47,7 @@ public class ResourceSlot : ObjSlot
         {
             var resourceObj = Instantiate(PrefabHub.ResourceObjPrefab, resourceObjParent).GetComponent<ResourceObj>();
             resourceObj.Init(ResourceDatabase.Instance.GetTemplate(resourceId), stack, this);
-            resourceObj.SetSlot(this);
+            resourceObj.SetSlot(this, true);
         }
     }
 
@@ -71,21 +71,32 @@ public class ResourceSlot : ObjSlot
                 if (resourceObj.Stack <= 0)
                 {
                     Destroy(resourceObj.gameObject);
+                }
+
+                if (ResourceInSlot.Stack >= maxStack)
+                {
                     reachedMaxStack.Invoke();
                 }
             }
         }
         else
         {
+            var inSlotResource = Instantiate(PrefabHub.ResourceObjPrefab, resourceObjParent).GetComponent<ResourceObj>();
+
             if (maxStack > 0 && resourceObj.Stack > maxStack)
             {
-                AddResource(maxStack);
+                inSlotResource.Init(ResourceDatabase.Instance.GetTemplate(resourceId), maxStack, this);
                 resourceObj.Stack -= maxStack;
                 reachedMaxStack.Invoke();
-                return;
+            }
+            else
+            {
+                inSlotResource.Init(ResourceDatabase.Instance.GetTemplate(resourceId), resourceObj.Stack, this);
+                resourceObj.Stack = 0;
+                Destroy(resourceObj.gameObject);
             }
 
-            base.AddObj(obj);
+            base.AddObj(inSlotResource);
         }
     }
 
@@ -103,7 +114,7 @@ public class ResourceSlot : ObjSlot
         
         AddObj(obj);
 
-        if (maxStack > 0 && obj is ResourceObj resourceObj && resourceObj.Stack > maxStack)
+        if (maxStack > 0 && obj is ResourceObj resourceObj && resourceObj.Stack > 0)
         {
             return false;
         }

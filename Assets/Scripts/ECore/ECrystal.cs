@@ -2,10 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using JTUtility;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ECrystal : DraggableObj
 {
+    [SerializeField] protected Image visualImage;
     [SerializeField] private float effectiveTime = 5f;
+
+    protected Material material;
+
+    protected virtual void Start()
+    {
+        material = new Material(visualImage.material);
+        visualImage.material = material;
+    }
 
     protected override void OnDragStart()
     {
@@ -33,7 +43,13 @@ public class ECrystal : DraggableObj
     private IEnumerator Effective()
     {
         draggable.CanDrag = false;
-        yield return new WaitForSeconds(effectiveTime);
+        float time = effectiveTime;
+        while (time > 0)
+        {
+            time -= Time.deltaTime;
+            material.SetFloat("_energy", time / effectiveTime);
+            yield return null;
+        }
         this.CurrentSlot.TryRemoveObj(this);
         Destroy(gameObject);
     }

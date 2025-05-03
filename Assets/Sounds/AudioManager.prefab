@@ -175,7 +175,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 7647525540922859977}
-  normalBgm: {fileID: 8300000, guid: e32756ac039f62c438ce62705aa90893, type: 3}
+  normalBgm: {fileID: 8300000, guid: 44a3b284409b75f40b06f52da93d65fd, type: 3}
+  bossIntro: {fileID: 8300000, guid: 1db3b6193ecf4c0499cf8bef2088e611, type: 3}
+  bossLoop: {fileID: 8300000, guid: e22c94646147dba4bbce64d123894a48, type: 3}
+  flyIntro: {fileID: 8300000, guid: dbd805e4cbc030249bb6cd6c2e1c14cf, type: 3}
+  flyLoop: {fileID: 8300000, guid: 820b216c353e80645a131dcb969a8082, type: 3}
 --- !u!1 &7647525542479542245
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +223,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

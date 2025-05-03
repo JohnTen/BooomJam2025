@@ -903,6 +903,10 @@ public class DialogueEntry
                     oneTimeOnly = true,
                     condition = (int index, DialogueEntry entry, object[] args) => {
                         return DialogueManager.Instance.GetSwitch("stage3_choice") == 1;
+                    },
+                    onExecuting = (entry) =>
+                    {
+                        AudioManager.instance.ChangeBGMToBoss();
                     }
                 },
             new DialogueEntry("",

@@ -6048,6 +6048,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1950957668}
+          m_TargetAssemblyTypeName: AudioTest, Assembly-CSharp
+          m_MethodName: ChangeBGMToFly
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!1 &163516669
 GameObject:
   m_ObjectHideFlags: 0
@@ -24287,7 +24299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 0}
-  characterTypes: 0200000003000000
+  characterTypes: 02000000
   characterState: 01000000
 --- !u!1 &765149230
 GameObject:
@@ -36191,6 +36203,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1950957668}
+          m_TargetAssemblyTypeName: AudioTest, Assembly-CSharp
+          m_MethodName: ChangeBGMToFly
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!1 &1187482810
 GameObject:
   m_ObjectHideFlags: 0
@@ -41193,7 +41217,7 @@ MonoBehaviour:
   coreYellowGameProperty:
     WarmUpSpeed: 0.34
     CoreDragSpeed: 0.7
-    memoryDegrade: 0.75
+    memoryDegrade: 0.25
     breakdownChance: 5
     breakdownDuration: 10
     screenEffectWeight: 0.33
@@ -41207,7 +41231,7 @@ MonoBehaviour:
   coreEmptyGameProperty:
     WarmUpSpeed: 0.125
     CoreDragSpeed: 0.2
-    memoryDegrade: 0.25
+    memoryDegrade: 0.75
     breakdownChance: 20
     breakdownDuration: 10
     screenEffectWeight: 1
@@ -55477,6 +55501,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1950957667}
   - component: {fileID: 1950957666}
+  - component: {fileID: 1950957668}
   m_Layer: 0
   m_Name: Director
   m_TagString: Untagged
@@ -55529,6 +55554,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1950957668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950957665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d9bfad8cdbdc504098becb6a97175d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1952454218
 GameObject:
   m_ObjectHideFlags: 0
@@ -56871,7 +56908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6df22d5587e671145be4acff8f06e83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: F01
+  title: F02
   description: "\u5DE5\u7A0B\u578B\u673A\u5668\u4EBA\uFF0C\u53EF\u4EE5\u6267\u884C\u7EF4\u4FEE\u548C\u91C7\u77FF\u4EFB\u52A1\uFF0C\u4E0D\u9700\u8981\u989D\u5916\u80FD\u6E90"
   isResource: 0
 --- !u!114 &2000965125 stripped

@@ -77,7 +77,7 @@ public class GibberishText : MonoBehaviour
     {
         if (levelFromGameManager)
         {
-            gibberishLevel = 1 - GameManager.Instance.corePercent[CoreSlotType.MemoryCore];
+            gibberishLevel = 1 - GameManager.Instance.GameProperty.memoryDegrade;
         }
 
         if (!AutoUpdate) return;

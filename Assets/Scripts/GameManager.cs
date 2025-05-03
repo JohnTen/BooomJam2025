@@ -23,6 +23,7 @@ public struct GameProperty
 {
     public float WarmUpSpeed;
     public float CoreDragSpeed;
+    public float memoryDegrade;
     public float breakdownChance;
     public float breakdownDuration;
     public float screenEffectWeight;
@@ -229,18 +230,22 @@ public class GameManager : MonoSingleton<GameManager>
         if (corePercent[CoreSlotType.MemoryCore] >= coreGreenPercent)
         {
             coreStage[CoreSlotType.MemoryCore] = 0;
+            modifiedGameProperty.memoryDegrade = coreGreenGameProperty.memoryDegrade;
         }
         else if (corePercent[CoreSlotType.MemoryCore] >= coreYellowPercent)
         {
             coreStage[CoreSlotType.MemoryCore] = 1;
+            modifiedGameProperty.memoryDegrade = coreYellowGameProperty.memoryDegrade;
         }
         else if (corePercent[CoreSlotType.MemoryCore] > coreRedPercent)
         {
             coreStage[CoreSlotType.MemoryCore] = 2;
+            modifiedGameProperty.memoryDegrade = coreRedGameProperty.memoryDegrade;
         }
         else
         {
             coreStage[CoreSlotType.MemoryCore] = 3;
+            modifiedGameProperty.memoryDegrade = coreEmptyGameProperty.memoryDegrade;
         }
 
         if (lastCoreStage != coreStage[CoreSlotType.MemoryCore])

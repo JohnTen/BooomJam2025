@@ -366,7 +366,7 @@ public class DialogueManager : MonoSingleton<DialogueManager>
             visualParentTween.Kill();
         
         //visualParent.transform.localPosition = visualParentOriginalPosition.AlterX(-visualParentOriginalPosition.x);
-        visualParentTween = visualParent.transform.DOLocalMoveX(visualParentOriginalPosition.x, 0.5f).SetEase(Ease.OutCubic);
+        visualParentTween = visualParent.transform.DOLocalMoveX(visualParentOriginalPosition.x, 0.5f).SetUpdate(true).SetEase(Ease.OutCubic);
     }
 
     public void HideDialoguePanel()
@@ -375,7 +375,7 @@ public class DialogueManager : MonoSingleton<DialogueManager>
             visualParentTween.Kill();
 
         //visualParent.transform.localPosition = visualParentOriginalPosition;
-        visualParentTween = visualParent.transform.DOLocalMoveX(-visualParentOriginalPosition.x, 0.5f).SetEase(Ease.InCubic);
+        visualParentTween = visualParent.transform.DOLocalMoveX(-visualParentOriginalPosition.x, 0.5f).SetUpdate(true).SetEase(Ease.InCubic);
     }
 
     private void FinishDialogue()

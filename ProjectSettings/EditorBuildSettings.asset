@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestTween.unity
     guid: 0d623701bc8b3c24e8dcd757f2a0826f
+  - enabled: 1
+    path: Assets/Scenes/Credit.unity
+    guid: 7b83f0742df1640428d905867d3856a8
   m_configObjects: {}

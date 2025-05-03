@@ -46,18 +46,18 @@ public class Pop_upTween : MonoBehaviour
         if (enableUnfold)
         {
             windowRT.localScale = new Vector3(originSize.x, 0f, 1f);
-            windowRT.DOScaleY(originSize.y, fadeTime).SetEase(isOutBack?Ease.OutBack:Ease.OutSine);
+            windowRT.DOScaleY(originSize.y, fadeTime).SetEase(isOutBack?Ease.OutBack:Ease.OutSine).SetUpdate(true);
         }
         else if (enableScaleUp)
         {
-            windowRT.DOScale(originSize, fadeTime).SetEase(Ease.OutSine);
+            windowRT.DOScale(originSize, fadeTime).SetEase(Ease.OutSine).SetUpdate(true);
         }
 
         if (enableMove)
         {
             Vector3 origin = windowRT.localPosition;
             windowRT.localPosition = windowRT.localPosition - moveTarget;
-            windowRT.DOAnchorPos(origin,fadeTime,true).SetEase(Ease.OutSine);
+            windowRT.DOAnchorPos(origin,fadeTime,true).SetEase(Ease.OutSine).SetUpdate(true);
         }
     }
 
@@ -67,18 +67,18 @@ public class Pop_upTween : MonoBehaviour
         
         if (enableUnfold)
         {
-            windowRT.DOScaleY(0, fadeTime).SetEase(isOutBack ? Ease.OutBack : Ease.OutSine).OnComplete(() => { window.SetActive(false); });
+            windowRT.DOScaleY(0, fadeTime).SetEase(isOutBack ? Ease.OutBack : Ease.OutSine).SetUpdate(true).OnComplete(() => { window.SetActive(false); });
         }
         else if (enableScaleUp)
         {
             Debug.Log("ScaleUp is not enabled, using default scale animation.");
-            windowRT.DOScale(Vector3.zero, fadeTime).SetEase(Ease.OutSine).OnComplete(() => { window.SetActive(false); });
+            windowRT.DOScale(Vector3.zero, fadeTime).SetEase(Ease.OutSine).SetUpdate(true).OnComplete(() => { window.SetActive(false); });
         }
 
         if (enableMove)
         {
             Vector3 origin = windowRT.localPosition;
-            windowRT.DOAnchorPos(origin-moveTarget, fadeTime, true).SetEase(Ease.OutSine).OnComplete(() => { windowRT.localPosition = origin; window.SetActive(false); });
+            windowRT.DOAnchorPos(origin-moveTarget, fadeTime, true).SetEase(Ease.OutSine).SetUpdate(true).OnComplete(() => { windowRT.localPosition = origin; window.SetActive(false); });
             
         }
     }

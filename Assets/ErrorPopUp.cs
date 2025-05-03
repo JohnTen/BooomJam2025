@@ -25,7 +25,7 @@ public class ErrorPopUp : MonoBehaviour
     {
         transform.localScale=Vector3.zero;
         gameObject.SetActive(true);
-        transform.DOScale(originSize, fadeTime).SetEase(Ease.OutSine).OnComplete(()=>
+        transform.DOScale(originSize, fadeTime).SetEase(Ease.OutSine).SetUpdate(true).OnComplete(()=>
         {
             transform.DOShakePosition(shakeDuration, shakeStrength, shakeVibrato, 90, true, true);
         });

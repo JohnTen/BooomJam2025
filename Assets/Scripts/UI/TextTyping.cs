@@ -76,7 +76,7 @@ public class TextTyping : MonoBehaviour
 
         if (isScramble)
         {
-            typingHandle = textMesh.DOText(content, time, true, ScrambleMode.All).OnComplete(() =>
+            typingHandle = textMesh.DOText(content, time, true, ScrambleMode.All).SetUpdate(true).OnComplete(() =>
             {
                 if (onCompleteEvent != null && nextEvent)
                 {
@@ -86,7 +86,7 @@ public class TextTyping : MonoBehaviour
         }
         else
         {
-            typingHandle = textMesh.DOText(content, time).OnComplete(() =>
+            typingHandle = textMesh.DOText(content, time).SetUpdate(true).OnComplete(() =>
             {
                 if (onCompleteEvent != null && nextEvent)
                 {
@@ -100,7 +100,7 @@ public class TextTyping : MonoBehaviour
     {
         if (IsTyping)
         {
-            typingHandle.Kill();
+            typingHandle.SetUpdate(true).Kill();
             textMesh.text = content;
         }
     }

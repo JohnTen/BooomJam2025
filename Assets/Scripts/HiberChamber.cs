@@ -49,11 +49,16 @@ public class HiberChamber : MonoBehaviour
         if (timer >= timeToUnlock)
         {
             timer = 0;
-            foreach (var cover in covers)
+            for (int i = 0; i < covers.Count; i++)
             {
-                if (cover.activeSelf)
+                if (covers[i].activeSelf)
                 {
-                    cover.SetActive(false);
+                    covers[i].SetActive(false);
+                    var character = characterSlots[i].ObjInSlot as Character;
+                    if (character != null)
+                    {
+                        character.CharacterState = CharacterState.Idle;
+                    }
                     break;
                 }
             }

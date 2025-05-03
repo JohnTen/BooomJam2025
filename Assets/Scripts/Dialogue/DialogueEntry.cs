@@ -377,6 +377,7 @@ public class DialogueEntry
             {
                 masks = new List<MaskSetting>{
                 new MaskSetting(new Vector2(-310f, 265f), new Vector2(100f,100f)),},
+                triggerUnityEvents = new List<string>{"Enable core control"},
                 setSwitch= new List<StrIntPair>{
                     new StrIntPair("stage1", 2),
                 },
@@ -889,6 +890,7 @@ public class DialogueEntry
                 "unknown",
                 "？？？",
                 "或者你可以选择不唤醒中央系统。") {
+                    oneTimeOnly = true,
                     condition = (int index, DialogueEntry entry, object[] args) => {
                         return DialogueManager.Instance.GetSwitch("stage3_choice") == 1;
                     }
@@ -991,15 +993,20 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "星云",
                 "星云",
-                "Astra! 如果你再将微型反应堆给我加速，你自己会因为失去能源关机的！"){ oneTimeOnly=true},
+                "Astra! 如果你再将微型反应堆给我加速，你自己会因为失去能源关机的！"){ 
+                    oneTimeOnly=true
+                },
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "Astra",
                 "Astra",
                 "不用担心我，我没问题。") {
-                    setSwitch = new List<StrIntPair>{
-                        new StrIntPair("stage3_provide_energy", 1),
-                    },
+                    onExecuting = (entry) => {
+                        if (GameManager.Instance.corePercent[CoreSlotType.EthicCore] < 50)
+                        {
+                            entry.nextEntry = "stage_3-ProvideEnergyAdditional_1";
+                        }
+                    }
                 },
         };
 
@@ -1014,13 +1021,7 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "Astra?",
                 "Astra?",
-                "她说的对，再这样下去*我们*就要完了！"){
-                    oneTimeOnly=true,
-                    condition = (int index, DialogueEntry entry, object[] args) => {
-                        return DialogueManager.Instance.GetSwitch("stage3_provide_energy") == 1 &&
-                        GameManager.Instance.corePercent[CoreSlotType.EthicCore] < 50;
-                    }
-                },
+                "她说的对，再这样下去*我们*就要完了！"),
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "Astra?",

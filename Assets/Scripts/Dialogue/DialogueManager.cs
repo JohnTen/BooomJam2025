@@ -170,6 +170,11 @@ public class DialogueManager : MonoSingleton<DialogueManager>
         }
     }
 
+    public void SetSwitchTo1(string switchID)
+    {
+        SetSwitch(switchID, 1);
+    }
+
     private void UpdateEntries(int eventID, object[] args)
     {
         if (currentEntry != null)
@@ -419,7 +424,7 @@ public class DialogueManager : MonoSingleton<DialogueManager>
             dialogueObjects.Add(currentObject);
         }
 
-        print("BuildDialogueObject: " + currentEntry.instructionID);
+        //print("BuildDialogueObject: " + currentEntry.instructionID);
         currentEntry.inited = false;
         currentEntry.started = false;
         currentEntry.done = false;

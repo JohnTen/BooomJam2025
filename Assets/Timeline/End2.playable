@@ -22,10 +22,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 9.95
+    m_Start: 8
     m_ClipIn: 0
     m_Asset: {fileID: 8862230893809075854}
-    m_Duration: 6.050000000000001
+    m_Duration: 8.000000000000002
     m_TimeScale: 1
     m_ParentTrack: {fileID: -4352329087256618658}
     m_EaseInDuration: 0
@@ -91,7 +91,8 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Active
   m_Markers:
-    m_Objects: []
+    m_Objects:
+    - {fileID: 7566748769818995957}
   m_PostPlaybackState: 3
 --- !u!114 &-3187795383384174830
 MonoBehaviour:
@@ -196,7 +197,8 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Active
   m_Markers:
-    m_Objects: []
+    m_Objects:
+    - {fileID: 1240251720354135132}
   m_PostPlaybackState: 3
 --- !u!114 &11400000
 MonoBehaviour:
@@ -354,6 +356,22 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events: []
+--- !u!114 &1240251720354135132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 3.4833333333333334
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: c31a29c666139554a9e9709619869f73, type: 2}
 --- !u!114 &2517234022454264907
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -550,6 +568,22 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events: []
+--- !u!114 &7566748769818995957
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 15.016666666666667
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: c31a29c666139554a9e9709619869f73, type: 2}
 --- !u!114 &8862230893809075854
 MonoBehaviour:
   m_ObjectHideFlags: 1

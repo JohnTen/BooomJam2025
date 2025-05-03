@@ -26,8 +26,16 @@ public class AsyncLoadScene : MonoBehaviour
     public void LoadSceneAsync(string sceneName)
     {
         this.sceneName = sceneName;
+        print("LoadSceneAsync: " + sceneName);
         asyncOperation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         asyncOperation.allowSceneActivation = false;
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        this.sceneName = sceneName;
+        print("LoadScene: " + sceneName);
+        SceneManager.LoadScene(sceneName);
     }
 
     public void ActiveScene()
@@ -40,9 +48,11 @@ public class AsyncLoadScene : MonoBehaviour
 
         EventDispatcher<string>.Dispatch(EventConstant.AsyncSceneActivating, sceneName);
         asyncOperation.allowSceneActivation = true;
+        print("ActiveScene: " + sceneName);
 
         Timing.CallDelayed(0.0001f, () =>
         {
+            print("UnloadSceneAsync: " + SceneManager.GetActiveScene().name);
             SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name).allowSceneActivation = true;
             EventDispatcher<string>.Dispatch(EventConstant.AsyncSceneActivated, sceneName);
         });

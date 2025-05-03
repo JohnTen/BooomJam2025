@@ -71,6 +71,10 @@ public class CoreWarnings : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
         warningText.text = stringBuilder.ToString();
         warningSign.SetActive(hasWarning);
+        if (!warningSign.activeSelf)
+        {
+            warningPanel.SetActive(false);
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)

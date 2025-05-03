@@ -1,14 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using JTUtility.Event;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using DG.Tweening;
 
 [RequireComponent(typeof(Draggable))]
 [RequireComponent(typeof(DragDropDetector))]
-public class DraggableObj : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class DraggableObj : MonoBehaviour
 {
     [SerializeField] protected bool initOnEnable = true;
 
@@ -178,16 +176,5 @@ public class DraggableObj : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         EventDispatcher<DraggableObj>.Dispatch(EventConstant.OnDragEnd, this);
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        if (draggable.CanDrag)
-        {
-            transform.DOScale(Vector3.one * 1.05f, 0.2f).SetEase(Ease.InOutSine).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
-        }       
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        transform.DORewind();
-    }
+    
 }

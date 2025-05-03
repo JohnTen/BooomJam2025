@@ -50,7 +50,6 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField] private GameProperty coreEmptyGameProperty;
     [SerializeField] private Volume screenEffectVolume;
     [SerializeField] private float screenEffectTransitionTime;
-
     [SerializeField] private OverheatWarning overheatWarning;
 
     public CharacterSlot defaultExplorerSlot;

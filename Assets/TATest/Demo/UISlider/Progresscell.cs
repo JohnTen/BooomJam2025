@@ -6,8 +6,8 @@ public class Progresscell : RawImage {
     private Slider _Progresscell;
     
     // Define color thresholds
-    public float HealthyThreshold = 8f;  // 80%
-    public float WarningThreshold = 3f;   // 30%
+    float HealthyThreshold = 6f;  // 60%
+    float WarningThreshold = 3f;   // 30%
     
     // Define colors for different states
     private readonly Color HealthyColor = Color.green;

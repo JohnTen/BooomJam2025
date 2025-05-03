@@ -272,7 +272,12 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
                 "应急模型",
-                "冬眠仓的情况在变得越来越糟糕。从最新的数据来看，04号成员已无生命体征。"),
+                "冬眠仓的情况在变得越来越糟糕。从最新的数据来看，04号成员已无生命体征。")
+            {
+                    masks = new List<MaskSetting>{
+                        new MaskSetting(new Vector2(18.337f, 245.931f), new Vector2(78.675f, 86.139f)),
+                    },
+            },
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
@@ -292,7 +297,12 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
                 "应急模型",
-                "冬眠仓的在进入黑域后停摆，数据全部丢失，首先需要重新获得维生数据。"),
+                "冬眠仓的在进入黑域后停摆，数据全部丢失，需要重新获得维生数据来重启。")
+            {
+                    masks = new List<MaskSetting>{
+                        new MaskSetting(new Vector2(35.108f, 149.946f), new Vector2(210.891f, 152.247f)),
+                    },
+            },
 
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
@@ -301,6 +311,9 @@ public class DialogueEntry
                 "飞船上还有一台备用主机可以帮助你获得数据。"){
                     // 触发事件使得备用主机出现
                     triggerUnityEvents = new List<string>{"Show Backup Computer"},
+                    masks = new List<MaskSetting>{
+                        new MaskSetting(new Vector2(-297.5358f, 255.9491f), new Vector2(183.168f, 234.349f)),
+                    },
                 },
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
@@ -334,13 +347,20 @@ public class DialogueEntry
                 "应急模型",
                 "作为机械结构的应急AI，给你配置了6个微型反应堆分别供能你的6个系统，")
                 {
-                    // 触发事件使得反应堆出现
-                    triggerUnityEvents = new List<string>{"Hide Shell"}},
+                    // 触发事件使得反应堆消失
+                    triggerUnityEvents = new List<string>{"Hide Shell"},
+                    masks = new List<MaskSetting>{
+                    new MaskSetting(new Vector2(-699f, -26.439f), new Vector2(480f, 350f)),
+                    },},
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
                 "应急模型",
-                "目前急需数据来修复冬眠仓，得借用你的反应堆来供能了。"),
+                "目前急需数据来修复冬眠仓，得借用你的反应堆来供能了。")
+                {
+                 masks = new List<MaskSetting>{
+                 new MaskSetting(new Vector2(-611f, 0f), new Vector2(100f, 100f)),},
+                },
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "Astra",
@@ -353,8 +373,10 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
                 "应急模型",
-                "反应堆在新设备上要适应一段时间，才能供能。在此期间无法再次移动。")
+                "将核心反应堆拖动放置在此处供能。")
             {
+                masks = new List<MaskSetting>{
+                new MaskSetting(new Vector2(-310f, 265f), new Vector2(100f,100f)),},
                 setSwitch= new List<StrIntPair>{
                     new StrIntPair("stage1", 2),
                 },
@@ -370,12 +392,27 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
                 "应急模型",
-                "Astra，我的记录快用完了，这说明我就快要下线了。"),
+                "Astra，我的记录快用完了，这说明我就快要下线了。"){
+                oneTimeOnly = true,
+                condition = (int index, DialogueEntry entry, object[] args) =>
+                {
+                    foreach (CoreSlotType coreSlotType in System.Enum.GetValues(typeof(CoreSlotType)))
+                    {
+                        if (GameManager.Instance.corePercent[coreSlotType] < 0.9f)
+                            return true;
+                    }
+
+                    return false;
+                },
+            },
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
                 "应急模型",
-                "最后我必须要提醒你，你的系统数值下降了，"),
+                "最后我必须要提醒你，你的系统数值下降了，")
+                { masks = new List<MaskSetting>{
+                    new MaskSetting(new Vector2(-699f, -26.439f), new Vector2(480f, 350f)),
+                    },},
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
@@ -385,7 +422,12 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "unknown",
                 "应急模型",
-                "修好这艘船，拯救大家，你是我们最后的希——"),
+                "修好这艘船，拯救大家，你是我们最后的希————"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "unknown",
+                "？？？",
+                "<color=red>内存已用完，应急模型清除</color>"),
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "Astra",
@@ -401,6 +443,38 @@ public class DialogueEntry
 
         BuildSeriesEntries(stage1_2BeginningID, stage1_2BeginningEntries);
         collections.AddRange(stage1_2BeginningEntries);
+
+        //够了
+        entry =
+        new DialogueEntry("fixed_HC",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "数据够了，可以用来重启冬眠舱了。")
+        {
+            oneTimeOnly = true,
+            masks = new List<MaskSetting>{
+                        new MaskSetting(new Vector2(35.108f, 149.946f), new Vector2(210.891f, 152.247f)),
+                        new MaskSetting(new Vector2(-176f, 261f), new Vector2(120f, 120f)),
+                    },
+            condition = (int index, DialogueEntry entry, object[] args) =>
+            {
+                var resources = GameObject.FindObjectsByType(typeof(ResourceObj), FindObjectsSortMode.None);
+                var sum = 0;
+                foreach (var resource in resources)
+                {
+                    var res = resource as ResourceObj;
+                    if (res != null && res.Template.uid == "Data")
+                    {
+                        sum += res.Stack;
+                    }
+                }
+
+                return sum >= 100;
+            },
+
+        };
+        collections.Add(entry);
 
         // 冬眠舱
         entry = new DialogueEntry(
@@ -444,7 +518,10 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "Astra",
                 "Astra",
-                "接下来我需要将作业舱重新唤醒，还需要通过主机获得一些数据。"),
+                "接下来我需要将作业舱重新唤醒，还需要通过主机获得一些数据。")
+                { masks = new List<MaskSetting>{
+                    new MaskSetting(new Vector2(335f, 230f), new Vector2(260f, 340f)),
+                    },},
         };
 
         BuildSeriesEntries(stage2BeginningID, stage2BeginningEntries);
@@ -459,12 +536,16 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "Astra",
                 "Astra",
-                "你好，探索机器人 S01，你现在感觉如何？"),
+                "你好，探索机器人 S01，你现在感觉如何？")
+                ,
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "S01",
                 "S01",
-                "**&%@，我竟然还能重启？陷入黑域的感觉太可怕了，我可不想再体验一次。"),
+                "**&%@，我竟然还能重启？陷入黑域的感觉太可怕了，我可不想再体验一次。")
+                { masks = new List<MaskSetting>{
+                    new MaskSetting(new Vector2(460f, 311f), new Vector2(100f, 100f)),
+                    },},
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "Astra",
@@ -489,7 +570,10 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "Astra",
                 "Astra",
-                "需要你帮忙去我们迫降的这个行星看看，能不能找到有用的东西。"),
+                "需要你帮忙去我们迫降的这个行星看看，能不能找到有用的东西。")
+                { masks = new List<MaskSetting>{
+                    new MaskSetting(new Vector2(-149f, -331f), new Vector2(400f, 200f)),
+                    },},
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "Astra",
@@ -524,6 +608,9 @@ public class DialogueEntry
                 "S01",
                 "探索完成，这次我找到了一个秘方石，可以当作临时的能量源。")
             {
+                masks = new List<MaskSetting>{
+                    new MaskSetting(new Vector2(-714f, 344f), new Vector2(300f, 200f)),
+                    },
                 onExecuting = (entry) =>
                 {
                     if (DialogueManager.Instance.GetSwitch("foundMine") == 1)
@@ -550,7 +637,11 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "S01",
                 "S01",
-                "探索完成，这次我找到了n个金属矿石，可以用于维修飞船。") {
+                "探索完成，这次我找到了n个金属矿石，可以用于维修飞船。")
+                {
+                     masks = new List<MaskSetting>{
+                        new MaskSetting(new Vector2(-714f, 344f), new Vector2(300f, 200f)),
+                     },
                      onExecuting = (entry) =>
                     {
                         if (DialogueManager.Instance.GetSwitch("foundMine") == 1)
@@ -589,10 +680,14 @@ public class DialogueEntry
                 "S01",
                 "S01",
                 "探索完成，我找到了金属矿脉，坐标已经上传，之后我们可以稳定的获取金属矿石了。"){
+                    masks = new List<MaskSetting>{
+                        new MaskSetting(new Vector2(340f,-331f), new Vector2(480f, 200f)),
+                    },
                     // 触发事件使得金属矿脉出现
                     triggerUnityEvents = new List<string>{"Unlock Metal Mine"},
                     setSwitch = new List<StrIntPair>{
                         new StrIntPair("foundMine", 1),
+
                     },
                 },
         };
@@ -608,6 +703,9 @@ public class DialogueEntry
                 "Astra",
                 "矿石收集够了，可以修复加工炉了。")
             {
+                masks = new List<MaskSetting>{
+                    new MaskSetting(new Vector2(351f, 14f), new Vector2(300f, 300f)),
+                    },
                 oneTimeOnly = true,
                 condition = (int index, DialogueEntry entry, object[] args) =>
                 {
@@ -622,7 +720,7 @@ public class DialogueEntry
                         }
                     }
 
-                    return sum >= 200;
+                    return sum >= 300;
                 },
 
             };
@@ -634,7 +732,12 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "S01",
                 "S01",
-                "有了加工炉，就可以生产金属材料，船体修复就能加快了。");
+                "有了加工炉，就可以生产金属材料，船体修复就能加快了。")
+                {
+                masks = new List<MaskSetting>{
+                    new MaskSetting(new Vector2(418f, 67f), new Vector2(300f, 210f)),
+                    },
+                };
         collections.Add(entry);
 
         // 主控仓修复
@@ -647,6 +750,11 @@ public class DialogueEntry
                 "Astra",
                 "主控舱可以进行修复了，需要一个微型反应堆来保持能源稳定。")
              {
+                
+                masks = new List<MaskSetting>{
+                    new MaskSetting(new Vector2(79f,-112f), new Vector2(380f, 200f)),
+                    },
+
                 oneTimeOnly = true,
                 condition = (int index, DialogueEntry entry, object[] args) => {
                     var resources = GameObject.FindObjectsByType(typeof(ResourceObj), FindObjectsSortMode.None);
@@ -665,7 +773,7 @@ public class DialogueEntry
                         }
                     }
 
-                    return sum >= 100&&data_sum>=100;
+                    return sum >= 200&&data_sum>=300;
                 },
                 },
             new DialogueEntry("",
@@ -691,7 +799,10 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "F02",
                 "F02",
-                "数据获取中……"),
+                "数据获取中……")
+            { masks = new List<MaskSetting>{
+                    new MaskSetting(new Vector2(488f, -128f), new Vector2(100f, 100f)),
+                    },},
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "F02",
@@ -730,11 +841,31 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "Astra",
                 "Astra",
-                "数据够了，可以重新唤醒中央系统了。"){
-                    requireSwitch = new List<StrIntPair>{
-                        new StrIntPair("stage3", 1),
+                "数据够了，可以重新唤醒中央系统了。")
+            {
+                masks = new List<MaskSetting>{
+                    new MaskSetting(new Vector2(-121f, 21f), new Vector2(420f, 200f)),
                     },
+                oneTimeOnly = true,
+                condition = (int index, DialogueEntry entry, object[] args) =>
+                {
+                    var resources = GameObject.FindObjectsByType(typeof(ResourceObj), FindObjectsSortMode.None);
+                    var sum = 0;
+                    foreach (var resource in resources)
+                    {
+                        var res = resource as ResourceObj;
+                        if (res != null && res.Template.uid == "Data")
+                        {
+                            sum += res.Stack;
+                        }
+                    }
+
+                    return sum >= 600;
                 },
+                requireSwitch = new List<StrIntPair>{
+                    new StrIntPair("stage3", 1),
+                },
+            },
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "Astra",
@@ -759,8 +890,7 @@ public class DialogueEntry
                 "？？？",
                 "或者你可以选择不唤醒中央系统。") {
                     condition = (int index, DialogueEntry entry, object[] args) => {
-                        return DialogueManager.Instance.GetSwitch("stage3_choice") == 1 &&
-                            GameManager.Instance.corePercent[CoreSlotType.EthicCore] < 50;
+                        return DialogueManager.Instance.GetSwitch("stage3_choice") == 1;
                     }
                 },
             new DialogueEntry("",
@@ -861,7 +991,7 @@ public class DialogueEntry
                 DialogueEntryType.ClickAnywhere,
                 "星云",
                 "星云",
-                "Astra! 如果你再将微型反应堆给我加速，你自己会因为失去能源关机的！"),
+                "Astra! 如果你再将微型反应堆给我加速，你自己会因为失去能源关机的！"){ oneTimeOnly=true},
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "Astra",
@@ -885,6 +1015,7 @@ public class DialogueEntry
                 "Astra?",
                 "Astra?",
                 "她说的对，再这样下去*我们*就要完了！"){
+                    oneTimeOnly=true,
                     condition = (int index, DialogueEntry entry, object[] args) => {
                         return DialogueManager.Instance.GetSwitch("stage3_provide_energy") == 1 &&
                         GameManager.Instance.corePercent[CoreSlotType.EthicCore] < 50;
@@ -1144,17 +1275,17 @@ public class DialogueEntry
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "f1",
-                "宇航员1",
+                "梦露",
                 "我同意。"),
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "f2",
-                "宇航员2",
+                "朱莉",
                 "我反对。"),
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
                 "m1",
-                "宇航员3",
+                "约翰",
                 "我同意。"),
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
@@ -1174,6 +1305,69 @@ public class DialogueEntry
 
         BuildSeriesEntries(stage4Ending2ID, stage4Ending2Entries);
         collections.AddRange(stage4Ending2Entries);
+
+        //梦露被唤醒
+        string stage0f1ID = "stage_0-f101";
+        List<DialogueEntry> stage0f1Entries = new List<DialogueEntry>()
+        {
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "f1",
+                "梦露",
+                "目的地到了？")
+             {
+                oneTimeOnly = true,
+                condition = (int index, DialogueEntry entry, object[] args) => {
+                    if (index == EventConstant.OnCharacterStateChanged)
+                    {
+                        var character = args[0] as Character;
+                        if (character.CharacterName == "f1" && character.CharacterState == CharacterState.Idle)
+                        {
+                            return true;
+                        }
+                    }
+
+                    return false;
+                },
+                },
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "还没有，梦露女士，您是被提前唤醒的。"),
+            new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "飞船在航行时误入了“黑域”，大部分设施都停摆了，我在抢修。"),
+             new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "冬眠舱也一度停摆，我没能救下山姆。"),
+             new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "f1",
+                "梦露",
+                "可怜的山姆，朱莉如果醒来会很伤心的。"),
+             new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "Astra",
+                "Astra",
+                "目前唤醒你是希望你能提供帮助，据我所知你是一流工程师。"),
+             new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "f1",
+                "梦露",
+                "明白了，目前的状况已经由备用系统输入给我了，我可以协助生产设备，来加速生产。"),
+             new DialogueEntry("",
+                DialogueEntryType.ClickAnywhere,
+                "f1",
+                "梦露",
+                "只需要拖动我的头像，将我部署到相应设备就能加速生产了"),
+        };
+        BuildSeriesEntries(stage0f1ID, stage0f1Entries);
+        collections.AddRange(stage0f1Entries);
 
         return collections;
     }

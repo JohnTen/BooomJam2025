@@ -118,6 +118,34 @@ public class DialogueManager : MonoSingleton<DialogueManager>
         }
     }
 
+    public void PlayDialogueConditional(string dialogueID)
+    {
+        var entry = entries.Find(e => e.instructionID == dialogueID);
+        if (entry != null)
+        {
+            if (entry.oneTimeOnly && entry.playedTimes > 0)
+                return;
+
+            if (entry.requireSwitch.IsNullOrEmpty() == false)
+            {
+                bool allRequireSwitchMet = true;
+                foreach (var requireSwitch in entry.requireSwitch)
+                {
+                    if (GetSwitch(requireSwitch.Key) != requireSwitch.Value)
+                    {
+                        allRequireSwitchMet = false;
+                        break;
+                    }
+                }
+
+                if (!allRequireSwitchMet)
+                    return;
+            }
+
+            PlayDialogue(dialogueID);
+        }
+    }
+
     public int GetSwitch(string switchID)
     {
         var switchEntry = switches.Find(s => s.Key == switchID);

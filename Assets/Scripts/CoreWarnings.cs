@@ -7,7 +7,7 @@ using JTUtility.Event;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CoreWarnings : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class CoreWarnings : MonoBehaviour
 {
     [Serializable] struct CoreWarning
     {
@@ -71,29 +71,7 @@ public class CoreWarnings : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
         warningText.text = stringBuilder.ToString();
         warningSign.SetActive(hasWarning);
-        if (!warningSign.activeSelf)
-        {
-            warningPanel.SetActive(false);
-        }
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        if (!warningSign.activeSelf)
-        {
-            return;
-        }
-
-        warningPanel.SetActive(true);
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        if (!warningSign.activeSelf)
-        {
-            return;
-        }
-
-        warningPanel.SetActive(false);
+        warningPanel.SetActive(hasWarning);
+       
     }
 }

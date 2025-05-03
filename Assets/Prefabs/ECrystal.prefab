@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6917841155182661407}
   - component: {fileID: 8975497313536853060}
   - component: {fileID: 2436893099196453769}
+  - component: {fileID: 699859701375637215}
   m_Layer: 5
   m_Name: ECrystal
   m_TagString: Untagged
@@ -95,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initOnEnable: 1
   visualImage: {fileID: 7275556366876430731}
-  effectiveTime: 5.05
+  effectiveTime: 20.05
 --- !u!114 &6917841155182661407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1372d7fbd6757664bbe57608b26053b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDragging: 0
   OnDragStart:
     m_PersistentCalls:
       m_Calls:
@@ -169,6 +171,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306265cd902eae345bd889a05f23bc28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &699859701375637215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7275556366076848276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6df22d5587e671145be4acff8f06e83d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: "\u79D8\u65B9\u77F3"
+  description: "\u53EF\u4EE5\u50CF\u6838\u5FC3\u53CD\u5E94\u5806\u4E00\u6837\u91CA\u653E\u80FD\u91CF\uFF0C\u4F46\u662F\u53EA\u80FD\u7EF4\u6301\u4E00\u6BB5\u65F6\u95F4"
+  isResource: 0
 --- !u!1 &7275556366876430725
 GameObject:
   m_ObjectHideFlags: 0

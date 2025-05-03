@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 6471137238357250227}
   - component: {fileID: 6717388358210565942}
   - component: {fileID: 4735167493626657901}
+  - component: {fileID: 475272508039248028}
   m_Layer: 5
   m_Name: ECore
   m_TagString: Untagged
@@ -132,8 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initOnEnable: 1
-  effectiveTime: -1
   visualImage: {fileID: 6471137237017946530}
+  effectiveTime: -1
   normalSprite: {fileID: 21300000, guid: 46e2439a97060164d916c0a26439283f, type: 3}
   breakdownSprite: {fileID: 21300000, guid: 3a1b52698bcaa7f4ca70694be3c7f718, type: 3}
   warmUpSprite: {fileID: 21300000, guid: 155ada9d81d8bfc42b555121f47ca265, type: 3}
@@ -188,12 +189,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1372d7fbd6757664bbe57608b26053b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDragging: 0
   OnDragStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 475272508039248028}
+        m_TargetAssemblyTypeName: SFXPlayer, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: e2672ac17c1149b458ade723feec4028,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDragEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 475272508039248028}
+        m_TargetAssemblyTypeName: SFXPlayer, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: f2c8f0a1792a52c47af68592ec49edc3,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDragging:
     m_PersistentCalls:
       m_Calls: []
@@ -210,6 +238,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetComponent: {fileID: 0}
+  detectTopMost: 0
+--- !u!114 &475272508039248028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6471137238357250237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306265cd902eae345bd889a05f23bc28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7932737912465964878
 GameObject:
   m_ObjectHideFlags: 0

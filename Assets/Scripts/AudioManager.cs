@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
 {
     [Header("Audio Sources")]
     [SerializeField] AudioSource musicSource;
+    [SerializeField] List<AudioClip> sfxClips;
 
     [Header("Audio Clips")]
     public AudioClip normalBgm;
@@ -44,6 +45,33 @@ public class AudioManager : MonoBehaviour
         Destroy(sfxSource, clip.length);
     }
 
+    public void PlaySFX(string clipName)
+    {
+        var clip = sfxClips.Find(c => c.name == clipName);
+        if (clip != null)
+        {
+            PlaySFX(clip);
+        }
+    }
+    public AudioSource PlayLoopSFX(AudioClip clip)
+    {
+        var sfxSource = gameObject.AddComponent<AudioSource>();
+        sfxSource.clip = clip;
+        sfxSource.Play();
+        sfxSource.loop = true;
+        return sfxSource;
+    }
+
+    public AudioSource PlayLoopSFX(string clipName)
+    {
+        var clip = sfxClips.Find(c => c.name == clipName);
+        if (clip != null)
+        {
+            return PlayLoopSFX(clip);
+        }
+        
+        return null;
+    }
     public void ChangeBGMToBoss()
     {
         var newSource = musicSource.gameObject.AddComponent<AudioSource>();

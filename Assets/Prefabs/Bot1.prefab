@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 7647062439746786999}
   - component: {fileID: 7647062439746786998}
   - component: {fileID: 7647062439746786997}
+  - component: {fileID: 7876636023952903526}
   m_Layer: 5
   m_Name: Bot1
   m_TagString: Untagged
@@ -308,12 +309,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1372d7fbd6757664bbe57608b26053b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDragging: 0
   OnDragStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7876636023952903526}
+        m_TargetAssemblyTypeName: SFXPlayer, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 7b509b49e4d39e3498a2e01ccad3fd25,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDragEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7876636023952903526}
+        m_TargetAssemblyTypeName: SFXPlayer, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 27397afd06bdc414caeffc3ec15f4d18,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDragging:
     m_PersistentCalls:
       m_Calls: []
@@ -330,6 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetComponent: {fileID: 0}
+  detectTopMost: 0
 --- !u!114 &7647062439746786997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,10 +371,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95a9358c40bb6864e88a536b574d6dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initOnEnable: 1
   characterName: S1
   characterPortriat: {fileID: 21300000, guid: cde840a81bd33d44bbfb7061fe48ac8e, type: 3}
   characterType: 2
   characterState: 1
+--- !u!114 &7876636023952903526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7647062439746787001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306265cd902eae345bd889a05f23bc28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7647062439925402375
 GameObject:
   m_ObjectHideFlags: 0

@@ -3491,7 +3491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickSFX:
-  - {fileID: 8300000, guid: b53f0474c72e751409fc99c5ff45e399, type: 3}
+  - {fileID: 8300000, guid: f25e856a709ea5c41a7be4c9a89d2d44, type: 3}
   hoverSFX: []
 --- !u!1 &5217591219456942308
 GameObject:

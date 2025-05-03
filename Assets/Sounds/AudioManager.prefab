@@ -175,6 +175,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 7647525540922859977}
+  sfxClips:
+  - {fileID: 8300000, guid: b53f0474c72e751409fc99c5ff45e399, type: 3}
+  - {fileID: 8300000, guid: a1b56afb68d53614fae09ac5dd4c1482, type: 3}
+  - {fileID: 8300000, guid: a4d5452bebc10db419e16757f8f25649, type: 3}
+  - {fileID: 8300000, guid: c5fa1fec4cc073a43a59a3d2f956cf25, type: 3}
+  - {fileID: 8300000, guid: 841127b2858107d42ab616f5ea21bc1a, type: 3}
+  - {fileID: 8300000, guid: 9ef410807ed65fc4d9eba71eb150e4f7, type: 3}
+  - {fileID: 8300000, guid: 7b509b49e4d39e3498a2e01ccad3fd25, type: 3}
+  - {fileID: 8300000, guid: 27397afd06bdc414caeffc3ec15f4d18, type: 3}
+  - {fileID: 8300000, guid: e2672ac17c1149b458ade723feec4028, type: 3}
+  - {fileID: 8300000, guid: f2c8f0a1792a52c47af68592ec49edc3, type: 3}
+  - {fileID: 8300000, guid: c136938d37c1e75429683d85fd679b5e, type: 3}
+  - {fileID: 8300000, guid: 854d6b44367affc459d8e25936b5bf13, type: 3}
+  - {fileID: 8300000, guid: f25e856a709ea5c41a7be4c9a89d2d44, type: 3}
+  - {fileID: 8300000, guid: d1942a9eb1ca2954c9eeea0bfded3f40, type: 3}
+  - {fileID: 8300000, guid: ced129991817f4048b4b09cef8ad7b36, type: 3}
+  - {fileID: 8300000, guid: 4f73b78b283bcaf4399cc0da7dbca271, type: 3}
+  - {fileID: 8300000, guid: 93139d89f29d9ba4bb34bbb3f9d3cc6a, type: 3}
+  - {fileID: 8300000, guid: 92e6ea8f64ba7e344baadd924baa79aa, type: 3}
+  - {fileID: 8300000, guid: 454f6fba76216ba4d8dc5c3e2e65cd7b, type: 3}
+  - {fileID: 8300000, guid: 9dba25a3bf1a86146b74fba23a6864a1, type: 3}
+  - {fileID: 8300000, guid: 230db74b105678841a04f01004ba3b07, type: 3}
+  - {fileID: 8300000, guid: a32eaafb40dd3064a95fe44e86535ff4, type: 3}
+  - {fileID: 8300000, guid: 9ca9165505826e54990b2ccc879fbe6e, type: 3}
   normalBgm: {fileID: 8300000, guid: 44a3b284409b75f40b06f52da93d65fd, type: 3}
   bossIntro: {fileID: 8300000, guid: 1db3b6193ecf4c0499cf8bef2088e611, type: 3}
   bossLoop: {fileID: 8300000, guid: e22c94646147dba4bbce64d123894a48, type: 3}

@@ -21,6 +21,7 @@ public class DialogueManager : MonoSingleton<DialogueManager>
     [SerializeField] private LayoutGroup contentLayoutGroup;
     [SerializeField] private Image visualMask;
     [SerializeField] private RectTransform unmaskPrefab;
+    [SerializeField] private AudioClip showDialogueSFX;
 
     [Header("Dialogue Object")]
     [SerializeField] private DialogueObject dialogueObjectPrefab;
@@ -367,6 +368,7 @@ public class DialogueManager : MonoSingleton<DialogueManager>
         
         //visualParent.transform.localPosition = visualParentOriginalPosition.AlterX(-visualParentOriginalPosition.x);
         visualParentTween = visualParent.transform.DOLocalMoveX(visualParentOriginalPosition.x, 0.5f).SetUpdate(true).SetEase(Ease.OutCubic);
+        AudioManager.instance.PlaySFX(showDialogueSFX);
     }
 
     public void HideDialoguePanel()
@@ -464,6 +466,8 @@ public class DialogueManager : MonoSingleton<DialogueManager>
                 mask.sizeDelta = entry.masks[i].size;
                 mask.anchoredPosition = entry.masks[i].pos;
             }
+            
+            AudioManager.instance.PlaySFX(UnityEngine.Random.value > 0.5f ? "教学框选画面1" : "教学框选画面2");
         }
 
         if (entry.transparentMask)

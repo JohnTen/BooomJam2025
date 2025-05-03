@@ -4,10 +4,12 @@ using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
 using UnityEngine.Events;
+using JTUtility;
 
 public class TextTyping : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textMesh;
+    [SerializeField] private AudioClip typingSFXClip;
 
     [Header("Parameter")]
 
@@ -24,6 +26,8 @@ public class TextTyping : MonoBehaviour
     public bool IsTyping => typingHandle != null && typingHandle.IsPlaying();
 
     private GibberishText gibberishText;
+
+    private AudioSource typingSFX;
 
 
     void Awake()
@@ -67,12 +71,24 @@ public class TextTyping : MonoBehaviour
             content = gibberishText.ConvertToGibberish(content);
         }
 
+        print(time);
+
         // 设置文本内容为空
         textMesh.text = string.Empty;
         this.content = content;
 
         if (typingHandle != null && typingHandle.IsPlaying())
+        {
             typingHandle.Kill();
+
+            if (typingSFX.IsNotNull())
+            {
+                typingSFX.Stop();
+                Destroy(typingSFX);
+            }
+        }
+
+        typingSFX = AudioManager.instance.PlayLoopSFX(typingSFXClip);
 
         if (isScramble)
         {
@@ -81,6 +97,12 @@ public class TextTyping : MonoBehaviour
                 if (onCompleteEvent != null && nextEvent)
                 {
                     onCompleteEvent.Invoke(); // 调用事件
+                }
+                
+                if (typingSFX.IsNotNull())
+                {
+                    typingSFX.Stop();
+                    Destroy(typingSFX);
                 }
             });
         }
@@ -92,6 +114,12 @@ public class TextTyping : MonoBehaviour
                 {
                     onCompleteEvent.Invoke(); // 调用事件
                 }
+
+                if (typingSFX.IsNotNull())
+                {
+                    typingSFX.Stop();
+                    Destroy(typingSFX);
+                }
             });
         }
     }
@@ -102,6 +130,12 @@ public class TextTyping : MonoBehaviour
         {
             typingHandle.SetUpdate(true).Kill();
             textMesh.text = content;
+
+            if (typingSFX.IsNotNull())
+            {
+                typingSFX.Stop();
+                Destroy(typingSFX);
+            }
         }
     }
 }

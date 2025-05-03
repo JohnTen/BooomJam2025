@@ -6,7 +6,6 @@ public class AudioManager : MonoBehaviour
 {
     [Header("Audio Sources")]
     [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioSource sfxSource;
 
     [Header("Audio Clips")]
     public AudioClip normalBgm;
@@ -35,7 +34,9 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(AudioClip clip)
     {
+        var sfxSource = gameObject.AddComponent<AudioSource>();
         sfxSource.PlayOneShot(clip);
+        Destroy(sfxSource, clip.length);
     }
 
 }

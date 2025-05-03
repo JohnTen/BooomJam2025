@@ -44,7 +44,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.24
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -175,7 +175,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 7647525540922859977}
-  sfxSource: {fileID: 7647525542479542247}
   normalBgm: {fileID: 8300000, guid: e32756ac039f62c438ce62705aa90893, type: 3}
 --- !u!1 &7647525542479542245
 GameObject:

@@ -3304,6 +3304,7 @@ GameObject:
   - component: {fileID: 5217591219435230941}
   - component: {fileID: 5217591219435230940}
   - component: {fileID: 5217591219435230943}
+  - component: {fileID: 7821098777757826905}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3440,6 +3441,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: b53f0474c72e751409fc99c5ff45e399,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5217591219435230943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3464,6 +3478,21 @@ MonoBehaviour:
   enableHoverPunch: 0
   enableDownPunch: 0
   enableDownMove: 1
+--- !u!114 &7821098777757826905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5217591219435230930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ab3b29e281026448cccaeeeb255098, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSFX:
+  - {fileID: 8300000, guid: b53f0474c72e751409fc99c5ff45e399, type: 3}
+  hoverSFX: []
 --- !u!1 &5217591219456942308
 GameObject:
   m_ObjectHideFlags: 0

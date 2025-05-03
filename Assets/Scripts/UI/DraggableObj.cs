@@ -55,6 +55,9 @@ public class DraggableObj : MonoBehaviour
 
         while (true)
         {
+            if (draggable.IsDragging)
+                yield break;
+                
             print("InitializePosition: " + name + " " + slotDetector.DetectComponent());
             if (slotDetector.DetectComponent())
             {

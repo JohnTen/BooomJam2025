@@ -94,6 +94,10 @@ public class ResourceSlot : ObjSlot
                 inSlotResource.Init(ResourceDatabase.Instance.GetTemplate(resourceId), resourceObj.Stack, this);
                 resourceObj.Stack = 0;
                 Destroy(resourceObj.gameObject);
+                if (maxStack > 0 && inSlotResource.Stack >= maxStack)
+                {
+                    reachedMaxStack.Invoke();
+                }
             }
 
             base.AddObj(inSlotResource);

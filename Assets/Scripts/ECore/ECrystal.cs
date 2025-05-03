@@ -31,7 +31,8 @@ public class ECrystal : DraggableObj
     {
         if(slot.IsNotNull())
             transform.SetParent(slot.transform);
-            
+
+        print("SetSlot: " + name + " to " + slot.name);
         base.SetSlot(slot, force);
 
         if (slot is ECoreSlot && effectiveTime > 0)

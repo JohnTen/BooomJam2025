@@ -6,7 +6,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
 {
     public bool CanDrag { get; set; } = true;
 
-    private bool isDragging = false;
+    [SerializeField]private bool isDragging = false;
     private Vector3 dragOffset;
     private Camera mainCamera;
     private Plane dragPlane;
@@ -45,6 +45,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
 
         parent = transform.parent;
         transform.SetParent(canvas.transform);
+        print("OnPointerDown: " + name + " Parent " + transform.parent.name);
 
         OnDragStart.Invoke();
     }

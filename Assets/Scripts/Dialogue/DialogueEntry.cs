@@ -191,7 +191,10 @@ public class DialogueEntry
                 "？？？",
                 "...")
             {
-                gadget = "testGadget"
+                gadget = "testGadget",
+                onExecuting = (entry) => {
+                    AudioManager.instance.PlaySFX("游戏刚开始初始化中");
+                }
             },
 
             new DialogueEntry("",

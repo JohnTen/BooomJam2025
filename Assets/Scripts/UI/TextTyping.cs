@@ -71,8 +71,6 @@ public class TextTyping : MonoBehaviour
             content = gibberishText.ConvertToGibberish(content);
         }
 
-        print(time);
-
         // 设置文本内容为空
         textMesh.text = string.Empty;
         this.content = content;

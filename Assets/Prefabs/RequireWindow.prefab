@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 6129911486291810780}
   - component: {fileID: 3411846114953734439}
   - component: {fileID: 2722220444806210575}
+  - component: {fileID: 6041900815656241620}
   m_Layer: 5
   m_Name: ResourceSlot
   m_TagString: Untagged
@@ -275,6 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 0}
+  indicator: {fileID: 6041900815656241620}
   resourceId: Data
   resourceNameText: {fileID: 3670412538863830570}
   isInput: 1
@@ -325,6 +327,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6041900815656241620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960022203929408008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94d031cc65500944b174bcd55eaa7d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indicator: {fileID: 4975390698542098915}
+  blinkColor: {r: 1, g: 1, b: 1, a: 0.6}
+  blinkInterval: 0.25
 --- !u!1 &2511889357211047057
 GameObject:
   m_ObjectHideFlags: 0
@@ -3008,6 +3025,7 @@ GameObject:
   - component: {fileID: 5217591219380890044}
   - component: {fileID: 5217591219380890035}
   - component: {fileID: 5217591219380890034}
+  - component: {fileID: 5729759557193045266}
   m_Layer: 5
   m_Name: CoreSlot
   m_TagString: Untagged
@@ -3088,13 +3106,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 0}
-  indicator: {fileID: 5217591218531996767}
+  indicator: {fileID: 5729759557193045266}
   OnCoreChanges:
     m_PersistentCalls:
       m_Calls: []
-  blinkIndicator: 0
   noWarmUp: 1
   ecoreOnly: 0
+--- !u!114 &5729759557193045266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5217591219380890032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94d031cc65500944b174bcd55eaa7d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indicator: {fileID: 5217591218531996767}
+  blinkColor: {r: 1, g: 1, b: 1, a: 0.6}
+  blinkInterval: 0.25
 --- !u!1 &5217591219389253563
 GameObject:
   m_ObjectHideFlags: 0
@@ -3190,6 +3222,7 @@ GameObject:
   - component: {fileID: 5217591219414359564}
   - component: {fileID: 5217591219414359555}
   - component: {fileID: 5217591219414359565}
+  - component: {fileID: 3857045806622471355}
   m_Layer: 5
   m_Name: ResourceSlot
   m_TagString: Untagged
@@ -3241,6 +3274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 0}
+  indicator: {fileID: 3857045806622471355}
   resourceId: Data
   resourceNameText: {fileID: 5217591218897912470}
   isInput: 1
@@ -3291,6 +3325,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3857045806622471355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5217591219414359553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94d031cc65500944b174bcd55eaa7d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indicator: {fileID: 5217591218095078371}
+  blinkColor: {r: 1, g: 1, b: 1, a: 0.6}
+  blinkInterval: 0.25
 --- !u!1 &5217591219435230930
 GameObject:
   m_ObjectHideFlags: 0

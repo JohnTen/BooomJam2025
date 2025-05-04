@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.49056602, g: 0.4739053, b: 0.4739053, a: 1}
+  m_Color: {r: 0.49019608, g: 0.4745098, b: 0.4745098, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 3527032478920281009}
   - component: {fileID: 3527032478920281023}
   - component: {fileID: 3527032478920281008}
+  - component: {fileID: 6697900533195735484}
   m_Layer: 5
   m_Name: ECoreSlot
   m_TagString: Untagged
@@ -208,10 +209,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed59ddbda548daa4fa0c572c1f62b765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicator: {fileID: 3527032478903649648}
+  obj: {fileID: 0}
+  indicator: {fileID: 6697900533195735484}
   OnCoreChanges:
     m_PersistentCalls:
       m_Calls: []
+  noWarmUp: 0
+  ecoreOnly: 0
 --- !u!222 &3527032478920281023
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -251,6 +255,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6697900533195735484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3527032478920281011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94d031cc65500944b174bcd55eaa7d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indicator: {fileID: 3527032478903649648}
+  blinkColor: {r: 0.94509804, g: 0.8627451, b: 0.39607844, a: 1}
+  blinkInterval: 0.2
 --- !u!1 &3527032479130403465
 GameObject:
   m_ObjectHideFlags: 0

@@ -84,14 +84,4 @@ public class InventorySlot : ObjSlot
     {
         return obj == ObjInSlot;
     }
-
-    public override void OnObjEnter(Component obj)
-    {
-
-    }
-
-    public override void OnObjExit(Component obj)
-    {
-
-    }
 }

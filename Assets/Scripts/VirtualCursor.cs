@@ -70,6 +70,12 @@ public class VirtualCursor : MonoSingleton<VirtualCursor>
 
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+
         VerifyComponents();
         var newPosition = cursor.anchoredPosition + new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y")) * (CursorSpeedMultiplier * cursorSpeed);
         cursor.anchoredPosition = new Vector2(Mathf.Clamp(newPosition.x, 0, canvasRectTransform.rect.width), Mathf.Clamp(newPosition.y, 0, canvasRectTransform.rect.height));

@@ -3,7 +3,9 @@ using UnityEngine;
 
 public abstract class ObjSlot : MonoBehaviour
 {
-    [SerializeField]protected Component obj;
+    [SerializeField] protected Component obj;
+
+    [SerializeField] protected Indicator indicator;
 
     public virtual bool HasObj => obj.IsNotNull();
 
@@ -47,6 +49,19 @@ public abstract class ObjSlot : MonoBehaviour
     
     public abstract bool CanAdd(Component obj);
     public abstract bool CanRemove(Component obj);
-    public abstract void OnObjEnter(Component obj);
-    public abstract void OnObjExit(Component obj);
+    public virtual void OnObjEnter(Component obj)
+    {
+        if (indicator != null)
+        {
+            indicator.SetActive(true);
+        }
+    }
+
+    public virtual void OnObjExit(Component obj)
+    {
+        if (indicator != null)
+        {
+            indicator.SetActive(false);
+        }
+    }
 }

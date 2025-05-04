@@ -113,7 +113,7 @@ public class DraggableObj : MonoBehaviour
 
         if (!slot.isActiveAndEnabled)
         {
-            Debug.LogError("SetSlot: " + name + " to disabled slot");
+            Debug.LogError("SetSlot: " + name + " to disabled slot" + slot.name);
             return;
         }
         

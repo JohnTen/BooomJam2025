@@ -141,12 +141,4 @@ public class ResourceSlot : ObjSlot
 
         return true;
     }
-
-    public override void OnObjEnter(Component obj)
-    {
-    }
-    
-    public override void OnObjExit(Component obj)
-    {
-    }
 }

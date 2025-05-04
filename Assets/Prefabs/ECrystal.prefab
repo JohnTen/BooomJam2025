@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 8975497313536853060}
   - component: {fileID: 2436893099196453769}
   - component: {fileID: 896688666273921234}
+  - component: {fileID: 9164817560152670920}
   m_Layer: 5
   m_Name: ECrystal
   m_TagString: Untagged
@@ -261,6 +262,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outline: {fileID: 7893454179454526381}
+--- !u!114 &9164817560152670920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7275556366076848276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6df22d5587e671145be4acff8f06e83d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: "\u79D8\u65B9\u77F3"
+  description: "\u795E\u79D8\u7684\u77FF\u77F3\uFF0C\u53EF\u4EE5\u548C\u53CD\u5E94\u5806\u4E00\u6837\u4EA7\u751F\u80FD\u91CF\u3002\u4F46\u662F\u53EA\u80FD\u4F9B\u80FD\u4E00\u6BB5\u65F6\u95F4"
+  isResource: 0
 --- !u!1 &7275556366876430725
 GameObject:
   m_ObjectHideFlags: 0

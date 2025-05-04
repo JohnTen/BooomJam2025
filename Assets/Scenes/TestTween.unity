@@ -21662,7 +21662,7 @@ RectTransform:
   - {fileID: 674076847}
   - {fileID: 399345151}
   m_Father: {fileID: 1352616590}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -40819,7 +40819,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1526223562}
-  - {fileID: 1941946679}
   - {fileID: 687452289}
   m_Father: {fileID: 1206166022}
   m_RootOrder: 5
@@ -48060,6 +48059,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1941946679}
     m_Modifications:
+    - target: {fileID: 390823500631832638, guid: 467e2e841c5d8b84e9a664ca8f6717c0,
+        type: 3}
+      propertyPath: indicator
+      value: 
+      objectReference: {fileID: 114538365}
+    - target: {fileID: 390823500631832638, guid: 467e2e841c5d8b84e9a664ca8f6717c0,
+        type: 3}
+      propertyPath: blinkColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 390823500631832638, guid: 467e2e841c5d8b84e9a664ca8f6717c0,
+        type: 3}
+      propertyPath: blinkColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 390823500631832638, guid: 467e2e841c5d8b84e9a664ca8f6717c0,
+        type: 3}
+      propertyPath: blinkColor.r
+      value: 0.13333334
+      objectReference: {fileID: 0}
     - target: {fileID: 4275079645120333395, guid: 467e2e841c5d8b84e9a664ca8f6717c0,
         type: 3}
       propertyPath: m_Name
@@ -54992,6 +55011,7 @@ RectTransform:
   m_Children:
   - {fileID: 942687447}
   - {fileID: 602773103}
+  - {fileID: 1941946679}
   m_Father: {fileID: 1526223562}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -55720,8 +55740,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1635467258}
-  m_Father: {fileID: 1352616590}
-  m_RootOrder: 1
+  m_Father: {fileID: 1924604331}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

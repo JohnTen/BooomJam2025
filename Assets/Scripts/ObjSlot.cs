@@ -15,6 +15,8 @@ public abstract class ObjSlot : MonoBehaviour
 
     public virtual Transform ObjParent => transform;
 
+    public virtual Indicator Indicator => indicator;
+
     public virtual void AddObj(Component obj)
     {
         this.obj = obj;
@@ -51,17 +53,9 @@ public abstract class ObjSlot : MonoBehaviour
     public abstract bool CanRemove(Component obj);
     public virtual void OnObjEnter(Component obj)
     {
-        if (indicator != null)
-        {
-            indicator.SetActive(true);
-        }
     }
 
     public virtual void OnObjExit(Component obj)
     {
-        if (indicator != null)
-        {
-            indicator.SetActive(false);
-        }
     }
 }

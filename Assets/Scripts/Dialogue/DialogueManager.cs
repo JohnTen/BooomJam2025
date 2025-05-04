@@ -268,7 +268,11 @@ public class DialogueManager : MonoSingleton<DialogueManager>
 
         if (IsDialogueObject && currentObject.isTyping)
         {
+            #if UNITY_EDITOR
             if (Input.GetMouseButtonDown(0) || Input.GetKey(KeyCode.Backspace))
+            #else
+            if (Input.GetMouseButtonDown(0))
+            #endif
             {
                 currentObject.SkipTyping();
                 return;

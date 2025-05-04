@@ -70,13 +70,15 @@ Material:
     - _QueueOffset: 0
     - _StepScale: 0.3046487
     - _energy: 0
+    - _keep: 0
+    - _keep1: 0
     - _x: 0
     - _y: 0
     m_Colors:
     - _EffectColor: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlitchColor: {r: 0, g: 0, b: 0, a: 0}
-    - _MainColor: {r: 1.5157166, g: 1.5157166, b: 1.5157166, a: 0}
+    - _MainColor: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
     - _NoiseSpeed: {r: 0, g: 0, b: 0, a: 0}
     - _PixelateTilling: {r: 10, g: 10, b: 0, a: 0}
   m_BuildTextureStacks: []

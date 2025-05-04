@@ -145,6 +145,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     - _energy: 0
+    - _keep: 0
+    - _keep1: 0
     - _x: 0
     - _y: 0
     m_Colors:

@@ -286,10 +286,12 @@ public class DialogueManager : MonoSingleton<DialogueManager>
                 delayTimer += Time.unscaledDeltaTime;
             }
 
+            #if UNITY_EDITOR
             if (Input.GetKey(KeyCode.Backspace))
             {
                 delayTimer = currentEntry.delay;
             }
+            #endif
 
             return;
         }
@@ -312,13 +314,21 @@ public class DialogueManager : MonoSingleton<DialogueManager>
                 FinishCurrentEntry();
                 break;
             case DialogueEntryType.ClickAnywhere:
+                #if UNITY_EDITOR
                 if (Input.GetMouseButtonDown(0) || Input.GetKey(KeyCode.Backspace))
+                #else
+                if (Input.GetMouseButtonDown(0))
+                #endif
                 {
                     FinishCurrentEntry();
                 }
                 break;
             case DialogueEntryType.ClickMaskArea:
+                #if UNITY_EDITOR
+                if (!Input.GetMouseButtonDown(0) || Input.GetKey(KeyCode.Backspace))
+                #else
                 if (!Input.GetMouseButtonDown(0))
+                #endif
                 {
                     return;
                 }

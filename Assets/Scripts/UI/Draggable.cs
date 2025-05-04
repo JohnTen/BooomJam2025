@@ -28,7 +28,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (!CanDrag) return;
+        if (!CanDrag || eventData.button != PointerEventData.InputButton.Left) return;
         isDragging = true;
 
         // 创建一个与相机平行的平面

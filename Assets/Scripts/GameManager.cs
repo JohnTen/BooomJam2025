@@ -342,6 +342,12 @@ public class GameManager : MonoSingleton<GameManager>
 
     public InventorySlot GetStackableInventorySlot(string resourceID)
     {
+        if (resourceID == "ECrystal")
+        {
+            return null;
+        }
+
+
         foreach (var slot in inventorySlots)
         {
             if (slot.HasObj && slot.ObjInSlot is ResourceObj resourceObj && resourceObj.Template.uid == resourceID)
@@ -349,12 +355,7 @@ public class GameManager : MonoSingleton<GameManager>
                 return slot;
             }
         }
-
-        if (resourceID == "ECrystal")
-        {
-
-        }
-
+        
         return null;
     }
 

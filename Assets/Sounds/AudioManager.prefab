@@ -204,6 +204,10 @@ MonoBehaviour:
   bossLoop: {fileID: 8300000, guid: e22c94646147dba4bbce64d123894a48, type: 3}
   flyIntro: {fileID: 8300000, guid: dbd805e4cbc030249bb6cd6c2e1c14cf, type: 3}
   flyLoop: {fileID: 8300000, guid: 820b216c353e80645a131dcb969a8082, type: 3}
+  normalBgmVolume: 0.24
+  bossBgmVolume: 0.6
+  flyBgmVolume: 0.6
+  fadeTime: 1
 --- !u!1 &7647525542479542245
 GameObject:
   m_ObjectHideFlags: 0

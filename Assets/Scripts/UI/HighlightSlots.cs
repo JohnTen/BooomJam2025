@@ -28,6 +28,7 @@ public class HighlightSlots : MonoBehaviour
                 continue;
             }
 
+            print("Slot: " + slot.transform.parent.name + "\\" + slot.name + " CanAdd: " + slot.CanAdd(draggableObj));
             if (slot.CanAdd(draggableObj))
             {
                 slot.Indicator.SetActive(true);

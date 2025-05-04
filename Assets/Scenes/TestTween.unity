@@ -363,8 +363,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94d031cc65500944b174bcd55eaa7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicator: {fileID: 6356571}
-  blinkColor: {r: 1, g: 1, b: 1, a: 0.6}
+  indicator: {fileID: 1841175303}
+  blinkColor: {r: 0, g: 0.9098039, b: 1, a: 1}
   blinkInterval: 0.25
 --- !u!1 &10553028
 GameObject:
@@ -9163,7 +9163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 0}
-  indicator: {fileID: 6356574}
+  indicator: {fileID: 278388287}
 --- !u!114 &278388287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9176,8 +9176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94d031cc65500944b174bcd55eaa7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicator: {fileID: 278388284}
-  blinkColor: {r: 1, g: 1, b: 1, a: 0.6}
+  indicator: {fileID: 1879633136}
+  blinkColor: {r: 0, g: 0.9098039, b: 1, a: 1}
   blinkInterval: 0.25
 --- !u!1 &279566947
 GameObject:
@@ -29501,7 +29501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 0}
-  indicator: {fileID: 6356574}
+  indicator: {fileID: 940444859}
 --- !u!114 &940444859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29514,8 +29514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94d031cc65500944b174bcd55eaa7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicator: {fileID: 940444856}
-  blinkColor: {r: 1, g: 1, b: 1, a: 0.6}
+  indicator: {fileID: 186682184}
+  blinkColor: {r: 0, g: 0.9098039, b: 1, a: 1}
   blinkInterval: 0.25
 --- !u!1 &942687446
 GameObject:
@@ -49713,7 +49713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 0}
-  indicator: {fileID: 6356574}
+  indicator: {fileID: 1725078031}
 --- !u!114 &1725078031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49726,8 +49726,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94d031cc65500944b174bcd55eaa7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicator: {fileID: 1725078028}
-  blinkColor: {r: 1, g: 1, b: 1, a: 0.6}
+  indicator: {fileID: 375252630}
+  blinkColor: {r: 0, g: 0.9098039, b: 1, a: 1}
   blinkInterval: 0.25
 --- !u!1 &1725178078
 GameObject:

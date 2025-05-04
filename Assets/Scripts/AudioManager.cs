@@ -16,6 +16,12 @@ public class AudioManager : MonoBehaviour
     public AudioClip flyIntro;
     public AudioClip flyLoop;
 
+    public float normalBgmVolume;
+    public float bossBgmVolume;
+    public float flyBgmVolume;
+
+    public float fadeTime = 2f;
+
     public static AudioManager instance;
 
     private void Awake()
@@ -72,6 +78,22 @@ public class AudioManager : MonoBehaviour
         
         return null;
     }
+
+    public void ChangeBGMToNormal()
+    {
+        var newSource = musicSource.gameObject.AddComponent<AudioSource>();
+
+        newSource.clip = normalBgm;
+        newSource.Play();
+        newSource.volume = 0;
+        newSource.DOFade(normalBgmVolume, fadeTime);
+
+        musicSource.DOFade(0, fadeTime).OnComplete(() => {
+            Destroy(musicSource);
+            musicSource = newSource;
+        });
+    }
+
     public void ChangeBGMToBoss()
     {
         var newSource = musicSource.gameObject.AddComponent<AudioSource>();
@@ -80,9 +102,9 @@ public class AudioManager : MonoBehaviour
         newSource.clip = bossLoop;
         newSource.PlayScheduled(AudioSettings.dspTime + bossIntro.length);
         newSource.volume = 0;
-        newSource.DOFade(musicSource.volume, 1f);
+        newSource.DOFade(bossBgmVolume, fadeTime);
 
-        musicSource.DOFade(0, 1f).OnComplete(() => {
+        musicSource.DOFade(0, fadeTime).OnComplete(() => {
             Destroy(musicSource);
             musicSource = newSource;
         });
@@ -96,9 +118,9 @@ public class AudioManager : MonoBehaviour
         newSource.clip = flyLoop;
         newSource.PlayScheduled(AudioSettings.dspTime + flyIntro.length);
         newSource.volume = 0;
-        newSource.DOFade(musicSource.volume, 1f);
+        newSource.DOFade(flyBgmVolume, fadeTime);
 
-        musicSource.DOFade(0, 1f).OnComplete(() => {
+        musicSource.DOFade(0, fadeTime).OnComplete(() => {
             Destroy(musicSource);
             musicSource = newSource;
         });

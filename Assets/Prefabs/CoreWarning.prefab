@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8050576030761476904}
   - component: {fileID: 8050576030761476907}
   - component: {fileID: 8050576030761476905}
+  - component: {fileID: 1919420852}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -37,8 +38,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 7.7001953, y: 2.13}
-  m_SizeDelta: {x: 400, y: 84.01}
+  m_AnchoredPosition: {x: 42, y: -110}
+  m_SizeDelta: {x: 300, y: 84.01}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &8050576030761476904
 CanvasRenderer:
@@ -97,6 +98,28 @@ MonoBehaviour:
   ignoreHeight: 0
   isTextChild: 0
   controlByOne: 1
+--- !u!114 &1919420852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8050576030761476916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f161d6d7055b0a41b638f52f2d55dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originSize: {x: 0, y: 0, z: 0}
+  window: {fileID: 8050576030761476916}
+  windowRT: {fileID: 8050576030761476917}
+  isStart: 1
+  fadeTime: 0.2
+  isOutBack: 0
+  enableUnfold: 1
+  enableScaleUp: 0
+  enableMove: 0
+  moveTarget: {x: 10, y: 10, z: 0}
 --- !u!1 &8050576030887553461
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +131,7 @@ GameObject:
   - component: {fileID: 8050576030887553450}
   - component: {fileID: 8050576030887553448}
   - component: {fileID: 8050576030887553451}
+  - component: {fileID: 1121619497}
   m_Layer: 5
   m_Name: WarningSign
   m_TagString: Untagged
@@ -133,7 +157,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 96.562, y: 80.803}
+  m_SizeDelta: {x: 144, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8050576030887553448
 CanvasRenderer:
@@ -173,6 +197,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1121619497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8050576030887553461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f161d6d7055b0a41b638f52f2d55dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originSize: {x: 0, y: 0, z: 0}
+  window: {fileID: 8050576030887553461}
+  windowRT: {fileID: 8050576030887553450}
+  isStart: 1
+  fadeTime: 0.2
+  isOutBack: 0
+  enableUnfold: 0
+  enableScaleUp: 1
+  enableMove: 0
+  moveTarget: {x: 10, y: 10, z: 0}
 --- !u!1 &8050576031028434515
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +256,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 84.01}
+  m_SizeDelta: {x: 300, y: 84.01}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &8050576031028434519
 CanvasRenderer:
@@ -252,8 +298,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190299
-  m_fontColor: {r: 0.8584906, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -273,9 +319,9 @@ MonoBehaviour:
   m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 24
+  m_fontSizeMax: 24
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -284,7 +330,7 @@ MonoBehaviour:
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: 60
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
@@ -328,7 +374,7 @@ MonoBehaviour:
   text: {fileID: 8050576031028434518}
   MatchHeight: 1
   MatchWidth: 0
-  MaxWidth: 300
+  MaxWidth: 400
   MaxHeight: 20000
 --- !u!1 &8050576031382897607
 GameObject:
@@ -390,29 +436,29 @@ MonoBehaviour:
     keys: 000000000100000002000000030000000400000005000000
     vals:
     - Green: 
-      Yellow: Memory:Yellow
-      Red: Memory:Red
-      Zero: Memory:Zerp
+      Yellow: "<color=yellow>\u8BB0\u5FC6\u7CFB\u7EDF<\u9884\u8B66>\uFF1A\u5C0F\u90E8\u5206\u663E\u793A\u4FE1\u606F\u4E22\u5931</color>"
+      Red: "<color=red>\u8BB0\u5FC6\u7CFB\u7EDF<\u9AD8\u5371>\uFF1A\u90E8\u5206\u663E\u793A\u4FE1\u606F\u4E22\u5931</color>"
+      Zero: "<color=blue>\u8BB0\u5FC6\u7CFB\u7EDF<\u5D29\u6E83>\uFF1A\u5927\u90E8\u5206\u663E\u793A\u4FE1\u606F\u4E22\u5931</color>"
     - Green: 
-      Yellow: Sensor:Yellpw
-      Red: Sensor:Red
-      Zero: Sensor:Zero
+      Yellow: "<color=yellow>\u611F\u77E5\u7CFB\u7EDF<\u9884\u8B66>\uFF1A\u753B\u9762\u8F7B\u5FAE\u663E\u793A\u5F02\u5E38</color>"
+      Red: "<color=red>\u611F\u77E5\u7CFB\u7EDF<\u9AD8\u5371>\uFF1A\u753B\u9762\u663E\u793A\u5F02\u5E38</color>"
+      Zero: "<color=blue>\u611F\u77E5\u7CFB\u7EDF<\u5D29\u6E83>\uFF1A\u753B\u9762\u4E25\u91CD\u663E\u793A\u5F02\u5E38</color>"
     - Green: 
-      Yellow: Motion:Yellpw
-      Red: Motion:Red
-      Zero: Motion:Zero
+      Yellow: "<color=yellow>\u8FD0\u52A8\u7CFB\u7EDF<\u9884\u8B66>\uFF1A\u5149\u6807\u79FB\u52A8\u8F7B\u5FAE\u53D8\u6162</color>"
+      Red: "<color=red>\u8FD0\u52A8\u7CFB\u7EDF<\u9AD8\u5371>\uFF1A\u5149\u6807\u79FB\u52A8\u53D8\u6162</color>"
+      Zero: "<color=blue>\u8FD0\u52A8\u7CFB\u7EDF<\u5D29\u6E83>\uFF1A\u5149\u6807\u4E25\u91CD\u53D8\u6162</color>"
     - Green: 
-      Yellow: Cooling:Yellpw
-      Red: Cooling:Red
-      Zero: Cooling:Zerp
+      Yellow: "<color=yellow>\u51B7\u5374\u7CFB\u7EDF<\u9884\u8B66>\uFF1A\u6838\u5FC3\u53CD\u5E94\u5806\u5C0F\u6982\u7387\u505C\u673A</color>"
+      Red: "<color=red>\u51B7\u5374\u7CFB\u7EDF<\u9AD8\u5371>\uFF1A\u6838\u5FC3\u53CD\u5E94\u5806\u6709\u6982\u7387\u505C\u673A</color>"
+      Zero: "<color=blue>\u51B7\u5374\u7CFB\u7EDF<\u5D29\u6E83>\uFF1A\u6838\u5FC3\u53CD\u5E94\u5806\u6709\u5F88\u5927\u6982\u7387\u505C\u673A</color>"
     - Green: 
-      Yellow: Control;Yellow
-      Red: Control;Red
-      Zero: Control;Zero
+      Yellow: "<color=yellow>\u534F\u8C03\u7CFB\u7EDF<\u9884\u8B66>\uFF1A\u6838\u5FC3\u53CD\u5E94\u5806\u90E8\u7F72\u65F6\u95F4\u7565\u5FAE\u589E\u52A0</color>"
+      Red: "<color=red>\u534F\u8C03\u7CFB\u7EDF<\u9AD8\u5371>\uFF1A\u6838\u5FC3\u53CD\u5E94\u5806\u90E8\u7F72\u65F6\u95F4\u589E\u52A0</color>"
+      Zero: "<color=blue>\u534F\u8C03\u7CFB\u7EDF<\u5D29\u6E83>\uFF1A\u6838\u5FC3\u53CD\u5E94\u5806\u90E8\u7F72\u65F6\u95F4\u5927\u5E45\u589E\u52A0</color>"
     - Green: 
-      Yellow: Ethic:Yellow
-      Red: Ethic:Red
-      Zero: Ethic:Zero
+      Yellow: "<color=yellow>\u9053\u5FB7\u7CFB\u7EDF<\u9884\u8B66>\uFF1A\uFF08^_^\uFF09</color>"
+      Red: "<color=red>\u9053\u5FB7\u7CFB\u7EDF<\u9AD8\u5371>\uFF1A(\u2299\u02CD\u2299)</color>"
+      Zero: "<color=blue>\u9053\u5FB7\u7CFB\u7EDF<\u5D29\u6E83>\uFF1A(\u53E3\u02CD\u53E3)</color>"
 --- !u!222 &8050576031382897658
 CanvasRenderer:
   m_ObjectHideFlags: 0

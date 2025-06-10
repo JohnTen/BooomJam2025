@@ -22,7 +22,7 @@ public class VirtualCursor : MonoSingleton<VirtualCursor>
 
     private Vector2 screenPosition;
 
-    private Vector2 viewportPosition;
+    private static Vector2 lastPosition;
 
     public List<RaycastResult> raycastResults = new List<RaycastResult>();
     RaycastResult firstResult;
@@ -34,6 +34,7 @@ public class VirtualCursor : MonoSingleton<VirtualCursor>
         Cursor.lockState = CursorLockMode.Confined;
 
         VerifyComponents();
+        cursor.anchoredPosition = lastPosition;
     }
 
     void OnDisable()
@@ -80,7 +81,7 @@ public class VirtualCursor : MonoSingleton<VirtualCursor>
         var newPosition = cursor.anchoredPosition + new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y")) * (CursorSpeedMultiplier * cursorSpeed);
         cursor.anchoredPosition = new Vector2(Mathf.Clamp(newPosition.x, 0, canvasRectTransform.rect.width), Mathf.Clamp(newPosition.y, 0, canvasRectTransform.rect.height));
         screenPosition = mainCamera.WorldToScreenPoint(cursor.position);
-        viewportPosition = mainCamera.WorldToViewportPoint(cursor.position);
+        lastPosition = cursor.anchoredPosition;
 
         EventSystem.current.RaycastAll(new PointerEventData(EventSystem.current) { position = screenPosition }, raycastResults);
         firstResult = FindFirstRaycast(raycastResults);

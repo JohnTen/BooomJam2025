@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using JTUtility;
 using JTUtility.Event;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
@@ -287,6 +286,11 @@ public class GameManager : MonoSingleton<GameManager>
         }
 
         CheckBreakdown();
+
+        if (Input.GetKey(KeyCode.Q) && Input.GetKey(KeyCode.P))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameStart");
+        }
     }
 
     void ChangeCorePercent(CoreSlotType coreSlotType, float percent)

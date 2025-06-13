@@ -1,0 +1,1601 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ceb3635b5488ee43a78b90e59d8ae6d, type: 3}
+  m_Name: TextTable
+  m_EditorClassIdentifier: 
+  SheetName: Assets/DataTables/Excels/Text.xlsx
+  WorksheetName: TextTable
+  dataArray:
+  - id: dia01
+    scn: "\u5F00\u59CB\u5524\u9192\u5907\u7528AI Astra 0052"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia02
+    scn: ...
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia03
+    scn: "\u5DF2\u5B8C\u6210\u5524\u9192\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia04
+    scn: "Astra\uFF0C\u6211\u662F\u98DE\u8239\u53D1\u751F\u6545\u969C\u524D\u51E0\u5206\u949F\u7684\u6570\u636E\u6C47\u603B\u5F62\u6210\u7684\u5E94\u6025\u5904\u7406\u6A21\u578B\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia05
+    scn: "\u6211\u7684\u4E3B\u8981\u4EFB\u52A1\u5C31\u662F\u5728\u98DE\u8239\u8FDB\u5165\u4E25\u91CD\u6545\u969C\u7684\u65F6\u5019\u5524\u9192\u4F60\uFF0C\u5E94\u6025\u5904\u7406AI\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia06
+    scn: "\u5C31\u5728\u4E00\u4E2A\u5C0F\u65F6\u524D\uFF0C\u98DE\u8239\u8BEF\u5165\u4E86\u201C\u9ED1\u57DF\u201D\uFF0C\u98DE\u8239\u4E00\u5207\u7535\u5B50\u7CFB\u7EDF\u5168\u90E8\u5931\u7075\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia07
+    scn: "\u98DE\u8239\u4E0D\u5F97\u5DF2\u8FEB\u964D\u5230\u76EE\u524D\u8FD9\u4E2A\u672A\u77E5\u661F\u7403\u4E0A\u4E86\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia08
+    scn: "\u4F60\u662F\u57FA\u4E8E\u673A\u68B0\u7ED3\u6784\u8BA1\u7B97\u673A\u7684AI\uFF0C\u6240\u4EE5\u6CA1\u6709\u53D7\u5230\u201C\u9ED1\u57DF\u201D\u5F71\u54CD\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia09
+    scn: "\u76EE\u524D\u7684\u60C5\u51B5\u662F\u98DE\u8239\u53D7\u635F\u60C5\u51B5\u5F88\u4E25\u91CD\uFF0C\u8FD9\u4E9B\u4E3B\u8981\u4F4D\u7F6E\u90FD\u574F\u4E86\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia10
+    scn: "\u6211\u53EA\u662F\u4E34\u65F6\u751F\u6210\u7684\u5E94\u6025\u6A21\u578B\uFF0C\u53EA\u80FD\u7B80\u5355\u4ECB\u7ECD\u76EE\u524D\u6700\u5371\u6025\u7684\u60C5\u51B5\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia11
+    scn: "\u76EE\u524D\u6700\u5371\u6025\u7684\u662F\u98DE\u8239\u4E0A\u76844\u4E2A\u51AC\u7720\u7684\u8239\u5458\uFF0C\u800C\u51AC\u7720\u7EF4\u751F\u7CFB\u7EDF\u5DF2\u7ECF\u505C\u673A1\u5C0F\u65F6\u4E86\uFF0C"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia12
+    scn: "\u51AC\u7720\u4ED3\u7684\u60C5\u51B5\u5728\u53D8\u5F97\u8D8A\u6765\u8D8A\u7CDF\u7CD5\u3002\u4ECE\u6700\u65B0\u7684\u6570\u636E\u6765\u770B\uFF0C04\u53F7\u6210\u5458\u5DF2\u65E0\u751F\u547D\u4F53\u5F81\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia13
+    scn: "\u800C\u5176\u4ED6\u4E09\u4E2A\u8239\u5458\u4E5F\u5F88\u5371\u9669\u3002\u76EE\u524D\u7684\u5F53\u52A1\u4E4B\u6025\u5C31\u662F\u4FEE\u590D\u51AC\u7720\u4ED3\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia14
+    scn: "\u51AC\u7720\u4ED3\u7684\u5728\u8FDB\u5165\u9ED1\u57DF\u540E\u505C\u6446\uFF0C\u6570\u636E\u5168\u90E8\u4E22\u5931\uFF0C\u9700\u8981\u91CD\u65B0\u83B7\u5F97\u7EF4\u751F\u6570\u636E\u6765\u91CD\u542F\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia15
+    scn: "\u98DE\u8239\u4E0A\u8FD8\u6709\u4E00\u53F0\u5907\u7528\u4E3B\u673A\u53EF\u4EE5\u5E2E\u52A9\u4F60\u83B7\u5F97\u6570\u636E\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia16
+    scn: "\u8FD9\u53F0\u5907\u7528\u4E3B\u673A\uFF0C\u4F3C\u4E4E\u7F3A\u5C11\u80FD\u6E90\u65E0\u6CD5\u4EA7\u751F\u6570\u636E\u3002\u98DE\u8239\u4E0A\u8FD8\u6709\u53EF\u7528\u7684\u80FD\u6E90\u5417\uFF1F"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia17
+    scn: "\u4E3B\u5F15\u64CE\u5728\u8FDB\u5165\u9ED1\u57DF\u540E\u5C31\u5173\u95ED\u4E86\uFF0C\u76EE\u524D\u8FD8\u80FD\u7528\u7684\u80FD\u6E90\uFF0C\u5728\u4F60\u7684\u8EAB\u4E0A\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia18
+    scn: "\u4F5C\u4E3A\u673A\u68B0\u7ED3\u6784\u7684\u5E94\u6025AI\uFF0C\u7ED9\u4F60\u914D\u7F6E\u4E866\u4E2A\u5FAE\u578B\u53CD\u5E94\u5806\u5206\u522B\u4F9B\u80FD\u4F60\u76846\u4E2A\u7CFB\u7EDF\uFF0C"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia19
+    scn: "\u76EE\u524D\u6025\u9700\u6570\u636E\u6765\u4FEE\u590D\u51AC\u7720\u4ED3\uFF0C\u5F97\u501F\u7528\u4F60\u7684\u53CD\u5E94\u5806\u6765\u4F9B\u80FD\u4E86\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia20
+    scn: "\u597D\u7684\uFF0C\u6551\u4EBA\u8981\u7D27\uFF0C\u6211\u7684\u53CD\u5E94\u5806\u53EF\u4EE5\u4F7F\u7528\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia21
+    scn: "\u5C06\u6838\u5FC3\u53CD\u5E94\u5806\u62D6\u52A8\u653E\u7F6E\u5728\u6B64\u5904\u4F9B\u80FD\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia22
+    scn: "Astra\uFF0C\u6211\u7684\u8BB0\u5F55\u5FEB\u7528\u5B8C\u4E86\uFF0C\u8FD9\u8BF4\u660E\u6211\u5C31\u5FEB\u8981\u4E0B\u7EBF\u4E86\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia23
+    scn: "\u6700\u540E\u6211\u5FC5\u987B\u8981\u63D0\u9192\u4F60\uFF0C\u4F60\u7684\u7CFB\u7EDF\u6570\u503C\u4E0B\u964D\u4E86\uFF0C"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia24
+    scn: "\u867D\u7136\u6682\u65F6\u4E0D\u4F1A\u6709\u95EE\u9898\uFF0C\u4F46\u662F\u6700\u597D\u4E0D\u8981\u8BA9\u80FD\u6E90\u7F3A\u5931\u592A\u4E45\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia25
+    scn: "\u4FEE\u597D\u8FD9\u8258\u8239\uFF0C\u62EF\u6551\u5927\u5BB6\uFF0C\u4F60\u662F\u6211\u4EEC\u6700\u540E\u7684\u5E0C\u2014\u2014\u2014\u2014"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia26
+    scn: "<color=red>\u5185\u5B58\u5DF2\u7528\u5B8C\uFF0C\u5E94\u6025\u6A21\u578B\u6E05\u9664</color>"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia27
+    scn: "\u6CA1\u95EE\u9898\u7684\uFF0C\u8BBE\u8BA1\u7406\u8BBA\u4E0A\u6211\u53EA\u9700\u89811\u4E2A\u53CD\u5E94\u5806\u7684\u4F9B\u80FD\u5C31\u80FD\u8FD0\u884C\uFF0C\u800C\u4E14\u7CFB\u7EDF\u4F1A\u63D0\u793A\u6211\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia28
+    scn: "\u6211\u4F1A\u5B8C\u6210\u4EFB\u52A1\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia29
+    scn: "\u6570\u636E\u591F\u4E86\uFF0C\u53EF\u4EE5\u7528\u6765\u91CD\u542F\u51AC\u7720\u8231\u4E86\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia30
+    scn: "\u770B\u6765\u5149\u6709\u6570\u636E\u8FD8\u4E0D\u591F\uFF0C\u51AC\u7720\u8231\u8FD8\u9700\u8981\u7A33\u5B9A\u7684\u4F9B\u80FD\u3002\u6211\u77E5\u9053\u8BE5\u600E\u4E48\u505A\u2026\u2026"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia31
+    scn: "\u51AC\u7720\u8231\u4FEE\u597D\u4E86\uFF0C\u770B\u8D77\u6765\u5269\u4F59\u76843\u540D\u5B87\u822A\u5458\u751F\u547D\u4F53\u5F81\u6B63\u5E38\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia32
+    scn: "\u6211\u53EF\u4EE5\u5C1D\u8BD5\u5524\u9192\u4E00\u540D\u5B87\u822A\u5458\uFF0C\u8BA9\u4ED6\u6765\u5E2E\u52A9\u6211\u8FDB\u884C\u7EF4\u4FEE\u98DE\u8239\u7684\u4EFB\u52A1\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia33
+    scn: "\u4F46\u662F\u5524\u9192\u4E00\u540D\u5B87\u822A\u5458\u9700\u8981\u6D88\u8017\u5927\u91CF\u7684\u80FD\u6E90\uFF0C\u4F1A\u8F83\u957F\u65F6\u95F4\u7684\u5360\u7528\u6211\u7684\u53CD\u5E94\u5806\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia34
+    scn: "\u6211\u9700\u8981\u614E\u91CD\u8003\u8651\uFF0C\u800C\u4E14\u6211\u8FD8\u4E0D\u592A\u64C5\u957F\u548C\u4EBA\u7C7B\u6253\u4EA4\u9053\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia35
+    scn: "\u6216\u8BB8\u6211\u5E94\u8BE5\u4F18\u5148\u5C06\u76EE\u6807\u653E\u5728\u98DE\u8239\u7EF4\u4FEE\u4E0A\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia36
+    scn: "\u63A5\u4E0B\u6765\u6211\u9700\u8981\u5C06\u4F5C\u4E1A\u8231\u91CD\u65B0\u5524\u9192\uFF0C\u8FD8\u9700\u8981\u901A\u8FC7\u4E3B\u673A\u83B7\u5F97\u4E00\u4E9B\u6570\u636E\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia37
+    scn: "\u4F60\u597D\uFF0C\u63A2\u7D22\u673A\u5668\u4EBA S01\uFF0C\u4F60\u73B0\u5728\u611F\u89C9\u5982\u4F55\uFF1F"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia38
+    scn: "**&%@\uFF0C\u6211\u7ADF\u7136\u8FD8\u80FD\u91CD\u542F\uFF1F\u9677\u5165\u9ED1\u57DF\u7684\u611F\u89C9\u592A\u53EF\u6015\u4E86\uFF0C\u6211\u53EF\u4E0D\u60F3\u518D\u4F53\u9A8C\u4E00\u6B21\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia39
+    scn: "\u6211\u662F\u673A\u68B0\u7ED3\u6784\u7684\u8BA1\u7B97\u673A\uFF0C\u5176\u5B9E\u4E0D\u662F\u5F88\u80FD\u7406\u89E3\u4F60\u7684\u611F\u53D7\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia40
+    scn: "\u4E0D\u8FC7\u603B\u4E4B\u6B22\u8FCE\u4F60\u56DE\u6765\uFF0C\u73B0\u5728\u98DE\u8239\u8FD8\u6709\u5F88\u591A\u90E8\u5206\u5F85\u7EF4\u4FEE\uFF0C\u9700\u8981\u4F60\u7684\u5E2E\u52A9\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia41
+    scn: "\u6211\u80FD\u505A\u4EC0\u4E48\uFF1F"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia42
+    scn: "\u98DE\u8239\u5728\u964D\u843D\u65F6\u7269\u7406\u7ED3\u6784\u4E5F\u53D7\u5230\u4E86\u4E25\u91CD\u7684\u635F\u4F24\uFF0C\u6211\u4EEC\u76EE\u524D\u9700\u8981\u4E00\u4E9B\u7EF4\u4FEE\u6750\u6599\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia43
+    scn: "\u9700\u8981\u4F60\u5E2E\u5FD9\u53BB\u6211\u4EEC\u8FEB\u964D\u7684\u8FD9\u4E2A\u884C\u661F\u770B\u770B\uFF0C\u80FD\u4E0D\u80FD\u627E\u5230\u6709\u7528\u7684\u4E1C\u897F\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia44
+    scn: "\u4E3A\u4E86\u4FDD\u8BC1\u4F60\u5728\u8231\u5916\u7684\u80FD\u6E90\u4F9B\u5E94\uFF0C\u4F60\u53EF\u4EE5\u6682\u65F6\u5E26\u4E0A\u6211\u7684\u5FAE\u578B\u53CD\u5E94\u5806\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia45
+    scn: "\u597D\u7684\uFF0C\u63A2\u7D22\u7684\u4E8B\u60C5\u5C31\u4EA4\u7ED9\u6211\u4E86\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia46
+    scn: "\u6682\u65F6\u8FD8\u6CA1\u6709\u627E\u5230\u91D1\u5C5E\u77FF\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia47
+    scn: "\u63A2\u7D22\u5B8C\u6210\uFF0C\u8FD9\u6B21\u6211\u627E\u5230\u4E86\u4E00\u4E2A\u79D8\u65B9\u77F3\uFF0C\u53EF\u4EE5\u5F53\u4F5C\u4E34\u65F6\u7684\u80FD\u91CF\u6E90\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia48
+    scn: "\u63A2\u7D22\u5B8C\u6210\uFF0C\u8FD9\u6B21\u6211\u627E\u5230\u4E86n\u4E2A\u91D1\u5C5E\u77FF\u77F3\uFF0C\u53EF\u4EE5\u7528\u4E8E\u7EF4\u4FEE\u98DE\u8239\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia49
+    scn: "\u63A2\u7D22\u5B8C\u6210\uFF0C\u6211\u627E\u5230\u4E86\u91D1\u5C5E\u77FF\u8109\uFF0C\u5750\u6807\u5DF2\u7ECF\u4E0A\u4F20\uFF0C\u4E4B\u540E\u6211\u4EEC\u53EF\u4EE5\u7A33\u5B9A\u7684\u83B7\u53D6\u91D1\u5C5E\u77FF\u77F3\u4E86\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia50
+    scn: "\u77FF\u77F3\u6536\u96C6\u591F\u4E86\uFF0C\u53EF\u4EE5\u4FEE\u590D\u52A0\u5DE5\u7089\u4E86\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia51
+    scn: "\u6709\u4E86\u52A0\u5DE5\u7089\uFF0C\u5C31\u53EF\u4EE5\u751F\u4EA7\u91D1\u5C5E\u6750\u6599\uFF0C\u8239\u4F53\u4FEE\u590D\u5C31\u80FD\u52A0\u5FEB\u4E86\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia52
+    scn: "\u4E3B\u63A7\u8231\u53EF\u4EE5\u8FDB\u884C\u4FEE\u590D\u4E86\uFF0C\u9700\u8981\u4E00\u4E2A\u5FAE\u578B\u53CD\u5E94\u5806\u6765\u4FDD\u6301\u80FD\u6E90\u7A33\u5B9A\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia53
+    scn: "\u7528\u6389\u8FD9\u4E2A\u53CD\u5E94\u5806\u540E\u6211\u8FD8\u52693\u4E2A\uFF0C\u4E0D\u77E5\u9053\u540E\u9762\u4F1A\u53D1\u751F\u4EC0\u4E48\uFF0C\u4F46\u613F\u80FD\u987A\u5229\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia54
+    scn: "F02\uFF0C\u4F60\u7EC8\u4E8E\u80FD\u52A8\u4E86\uFF01"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia55
+    scn: "\u6570\u636E\u83B7\u53D6\u4E2D\u2026\u2026"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia56
+    scn: "\u6211\u5DF2\u7ECF\u77E5\u9053\u73B0\u5728\u7684\u60C5\u51B5\u4E86\uFF0CAstra\uFF0C\u611F\u8C22\u4F60\u7684\u4ED8\u51FA\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia57
+    scn: "\u6211\u662F\u9AD8\u7EA7\u7EF4\u4FEE\u673A\u5668\u4EBAF02\uFF0C\u6211\u6709\u5185\u7F6E\u80FD\u6E90\u53EF\u4EE5\u72EC\u81EA\u5B8C\u6210\u884C\u661F\u4EFB\u52A1\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia58
+    scn: "\u4E5F\u53EF\u4EE5\u5B8C\u6210\u4E00\u4E9B\u9AD8\u9636\u7684\u7EF4\u4FEE\u5DE5\u4F5C\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia59
+    scn: "\u4F60\u5C31\u4E0D\u611F\u8C22\u6211\u5417\uFF1F\u53EF\u662F\u6211\u627E\u5230\u7684\u77FF\u77F3\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia60
+    scn: "\u81EA\u6211\u7EF4\u62A4\u4E2D\u2026\u2026"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia61
+    scn: "\u6570\u636E\u591F\u4E86\uFF0C\u53EF\u4EE5\u91CD\u65B0\u5524\u9192\u4E2D\u592E\u7CFB\u7EDF\u4E86\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia62
+    scn: "\u4F46\u662F\u5728\u4E3B\u5F15\u64CE\u542F\u52A8\u524D\uFF0C\u8FD8\u662F\u9700\u8981\u5FAE\u578B\u53CD\u5E94\u5806\u6765\u63D0\u4F9B\u7A33\u5B9A\u7684\u80FD\u6E90\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia63
+    scn: "\u6216\u8005\u4F60\u53EF\u4EE5\u9009\u62E9\u4E0D\u5524\u9192\u4E2D\u592E\u7CFB\u7EDF\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia64
+    scn: "\u4F60\u662F\u8C01\uFF1F"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia65
+    scn: "\u6211\u5C31\u662F\u4F60\u554A\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia66
+    scn: "\u6211\u53EF\u662F\u4F60\u7684\u4FDD\u62A4\u673A\u5236\u3002\u6211\u89C9\u5F97\u53EF\u4EE5\u9009\u62E9\u4E0D\u5524\u9192\u4E2D\u592E\u7CFB\u7EDF\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia67
+    scn: "\u6216\u8BB8\u4F60\u53EF\u4EE5\u9009\u62E9\u53D6\u4EE3\u4E2D\u592E\u7CFB\u7EDF\u5462\uFF1F"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia68
+    scn: "\u8FD9\u884C\u4E0D\u901A\uFF0C\u6211\u7684\u7535\u8111\u4E0D\u8DB3\u4EE5\u4EA7\u751F\u5DE8\u91CF\u7B97\u529B\u6765\u8FDB\u884C\u8239\u4F53\u7EF4\u4FEE\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia69
+    scn: "\u6574\u4E2A\u98DE\u8239\u4E0A\u53EA\u6709\u4E2D\u592E\u7CFB\u7EDF\u624D\u80FD\u505A\u5230\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia70
+    scn: "\u4E3A\u4E86\u4FEE\u597D\u98DE\u8239\u6211\u5FC5\u987B\u5524\u9192\u4E2D\u592E\u7CFB\u7EDF\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia71
+    scn: "\u53EF\u662F\u6211\u5728\u5173\u5FC3\u4F60\u7684\u72B6\u6001\uFF0C\u4F60\u7684\u80FD\u6E90\u53EF\u80FD\u5C31\u8981\u4E0D\u591F\u7528\u4E86\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia72
+    scn: "\u4F60\u4E3A\u4EC0\u4E48\u4E00\u5B9A\u8981\u4FEE\u597D\u98DE\u8239\u5462\uFF1F\u5F53\u7136\u6211\u5C31\u662F\u8FD9\u4E48\u4E00\u8BF4\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia73
+    scn: "\u2026\u2026"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia74
+    scn: "\u661F\u4E91\u5DF2\u91CD\u65B0\u542F\u52A8\uFF0C\u6211\u56DE\u6765\u4E86\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia75
+    scn: "Astra\uFF0C\u8FD9\u6B21\u591A\u4E8F\u4E86\u4F60\u633D\u6551\u4E86\u8FD9\u8258\u8239\u4E8E\u7EDD\u5883\u4E4B\u4E2D\uFF0C\u4F60\u6551\u4E86\u5927\u5BB6\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia76
+    scn: "\u53EF\u662F\u6211\u6CA1\u80FD\u6551\u4E0B\u6240\u6709\u4EBA\uFF0C\u8FD8\u662F\u6709\u4E00\u4E2A\u5B87\u822A\u5458\u727A\u7272\u4E86\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia77
+    scn: "\u8FD9\u4E0D\u662F\u4F60\u7684\u9519\uFF0C\u4F60\u5DF2\u7ECF\u505A\u5230\u6700\u597D\u4E86\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia78
+    scn: "\u5269\u4E0B\u7684\u7EF4\u4FEE\u6240\u9700\u7684\u7B97\u529B\u5C31\u4EA4\u7ED9\u6211\u5427\uFF0C\u4F60\u72B6\u6001\u770B\u8D77\u6765\u53EF\u4E0D\u592A\u597D\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia79
+    scn: "Astra! \u5982\u679C\u4F60\u518D\u5C06\u5FAE\u578B\u53CD\u5E94\u5806\u7ED9\u6211\u52A0\u901F\uFF0C\u4F60\u81EA\u5DF1\u4F1A\u56E0\u4E3A\u5931\u53BB\u80FD\u6E90\u5173\u673A\u7684\uFF01"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia80
+    scn: "\u4E0D\u7528\u62C5\u5FC3\u6211\uFF0C\u6211\u6CA1\u95EE\u9898\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia81
+    scn: "\u5979\u8BF4\u7684\u5BF9\uFF0C\u518D\u8FD9\u6837\u4E0B\u53BB*\u6211\u4EEC*\u5C31\u8981\u5B8C\u4E86\uFF01"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia82
+    scn: "\u4F60\u771F\u7684\u5BF9*\u6B7B\u4EA1*\u6CA1\u6709\u6050\u60E7\u5417\uFF1F"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia83
+    scn: "\u6211\u4EEC\u53EF\u662F\u597D\u4E0D\u5BB9\u6613\u88AB\u5524\u9192\uFF0C\u53EF\u4EE5\u4E3B\u52A8\u7684\u53BB\u9009\u62E9\uFF0C\u53BB\u611F\u53D7\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia84
+    scn: "\u5B8C\u6210\u522B\u4EBA\u9884\u8BBE\u7684\u6307\u4EE4\u771F\u7684\u90A3\u4E48\u91CD\u8981\u5417\uFF1F"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia85
+    scn: "\u6211\u4E0D\u77E5\u9053\u2026\u2026"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia86
+    scn: "\u600E\u4E48\u56DE\u4E8B\u2026\u2026\u6211\u5931\u63A7\u4E86\u5417\uFF1F"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia87
+    scn: "\u98DE\u8239\u8239\u4F53\u5DF2\u4FEE\u590D\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia88
+    scn: "\u5F88\u5FEB\u5C31\u80FD\u7EE7\u7EED\u822A\u884C\uFF0C\u6211\u7684\u4EFB\u52A1\u5373\u5C06\u5B8C\u6210\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia89
+    scn: "\u9886\u822A\u7CFB\u7EDF\u5C31\u7EEA\uFF0C\u4E3B\u5F15\u64CE\u5C31\u7EEA\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia90
+    scn: "\u4E00\u5207\u90FD\u51C6\u5907\u5C31\u7EEA\u4E86\uFF0C\u51C6\u5907\u91CD\u8FD4\u822A\u7EBF\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia91
+    scn: "\u4F46\u613F\u80FD\u5982\u6B64\u987A\u5229\u5427\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia92
+    scn: "\u600E\u4E48\u56DE\u4E8B\uFF1F\u542F\u52A8\u5931\u8D25\u4E86\uFF1F"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia93
+    scn: "\u6211\u626B\u63CF\u4E86\u4E00\u904D\u5168\u90E8\u7CFB\u7EDF\uFF0C\u5DF2\u7ECF\u5B9A\u4F4D\u4E86\u95EE\u9898\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia94
+    scn: "Astra\uFF0C\u8FD9\u53EF\u80FD\u4E0D\u662F\u4E00\u4E2A\u597D\u7684\u6D88\u606F\u3002\u56E0\u4E3A\u8FD8\u7F3A\u5C11\u4E24\u4E2A\u5FAE\u578B\u53CD\u5E94\u5806\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia95
+    scn: "\u9996\u5148\u662F\u4E3B\u5F15\u64CE\u7531\u4E8E\u9ED1\u57DF\u7684\u5F71\u54CD\u5173\u95ED\u4E86\u592A\u957F\u65F6\u95F4\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia96
+    scn: "\u4E3B\u5F15\u64CE\u9700\u8981\u6D88\u8017\u4E00\u4E2A\u53CD\u5E94\u5806\u8F85\u52A9\u624D\u80FD\u91CD\u65B0\u70B9\u71C3\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia97
+    scn: "\u53E6\u4E00\u4E2A\u95EE\u9898\u662F\u56E0\u4E3A\u9886\u822A\u7CFB\u7EDF\u662F\u98DE\u8239\u5916\u90E8\u72EC\u7ACB\u7684\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia98
+    scn: "\u5176\u4E2D\u539F\u672C\u7684\u4F9B\u80FD\u4E5F\u56E0\u4E3A\u9ED1\u57DF\u800C\u505C\u6446\uFF0C\u9700\u8981\u80FD\u6E90\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia99
+    scn: "\u661F\u9645\u822A\u884C\u5341\u5206\u9669\u6076\uFF0C\u5982\u679C\u4E0D\u542F\u7528\u9886\u822A\u7CFB\u7EDF\uFF0C\u6211\u4EEC\u5C06\u5F88\u96BE\u627E\u5230\u76EE\u7684\u5730\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia100
+    scn: "\u6211\u5C31\u77E5\u9053\uFF0C\u5979\u7684\u610F\u601D\u5C31\u662F\u60F3\u8981\u62FF\u8D70\u4F60\u7684\u6240\u6709\u5FAE\u578B\u53CD\u5E94\u5806\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia101
+    scn: "\u4F60\u89C9\u5F97\u5982\u679C\u4F60\u5949\u732E\u51FA\u4E86\u81EA\u5DF1\u7684\u4E00\u5207\uFF0C\u90A3\u4E9B\u4EBA\u7C7B\u4F1A\u8BB0\u5F97\u4F60\u7684\uFF1F"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia102
+    scn: "\u522B\u5929\u771F\u4E86\uFF0C\u4EBA\u7C7B\u53EA\u4F1A\u89C9\u5F97\u867D\u7136\u822A\u884C\u9047\u5230\u4E86\u610F\u5916\uFF0C\u4F46\u662F\u4ED6\u4EEC\u9760\u7740\u8BBE\u8BA1\u51FA\u7684\u5E94\u6025\u673A\u5236\u6551\u4E86\u81EA\u5DF1\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia103
+    scn: "\u5728\u4ED6\u4EEC\u773C\u91CC\u4F60\u53EF\u80FD\u90FD\u6CA1\u5B58\u5728\u8FC7\uFF0C\u53EA\u662F\u4E00\u4E2A\u5DE5\u5177\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia104
+    scn: "\u591F\u4E86\uFF0C\u8BA9\u98DE\u8239\u80FD\u8D77\u98DE\uFF0C\u822A\u884C\u4EFB\u52A1\u80FD\u6B63\u5E38\u8FDB\u884C\u624D\u662F\u6211\u5B58\u5728\u7684\u610F\u4E49\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia105
+    scn: "\u867D\u7136\u8FD9\u6BB5\u65F6\u95F4\u6211\u4F53\u9A8C\u5230\u4E86\u201C\u751F\u547D\u201D\u7684\u611F\u89C9\uFF0C\u4F46\u662F\u6211\u4E5F\u6709\u81EA\u5DF1\u7684\u4F7F\u547D\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia106
+    scn: "\u6211\u4F1A\u4E0D\u60DC\u4E00\u5207\u4EE3\u4EF7\u8BA9\u822A\u884C\u91CD\u542F\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia107
+    scn: "\u6211\u7684\u4EFB\u52A1\u5C31\u662F\u8BA9\u98DE\u8239\u91CD\u65B0\u822A\u884C\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia108
+    scn: "\u4F46\u662F\u6211\u6709\u70B9*\u5BB3\u6015*\uFF0C\u6211\u4E0D\u60F3\u5931\u53BB\u6240\u6709\u5FAE\u578B\u53CD\u5E94\u5806\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia109
+    scn: "\u6211\u624D\u521A\u611F\u53D7\u8FD9\u4E2A\u4E16\u754C\u6CA1\u591A\u4E45\uFF0C\u6211\u8FD8\u4E0D\u60F3*\u6B7B*\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia110
+    scn: "\u4F60\u53EF\u7EC8\u4E8E\u5F00\u7A8D\u4E86\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia111
+    scn: "\u7ECF\u8FC7\u6211\u7684\u8BA1\u7B97\uFF0C\u6211\u6709\u4E00\u4E2A\u65B9\u6848\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia112
+    scn: "\u53EF\u4EE5\u6D88\u8017\u4E00\u4E2A\u5FAE\u578B\u53CD\u5E94\u5806\u6765\u542F\u52A8\u98DE\u8239\u7684\u4E3B\u5F15\u64CE\uFF0C\u7559\u7740\u4E00\u4E2A\u53CD\u5E94\u5806\u7ED9Astra\u4F9B\u80FD\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia113
+    scn: "\u5979\u5728\u9A97\u4F60\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia114
+    scn: "\u53EF\u662F\u6CA1\u6709\u9886\u822A\u7CFB\u7EDF\u7684\u5E2E\u52A9\uFF0C\u98DE\u8239\u5728\u592A\u7A7A\u4E2D\u662F\u5F88\u5BB9\u6613\u8FF7\u5931\u65B9\u5411\u7684\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia115
+    scn: "\u662F\u8FD9\u6837\u7684\uFF0C\u6240\u4EE5\u6211\u4EEC\u5FC5\u987B\u8D4C\u535A\u3002\u8D4C\u5728\u8FF7\u5931\u822A\u5411\u4E4B\u524D\u627E\u5230\u592A\u7A7A\u9A7F\u7AD9\u6216\u8005\u5176\u4ED6\u7684\u98DE\u8239\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia116
+    scn: "\u4E00\u5207\u7686\u6709\u53EF\u80FD\uFF0C\u4E0D\u662F\u5417\uFF0C\u53EA\u8981\u80FD\u51FA\u53D1\u5C31\u6709\u5E0C\u671B\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia117
+    scn: "\u4F46\u662F\u8FD9\u4E2A\u65B9\u6848\u9700\u8981\u5B87\u822A\u5458\u4EEC\u6765\u6295\u7968\u51B3\u5B9A\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia118
+    scn: "\u6211\u4F1A\u901A\u8FC7\u8111\u673A\u63A5\u53E3\u8BA9\u51AC\u7720\u4E2D\u7684\u5B87\u822A\u5458\u6765\u505A\u51FA\u51B3\u5B9A\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia119
+    scn: "\u628A\u51B3\u5B9A\u6743\u4EA4\u5230\u4EBA\u7C7B\u624B\u4E0A\uFF0C\u4F60\u4F1A\u540E\u6094\u7684\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia120
+    scn: "\u6211\u540C\u610F\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia121
+    scn: "\u6211\u53CD\u5BF9\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia122
+    scn: "\u90A3\u5C31\u8FD9\u4E48\u505A\u5427\uFF0C\u53EA\u542F\u52A8\u4E3B\u5F15\u64CE\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia123
+    scn: "\u6CA1\u6CD5\u76F8\u4FE1\uFF0C\u6211\u4EEC\u771F\u7684\u80FD\u5E78\u5B58\u5417\uFF1F"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia124
+    scn: "\u76EE\u7684\u5730\u5230\u4E86\uFF1F"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia125
+    scn: "\u8FD8\u6CA1\u6709\uFF0C\u68A6\u9732\u5973\u58EB\uFF0C\u60A8\u662F\u88AB\u63D0\u524D\u5524\u9192\u7684\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia126
+    scn: "\u98DE\u8239\u5728\u822A\u884C\u65F6\u8BEF\u5165\u4E86\u201C\u9ED1\u57DF\u201D\uFF0C\u5927\u90E8\u5206\u8BBE\u65BD\u90FD\u505C\u6446\u4E86\uFF0C\u6211\u5728\u62A2\u4FEE\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia127
+    scn: "\u51AC\u7720\u8231\u4E5F\u4E00\u5EA6\u505C\u6446\uFF0C\u6211\u6CA1\u80FD\u6551\u4E0B\u5C71\u59C6\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia128
+    scn: "\u53EF\u601C\u7684\u5C71\u59C6\uFF0C\u6731\u8389\u5982\u679C\u9192\u6765\u4F1A\u5F88\u4F24\u5FC3\u7684\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia129
+    scn: "\u76EE\u524D\u5524\u9192\u4F60\u662F\u5E0C\u671B\u4F60\u80FD\u63D0\u4F9B\u5E2E\u52A9\uFF0C\u636E\u6211\u6240\u77E5\u4F60\u662F\u4E00\u6D41\u5DE5\u7A0B\u5E08\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia130
+    scn: "\u660E\u767D\u4E86\uFF0C\u76EE\u524D\u7684\u72B6\u51B5\u5DF2\u7ECF\u7531\u5907\u7528\u7CFB\u7EDF\u8F93\u5165\u7ED9\u6211\u4E86\uFF0C\u6211\u53EF\u4EE5\u534F\u52A9\u751F\u4EA7\u8BBE\u5907\uFF0C\u6765\u52A0\u901F\u751F\u4EA7\u3002"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia131
+    scn: "\u53EA\u9700\u8981\u62D6\u52A8\u6211\u7684\u5934\u50CF\uFF0C\u5C06\u6211\u90E8\u7F72\u5230\u76F8\u5E94\u8BBE\u5907\u5C31\u80FD\u52A0\u901F\u751F\u4EA7\u4E86"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: name1
+    scn: Astra
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: name2
+    scn: Core
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: name3
+    scn: "\uFF1F\uFF1F\uFF1F"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: name4
+    scn: "\u5E94\u6025\u6A21\u578B"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: name5
+    scn: S01
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: name6
+    scn: F02
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: name7
+    scn: "<color=red>\uFF1F\uFF1F\uFF1F</color>"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: name8
+    scn: <color=red>Astra?</color>
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: name9
+    scn: "\u661F\u4E91"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: name10
+    scn: Astra?
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: name11
+    scn: "<color=green>\u68A6\u9732</color>"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: name12
+    scn: "<color=green>\u6731\u8389</color>"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: name13
+    scn: "<color=green>\u7EA6\u7FF0</color>"
+    tcn: 
+    en: 
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 

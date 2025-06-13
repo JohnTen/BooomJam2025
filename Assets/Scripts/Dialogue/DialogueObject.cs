@@ -27,17 +27,13 @@ public class DialogueObject : MonoBehaviour
             portrait.sprite = portraitSprite;
         }
         
-        nameText.text = entry.actorName;
-        text.text = entry.text;
+        nameText.text = TextDatabase.Instance.GetLNItem(entry.actorName);
+        text.text = TextDatabase.Instance.GetLNItem(entry.text);
         if (entry.useTyping)
         {
             textTyping.isScramble = entry.useScramble;
-            float time = entry.text.Length / (textTyping.characterPerSecond * entry.typingSpeed);
-            textTyping.TypingEffect(entry.text, time);
-        }
-        else
-        {
-            text.text = entry.text;
+            float time = text.text.Length / (textTyping.characterPerSecond * entry.typingSpeed);
+            textTyping.TypingEffect(text.text, time);
         }
     }
 

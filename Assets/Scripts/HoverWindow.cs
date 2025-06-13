@@ -33,8 +33,8 @@ public class HoverWindow : MonoBehaviour
 
         if (showHoverWindow != null && !Input.GetMouseButton(0))
         {
-            title.text = showHoverWindow.Title;
-            description.text = showHoverWindow.Description;
+            title.text = TextDatabase.Instance.GetLNItem(showHoverWindow.Title);
+            description.text = TextDatabase.Instance.GetLNItem(showHoverWindow.Description);
             content.SetActive(true);
         }
         else

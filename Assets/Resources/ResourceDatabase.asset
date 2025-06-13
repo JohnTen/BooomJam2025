@@ -14,18 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resources:
   - uid: Data
-    name: "\u6570\u636E"
-    description: 
+    name: resource_01Name
+    description: resource_01Desc
     icon: {fileID: 21300000, guid: 51a864e79f39d7148894dae1d01048b7, type: 3}
   - uid: Metal
-    name: "\u91D1\u5C5E\u77FF\u77F3"
-    description: 
+    name: resource_02Name
+    description: resource_02Desc
     icon: {fileID: 21300000, guid: 6e605c567ca2df54b828d42f2aa3efff, type: 3}
   - uid: Material
-    name: "\u91D1\u5C5E\u6750\u6599"
-    description: 
+    name: resource_03Name
+    description: resource_03Desc
     icon: {fileID: 21300000, guid: ef0d843f87d481344970bd24af7fd51b, type: 3}
   - uid: CompPower
-    name: "\u7B97\u529B"
-    description: 
+    name: resource_04Name
+    description: resource_04Desc
     icon: {fileID: 21300000, guid: a8e31679401d0444fa6a353b4c783983, type: 3}

@@ -55,6 +55,7 @@ public class CoreWarnings : MonoBehaviour
         foreach (CoreSlotType slotType in Enum.GetValues(typeof(CoreSlotType)))
         {
             var warning = coreWarnings[slotType][GameManager.Instance.coreStage[slotType]];
+            warning = TextDatabase.Instance.GetLNItem(warning);
             if (string.IsNullOrEmpty(warning))
             {
                 continue;

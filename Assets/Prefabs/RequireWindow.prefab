@@ -468,6 +468,7 @@ GameObject:
   - component: {fileID: 1842952219886848839}
   - component: {fileID: 612203687946548119}
   - component: {fileID: 3780753559949823790}
+  - component: {fileID: 3278020887063329982}
   m_Layer: 5
   m_Name: Desc
   m_TagString: Untagged
@@ -611,6 +612,47 @@ MonoBehaviour:
   levelFromGameManager: 1
   useRandomSeed: 1
   AutoUpdate: 1
+--- !u!114 &3278020887063329982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2621058929040400912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f3c6a61489c7f4f9673609249a9cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textID: ui04
+  legacyText: {fileID: 0}
+  tmpText: {fileID: 612203687946548119}
+  fonts:
+    keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+    vals:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  tmpFonts:
+    keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+    vals:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
 --- !u!1 &3461273699466166192
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,6 +1286,7 @@ GameObject:
   - component: {fileID: 5217591218041031917}
   - component: {fileID: 5217591218041031916}
   - component: {fileID: 5217591218041031918}
+  - component: {fileID: 2094290418001044348}
   m_Layer: 5
   m_Name: Desc
   m_TagString: Untagged
@@ -1387,6 +1430,47 @@ MonoBehaviour:
   levelFromGameManager: 1
   useRandomSeed: 1
   AutoUpdate: 1
+--- !u!114 &2094290418001044348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5217591218041031906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f3c6a61489c7f4f9673609249a9cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textID: ui01
+  legacyText: {fileID: 0}
+  tmpText: {fileID: 5217591218041031916}
+  fonts:
+    keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+    vals:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  tmpFonts:
+    keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+    vals:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
 --- !u!1 &5217591218095078369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,6 +1559,7 @@ GameObject:
   - component: {fileID: 5217591218114138193}
   - component: {fileID: 5217591218114138192}
   - component: {fileID: 5217591218114138194}
+  - component: {fileID: 8216343260312001824}
   m_Layer: 5
   m_Name: Desc
   m_TagString: Untagged
@@ -1618,6 +1703,47 @@ MonoBehaviour:
   levelFromGameManager: 1
   useRandomSeed: 1
   AutoUpdate: 1
+--- !u!114 &8216343260312001824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5217591218114138198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f3c6a61489c7f4f9673609249a9cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textID: 
+  legacyText: {fileID: 0}
+  tmpText: {fileID: 5217591218114138192}
+  fonts:
+    keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+    vals:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  tmpFonts:
+    keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+    vals:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
 --- !u!1 &5217591218196326054
 GameObject:
   m_ObjectHideFlags: 0
@@ -2627,6 +2753,7 @@ GameObject:
   - component: {fileID: 5217591219058925356}
   - component: {fileID: 5217591219058925358}
   - component: {fileID: 5217591219058925357}
+  - component: {fileID: 8691666278980512029}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2752,6 +2879,47 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8691666278980512029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5217591219058925347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f3c6a61489c7f4f9673609249a9cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textID: ui13
+  legacyText: {fileID: 0}
+  tmpText: {fileID: 5217591219058925357}
+  fonts:
+    keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+    vals:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  tmpFonts:
+    keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+    vals:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
 --- !u!1 &5217591219124696455
 GameObject:
   m_ObjectHideFlags: 0
@@ -3591,6 +3759,7 @@ GameObject:
   - component: {fileID: 5217591219573876175}
   - component: {fileID: 5217591219573876174}
   - component: {fileID: 5217591219573876168}
+  - component: {fileID: 4851193796690863580}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3734,6 +3903,47 @@ MonoBehaviour:
   levelFromGameManager: 1
   useRandomSeed: 1
   AutoUpdate: 1
+--- !u!114 &4851193796690863580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5217591219573876172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f3c6a61489c7f4f9673609249a9cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textID: ui15
+  legacyText: {fileID: 0}
+  tmpText: {fileID: 5217591219573876174}
+  fonts:
+    keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+    vals:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  tmpFonts:
+    keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+    vals:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
 --- !u!1 &5388585781233313840
 GameObject:
   m_ObjectHideFlags: 0

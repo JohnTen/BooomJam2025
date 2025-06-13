@@ -435,30 +435,30 @@ MonoBehaviour:
   coreWarnings:
     keys: 000000000100000002000000030000000400000005000000
     vals:
-    - Green: 
-      Yellow: "<color=yellow>\u8BB0\u5FC6\u7CFB\u7EDF<\u9884\u8B66>\uFF1A\u5C0F\u90E8\u5206\u663E\u793A\u4FE1\u606F\u4E22\u5931</color>"
-      Red: "<color=red>\u8BB0\u5FC6\u7CFB\u7EDF<\u9AD8\u5371>\uFF1A\u90E8\u5206\u663E\u793A\u4FE1\u606F\u4E22\u5931</color>"
-      Zero: "<color=blue>\u8BB0\u5FC6\u7CFB\u7EDF<\u5D29\u6E83>\uFF1A\u5927\u90E8\u5206\u663E\u793A\u4FE1\u606F\u4E22\u5931</color>"
-    - Green: 
-      Yellow: "<color=yellow>\u611F\u77E5\u7CFB\u7EDF<\u9884\u8B66>\uFF1A\u753B\u9762\u8F7B\u5FAE\u663E\u793A\u5F02\u5E38</color>"
-      Red: "<color=red>\u611F\u77E5\u7CFB\u7EDF<\u9AD8\u5371>\uFF1A\u753B\u9762\u663E\u793A\u5F02\u5E38</color>"
-      Zero: "<color=blue>\u611F\u77E5\u7CFB\u7EDF<\u5D29\u6E83>\uFF1A\u753B\u9762\u4E25\u91CD\u663E\u793A\u5F02\u5E38</color>"
-    - Green: 
-      Yellow: "<color=yellow>\u8FD0\u52A8\u7CFB\u7EDF<\u9884\u8B66>\uFF1A\u5149\u6807\u79FB\u52A8\u8F7B\u5FAE\u53D8\u6162</color>"
-      Red: "<color=red>\u8FD0\u52A8\u7CFB\u7EDF<\u9AD8\u5371>\uFF1A\u5149\u6807\u79FB\u52A8\u53D8\u6162</color>"
-      Zero: "<color=blue>\u8FD0\u52A8\u7CFB\u7EDF<\u5D29\u6E83>\uFF1A\u5149\u6807\u4E25\u91CD\u53D8\u6162</color>"
-    - Green: 
-      Yellow: "<color=yellow>\u51B7\u5374\u7CFB\u7EDF<\u9884\u8B66>\uFF1A\u6838\u5FC3\u53CD\u5E94\u5806\u5C0F\u6982\u7387\u505C\u673A</color>"
-      Red: "<color=red>\u51B7\u5374\u7CFB\u7EDF<\u9AD8\u5371>\uFF1A\u6838\u5FC3\u53CD\u5E94\u5806\u6709\u6982\u7387\u505C\u673A</color>"
-      Zero: "<color=blue>\u51B7\u5374\u7CFB\u7EDF<\u5D29\u6E83>\uFF1A\u6838\u5FC3\u53CD\u5E94\u5806\u6709\u5F88\u5927\u6982\u7387\u505C\u673A</color>"
-    - Green: 
-      Yellow: "<color=yellow>\u534F\u8C03\u7CFB\u7EDF<\u9884\u8B66>\uFF1A\u6838\u5FC3\u53CD\u5E94\u5806\u90E8\u7F72\u65F6\u95F4\u7565\u5FAE\u589E\u52A0</color>"
-      Red: "<color=red>\u534F\u8C03\u7CFB\u7EDF<\u9AD8\u5371>\uFF1A\u6838\u5FC3\u53CD\u5E94\u5806\u90E8\u7F72\u65F6\u95F4\u589E\u52A0</color>"
-      Zero: "<color=blue>\u534F\u8C03\u7CFB\u7EDF<\u5D29\u6E83>\uFF1A\u6838\u5FC3\u53CD\u5E94\u5806\u90E8\u7F72\u65F6\u95F4\u5927\u5E45\u589E\u52A0</color>"
-    - Green: 
-      Yellow: "<color=yellow>\u9053\u5FB7\u7CFB\u7EDF<\u9884\u8B66>\uFF1A\uFF08^_^\uFF09</color>"
-      Red: "<color=red>\u9053\u5FB7\u7CFB\u7EDF<\u9AD8\u5371>\uFF1A(\u2299\u02CD\u2299)</color>"
-      Zero: "<color=blue>\u9053\u5FB7\u7CFB\u7EDF<\u5D29\u6E83>\uFF1A(\u53E3\u02CD\u53E3)</color>"
+    - Green: memoryCoreWarning_Green
+      Yellow: memoryCoreWarning_Yellow
+      Red: memoryCoreWarning_Red
+      Zero: memoryCoreWarning_Zero
+    - Green: sensorCoreWarning_Green
+      Yellow: sensorCoreWarning_Yellow
+      Red: sensorCoreWarning_Red
+      Zero: sensorCoreWarning_Zero
+    - Green: motionCoreWarning_Green
+      Yellow: motionCoreWarning_Yellow
+      Red: motionCoreWarning_Red
+      Zero: motionCoreWarning_Zero
+    - Green: coolingCoreWarning_Green
+      Yellow: coolingCoreWarning_Yellow
+      Red: coolingCoreWarning_Red
+      Zero: coolingCoreWarning_Zero
+    - Green: controlCoreWarning_Green
+      Yellow: controlCoreWarning_Yellow
+      Red: controlCoreWarning_Red
+      Zero: controlCoreWarning_Zero
+    - Green: ethicCoreWarning_Green
+      Yellow: ethicCoreWarning_Yellow
+      Red: ethicCoreWarning_Red
+      Zero: ethicCoreWarning_Zero
 --- !u!222 &8050576031382897658
 CanvasRenderer:
   m_ObjectHideFlags: 0

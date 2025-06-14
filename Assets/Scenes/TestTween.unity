@@ -27061,65 +27061,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816466738}
   m_CullTransparentMesh: 1
---- !u!1 &819584421 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5217591218041031906, guid: 47c7493eaff1f7f4f9f6467ea802462e,
-    type: 3}
-  m_PrefabInstance: {fileID: 416192518}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &819584424 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5217591218041031916, guid: 47c7493eaff1f7f4f9f6467ea802462e,
-    type: 3}
-  m_PrefabInstance: {fileID: 416192518}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 819584421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &819584426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 819584421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9f3c6a61489c7f4f9673609249a9cf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _textID: ui01
-  legacyText: {fileID: 0}
-  tmpText: {fileID: 819584424}
-  fonts:
-    keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
-    vals:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  tmpFonts:
-    keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
-    vals:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
 --- !u!1 &820036590
 GameObject:
   m_ObjectHideFlags: 0
@@ -65438,10 +65379,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1402119814}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: _textID
-      value: ui04
-      objectReference: {fileID: 0}
     - target: {fileID: 5217591217576189016, guid: 47c7493eaff1f7f4f9f6467ea802462e,
         type: 3}
       propertyPath: m_AnchorMax.y

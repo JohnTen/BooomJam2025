@@ -19,9 +19,9 @@ public class DraggableObjEffect : MonoBehaviour
 
     private void Update()
     {
-        if (VirtualCursor.Instance.raycastResults.Count > 0)
+        if (VirtualCursor.RaycastResults.Count > 0)
         {
-            if (VirtualCursor.Instance.raycastResults[0].gameObject == gameObject &&
+            if (VirtualCursor.RaycastResults[0].gameObject == gameObject &&
                 draggable.CanDrag &&
                 !draggable.IsDragging)
             {

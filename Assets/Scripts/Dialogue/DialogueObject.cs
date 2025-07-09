@@ -29,6 +29,13 @@ public class DialogueObject : MonoBehaviour
         
         nameText.text = TextDatabase.Instance.GetLNItem(entry.actorName);
         text.text = TextDatabase.Instance.GetLNItem(entry.text);
+        if (entry.textPostProcessors.Count > 0)
+        {
+            foreach (var processor in entry.textPostProcessors)
+            {
+                text.text = processor(text.text);
+            }
+        }
         if (entry.useTyping)
         {
             textTyping.isScramble = entry.useScramble;

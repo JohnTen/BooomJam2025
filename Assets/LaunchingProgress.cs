@@ -11,6 +11,7 @@ public class LaunchingProgress : MonoBehaviour
     public float speed = 25f;
     public float percent = 0.5f;
     public TextMeshProUGUI text;
+    public MultiLanguageText MLT;
 
     float targetValue = 0f;
     bool once = true;
@@ -29,7 +30,8 @@ public class LaunchingProgress : MonoBehaviour
 
         if (slider.value == slider.maxValue && once)
         {
-            text.text = "成功起飞!";
+            //text.text = "成功起飞!";
+            MLT.textID = "ui57";
             once = false;
             endEvent.Invoke();
         }

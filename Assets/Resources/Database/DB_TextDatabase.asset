@@ -30,13 +30,13 @@ MonoBehaviour:
   defaultTmpFonts:
     keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
     vals:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 11400000, guid: fca9aa24a005806499ec833ad99c01f6, type: 2}
+    - {fileID: 11400000, guid: fca9aa24a005806499ec833ad99c01f6, type: 2}
+    - {fileID: 11400000, guid: fca9aa24a005806499ec833ad99c01f6, type: 2}
+    - {fileID: 11400000, guid: fca9aa24a005806499ec833ad99c01f6, type: 2}
+    - {fileID: 11400000, guid: fca9aa24a005806499ec833ad99c01f6, type: 2}
+    - {fileID: 11400000, guid: fca9aa24a005806499ec833ad99c01f6, type: 2}
+    - {fileID: 11400000, guid: fca9aa24a005806499ec833ad99c01f6, type: 2}
+    - {fileID: 11400000, guid: fca9aa24a005806499ec833ad99c01f6, type: 2}
+    - {fileID: 11400000, guid: fca9aa24a005806499ec833ad99c01f6, type: 2}
+    - {fileID: 11400000, guid: fca9aa24a005806499ec833ad99c01f6, type: 2}

@@ -102,6 +102,9 @@ public class DialogueEntry
     // 是否存在条件
     public bool HasCondition => waitForCondition != null;
 
+    // 文本后处理
+    public List<Func<string, string>> textPostProcessors = new List<Func<string, string>>();
+
     public DialogueEntry(string instructionID, DialogueEntryType type, string portriat, string actorName, string text)
     {
         this.instructionID = instructionID;
@@ -353,7 +356,7 @@ public class DialogueEntry
                     // 触发事件使得反应堆消失
                     triggerUnityEvents = new List<string>{"Hide Shell"},
                     masks = new List<MaskSetting>{
-                    new MaskSetting(new Vector2(-699f, -26.439f), new Vector2(480f, 350f)),
+                    new MaskSetting(new Vector2(-699f, -60.439f), new Vector2(480f, 350f)),
                     },},
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
@@ -362,7 +365,7 @@ public class DialogueEntry
                 "dia19")//"目前急需数据来修复冬眠仓，得借用你的反应堆来供能了。"
                 {pauseGame=true,
                  masks = new List<MaskSetting>{
-                 new MaskSetting(new Vector2(-611f, 0f), new Vector2(100f, 100f)),},
+                 new MaskSetting(new Vector2(-611f, -33f), new Vector2(100f, 100f)),},
                 },
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
@@ -417,7 +420,7 @@ public class DialogueEntry
                 "dia23")//"最后我必须要提醒你，你的系统数值下降了，"
                 { pauseGame=true,
                     masks = new List<MaskSetting>{
-                    new MaskSetting(new Vector2(-699f, -26.439f), new Vector2(480f, 350f)),
+                    new MaskSetting(new Vector2(-699f, -60.439f), new Vector2(480f, 350f)),
                     },},
             new DialogueEntry("",
                 DialogueEntryType.ClickAnywhere,
@@ -664,13 +667,14 @@ public class DialogueEntry
                         }
                     },
                     condition = (int index, DialogueEntry entry, object[] args) => {
+                        entry.textPostProcessors.Clear();
                         if (index == EventConstant.OnExploreResult)
                         {
                             var resources = args[0] as List<StrIntPair>;
                             var metal = resources.Find(resource => resource.Key == "Metal");
                             if (metal != null)
                             {
-                                entry.text =  $"探索完成，这次我找到了{metal.Value}个金属矿石，可以用于维修飞船。";
+                                entry.textPostProcessors.Add(text => text.Replace("<n>", metal.Value.ToString()));
                             }
                         }
                         return false;
@@ -1390,37 +1394,6 @@ public class DialogueEntry
         BuildSeriesEntries(stage0f1ID, stage0f1Entries);
         collections.AddRange(stage0f1Entries);
 
-        printToFile(collections);
-
         return collections;
-    }
-
-    private static void printToFile(List<DialogueEntry> entries)
-    {
-        string path = Application.dataPath + "/DialogueOutput.txt";
-        using (System.IO.StreamWriter writer = new System.IO.StreamWriter(path))
-        {
-            List<string> nameList = new List<string>();
-            foreach (var entry in entries)
-            {
-                if (!string.IsNullOrEmpty(entry.actorName))
-                {
-                    if (!nameList.Contains(entry.actorName))
-                    {
-                        nameList.Add(entry.actorName);
-                    }
-                }
-                if (!string.IsNullOrEmpty(entry.text))
-                {
-                    writer.WriteLine(entry.text);
-                }
-            }
-
-            foreach (var name in nameList)
-            {
-                writer.WriteLine(name);
-            }
-        }
-        Debug.Log($"对话内容已输出到: {path}");
     }
 }

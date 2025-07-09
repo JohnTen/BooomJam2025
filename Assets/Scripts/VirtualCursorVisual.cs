@@ -35,7 +35,7 @@ public class VirtualCursorVisual : MonoBehaviour
 
     void Update()
     {
-        draggable = VirtualCursor.Instance.FirstResult.gameObject?.GetComponent<Draggable>();
+        draggable = VirtualCursor.FirstResult.gameObject?.GetComponent<Draggable>();
 
         var targetCoreSizeDelta = coreSizeDelta;
         var targetRingSizeDelta = ringSizeDelta;

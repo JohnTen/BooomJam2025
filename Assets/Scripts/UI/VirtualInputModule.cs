@@ -467,5 +467,15 @@ namespace UnityEngine.EventSystems
 
 			return m_MouseState;
 		}
+
+		public PointerEventData GetCurrentPointerEventData(PointerEventData.InputButton button)
+		{
+			return m_MouseState.GetButtonState(button).eventData.buttonData;
+		}
+
+		public MouseButtonEventData GetCurrentMouseButtonEventData(PointerEventData.InputButton button)
+		{
+			return m_MouseState.GetButtonState(button).eventData;
+		}
 	}
 }

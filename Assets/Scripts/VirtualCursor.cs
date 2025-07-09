@@ -24,9 +24,9 @@ public class VirtualCursor : MonoSingleton<VirtualCursor>
 
     private static Vector2 lastPosition;
 
-    public List<RaycastResult> raycastResults = new List<RaycastResult>();
-    RaycastResult firstResult;
-    public RaycastResult FirstResult => firstResult;
+    // 使用统一的RaycastManager
+    public static List<RaycastResult> RaycastResults => RaycastManager.RaycastResults;
+    public static RaycastResult FirstResult => RaycastManager.FirstResult;
 
     void OnEnable()
     {
@@ -83,25 +83,12 @@ public class VirtualCursor : MonoSingleton<VirtualCursor>
         screenPosition = mainCamera.WorldToScreenPoint(cursor.position);
         lastPosition = cursor.anchoredPosition;
 
-        EventSystem.current.RaycastAll(new PointerEventData(EventSystem.current) { position = screenPosition }, raycastResults);
-        firstResult = FindFirstRaycast(raycastResults);
+        // 使用统一的RaycastManager，不再重复执行射线检测
+        // 射线检测现在由RaycastManager统一管理，通过raycastResults和firstResult属性访问
 
         if (GameManager.HasInstance)
         {
             CursorSpeedMultiplier = GameManager.Instance.GameProperty.CoreDragSpeed;
         }
-    }
-
-    private RaycastResult FindFirstRaycast(List<RaycastResult> candidates)
-    {
-        var candidatesCount = candidates.Count;
-        for (var i = 0; i < candidatesCount; ++i)
-        {
-            if (candidates[i].gameObject == null)
-                continue;
-
-            return candidates[i];
-        }
-        return new RaycastResult();
     }
 }

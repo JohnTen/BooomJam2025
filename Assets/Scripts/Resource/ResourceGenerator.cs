@@ -8,70 +8,73 @@ using UnityEngine.UI;
 
 public class ResourceGenerator : MonoBehaviour
 {
-    [SerializeField] Image progressBar;
-
-    [SerializeField] string generatorId;
+    [Header("Data")]
+    [SerializeField] private ResourceGeneratorData data;
     
-    [Header("Slot references")]
-    [SerializeField] List<ResourceSlot> inputSlots;
-    [SerializeField] List<ECoreSlot> eCoreSlots;
-    [SerializeField] CharacterSlot accCharacterSlot;
-    [SerializeField] ResourceSlot outputSlot;
-
-    [Header("Convenient settings")]
-    [SerializeField] List<string> inputResourceids;
-    [SerializeField] string outputResourceid;
-
-    [Header("Generation conditions")]
-    [SerializeField] List<int> inputAmounts;
-    [SerializeField] List<float> generateTimesFactor;
-    [SerializeField] float characterFactor;
-    [SerializeField] int outputAmount;
-
-    [SerializeField] float generateTime;
-
-    float generateTimer;
-
-    bool isGenerating = false;
+    [Header("UI Components")]
+    [SerializeField] private ResourceGeneratorUI uiComponent;
+    
+    // 运行时状态
+    private float generateTimer;
+    private bool isGenerating = false;
+    
+    // 公共接口
+    public ResourceGeneratorData Data => data;
     public bool IsGenerating => isGenerating;
+    public float CurrentProgress => data.currentProgress;
+    public float RemainingTime => data.remainingTime;
+    public string StatusDescription => data.StatusDescription;
 
     private void Start()
     {
-        progressBar.fillAmount = 0;
-
-        if (!inputResourceids.IsNullOrEmpty())
+        // 初始化数据
+        InitializeData();
+        
+        // 初始化UI
+        if (uiComponent != null)
         {
-            for (int i = 0; i < inputResourceids.Count && i < inputSlots.Count; i++)
+            uiComponent.Initialize(data);
+        }
+    }
+    
+    private void InitializeData()
+    {
+        // 设置输入槽位的资源ID
+        if (data.inputResourceIds != null && data.inputSlots != null)
+        {
+            for (int i = 0; i < data.inputResourceIds.Count && i < data.inputSlots.Count; i++)
             {
-                inputSlots[i].ResourceId = inputResourceids[i];
+                data.inputSlots[i].ResourceId = data.inputResourceIds[i];
             }
         }
 
-        if (!string.IsNullOrEmpty(outputResourceid))
+        // 设置输出槽位的资源ID
+        if (!string.IsNullOrEmpty(data.outputResourceId))
         {
-            outputSlot.ResourceId = outputResourceid;
+            data.outputSlot.ResourceId = data.outputResourceId;
         }
     }
 
     private void Update()
     {
-        if (CheckGenerationConditions())
+        // 更新数据状态
+        data.UpdateRuntimeState(isGenerating, generateTimer);
+        
+        if (data.CanGenerate)
         {
             if (!isGenerating)
             {
                 isGenerating = true;
-                EventDispatcher<string>.Dispatch(EventConstant.ResourceGeneratorStarted, generatorId);
+                EventDispatcher<string>.Dispatch(EventConstant.ResourceGeneratorStarted, data.generatorId);
             }
 
-            float factor = CalculateGenerationFactor();
+            float factor = data.CurrentGenerationFactor;
             generateTimer += Time.deltaTime * factor;
-            progressBar.fillAmount = generateTimer / generateTime;
 
-            if (generateTimer >= generateTime)
+            if (generateTimer >= data.generateTime)
             {
                 GenerateResource();
                 generateTimer = 0;
-                progressBar.fillAmount = 0;
             }
         }
         else
@@ -79,70 +82,33 @@ public class ResourceGenerator : MonoBehaviour
             if (isGenerating)
             {
                 isGenerating = false;
-                EventDispatcher<string>.Dispatch(EventConstant.ResourceGeneratorStopped, generatorId);
+                EventDispatcher<string>.Dispatch(EventConstant.ResourceGeneratorStopped, data.generatorId);
             }
             generateTimer = 0;
-            progressBar.fillAmount = 0;
         }
-    }
-
-    private bool CheckGenerationConditions()
-    {
-        // 检查输入槽位条件
-        for (int i = 0; i < inputSlots.Count; i++)
-        {
-            var resourceObj = inputSlots[i].ResourceInSlot;
-            if (resourceObj == null || resourceObj.Stack < inputAmounts[i])
-            {
-                return false;
-            }
-        }
-
-        // 检查是否有核心插槽或至少插入一个能量核心
-        bool hasECore = eCoreSlots.Count <= 0;
-        foreach (var eCoreSlot in eCoreSlots)
-        {
-            if (eCoreSlot.HasActiveObj)
-            {
-                hasECore = true;
-                break;
-            }
-        }
-
-        return hasECore;
-    }
-
-    private float CalculateGenerationFactor()
-    {
-        float totalFactor = generateTimesFactor[Mathf.Max(0, eCoreSlots.Count(slot => slot.HasActiveObj)-1)];
-        if (accCharacterSlot != null &&accCharacterSlot.HasObj)
-        {
-            totalFactor *= characterFactor;
-        }
-        
-        return totalFactor;
     }
 
     private void GenerateResource()
     {
         // 扣除输入资源
-        for (int i = 0; i < inputSlots.Count; i++)
+        for (int i = 0; i < data.inputSlots.Count; i++)
         {
-            var resourceObj = inputSlots[i].ResourceInSlot;
-            resourceObj.Stack -= inputAmounts[i];
+            var resourceObj = data.inputSlots[i].ResourceInSlot;
+            resourceObj.Stack -= data.inputAmounts[i];
         }
 
         // 添加输出资源
-        var outputResourceObj = outputSlot.ResourceInSlot;
+        var outputResourceObj = data.outputSlot.ResourceInSlot;
         if (outputResourceObj == null)
         {
             // 如果输出槽为空，创建新的资源
-            outputSlot.AddResource(outputAmount);
+            data.outputSlot.AddResource(data.outputAmount);
         }
         else
         {
             // 如果输出槽已有资源，增加数量
-            outputResourceObj.Stack += outputAmount;
+            outputResourceObj.Stack += data.outputAmount;
         }
     }
 }
+

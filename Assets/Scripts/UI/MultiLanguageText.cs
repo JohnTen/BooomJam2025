@@ -115,7 +115,16 @@ public class MultiLanguageText : MonoBehaviour
             return;
         }
 
-        var atext = textDatabase.GetLNItem(_textID);
+        string atext = string.Empty;
+        if (!textDatabase.ContainsID(_textID))
+        {
+            atext = _textID;
+        }
+        else
+        {
+            atext = textDatabase.GetLNItem(_textID);
+        }
+
         if (!textPostProcessors.IsNullOrEmpty())
         {
             foreach (var processor in textPostProcessors)
@@ -133,6 +142,11 @@ public class MultiLanguageText : MonoBehaviour
         {
             tmpText.text = atext;
             tmpText.font = tmpFonts[textDatabase.CurrentLanguage];
+        }
+        
+        if (GetComponent<TextTyping>().IsNotNull())
+        {
+            GetComponent<TextTyping>().content = atext;
         }
     }
 }

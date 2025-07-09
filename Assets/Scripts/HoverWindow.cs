@@ -23,7 +23,7 @@ public class HoverWindow : MonoBehaviour
     void Update()
     {
         ShowHoverWindow showHoverWindow = null;
-        foreach (var result in VirtualCursor.Instance.raycastResults)
+        foreach (var result in VirtualCursor.RaycastResults)
         {
             if (result.gameObject.TryGetComponent(out showHoverWindow))
             {

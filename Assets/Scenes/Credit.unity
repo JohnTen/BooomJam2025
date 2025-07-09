@@ -536,7 +536,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u8BBE\u8BA1 - \u9633\u86CB\u86CB\uFF0C\u68A6\u68A6\n\u7A0B\u5E8F - John\n\u7F8E\u672F
+  m_text: "\u8BBE\u8BA1 - Yang\uFF0C\u68A6\u68A6\n\u7A0B\u5E8F - John\n\u7F8E\u672F
     - \u5C71\u8C37\u6DF1\u5904\n\u6280\u672F\u7F8E\u672F - \u963F\u591C\n\u58F0\u97F3
     - \u8D85\u9AD8\u6821\u7EA7\u53EF\u8FBE\u9E2D"
   m_isRightToLeft: 0
@@ -800,7 +800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cdb01d697588bc49b6538902d58694f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!21 &738223799
+--- !u!21 &695036433
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -898,6 +898,8 @@ Material:
     - _X: 0
     - _Y: 0
     - _energy: 0
+    - _keep: 0
+    - _keep1: 0
     - _x: 1
     - _y: 0
     m_Colors:
@@ -1164,7 +1166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 738223799}
+  m_Material: {fileID: 695036433}
   m_Color: {r: 0.80784315, g: 0.8039216, b: 0.9529412, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1246,6 +1248,7 @@ GameObject:
   - component: {fileID: 1523151981}
   - component: {fileID: 1523151983}
   - component: {fileID: 1523151982}
+  - component: {fileID: 1523151984}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1371,6 +1374,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523151980}
   m_CullTransparentMesh: 1
+--- !u!114 &1523151984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523151980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f3c6a61489c7f4f9673609249a9cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textID: ui56
+  legacyText: {fileID: 0}
+  tmpText: {fileID: 1523151982}
+  fonts:
+    keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+    vals:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  tmpFonts:
+    keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+    vals:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
 --- !u!1001 &1641568830
 PrefabInstance:
   m_ObjectHideFlags: 0

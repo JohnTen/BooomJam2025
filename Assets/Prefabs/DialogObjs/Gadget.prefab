@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 847364127865838261}
   - component: {fileID: 847364127865838263}
   - component: {fileID: 847364127865838262}
+  - component: {fileID: 4987007988293679297}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -136,6 +137,47 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4987007988293679297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847364127865838260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f3c6a61489c7f4f9673609249a9cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textID: dia132
+  legacyText: {fileID: 0}
+  tmpText: {fileID: 847364127865838262}
+  fonts:
+    keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+    vals:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  tmpFonts:
+    keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+    vals:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
 --- !u!1 &847364128246467389
 GameObject:
   m_ObjectHideFlags: 0

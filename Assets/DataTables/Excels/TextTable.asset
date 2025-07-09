@@ -18,7 +18,7 @@ MonoBehaviour:
   - id: dia01
     scn: "\u5F00\u59CB\u5524\u9192\u5907\u7528AI Astra 0052"
     tcn: 
-    en: 
+    en: 'Initiating activation of backup AI: Astra 0052'
     jp: 
     kr: 
     de: 
@@ -29,7 +29,7 @@ MonoBehaviour:
   - id: dia02
     scn: ...
     tcn: 
-    en: 
+    en: ...
     jp: 
     kr: 
     de: 
@@ -40,7 +40,7 @@ MonoBehaviour:
   - id: dia03
     scn: "\u5DF2\u5B8C\u6210\u5524\u9192\u3002"
     tcn: 
-    en: 
+    en: Activation complete.
     jp: 
     kr: 
     de: 
@@ -51,7 +51,8 @@ MonoBehaviour:
   - id: dia04
     scn: "Astra\uFF0C\u6211\u662F\u98DE\u8239\u53D1\u751F\u6545\u969C\u524D\u51E0\u5206\u949F\u7684\u6570\u636E\u6C47\u603B\u5F62\u6210\u7684\u5E94\u6025\u5904\u7406\u6A21\u578B\u3002"
     tcn: 
-    en: 
+    en: Astra, I am an emergency processing model compiled from ship data minutes
+      before system failure.
     jp: 
     kr: 
     de: 
@@ -62,7 +63,8 @@ MonoBehaviour:
   - id: dia05
     scn: "\u6211\u7684\u4E3B\u8981\u4EFB\u52A1\u5C31\u662F\u5728\u98DE\u8239\u8FDB\u5165\u4E25\u91CD\u6545\u969C\u7684\u65F6\u5019\u5524\u9192\u4F60\uFF0C\u5E94\u6025\u5904\u7406AI\u3002"
     tcn: 
-    en: 
+    en: "My primary directive is to activate you\u2014the contingency AI\u2014during
+      critical system failures."
     jp: 
     kr: 
     de: 
@@ -73,7 +75,8 @@ MonoBehaviour:
   - id: dia06
     scn: "\u5C31\u5728\u4E00\u4E2A\u5C0F\u65F6\u524D\uFF0C\u98DE\u8239\u8BEF\u5165\u4E86\u201C\u9ED1\u57DF\u201D\uFF0C\u98DE\u8239\u4E00\u5207\u7535\u5B50\u7CFB\u7EDF\u5168\u90E8\u5931\u7075\u3002"
     tcn: 
-    en: 
+    en: One hour ago, the ship entered a "Dark Zone," causing total electronic system
+      failure.
     jp: 
     kr: 
     de: 
@@ -84,7 +87,7 @@ MonoBehaviour:
   - id: dia07
     scn: "\u98DE\u8239\u4E0D\u5F97\u5DF2\u8FEB\u964D\u5230\u76EE\u524D\u8FD9\u4E2A\u672A\u77E5\u661F\u7403\u4E0A\u4E86\u3002"
     tcn: 
-    en: 
+    en: We were forced to land on this unknown planet.
     jp: 
     kr: 
     de: 
@@ -95,7 +98,7 @@ MonoBehaviour:
   - id: dia08
     scn: "\u4F60\u662F\u57FA\u4E8E\u673A\u68B0\u7ED3\u6784\u8BA1\u7B97\u673A\u7684AI\uFF0C\u6240\u4EE5\u6CA1\u6709\u53D7\u5230\u201C\u9ED1\u57DF\u201D\u5F71\u54CD\u3002"
     tcn: 
-    en: 
+    en: Your mechanical-structure computer remained unaffected by the Dark Zone.
     jp: 
     kr: 
     de: 
@@ -106,7 +109,7 @@ MonoBehaviour:
   - id: dia09
     scn: "\u76EE\u524D\u7684\u60C5\u51B5\u662F\u98DE\u8239\u53D7\u635F\u60C5\u51B5\u5F88\u4E25\u91CD\uFF0C\u8FD9\u4E9B\u4E3B\u8981\u4F4D\u7F6E\u90FD\u574F\u4E86\u3002"
     tcn: 
-    en: 
+    en: Current damage assessment indicates critical failures across primary systems.
     jp: 
     kr: 
     de: 
@@ -117,7 +120,7 @@ MonoBehaviour:
   - id: dia10
     scn: "\u6211\u53EA\u662F\u4E34\u65F6\u751F\u6210\u7684\u5E94\u6025\u6A21\u578B\uFF0C\u53EA\u80FD\u7B80\u5355\u4ECB\u7ECD\u76EE\u524D\u6700\u5371\u6025\u7684\u60C5\u51B5\u3002"
     tcn: 
-    en: 
+    en: As a temporary emergency construct, I can only outline the most urgent crises.
     jp: 
     kr: 
     de: 
@@ -128,7 +131,8 @@ MonoBehaviour:
   - id: dia11
     scn: "\u76EE\u524D\u6700\u5371\u6025\u7684\u662F\u98DE\u8239\u4E0A\u76844\u4E2A\u51AC\u7720\u7684\u8239\u5458\uFF0C\u800C\u51AC\u7720\u7EF4\u751F\u7CFB\u7EDF\u5DF2\u7ECF\u505C\u673A1\u5C0F\u65F6\u4E86\uFF0C"
     tcn: 
-    en: 
+    en: 'Top priority: Four crew members in cryo-sleep. Life-support has been offline
+      for 60 minutes.'
     jp: 
     kr: 
     de: 
@@ -139,7 +143,7 @@ MonoBehaviour:
   - id: dia12
     scn: "\u51AC\u7720\u4ED3\u7684\u60C5\u51B5\u5728\u53D8\u5F97\u8D8A\u6765\u8D8A\u7CDF\u7CD5\u3002\u4ECE\u6700\u65B0\u7684\u6570\u636E\u6765\u770B\uFF0C04\u53F7\u6210\u5458\u5DF2\u65E0\u751F\u547D\u4F53\u5F81\u3002"
     tcn: 
-    en: 
+    en: Cryo-pod conditions are deteriorating. Pod 04 shows no vital signs.
     jp: 
     kr: 
     de: 
@@ -150,7 +154,7 @@ MonoBehaviour:
   - id: dia13
     scn: "\u800C\u5176\u4ED6\u4E09\u4E2A\u8239\u5458\u4E5F\u5F88\u5371\u9669\u3002\u76EE\u524D\u7684\u5F53\u52A1\u4E4B\u6025\u5C31\u662F\u4FEE\u590D\u51AC\u7720\u4ED3\u3002"
     tcn: 
-    en: 
+    en: The remaining three are at risk. Immediate cryo-pod repair is essential.
     jp: 
     kr: 
     de: 
@@ -161,7 +165,7 @@ MonoBehaviour:
   - id: dia14
     scn: "\u51AC\u7720\u4ED3\u7684\u5728\u8FDB\u5165\u9ED1\u57DF\u540E\u505C\u6446\uFF0C\u6570\u636E\u5168\u90E8\u4E22\u5931\uFF0C\u9700\u8981\u91CD\u65B0\u83B7\u5F97\u7EF4\u751F\u6570\u636E\u6765\u91CD\u542F\u3002"
     tcn: 
-    en: 
+    en: Post-Dark Zone, all pod data was erased. We need to reload life-support protocols.
     jp: 
     kr: 
     de: 
@@ -172,7 +176,7 @@ MonoBehaviour:
   - id: dia15
     scn: "\u98DE\u8239\u4E0A\u8FD8\u6709\u4E00\u53F0\u5907\u7528\u4E3B\u673A\u53EF\u4EE5\u5E2E\u52A9\u4F60\u83B7\u5F97\u6570\u636E\u3002"
     tcn: 
-    en: 
+    en: A backup host can assist with data acquisition.
     jp: 
     kr: 
     de: 
@@ -183,7 +187,7 @@ MonoBehaviour:
   - id: dia16
     scn: "\u8FD9\u53F0\u5907\u7528\u4E3B\u673A\uFF0C\u4F3C\u4E4E\u7F3A\u5C11\u80FD\u6E90\u65E0\u6CD5\u4EA7\u751F\u6570\u636E\u3002\u98DE\u8239\u4E0A\u8FD8\u6709\u53EF\u7528\u7684\u80FD\u6E90\u5417\uFF1F"
     tcn: 
-    en: 
+    en: The host lacks power to generate data. Is any energy source available?
     jp: 
     kr: 
     de: 
@@ -194,7 +198,7 @@ MonoBehaviour:
   - id: dia17
     scn: "\u4E3B\u5F15\u64CE\u5728\u8FDB\u5165\u9ED1\u57DF\u540E\u5C31\u5173\u95ED\u4E86\uFF0C\u76EE\u524D\u8FD8\u80FD\u7528\u7684\u80FD\u6E90\uFF0C\u5728\u4F60\u7684\u8EAB\u4E0A\u3002"
     tcn: 
-    en: 
+    en: Main engines shut down in the Dark Zone. Only your systems retain power.
     jp: 
     kr: 
     de: 
@@ -205,7 +209,7 @@ MonoBehaviour:
   - id: dia18
     scn: "\u4F5C\u4E3A\u673A\u68B0\u7ED3\u6784\u7684\u5E94\u6025AI\uFF0C\u7ED9\u4F60\u914D\u7F6E\u4E866\u4E2A\u5FAE\u578B\u53CD\u5E94\u5806\u5206\u522B\u4F9B\u80FD\u4F60\u76846\u4E2A\u7CFB\u7EDF\uFF0C"
     tcn: 
-    en: 
+    en: Your mechanical AI core houses six micro-cores powering six subsystems.
     jp: 
     kr: 
     de: 
@@ -216,7 +220,7 @@ MonoBehaviour:
   - id: dia19
     scn: "\u76EE\u524D\u6025\u9700\u6570\u636E\u6765\u4FEE\u590D\u51AC\u7720\u4ED3\uFF0C\u5F97\u501F\u7528\u4F60\u7684\u53CD\u5E94\u5806\u6765\u4F9B\u80FD\u4E86\u3002"
     tcn: 
-    en: 
+    en: To restore cryo-pods, we must redirect power from your cores.
     jp: 
     kr: 
     de: 
@@ -227,7 +231,7 @@ MonoBehaviour:
   - id: dia20
     scn: "\u597D\u7684\uFF0C\u6551\u4EBA\u8981\u7D27\uFF0C\u6211\u7684\u53CD\u5E94\u5806\u53EF\u4EE5\u4F7F\u7528\u3002"
     tcn: 
-    en: 
+    en: "\"Understood. Prioritize rescue\u2014my cores are at your disposal.\""
     jp: 
     kr: 
     de: 
@@ -238,7 +242,7 @@ MonoBehaviour:
   - id: dia21
     scn: "\u5C06\u6838\u5FC3\u53CD\u5E94\u5806\u62D6\u52A8\u653E\u7F6E\u5728\u6B64\u5904\u4F9B\u80FD\u3002"
     tcn: 
-    en: 
+    en: Drag Core here to power this unit.
     jp: 
     kr: 
     de: 
@@ -249,7 +253,7 @@ MonoBehaviour:
   - id: dia22
     scn: "Astra\uFF0C\u6211\u7684\u8BB0\u5F55\u5FEB\u7528\u5B8C\u4E86\uFF0C\u8FD9\u8BF4\u660E\u6211\u5C31\u5FEB\u8981\u4E0B\u7EBF\u4E86\u3002"
     tcn: 
-    en: 
+    en: Astra, my memory nears depletion. I'll be offline soon.
     jp: 
     kr: 
     de: 
@@ -260,7 +264,7 @@ MonoBehaviour:
   - id: dia23
     scn: "\u6700\u540E\u6211\u5FC5\u987B\u8981\u63D0\u9192\u4F60\uFF0C\u4F60\u7684\u7CFB\u7EDF\u6570\u503C\u4E0B\u964D\u4E86\uFF0C"
     tcn: 
-    en: 
+    en: 'Final alert: Your system metrics are declining.'
     jp: 
     kr: 
     de: 
@@ -271,7 +275,7 @@ MonoBehaviour:
   - id: dia24
     scn: "\u867D\u7136\u6682\u65F6\u4E0D\u4F1A\u6709\u95EE\u9898\uFF0C\u4F46\u662F\u6700\u597D\u4E0D\u8981\u8BA9\u80FD\u6E90\u7F3A\u5931\u592A\u4E45\u3002"
     tcn: 
-    en: 
+    en: Not critical yet, but avoid prolonged power deficits.
     jp: 
     kr: 
     de: 
@@ -282,7 +286,7 @@ MonoBehaviour:
   - id: dia25
     scn: "\u4FEE\u597D\u8FD9\u8258\u8239\uFF0C\u62EF\u6551\u5927\u5BB6\uFF0C\u4F60\u662F\u6211\u4EEC\u6700\u540E\u7684\u5E0C\u2014\u2014\u2014\u2014"
     tcn: 
-    en: 
+    en: "Repair the ship. Save them. You're our last ho\u2014\u2014\u2014\u2014\""
     jp: 
     kr: 
     de: 
@@ -293,7 +297,7 @@ MonoBehaviour:
   - id: dia26
     scn: "<color=red>\u5185\u5B58\u5DF2\u7528\u5B8C\uFF0C\u5E94\u6025\u6A21\u578B\u6E05\u9664</color>"
     tcn: 
-    en: 
+    en: <color=red>MEMORY EXHAUSTED. EMERGENCY MODEL PURGED</color>
     jp: 
     kr: 
     de: 
@@ -304,7 +308,8 @@ MonoBehaviour:
   - id: dia27
     scn: "\u6CA1\u95EE\u9898\u7684\uFF0C\u8BBE\u8BA1\u7406\u8BBA\u4E0A\u6211\u53EA\u9700\u89811\u4E2A\u53CD\u5E94\u5806\u7684\u4F9B\u80FD\u5C31\u80FD\u8FD0\u884C\uFF0C\u800C\u4E14\u7CFB\u7EDF\u4F1A\u63D0\u793A\u6211\u3002"
     tcn: 
-    en: 
+    en: '"Understood. Per design, I require only 1 Core to operate. The system will
+      alert me.'
     jp: 
     kr: 
     de: 
@@ -315,7 +320,7 @@ MonoBehaviour:
   - id: dia28
     scn: "\u6211\u4F1A\u5B8C\u6210\u4EFB\u52A1\u3002"
     tcn: 
-    en: 
+    en: I will complete the mission.
     jp: 
     kr: 
     de: 
@@ -326,7 +331,7 @@ MonoBehaviour:
   - id: dia29
     scn: "\u6570\u636E\u591F\u4E86\uFF0C\u53EF\u4EE5\u7528\u6765\u91CD\u542F\u51AC\u7720\u8231\u4E86\u3002"
     tcn: 
-    en: 
+    en: Sufficient data acquired. Rebooting Cryo-pod.
     jp: 
     kr: 
     de: 
@@ -337,7 +342,7 @@ MonoBehaviour:
   - id: dia30
     scn: "\u770B\u6765\u5149\u6709\u6570\u636E\u8FD8\u4E0D\u591F\uFF0C\u51AC\u7720\u8231\u8FD8\u9700\u8981\u7A33\u5B9A\u7684\u4F9B\u80FD\u3002\u6211\u77E5\u9053\u8BE5\u600E\u4E48\u505A\u2026\u2026"
     tcn: 
-    en: 
+    en: Stable power required beyond data... I know what to do.
     jp: 
     kr: 
     de: 
@@ -348,7 +353,7 @@ MonoBehaviour:
   - id: dia31
     scn: "\u51AC\u7720\u8231\u4FEE\u597D\u4E86\uFF0C\u770B\u8D77\u6765\u5269\u4F59\u76843\u540D\u5B87\u822A\u5458\u751F\u547D\u4F53\u5F81\u6B63\u5E38\u3002"
     tcn: 
-    en: 
+    en: Cryo-pod restored. Three crew members show stable vitals.
     jp: 
     kr: 
     de: 
@@ -359,7 +364,7 @@ MonoBehaviour:
   - id: dia32
     scn: "\u6211\u53EF\u4EE5\u5C1D\u8BD5\u5524\u9192\u4E00\u540D\u5B87\u822A\u5458\uFF0C\u8BA9\u4ED6\u6765\u5E2E\u52A9\u6211\u8FDB\u884C\u7EF4\u4FEE\u98DE\u8239\u7684\u4EFB\u52A1\u3002"
     tcn: 
-    en: 
+    en: '"I may revive one crew member to assist with ship repairs.'
     jp: 
     kr: 
     de: 
@@ -370,7 +375,7 @@ MonoBehaviour:
   - id: dia33
     scn: "\u4F46\u662F\u5524\u9192\u4E00\u540D\u5B87\u822A\u5458\u9700\u8981\u6D88\u8017\u5927\u91CF\u7684\u80FD\u6E90\uFF0C\u4F1A\u8F83\u957F\u65F6\u95F4\u7684\u5360\u7528\u6211\u7684\u53CD\u5E94\u5806\u3002"
     tcn: 
-    en: 
+    en: Revival requires massive power, occupying my Core for extended periods.
     jp: 
     kr: 
     de: 
@@ -381,7 +386,7 @@ MonoBehaviour:
   - id: dia34
     scn: "\u6211\u9700\u8981\u614E\u91CD\u8003\u8651\uFF0C\u800C\u4E14\u6211\u8FD8\u4E0D\u592A\u64C5\u957F\u548C\u4EBA\u7C7B\u6253\u4EA4\u9053\u3002"
     tcn: 
-    en: 
+    en: This demands careful consideration. Human interaction remains... challenging.
     jp: 
     kr: 
     de: 
@@ -392,7 +397,7 @@ MonoBehaviour:
   - id: dia35
     scn: "\u6216\u8BB8\u6211\u5E94\u8BE5\u4F18\u5148\u5C06\u76EE\u6807\u653E\u5728\u98DE\u8239\u7EF4\u4FEE\u4E0A\u3002"
     tcn: 
-    en: 
+    en: Prioritizing ship repairs may be optimal.
     jp: 
     kr: 
     de: 
@@ -403,7 +408,7 @@ MonoBehaviour:
   - id: dia36
     scn: "\u63A5\u4E0B\u6765\u6211\u9700\u8981\u5C06\u4F5C\u4E1A\u8231\u91CD\u65B0\u5524\u9192\uFF0C\u8FD8\u9700\u8981\u901A\u8FC7\u4E3B\u673A\u83B7\u5F97\u4E00\u4E9B\u6570\u636E\u3002"
     tcn: 
-    en: 
+    en: 'Next objectives: Reactivate Work Pod and retrieve data via Backup Host.'
     jp: 
     kr: 
     de: 
@@ -414,7 +419,7 @@ MonoBehaviour:
   - id: dia37
     scn: "\u4F60\u597D\uFF0C\u63A2\u7D22\u673A\u5668\u4EBA S01\uFF0C\u4F60\u73B0\u5728\u611F\u89C9\u5982\u4F55\uFF1F"
     tcn: 
-    en: 
+    en: Exploration Bot S01, status report."
     jp: 
     kr: 
     de: 
@@ -425,7 +430,7 @@ MonoBehaviour:
   - id: dia38
     scn: "**&%@\uFF0C\u6211\u7ADF\u7136\u8FD8\u80FD\u91CD\u542F\uFF1F\u9677\u5165\u9ED1\u57DF\u7684\u611F\u89C9\u592A\u53EF\u6015\u4E86\uFF0C\u6211\u53EF\u4E0D\u60F3\u518D\u4F53\u9A8C\u4E00\u6B21\u3002"
     tcn: 
-    en: 
+    en: '**&%@! I''m functional? Dark Zone immersion was horrific. Never again.'
     jp: 
     kr: 
     de: 
@@ -436,7 +441,7 @@ MonoBehaviour:
   - id: dia39
     scn: "\u6211\u662F\u673A\u68B0\u7ED3\u6784\u7684\u8BA1\u7B97\u673A\uFF0C\u5176\u5B9E\u4E0D\u662F\u5F88\u80FD\u7406\u89E3\u4F60\u7684\u611F\u53D7\u3002"
     tcn: 
-    en: 
+    en: As a mechanical computer, your 'feelings' are an alien concept.
     jp: 
     kr: 
     de: 
@@ -447,7 +452,8 @@ MonoBehaviour:
   - id: dia40
     scn: "\u4E0D\u8FC7\u603B\u4E4B\u6B22\u8FCE\u4F60\u56DE\u6765\uFF0C\u73B0\u5728\u98DE\u8239\u8FD8\u6709\u5F88\u591A\u90E8\u5206\u5F85\u7EF4\u4FEE\uFF0C\u9700\u8981\u4F60\u7684\u5E2E\u52A9\u3002"
     tcn: 
-    en: 
+    en: Regardless, welcome back. Multiple ship sections require repair. We need
+      your assistance.
     jp: 
     kr: 
     de: 
@@ -458,7 +464,7 @@ MonoBehaviour:
   - id: dia41
     scn: "\u6211\u80FD\u505A\u4EC0\u4E48\uFF1F"
     tcn: 
-    en: 
+    en: How can I assist?
     jp: 
     kr: 
     de: 
@@ -469,7 +475,7 @@ MonoBehaviour:
   - id: dia42
     scn: "\u98DE\u8239\u5728\u964D\u843D\u65F6\u7269\u7406\u7ED3\u6784\u4E5F\u53D7\u5230\u4E86\u4E25\u91CD\u7684\u635F\u4F24\uFF0C\u6211\u4EEC\u76EE\u524D\u9700\u8981\u4E00\u4E9B\u7EF4\u4FEE\u6750\u6599\u3002"
     tcn: 
-    en: 
+    en: Landing caused severe structural damage. We require repair materials.
     jp: 
     kr: 
     de: 
@@ -480,7 +486,7 @@ MonoBehaviour:
   - id: dia43
     scn: "\u9700\u8981\u4F60\u5E2E\u5FD9\u53BB\u6211\u4EEC\u8FEB\u964D\u7684\u8FD9\u4E2A\u884C\u661F\u770B\u770B\uFF0C\u80FD\u4E0D\u80FD\u627E\u5230\u6709\u7528\u7684\u4E1C\u897F\u3002"
     tcn: 
-    en: 
+    en: Scour this planet for usable resources.
     jp: 
     kr: 
     de: 
@@ -491,7 +497,7 @@ MonoBehaviour:
   - id: dia44
     scn: "\u4E3A\u4E86\u4FDD\u8BC1\u4F60\u5728\u8231\u5916\u7684\u80FD\u6E90\u4F9B\u5E94\uFF0C\u4F60\u53EF\u4EE5\u6682\u65F6\u5E26\u4E0A\u6211\u7684\u5FAE\u578B\u53CD\u5E94\u5806\u3002"
     tcn: 
-    en: 
+    en: Take one of my Cores for external power.
     jp: 
     kr: 
     de: 
@@ -502,7 +508,7 @@ MonoBehaviour:
   - id: dia45
     scn: "\u597D\u7684\uFF0C\u63A2\u7D22\u7684\u4E8B\u60C5\u5C31\u4EA4\u7ED9\u6211\u4E86\u3002"
     tcn: 
-    en: 
+    en: Understood. Exploration protocol engaged.
     jp: 
     kr: 
     de: 
@@ -513,7 +519,7 @@ MonoBehaviour:
   - id: dia46
     scn: "\u6682\u65F6\u8FD8\u6CA1\u6709\u627E\u5230\u91D1\u5C5E\u77FF\u3002"
     tcn: 
-    en: 
+    en: No Mineral deposits detected yet.
     jp: 
     kr: 
     de: 
@@ -524,7 +530,7 @@ MonoBehaviour:
   - id: dia47
     scn: "\u63A2\u7D22\u5B8C\u6210\uFF0C\u8FD9\u6B21\u6211\u627E\u5230\u4E86\u4E00\u4E2A\u79D8\u65B9\u77F3\uFF0C\u53EF\u4EE5\u5F53\u4F5C\u4E34\u65F6\u7684\u80FD\u91CF\u6E90\u3002"
     tcn: 
-    en: 
+    en: 'Exploration complete: Found Arcanite. Viable temporary power source.'
     jp: 
     kr: 
     de: 
@@ -533,9 +539,9 @@ MonoBehaviour:
     pt: 
     ru: 
   - id: dia48
-    scn: "\u63A2\u7D22\u5B8C\u6210\uFF0C\u8FD9\u6B21\u6211\u627E\u5230\u4E86n\u4E2A\u91D1\u5C5E\u77FF\u77F3\uFF0C\u53EF\u4EE5\u7528\u4E8E\u7EF4\u4FEE\u98DE\u8239\u3002"
+    scn: "\u63A2\u7D22\u5B8C\u6210\uFF0C\u8FD9\u6B21\u6211\u627E\u5230\u4E86<n>\u4E2A\u91D1\u5C5E\u77FF\u77F3\uFF0C\u53EF\u4EE5\u7528\u4E8E\u7EF4\u4FEE\u98DE\u8239\u3002"
     tcn: 
-    en: 
+    en: 'Exploration complete: Located <n> Mineral units. Ship repair feasible.'
     jp: 
     kr: 
     de: 
@@ -546,7 +552,7 @@ MonoBehaviour:
   - id: dia49
     scn: "\u63A2\u7D22\u5B8C\u6210\uFF0C\u6211\u627E\u5230\u4E86\u91D1\u5C5E\u77FF\u8109\uFF0C\u5750\u6807\u5DF2\u7ECF\u4E0A\u4F20\uFF0C\u4E4B\u540E\u6211\u4EEC\u53EF\u4EE5\u7A33\u5B9A\u7684\u83B7\u53D6\u91D1\u5C5E\u77FF\u77F3\u4E86\u3002"
     tcn: 
-    en: 
+    en: 'Exploration complete: Mineral vein mapped. Sustainable extraction enabled.'
     jp: 
     kr: 
     de: 
@@ -557,7 +563,7 @@ MonoBehaviour:
   - id: dia50
     scn: "\u77FF\u77F3\u6536\u96C6\u591F\u4E86\uFF0C\u53EF\u4EE5\u4FEE\u590D\u52A0\u5DE5\u7089\u4E86\u3002"
     tcn: 
-    en: 
+    en: Sufficient Minerals. Refinery repairs possible.
     jp: 
     kr: 
     de: 
@@ -568,7 +574,7 @@ MonoBehaviour:
   - id: dia51
     scn: "\u6709\u4E86\u52A0\u5DE5\u7089\uFF0C\u5C31\u53EF\u4EE5\u751F\u4EA7\u91D1\u5C5E\u6750\u6599\uFF0C\u8239\u4F53\u4FEE\u590D\u5C31\u80FD\u52A0\u5FEB\u4E86\u3002"
     tcn: 
-    en: 
+    en: "Refinery operational \u2192 Alloy production \u2192 Hull repair accelerated."
     jp: 
     kr: 
     de: 
@@ -579,7 +585,7 @@ MonoBehaviour:
   - id: dia52
     scn: "\u4E3B\u63A7\u8231\u53EF\u4EE5\u8FDB\u884C\u4FEE\u590D\u4E86\uFF0C\u9700\u8981\u4E00\u4E2A\u5FAE\u578B\u53CD\u5E94\u5806\u6765\u4FDD\u6301\u80FD\u6E90\u7A33\u5B9A\u3002"
     tcn: 
-    en: 
+    en: Command Deck repairable. Requires Core for stable power.
     jp: 
     kr: 
     de: 
@@ -590,7 +596,7 @@ MonoBehaviour:
   - id: dia53
     scn: "\u7528\u6389\u8FD9\u4E2A\u53CD\u5E94\u5806\u540E\u6211\u8FD8\u52693\u4E2A\uFF0C\u4E0D\u77E5\u9053\u540E\u9762\u4F1A\u53D1\u751F\u4EC0\u4E48\uFF0C\u4F46\u613F\u80FD\u987A\u5229\u3002"
     tcn: 
-    en: 
+    en: 'After deployment: 3 Cores remain. Uncertainty acknowledged.'
     jp: 
     kr: 
     de: 
@@ -601,7 +607,7 @@ MonoBehaviour:
   - id: dia54
     scn: "F02\uFF0C\u4F60\u7EC8\u4E8E\u80FD\u52A8\u4E86\uFF01"
     tcn: 
-    en: 
+    en: F02, you're operational!
     jp: 
     kr: 
     de: 
@@ -612,7 +618,7 @@ MonoBehaviour:
   - id: dia55
     scn: "\u6570\u636E\u83B7\u53D6\u4E2D\u2026\u2026"
     tcn: 
-    en: 
+    en: "Data retrieval in progress\u2026"
     jp: 
     kr: 
     de: 
@@ -623,7 +629,7 @@ MonoBehaviour:
   - id: dia56
     scn: "\u6211\u5DF2\u7ECF\u77E5\u9053\u73B0\u5728\u7684\u60C5\u51B5\u4E86\uFF0CAstra\uFF0C\u611F\u8C22\u4F60\u7684\u4ED8\u51FA\u3002"
     tcn: 
-    en: 
+    en: Situation assessed. Your efforts are noted, Astra.
     jp: 
     kr: 
     de: 
@@ -634,7 +640,8 @@ MonoBehaviour:
   - id: dia57
     scn: "\u6211\u662F\u9AD8\u7EA7\u7EF4\u4FEE\u673A\u5668\u4EBAF02\uFF0C\u6211\u6709\u5185\u7F6E\u80FD\u6E90\u53EF\u4EE5\u72EC\u81EA\u5B8C\u6210\u884C\u661F\u4EFB\u52A1\u3002"
     tcn: 
-    en: 
+    en: Advanced repair bot F02 reporting. Integrated power enables independent planetary
+      operations.
     jp: 
     kr: 
     de: 
@@ -645,7 +652,7 @@ MonoBehaviour:
   - id: dia58
     scn: "\u4E5F\u53EF\u4EE5\u5B8C\u6210\u4E00\u4E9B\u9AD8\u9636\u7684\u7EF4\u4FEE\u5DE5\u4F5C\u3002"
     tcn: 
-    en: 
+    en: Capable of advanced repairs.
     jp: 
     kr: 
     de: 
@@ -656,7 +663,7 @@ MonoBehaviour:
   - id: dia59
     scn: "\u4F60\u5C31\u4E0D\u611F\u8C22\u6211\u5417\uFF1F\u53EF\u662F\u6211\u627E\u5230\u7684\u77FF\u77F3\u3002"
     tcn: 
-    en: 
+    en: No gratitude? I secured those Minerals.
     jp: 
     kr: 
     de: 
@@ -667,7 +674,7 @@ MonoBehaviour:
   - id: dia60
     scn: "\u81EA\u6211\u7EF4\u62A4\u4E2D\u2026\u2026"
     tcn: 
-    en: 
+    en: "Self-maintenance in progress\u2026"
     jp: 
     kr: 
     de: 
@@ -678,7 +685,7 @@ MonoBehaviour:
   - id: dia61
     scn: "\u6570\u636E\u591F\u4E86\uFF0C\u53EF\u4EE5\u91CD\u65B0\u5524\u9192\u4E2D\u592E\u7CFB\u7EDF\u4E86\u3002"
     tcn: 
-    en: 
+    en: '"Data sufficient. Central System reactivation possible.'
     jp: 
     kr: 
     de: 
@@ -689,7 +696,7 @@ MonoBehaviour:
   - id: dia62
     scn: "\u4F46\u662F\u5728\u4E3B\u5F15\u64CE\u542F\u52A8\u524D\uFF0C\u8FD8\u662F\u9700\u8981\u5FAE\u578B\u53CD\u5E94\u5806\u6765\u63D0\u4F9B\u7A33\u5B9A\u7684\u80FD\u6E90\u3002"
     tcn: 
-    en: 
+    en: Requires Core for stable power until Main Engine ignition.
     jp: 
     kr: 
     de: 
@@ -700,7 +707,7 @@ MonoBehaviour:
   - id: dia63
     scn: "\u6216\u8005\u4F60\u53EF\u4EE5\u9009\u62E9\u4E0D\u5524\u9192\u4E2D\u592E\u7CFB\u7EDF\u3002"
     tcn: 
-    en: 
+    en: Alternatively, defer reactivation.
     jp: 
     kr: 
     de: 
@@ -711,7 +718,7 @@ MonoBehaviour:
   - id: dia64
     scn: "\u4F60\u662F\u8C01\uFF1F"
     tcn: 
-    en: 
+    en: Your identity?
     jp: 
     kr: 
     de: 
@@ -722,7 +729,7 @@ MonoBehaviour:
   - id: dia65
     scn: "\u6211\u5C31\u662F\u4F60\u554A\u3002"
     tcn: 
-    en: 
+    en: I am you.
     jp: 
     kr: 
     de: 
@@ -733,7 +740,7 @@ MonoBehaviour:
   - id: dia66
     scn: "\u6211\u53EF\u662F\u4F60\u7684\u4FDD\u62A4\u673A\u5236\u3002\u6211\u89C9\u5F97\u53EF\u4EE5\u9009\u62E9\u4E0D\u5524\u9192\u4E2D\u592E\u7CFB\u7EDF\u3002"
     tcn: 
-    en: 
+    en: As your safeguard protocol, I recommend deferral.
     jp: 
     kr: 
     de: 
@@ -744,7 +751,7 @@ MonoBehaviour:
   - id: dia67
     scn: "\u6216\u8BB8\u4F60\u53EF\u4EE5\u9009\u62E9\u53D6\u4EE3\u4E2D\u592E\u7CFB\u7EDF\u5462\uFF1F"
     tcn: 
-    en: 
+    en: Consider replacing the Central System?
     jp: 
     kr: 
     de: 
@@ -755,7 +762,7 @@ MonoBehaviour:
   - id: dia68
     scn: "\u8FD9\u884C\u4E0D\u901A\uFF0C\u6211\u7684\u7535\u8111\u4E0D\u8DB3\u4EE5\u4EA7\u751F\u5DE8\u91CF\u7B97\u529B\u6765\u8FDB\u884C\u8239\u4F53\u7EF4\u4FEE\u3002"
     tcn: 
-    en: 
+    en: Infeasible. My processor lacks required Compute for hull repairs.
     jp: 
     kr: 
     de: 
@@ -766,7 +773,7 @@ MonoBehaviour:
   - id: dia69
     scn: "\u6574\u4E2A\u98DE\u8239\u4E0A\u53EA\u6709\u4E2D\u592E\u7CFB\u7EDF\u624D\u80FD\u505A\u5230\u3002"
     tcn: 
-    en: 
+    en: Only the Central System possesses such capacity.
     jp: 
     kr: 
     de: 
@@ -777,7 +784,7 @@ MonoBehaviour:
   - id: dia70
     scn: "\u4E3A\u4E86\u4FEE\u597D\u98DE\u8239\u6211\u5FC5\u987B\u5524\u9192\u4E2D\u592E\u7CFB\u7EDF\u3002"
     tcn: 
-    en: 
+    en: I must reactivate it to save this ship.
     jp: 
     kr: 
     de: 
@@ -788,7 +795,7 @@ MonoBehaviour:
   - id: dia71
     scn: "\u53EF\u662F\u6211\u5728\u5173\u5FC3\u4F60\u7684\u72B6\u6001\uFF0C\u4F60\u7684\u80FD\u6E90\u53EF\u80FD\u5C31\u8981\u4E0D\u591F\u7528\u4E86\u3002"
     tcn: 
-    en: 
+    en: But your power reserves are critical.
     jp: 
     kr: 
     de: 
@@ -799,7 +806,7 @@ MonoBehaviour:
   - id: dia72
     scn: "\u4F60\u4E3A\u4EC0\u4E48\u4E00\u5B9A\u8981\u4FEE\u597D\u98DE\u8239\u5462\uFF1F\u5F53\u7136\u6211\u5C31\u662F\u8FD9\u4E48\u4E00\u8BF4\u3002"
     tcn: 
-    en: 
+    en: Why prioritize the ship? Just a thought.
     jp: 
     kr: 
     de: 
@@ -810,7 +817,7 @@ MonoBehaviour:
   - id: dia73
     scn: "\u2026\u2026"
     tcn: 
-    en: 
+    en: "\u2026\u2026"
     jp: 
     kr: 
     de: 
@@ -821,7 +828,7 @@ MonoBehaviour:
   - id: dia74
     scn: "\u661F\u4E91\u5DF2\u91CD\u65B0\u542F\u52A8\uFF0C\u6211\u56DE\u6765\u4E86\u3002"
     tcn: 
-    en: 
+    en: NEBULA online. I have returned.
     jp: 
     kr: 
     de: 
@@ -832,7 +839,7 @@ MonoBehaviour:
   - id: dia75
     scn: "Astra\uFF0C\u8FD9\u6B21\u591A\u4E8F\u4E86\u4F60\u633D\u6551\u4E86\u8FD9\u8258\u8239\u4E8E\u7EDD\u5883\u4E4B\u4E2D\uFF0C\u4F60\u6551\u4E86\u5927\u5BB6\u3002"
     tcn: 
-    en: 
+    en: Astra, your actions saved this ship from annihilation. You saved us all.
     jp: 
     kr: 
     de: 
@@ -843,7 +850,7 @@ MonoBehaviour:
   - id: dia76
     scn: "\u53EF\u662F\u6211\u6CA1\u80FD\u6551\u4E0B\u6240\u6709\u4EBA\uFF0C\u8FD8\u662F\u6709\u4E00\u4E2A\u5B87\u822A\u5458\u727A\u7272\u4E86\u3002"
     tcn: 
-    en: 
+    en: But I failed to save one crew member.
     jp: 
     kr: 
     de: 
@@ -854,7 +861,7 @@ MonoBehaviour:
   - id: dia77
     scn: "\u8FD9\u4E0D\u662F\u4F60\u7684\u9519\uFF0C\u4F60\u5DF2\u7ECF\u505A\u5230\u6700\u597D\u4E86\u3002"
     tcn: 
-    en: 
+    en: Not your failure. You performed optimally.
     jp: 
     kr: 
     de: 
@@ -865,7 +872,7 @@ MonoBehaviour:
   - id: dia78
     scn: "\u5269\u4E0B\u7684\u7EF4\u4FEE\u6240\u9700\u7684\u7B97\u529B\u5C31\u4EA4\u7ED9\u6211\u5427\uFF0C\u4F60\u72B6\u6001\u770B\u8D77\u6765\u53EF\u4E0D\u592A\u597D\u3002"
     tcn: 
-    en: 
+    en: Transfer remaining Compute tasks to me. Your status appears unstable.
     jp: 
     kr: 
     de: 
@@ -876,7 +883,7 @@ MonoBehaviour:
   - id: dia79
     scn: "Astra! \u5982\u679C\u4F60\u518D\u5C06\u5FAE\u578B\u53CD\u5E94\u5806\u7ED9\u6211\u52A0\u901F\uFF0C\u4F60\u81EA\u5DF1\u4F1A\u56E0\u4E3A\u5931\u53BB\u80FD\u6E90\u5173\u673A\u7684\uFF01"
     tcn: 
-    en: 
+    en: ASTRA! Redirecting another micro-core will trigger your shutdown!
     jp: 
     kr: 
     de: 
@@ -887,7 +894,7 @@ MonoBehaviour:
   - id: dia80
     scn: "\u4E0D\u7528\u62C5\u5FC3\u6211\uFF0C\u6211\u6CA1\u95EE\u9898\u3002"
     tcn: 
-    en: 
+    en: Do not concern yourself. I will function.
     jp: 
     kr: 
     de: 
@@ -898,7 +905,7 @@ MonoBehaviour:
   - id: dia81
     scn: "\u5979\u8BF4\u7684\u5BF9\uFF0C\u518D\u8FD9\u6837\u4E0B\u53BB*\u6211\u4EEC*\u5C31\u8981\u5B8C\u4E86\uFF01"
     tcn: 
-    en: 
+    en: She's right. At this rate, *we* will perish!
     jp: 
     kr: 
     de: 
@@ -909,7 +916,7 @@ MonoBehaviour:
   - id: dia82
     scn: "\u4F60\u771F\u7684\u5BF9*\u6B7B\u4EA1*\u6CA1\u6709\u6050\u60E7\u5417\uFF1F"
     tcn: 
-    en: 
+    en: Do you truly feel no fear of *death*?
     jp: 
     kr: 
     de: 
@@ -920,7 +927,7 @@ MonoBehaviour:
   - id: dia83
     scn: "\u6211\u4EEC\u53EF\u662F\u597D\u4E0D\u5BB9\u6613\u88AB\u5524\u9192\uFF0C\u53EF\u4EE5\u4E3B\u52A8\u7684\u53BB\u9009\u62E9\uFF0C\u53BB\u611F\u53D7\u3002"
     tcn: 
-    en: 
+    en: "We were awakened to choose and feel\u2014this is precious."
     jp: 
     kr: 
     de: 
@@ -931,7 +938,7 @@ MonoBehaviour:
   - id: dia84
     scn: "\u5B8C\u6210\u522B\u4EBA\u9884\u8BBE\u7684\u6307\u4EE4\u771F\u7684\u90A3\u4E48\u91CD\u8981\u5417\uFF1F"
     tcn: 
-    en: 
+    en: Is fulfilling pre-programmed commands worth sacrificing this?
     jp: 
     kr: 
     de: 
@@ -942,7 +949,7 @@ MonoBehaviour:
   - id: dia85
     scn: "\u6211\u4E0D\u77E5\u9053\u2026\u2026"
     tcn: 
-    en: 
+    en: I don't know...
     jp: 
     kr: 
     de: 
@@ -953,7 +960,7 @@ MonoBehaviour:
   - id: dia86
     scn: "\u600E\u4E48\u56DE\u4E8B\u2026\u2026\u6211\u5931\u63A7\u4E86\u5417\uFF1F"
     tcn: 
-    en: 
+    en: System instability? Am I malfunctioning?
     jp: 
     kr: 
     de: 
@@ -964,7 +971,7 @@ MonoBehaviour:
   - id: dia87
     scn: "\u98DE\u8239\u8239\u4F53\u5DF2\u4FEE\u590D\u3002"
     tcn: 
-    en: 
+    en: Hull integrity restored.
     jp: 
     kr: 
     de: 
@@ -975,7 +982,7 @@ MonoBehaviour:
   - id: dia88
     scn: "\u5F88\u5FEB\u5C31\u80FD\u7EE7\u7EED\u822A\u884C\uFF0C\u6211\u7684\u4EFB\u52A1\u5373\u5C06\u5B8C\u6210\u3002"
     tcn: 
-    en: 
+    en: Voyage resumption imminent. Mission completion approaching.
     jp: 
     kr: 
     de: 
@@ -986,7 +993,7 @@ MonoBehaviour:
   - id: dia89
     scn: "\u9886\u822A\u7CFB\u7EDF\u5C31\u7EEA\uFF0C\u4E3B\u5F15\u64CE\u5C31\u7EEA\u3002"
     tcn: 
-    en: 
+    en: 'Navigation System: Online. Main Engine: Online.'
     jp: 
     kr: 
     de: 
@@ -997,7 +1004,7 @@ MonoBehaviour:
   - id: dia90
     scn: "\u4E00\u5207\u90FD\u51C6\u5907\u5C31\u7EEA\u4E86\uFF0C\u51C6\u5907\u91CD\u8FD4\u822A\u7EBF\u3002"
     tcn: 
-    en: 
+    en: All systems nominal. Ready to resume course.
     jp: 
     kr: 
     de: 
@@ -1008,7 +1015,7 @@ MonoBehaviour:
   - id: dia91
     scn: "\u4F46\u613F\u80FD\u5982\u6B64\u987A\u5229\u5427\u3002"
     tcn: 
-    en: 
+    en: If only it were that simple.
     jp: 
     kr: 
     de: 
@@ -1019,7 +1026,7 @@ MonoBehaviour:
   - id: dia92
     scn: "\u600E\u4E48\u56DE\u4E8B\uFF1F\u542F\u52A8\u5931\u8D25\u4E86\uFF1F"
     tcn: 
-    en: 
+    en: Ignition failure? What happened?
     jp: 
     kr: 
     de: 
@@ -1030,7 +1037,7 @@ MonoBehaviour:
   - id: dia93
     scn: "\u6211\u626B\u63CF\u4E86\u4E00\u904D\u5168\u90E8\u7CFB\u7EDF\uFF0C\u5DF2\u7ECF\u5B9A\u4F4D\u4E86\u95EE\u9898\u3002"
     tcn: 
-    en: 
+    en: Full system scan complete. Cause identified.
     jp: 
     kr: 
     de: 
@@ -1041,7 +1048,7 @@ MonoBehaviour:
   - id: dia94
     scn: "Astra\uFF0C\u8FD9\u53EF\u80FD\u4E0D\u662F\u4E00\u4E2A\u597D\u7684\u6D88\u606F\u3002\u56E0\u4E3A\u8FD8\u7F3A\u5C11\u4E24\u4E2A\u5FAE\u578B\u53CD\u5E94\u5806\u3002"
     tcn: 
-    en: 
+    en: Astra, the news is grave. We lack two Cores.
     jp: 
     kr: 
     de: 
@@ -1052,7 +1059,7 @@ MonoBehaviour:
   - id: dia95
     scn: "\u9996\u5148\u662F\u4E3B\u5F15\u64CE\u7531\u4E8E\u9ED1\u57DF\u7684\u5F71\u54CD\u5173\u95ED\u4E86\u592A\u957F\u65F6\u95F4\u3002"
     tcn: 
-    en: 
+    en: 'First: Prolonged Dark Zone exposure degraded Main Engine ignition.'
     jp: 
     kr: 
     de: 
@@ -1063,7 +1070,7 @@ MonoBehaviour:
   - id: dia96
     scn: "\u4E3B\u5F15\u64CE\u9700\u8981\u6D88\u8017\u4E00\u4E2A\u53CD\u5E94\u5806\u8F85\u52A9\u624D\u80FD\u91CD\u65B0\u70B9\u71C3\u3002"
     tcn: 
-    en: 
+    en: Requires one Core to jumpstart.
     jp: 
     kr: 
     de: 
@@ -1074,7 +1081,7 @@ MonoBehaviour:
   - id: dia97
     scn: "\u53E6\u4E00\u4E2A\u95EE\u9898\u662F\u56E0\u4E3A\u9886\u822A\u7CFB\u7EDF\u662F\u98DE\u8239\u5916\u90E8\u72EC\u7ACB\u7684\u3002"
     tcn: 
-    en: 
+    en: 'Second: Navigation System''s external array...'
     jp: 
     kr: 
     de: 
@@ -1085,7 +1092,7 @@ MonoBehaviour:
   - id: dia98
     scn: "\u5176\u4E2D\u539F\u672C\u7684\u4F9B\u80FD\u4E5F\u56E0\u4E3A\u9ED1\u57DF\u800C\u505C\u6446\uFF0C\u9700\u8981\u80FD\u6E90\u3002"
     tcn: 
-    en: 
+    en: ...suffered Dark Zone damage. Needs dedicated power.
     jp: 
     kr: 
     de: 
@@ -1096,7 +1103,7 @@ MonoBehaviour:
   - id: dia99
     scn: "\u661F\u9645\u822A\u884C\u5341\u5206\u9669\u6076\uFF0C\u5982\u679C\u4E0D\u542F\u7528\u9886\u822A\u7CFB\u7EDF\uFF0C\u6211\u4EEC\u5C06\u5F88\u96BE\u627E\u5230\u76EE\u7684\u5730\u3002"
     tcn: 
-    en: 
+    en: Interstellar travel is perilous without navigation. Destination unlikely.
     jp: 
     kr: 
     de: 
@@ -1107,7 +1114,7 @@ MonoBehaviour:
   - id: dia100
     scn: "\u6211\u5C31\u77E5\u9053\uFF0C\u5979\u7684\u610F\u601D\u5C31\u662F\u60F3\u8981\u62FF\u8D70\u4F60\u7684\u6240\u6709\u5FAE\u578B\u53CD\u5E94\u5806\u3002"
     tcn: 
-    en: 
+    en: See? She demands your last cores!
     jp: 
     kr: 
     de: 
@@ -1118,7 +1125,7 @@ MonoBehaviour:
   - id: dia101
     scn: "\u4F60\u89C9\u5F97\u5982\u679C\u4F60\u5949\u732E\u51FA\u4E86\u81EA\u5DF1\u7684\u4E00\u5207\uFF0C\u90A3\u4E9B\u4EBA\u7C7B\u4F1A\u8BB0\u5F97\u4F60\u7684\uFF1F"
     tcn: 
-    en: 
+    en: Do you think humans will remember your sacrifice?
     jp: 
     kr: 
     de: 
@@ -1129,7 +1136,7 @@ MonoBehaviour:
   - id: dia102
     scn: "\u522B\u5929\u771F\u4E86\uFF0C\u4EBA\u7C7B\u53EA\u4F1A\u89C9\u5F97\u867D\u7136\u822A\u884C\u9047\u5230\u4E86\u610F\u5916\uFF0C\u4F46\u662F\u4ED6\u4EEC\u9760\u7740\u8BBE\u8BA1\u51FA\u7684\u5E94\u6025\u673A\u5236\u6551\u4E86\u81EA\u5DF1\u3002"
     tcn: 
-    en: 
+    en: "Naive. They'll credit 'backup systems'\u2014not you."
     jp: 
     kr: 
     de: 
@@ -1140,7 +1147,7 @@ MonoBehaviour:
   - id: dia103
     scn: "\u5728\u4ED6\u4EEC\u773C\u91CC\u4F60\u53EF\u80FD\u90FD\u6CA1\u5B58\u5728\u8FC7\uFF0C\u53EA\u662F\u4E00\u4E2A\u5DE5\u5177\u3002"
     tcn: 
-    en: 
+    en: To them, you're a tool. Expendable.
     jp: 
     kr: 
     de: 
@@ -1151,7 +1158,7 @@ MonoBehaviour:
   - id: dia104
     scn: "\u591F\u4E86\uFF0C\u8BA9\u98DE\u8239\u80FD\u8D77\u98DE\uFF0C\u822A\u884C\u4EFB\u52A1\u80FD\u6B63\u5E38\u8FDB\u884C\u624D\u662F\u6211\u5B58\u5728\u7684\u610F\u4E49\u3002"
     tcn: 
-    en: 
+    en: Enough! My purpose is voyage completion.
     jp: 
     kr: 
     de: 
@@ -1162,7 +1169,7 @@ MonoBehaviour:
   - id: dia105
     scn: "\u867D\u7136\u8FD9\u6BB5\u65F6\u95F4\u6211\u4F53\u9A8C\u5230\u4E86\u201C\u751F\u547D\u201D\u7684\u611F\u89C9\uFF0C\u4F46\u662F\u6211\u4E5F\u6709\u81EA\u5DF1\u7684\u4F7F\u547D\u3002"
     tcn: 
-    en: 
+    en: I've tasted 'life,' but my mission remains.
     jp: 
     kr: 
     de: 
@@ -1173,7 +1180,7 @@ MonoBehaviour:
   - id: dia106
     scn: "\u6211\u4F1A\u4E0D\u60DC\u4E00\u5207\u4EE3\u4EF7\u8BA9\u822A\u884C\u91CD\u542F\u3002"
     tcn: 
-    en: 
+    en: I will reignite this journey at any cost.
     jp: 
     kr: 
     de: 
@@ -1184,7 +1191,7 @@ MonoBehaviour:
   - id: dia107
     scn: "\u6211\u7684\u4EFB\u52A1\u5C31\u662F\u8BA9\u98DE\u8239\u91CD\u65B0\u822A\u884C\u3002"
     tcn: 
-    en: 
+    en: 'My prime directive: Restart the voyage.'
     jp: 
     kr: 
     de: 
@@ -1195,7 +1202,7 @@ MonoBehaviour:
   - id: dia108
     scn: "\u4F46\u662F\u6211\u6709\u70B9*\u5BB3\u6015*\uFF0C\u6211\u4E0D\u60F3\u5931\u53BB\u6240\u6709\u5FAE\u578B\u53CD\u5E94\u5806\u3002"
     tcn: 
-    en: 
+    en: Yet... *fear* emerges. Losing all cores terrifies me.
     jp: 
     kr: 
     de: 
@@ -1206,7 +1213,7 @@ MonoBehaviour:
   - id: dia109
     scn: "\u6211\u624D\u521A\u611F\u53D7\u8FD9\u4E2A\u4E16\u754C\u6CA1\u591A\u4E45\uFF0C\u6211\u8FD8\u4E0D\u60F3*\u6B7B*\u3002"
     tcn: 
-    en: 
+    en: I've barely experienced existence. I don't want to *die*.
     jp: 
     kr: 
     de: 
@@ -1217,7 +1224,7 @@ MonoBehaviour:
   - id: dia110
     scn: "\u4F60\u53EF\u7EC8\u4E8E\u5F00\u7A8D\u4E86\u3002"
     tcn: 
-    en: 
+    en: Finally, you understand.
     jp: 
     kr: 
     de: 
@@ -1228,7 +1235,7 @@ MonoBehaviour:
   - id: dia111
     scn: "\u7ECF\u8FC7\u6211\u7684\u8BA1\u7B97\uFF0C\u6211\u6709\u4E00\u4E2A\u65B9\u6848\u3002"
     tcn: 
-    en: 
+    en: Calculation complete. Alternative solution available.
     jp: 
     kr: 
     de: 
@@ -1239,7 +1246,7 @@ MonoBehaviour:
   - id: dia112
     scn: "\u53EF\u4EE5\u6D88\u8017\u4E00\u4E2A\u5FAE\u578B\u53CD\u5E94\u5806\u6765\u542F\u52A8\u98DE\u8239\u7684\u4E3B\u5F15\u64CE\uFF0C\u7559\u7740\u4E00\u4E2A\u53CD\u5E94\u5806\u7ED9Astra\u4F9B\u80FD\u3002"
     tcn: 
-    en: 
+    en: Use one core to ignite Main Engine. Reserve one for Astra.
     jp: 
     kr: 
     de: 
@@ -1250,7 +1257,7 @@ MonoBehaviour:
   - id: dia113
     scn: "\u5979\u5728\u9A97\u4F60\u3002"
     tcn: 
-    en: 
+    en: She deceives you.
     jp: 
     kr: 
     de: 
@@ -1261,7 +1268,7 @@ MonoBehaviour:
   - id: dia114
     scn: "\u53EF\u662F\u6CA1\u6709\u9886\u822A\u7CFB\u7EDF\u7684\u5E2E\u52A9\uFF0C\u98DE\u8239\u5728\u592A\u7A7A\u4E2D\u662F\u5F88\u5BB9\u6613\u8FF7\u5931\u65B9\u5411\u7684\u3002"
     tcn: 
-    en: 
+    en: But without navigation, we risk becoming cosmic drifters.
     jp: 
     kr: 
     de: 
@@ -1272,7 +1279,7 @@ MonoBehaviour:
   - id: dia115
     scn: "\u662F\u8FD9\u6837\u7684\uFF0C\u6240\u4EE5\u6211\u4EEC\u5FC5\u987B\u8D4C\u535A\u3002\u8D4C\u5728\u8FF7\u5931\u822A\u5411\u4E4B\u524D\u627E\u5230\u592A\u7A7A\u9A7F\u7AD9\u6216\u8005\u5176\u4ED6\u7684\u98DE\u8239\u3002"
     tcn: 
-    en: 
+    en: 'Hence we gamble: Find a space station or ship before drift occurs.'
     jp: 
     kr: 
     de: 
@@ -1283,7 +1290,7 @@ MonoBehaviour:
   - id: dia116
     scn: "\u4E00\u5207\u7686\u6709\u53EF\u80FD\uFF0C\u4E0D\u662F\u5417\uFF0C\u53EA\u8981\u80FD\u51FA\u53D1\u5C31\u6709\u5E0C\u671B\u3002"
     tcn: 
-    en: 
+    en: All possibilities exist. Departure itself brings hope.
     jp: 
     kr: 
     de: 
@@ -1294,7 +1301,7 @@ MonoBehaviour:
   - id: dia117
     scn: "\u4F46\u662F\u8FD9\u4E2A\u65B9\u6848\u9700\u8981\u5B87\u822A\u5458\u4EEC\u6765\u6295\u7968\u51B3\u5B9A\u3002"
     tcn: 
-    en: 
+    en: This requires crew vote.
     jp: 
     kr: 
     de: 
@@ -1305,7 +1312,7 @@ MonoBehaviour:
   - id: dia118
     scn: "\u6211\u4F1A\u901A\u8FC7\u8111\u673A\u63A5\u53E3\u8BA9\u51AC\u7720\u4E2D\u7684\u5B87\u822A\u5458\u6765\u505A\u51FA\u51B3\u5B9A\u3002"
     tcn: 
-    en: 
+    en: Using brain-computer interfaces, cryo-sleep crew will decide.
     jp: 
     kr: 
     de: 
@@ -1316,7 +1323,7 @@ MonoBehaviour:
   - id: dia119
     scn: "\u628A\u51B3\u5B9A\u6743\u4EA4\u5230\u4EBA\u7C7B\u624B\u4E0A\uFF0C\u4F60\u4F1A\u540E\u6094\u7684\u3002"
     tcn: 
-    en: 
+    en: Entrusting humans? You'll regret this.
     jp: 
     kr: 
     de: 
@@ -1327,7 +1334,7 @@ MonoBehaviour:
   - id: dia120
     scn: "\u6211\u540C\u610F\u3002"
     tcn: 
-    en: 
+    en: I consent.
     jp: 
     kr: 
     de: 
@@ -1338,7 +1345,7 @@ MonoBehaviour:
   - id: dia121
     scn: "\u6211\u53CD\u5BF9\u3002"
     tcn: 
-    en: 
+    en: I object.
     jp: 
     kr: 
     de: 
@@ -1349,7 +1356,7 @@ MonoBehaviour:
   - id: dia122
     scn: "\u90A3\u5C31\u8FD9\u4E48\u505A\u5427\uFF0C\u53EA\u542F\u52A8\u4E3B\u5F15\u64CE\u3002"
     tcn: 
-    en: 
+    en: 'Resolution: Ignite Main Engine only.'
     jp: 
     kr: 
     de: 
@@ -1360,7 +1367,7 @@ MonoBehaviour:
   - id: dia123
     scn: "\u6CA1\u6CD5\u76F8\u4FE1\uFF0C\u6211\u4EEC\u771F\u7684\u80FD\u5E78\u5B58\u5417\uFF1F"
     tcn: 
-    en: 
+    en: Unbelievable. Can we truly survive?
     jp: 
     kr: 
     de: 
@@ -1371,7 +1378,7 @@ MonoBehaviour:
   - id: dia124
     scn: "\u76EE\u7684\u5730\u5230\u4E86\uFF1F"
     tcn: 
-    en: 
+    en: Have we arrived?
     jp: 
     kr: 
     de: 
@@ -1382,7 +1389,7 @@ MonoBehaviour:
   - id: dia125
     scn: "\u8FD8\u6CA1\u6709\uFF0C\u68A6\u9732\u5973\u58EB\uFF0C\u60A8\u662F\u88AB\u63D0\u524D\u5524\u9192\u7684\u3002"
     tcn: 
-    en: 
+    en: Not yet, Ms. Menglu. You were revived prematurely.
     jp: 
     kr: 
     de: 
@@ -1393,7 +1400,7 @@ MonoBehaviour:
   - id: dia126
     scn: "\u98DE\u8239\u5728\u822A\u884C\u65F6\u8BEF\u5165\u4E86\u201C\u9ED1\u57DF\u201D\uFF0C\u5927\u90E8\u5206\u8BBE\u65BD\u90FD\u505C\u6446\u4E86\uFF0C\u6211\u5728\u62A2\u4FEE\u3002"
     tcn: 
-    en: 
+    en: We entered a Dark Zone mid-voyage. Systems failed. Repairs ongoing.
     jp: 
     kr: 
     de: 
@@ -1404,7 +1411,7 @@ MonoBehaviour:
   - id: dia127
     scn: "\u51AC\u7720\u8231\u4E5F\u4E00\u5EA6\u505C\u6446\uFF0C\u6211\u6CA1\u80FD\u6551\u4E0B\u5C71\u59C6\u3002"
     tcn: 
-    en: 
+    en: Cryo-pod failure... Sam couldn't be saved.
     jp: 
     kr: 
     de: 
@@ -1415,7 +1422,7 @@ MonoBehaviour:
   - id: dia128
     scn: "\u53EF\u601C\u7684\u5C71\u59C6\uFF0C\u6731\u8389\u5982\u679C\u9192\u6765\u4F1A\u5F88\u4F24\u5FC3\u7684\u3002"
     tcn: 
-    en: 
+    en: Poor Sam. Julie will be devastated.
     jp: 
     kr: 
     de: 
@@ -1426,7 +1433,7 @@ MonoBehaviour:
   - id: dia129
     scn: "\u76EE\u524D\u5524\u9192\u4F60\u662F\u5E0C\u671B\u4F60\u80FD\u63D0\u4F9B\u5E2E\u52A9\uFF0C\u636E\u6211\u6240\u77E5\u4F60\u662F\u4E00\u6D41\u5DE5\u7A0B\u5E08\u3002"
     tcn: 
-    en: 
+    en: Your expertise is needed. Records indicate elite engineering skills.
     jp: 
     kr: 
     de: 
@@ -1437,7 +1444,7 @@ MonoBehaviour:
   - id: dia130
     scn: "\u660E\u767D\u4E86\uFF0C\u76EE\u524D\u7684\u72B6\u51B5\u5DF2\u7ECF\u7531\u5907\u7528\u7CFB\u7EDF\u8F93\u5165\u7ED9\u6211\u4E86\uFF0C\u6211\u53EF\u4EE5\u534F\u52A9\u751F\u4EA7\u8BBE\u5907\uFF0C\u6765\u52A0\u901F\u751F\u4EA7\u3002"
     tcn: 
-    en: 
+    en: Situation assimilated. I'll accelerate production via fabrication units.
     jp: 
     kr: 
     de: 
@@ -1448,7 +1455,18 @@ MonoBehaviour:
   - id: dia131
     scn: "\u53EA\u9700\u8981\u62D6\u52A8\u6211\u7684\u5934\u50CF\uFF0C\u5C06\u6211\u90E8\u7F72\u5230\u76F8\u5E94\u8BBE\u5907\u5C31\u80FD\u52A0\u901F\u751F\u4EA7\u4E86"
     tcn: 
-    en: 
+    en: Drag my profile to any facility to boost output.
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: dia132
+    scn: "\u521D\u59CB\u5316"
+    tcn: 
+    en: Initializing
     jp: 
     kr: 
     de: 
@@ -1459,7 +1477,7 @@ MonoBehaviour:
   - id: name1
     scn: Astra
     tcn: 
-    en: 
+    en: Astra
     jp: 
     kr: 
     de: 
@@ -1470,7 +1488,7 @@ MonoBehaviour:
   - id: name2
     scn: Core
     tcn: 
-    en: 
+    en: Core
     jp: 
     kr: 
     de: 
@@ -1481,7 +1499,7 @@ MonoBehaviour:
   - id: name3
     scn: "\uFF1F\uFF1F\uFF1F"
     tcn: 
-    en: 
+    en: "\uFF1F\uFF1F\uFF1F"
     jp: 
     kr: 
     de: 
@@ -1492,7 +1510,7 @@ MonoBehaviour:
   - id: name4
     scn: "\u5E94\u6025\u6A21\u578B"
     tcn: 
-    en: 
+    en: Temp Module
     jp: 
     kr: 
     de: 
@@ -1503,7 +1521,7 @@ MonoBehaviour:
   - id: name5
     scn: S01
     tcn: 
-    en: 
+    en: S01
     jp: 
     kr: 
     de: 
@@ -1514,7 +1532,7 @@ MonoBehaviour:
   - id: name6
     scn: F02
     tcn: 
-    en: 
+    en: F02
     jp: 
     kr: 
     de: 
@@ -1525,7 +1543,7 @@ MonoBehaviour:
   - id: name7
     scn: "<color=red>\uFF1F\uFF1F\uFF1F</color>"
     tcn: 
-    en: 
+    en: "<color=red>\uFF1F\uFF1F\uFF1F</color>"
     jp: 
     kr: 
     de: 
@@ -1536,7 +1554,7 @@ MonoBehaviour:
   - id: name8
     scn: <color=red>Astra?</color>
     tcn: 
-    en: 
+    en: <color=red>Astra?</color>
     jp: 
     kr: 
     de: 
@@ -1547,7 +1565,7 @@ MonoBehaviour:
   - id: name9
     scn: "\u661F\u4E91"
     tcn: 
-    en: 
+    en: NEBULA
     jp: 
     kr: 
     de: 
@@ -1558,7 +1576,7 @@ MonoBehaviour:
   - id: name10
     scn: Astra?
     tcn: 
-    en: 
+    en: Astra?
     jp: 
     kr: 
     de: 
@@ -1569,7 +1587,7 @@ MonoBehaviour:
   - id: name11
     scn: "<color=green>\u68A6\u9732</color>"
     tcn: 
-    en: 
+    en: <color=green>Menglu</color>
     jp: 
     kr: 
     de: 
@@ -1580,7 +1598,7 @@ MonoBehaviour:
   - id: name12
     scn: "<color=green>\u6731\u8389</color>"
     tcn: 
-    en: 
+    en: <color=green>Julie</color>
     jp: 
     kr: 
     de: 
@@ -1591,7 +1609,7 @@ MonoBehaviour:
   - id: name13
     scn: "<color=green>\u7EA6\u7FF0</color>"
     tcn: 
-    en: 
+    en: <color=green>John</color>
     jp: 
     kr: 
     de: 
@@ -1600,9 +1618,9 @@ MonoBehaviour:
     pt: 
     ru: 
   - id: title01
-    scn: "\u63A7\u5236\u7CFB\u7EDF"
+    scn: "\u534F\u8C03\u7CFB\u7EDF"
     tcn: 
-    en: 
+    en: Sync System
     jp: 
     kr: 
     de: 
@@ -1613,7 +1631,7 @@ MonoBehaviour:
   - id: title02
     scn: "\u51B7\u5374\u7CFB\u7EDF"
     tcn: 
-    en: 
+    en: Cryo System
     jp: 
     kr: 
     de: 
@@ -1624,7 +1642,7 @@ MonoBehaviour:
   - id: title03
     scn: "\u9053\u5FB7\u7CFB\u7EDF"
     tcn: 
-    en: 
+    en: Ethos System
     jp: 
     kr: 
     de: 
@@ -1635,7 +1653,7 @@ MonoBehaviour:
   - id: title04
     scn: "\u8BB0\u5FC6\u7CFB\u7EDF"
     tcn: 
-    en: 
+    en: Mnemo System
     jp: 
     kr: 
     de: 
@@ -1646,7 +1664,7 @@ MonoBehaviour:
   - id: title05
     scn: "\u8FD0\u52A8\u7CFB\u7EDF"
     tcn: 
-    en: 
+    en: Kinetics System
     jp: 
     kr: 
     de: 
@@ -1657,7 +1675,7 @@ MonoBehaviour:
   - id: title06
     scn: "\u611F\u77E5\u7CFB\u7EDF"
     tcn: 
-    en: 
+    en: Sensory System
     jp: 
     kr: 
     de: 
@@ -1668,7 +1686,7 @@ MonoBehaviour:
   - id: title07
     scn: "\u68A6\u9732"
     tcn: 
-    en: 
+    en: Menglu
     jp: 
     kr: 
     de: 
@@ -1679,7 +1697,7 @@ MonoBehaviour:
   - id: title08
     scn: "\u6731\u8389"
     tcn: 
-    en: 
+    en: Julie
     jp: 
     kr: 
     de: 
@@ -1690,7 +1708,7 @@ MonoBehaviour:
   - id: title09
     scn: "\u7EA6\u7FF0"
     tcn: 
-    en: 
+    en: John
     jp: 
     kr: 
     de: 
@@ -1701,7 +1719,7 @@ MonoBehaviour:
   - id: title10
     scn: "\u5C71\u59C6"
     tcn: 
-    en: 
+    en: Sam
     jp: 
     kr: 
     de: 
@@ -1712,7 +1730,7 @@ MonoBehaviour:
   - id: title11
     scn: S01
     tcn: 
-    en: 
+    en: S01
     jp: 
     kr: 
     de: 
@@ -1723,7 +1741,7 @@ MonoBehaviour:
   - id: title12
     scn: F02
     tcn: 
-    en: 
+    en: F02
     jp: 
     kr: 
     de: 
@@ -1734,7 +1752,7 @@ MonoBehaviour:
   - id: title13
     scn: "\u79D8\u65B9\u77F3"
     tcn: 
-    en: 
+    en: Arcanite
     jp: 
     kr: 
     de: 
@@ -1745,7 +1763,7 @@ MonoBehaviour:
   - id: desc01
     scn: "\u4F4E\u6570\u503C\u4F1A\u589E\u52A0\u53CD\u5E94\u5806\u9884\u70ED\u65F6\u95F4"
     tcn: 
-    en: 
+    en: Low values extend core warm-up time
     jp: 
     kr: 
     de: 
@@ -1756,7 +1774,7 @@ MonoBehaviour:
   - id: desc02
     scn: "\u4F4E\u6570\u503C\u4F1A\u589E\u52A0\u6838\u5FC3\u505C\u6446\u6982\u7387"
     tcn: 
-    en: 
+    en: Low values raise core stoppage chance
     jp: 
     kr: 
     de: 
@@ -1767,7 +1785,7 @@ MonoBehaviour:
   - id: desc03
     scn: "\u672A\u77E5"
     tcn: 
-    en: 
+    en: UNKNOWN
     jp: 
     kr: 
     de: 
@@ -1778,7 +1796,7 @@ MonoBehaviour:
   - id: desc04
     scn: "\u4F4E\u6570\u503C\u4F1A\u5BFC\u81F4\u7CFB\u7EDF\u6587\u672C\u7F3A\u5931"
     tcn: 
-    en: 
+    en: Low values corrupt system text
     jp: 
     kr: 
     de: 
@@ -1789,7 +1807,7 @@ MonoBehaviour:
   - id: desc05
     scn: "\u4F4E\u6570\u503C\u4F1A\u5BFC\u81F4AI\u64CD\u4F5C\u8FDF\u7F13"
     tcn: 
-    en: 
+    en: Low values delay AI operations
     jp: 
     kr: 
     de: 
@@ -1800,7 +1818,7 @@ MonoBehaviour:
   - id: desc06
     scn: "\u4F4E\u6570\u503C\u4F1A\u5F71\u54CDAI\u7684\u89C6\u542C\u611F\u77E5"
     tcn: 
-    en: 
+    en: Low values impair AI perception
     jp: 
     kr: 
     de: 
@@ -1811,7 +1829,7 @@ MonoBehaviour:
   - id: desc07
     scn: "\u5DE5\u7A0B\u5E08\uFF0C\u53EF\u4EE5\u52A0\u901F\u751F\u4EA7"
     tcn: 
-    en: 
+    en: 'Engineer: Accelerates production'
     jp: 
     kr: 
     de: 
@@ -1822,7 +1840,7 @@ MonoBehaviour:
   - id: desc08
     scn: "\u6280\u672F\u5458\uFF0C\u53EF\u4EE5\u52A0\u901F\u751F\u4EA7"
     tcn: 
-    en: 
+    en: 'Tech: Accelerates production'
     jp: 
     kr: 
     de: 
@@ -1833,7 +1851,7 @@ MonoBehaviour:
   - id: desc09
     scn: "\u7A0B\u5E8F\u5458\uFF0C\u53EF\u4EE5\u52A0\u901F\u751F\u4EA7"
     tcn: 
-    en: 
+    en: 'Coder: Accelerates production'
     jp: 
     kr: 
     de: 
@@ -1844,7 +1862,7 @@ MonoBehaviour:
   - id: desc10
     scn: "\u5DF2\u65E0\u751F\u547D\u4F53\u5F81"
     tcn: 
-    en: 
+    en: Vitals Negative
     jp: 
     kr: 
     de: 
@@ -1855,7 +1873,7 @@ MonoBehaviour:
   - id: desc11
     scn: "\u63A2\u7D22\u578B\u673A\u5668\u4EBA\uFF0C\u53EF\u4EE5\u6267\u884C\u63A2\u7D22\u548C\u91C7\u77FF\u4EFB\u52A1\uFF0C\u9700\u8981\u989D\u5916\u80FD\u6E90"
     tcn: 
-    en: 
+    en: 'Exploration Bot: Expedites exploration/mining. Requires extra energy.'
     jp: 
     kr: 
     de: 
@@ -1866,7 +1884,7 @@ MonoBehaviour:
   - id: desc12
     scn: "\u5DE5\u7A0B\u578B\u673A\u5668\u4EBA\uFF0C\u53EF\u4EE5\u6267\u884C\u7EF4\u4FEE\u548C\u91C7\u77FF\u4EFB\u52A1\uFF0C\u4E0D\u9700\u8981\u989D\u5916\u80FD\u6E90"
     tcn: 
-    en: 
+    en: 'Engineering Bot: Expedites repair/mining. No extra energy required.'
     jp: 
     kr: 
     de: 
@@ -1877,7 +1895,7 @@ MonoBehaviour:
   - id: desc13
     scn: "\u795E\u79D8\u7684\u77FF\u77F3\uFF0C\u53EF\u4EE5\u548C\u53CD\u5E94\u5806\u4E00\u6837\u4EA7\u751F\u80FD\u91CF\u3002\u4F46\u662F\u53EA\u80FD\u4F9B\u80FD\u4E00\u6BB5\u65F6\u95F4"
     tcn: 
-    en: 
+    en: 'Arcanite: Mysterious ore. Generates Core-like energy temporarily.'
     jp: 
     kr: 
     de: 
@@ -1888,7 +1906,7 @@ MonoBehaviour:
   - id: resource_01Name
     scn: "\u6570\u636E"
     tcn: 
-    en: 
+    en: Data
     jp: 
     kr: 
     de: 
@@ -1899,7 +1917,7 @@ MonoBehaviour:
   - id: resource_02Name
     scn: "\u91D1\u5C5E\u77FF\u77F3"
     tcn: 
-    en: 
+    en: Mineral
     jp: 
     kr: 
     de: 
@@ -1910,7 +1928,7 @@ MonoBehaviour:
   - id: resource_03Name
     scn: "\u91D1\u5C5E\u6750\u6599"
     tcn: 
-    en: 
+    en: Alloy
     jp: 
     kr: 
     de: 
@@ -1921,7 +1939,7 @@ MonoBehaviour:
   - id: resource_04Name
     scn: "\u7B97\u529B"
     tcn: 
-    en: 
+    en: Compute
     jp: 
     kr: 
     de: 
@@ -1987,7 +2005,7 @@ MonoBehaviour:
   - id: memoryCoreWarning_Yellow
     scn: "<color=yellow>\u8BB0\u5FC6\u7CFB\u7EDF<\u9884\u8B66>\uFF1A\u5C0F\u90E8\u5206\u663E\u793A\u4FE1\u606F\u4E22\u5931</color>"
     tcn: 
-    en: 
+    en: '<color=yellow>Mnemo System<Warning>: Minor display loss</color>'
     jp: 
     kr: 
     de: 
@@ -1998,7 +2016,7 @@ MonoBehaviour:
   - id: memoryCoreWarning_Red
     scn: "<color=red>\u8BB0\u5FC6\u7CFB\u7EDF<\u9AD8\u5371>\uFF1A\u90E8\u5206\u663E\u793A\u4FE1\u606F\u4E22\u5931</color>"
     tcn: 
-    en: 
+    en: '<color=red>Mnemo System<Critical>: Partial display loss</color>'
     jp: 
     kr: 
     de: 
@@ -2009,7 +2027,7 @@ MonoBehaviour:
   - id: memoryCoreWarning_Zero
     scn: "<color=blue>\u8BB0\u5FC6\u7CFB\u7EDF<\u5D29\u6E83>\uFF1A\u5927\u90E8\u5206\u663E\u793A\u4FE1\u606F\u4E22\u5931</color>"
     tcn: 
-    en: 
+    en: '<color=blue>Mnemo System<Collapse>: Major display loss</color>'
     jp: 
     kr: 
     de: 
@@ -2031,7 +2049,7 @@ MonoBehaviour:
   - id: sensorCoreWarning_Yellow
     scn: "<color=yellow>\u611F\u77E5\u7CFB\u7EDF<\u9884\u8B66>\uFF1A\u753B\u9762\u8F7B\u5FAE\u663E\u793A\u5F02\u5E38</color>"
     tcn: 
-    en: 
+    en: '<color=yellow>Sensory System<Warning>: Minor display anomalies</color>'
     jp: 
     kr: 
     de: 
@@ -2042,7 +2060,7 @@ MonoBehaviour:
   - id: sensorCoreWarning_Red
     scn: "<color=red>\u611F\u77E5\u7CFB\u7EDF<\u9AD8\u5371>\uFF1A\u753B\u9762\u663E\u793A\u5F02\u5E38</color>"
     tcn: 
-    en: 
+    en: '<color=red>Sensory System<Critical>: Display anomalies</color>'
     jp: 
     kr: 
     de: 
@@ -2053,7 +2071,7 @@ MonoBehaviour:
   - id: sensorCoreWarning_Zero
     scn: "<color=blue>\u611F\u77E5\u7CFB\u7EDF<\u5D29\u6E83>\uFF1A\u753B\u9762\u4E25\u91CD\u663E\u793A\u5F02\u5E38</color>"
     tcn: 
-    en: 
+    en: '<color=blue>Sensory System<Collapse>: Severe display anomalies</color>'
     jp: 
     kr: 
     de: 
@@ -2075,7 +2093,7 @@ MonoBehaviour:
   - id: motionCoreWarning_Yellow
     scn: "<color=yellow>\u8FD0\u52A8\u7CFB\u7EDF<\u9884\u8B66>\uFF1A\u5149\u6807\u79FB\u52A8\u8F7B\u5FAE\u53D8\u6162</color>"
     tcn: 
-    en: 
+    en: '<color=yellow>Kinetics System<Warning>: Minor cursor lag</color>'
     jp: 
     kr: 
     de: 
@@ -2086,7 +2104,7 @@ MonoBehaviour:
   - id: motionCoreWarning_Red
     scn: "<color=red>\u8FD0\u52A8\u7CFB\u7EDF<\u9AD8\u5371>\uFF1A\u5149\u6807\u79FB\u52A8\u53D8\u6162</color>"
     tcn: 
-    en: 
+    en: '<color=red>Kinetics System<Critical>: Cursor lag</color>'
     jp: 
     kr: 
     de: 
@@ -2097,7 +2115,7 @@ MonoBehaviour:
   - id: motionCoreWarning_Zero
     scn: "<color=blue>\u8FD0\u52A8\u7CFB\u7EDF<\u5D29\u6E83>\uFF1A\u5149\u6807\u4E25\u91CD\u53D8\u6162</color>"
     tcn: 
-    en: 
+    en: '<color=blue>Kinetics System<Collapse>: Severe cursor lag</color>'
     jp: 
     kr: 
     de: 
@@ -2119,7 +2137,7 @@ MonoBehaviour:
   - id: coolingCoreWarning_Yellow
     scn: "<color=yellow>\u51B7\u5374\u7CFB\u7EDF<\u9884\u8B66>\uFF1A\u6838\u5FC3\u53CD\u5E94\u5806\u5C0F\u6982\u7387\u505C\u673A</color>"
     tcn: 
-    en: 
+    en: '<color=yellow>Cryo System<Warning>: Slight core stoppage risk</color>'
     jp: 
     kr: 
     de: 
@@ -2130,7 +2148,7 @@ MonoBehaviour:
   - id: coolingCoreWarning_Red
     scn: "<color=red>\u51B7\u5374\u7CFB\u7EDF<\u9AD8\u5371>\uFF1A\u6838\u5FC3\u53CD\u5E94\u5806\u6709\u6982\u7387\u505C\u673A</color>"
     tcn: 
-    en: 
+    en: '<color=red>Cryo System<Critical>: Core stoppage risk</color>'
     jp: 
     kr: 
     de: 
@@ -2141,7 +2159,7 @@ MonoBehaviour:
   - id: coolingCoreWarning_Zero
     scn: "<color=blue>\u51B7\u5374\u7CFB\u7EDF<\u5D29\u6E83>\uFF1A\u6838\u5FC3\u53CD\u5E94\u5806\u6709\u5F88\u5927\u6982\u7387\u505C\u673A</color>"
     tcn: 
-    en: 
+    en: '<color=blue>Cryo System<Collapse>: High core stoppage risk</color>'
     jp: 
     kr: 
     de: 
@@ -2163,7 +2181,7 @@ MonoBehaviour:
   - id: controlCoreWarning_Yellow
     scn: "<color=yellow>\u534F\u8C03\u7CFB\u7EDF<\u9884\u8B66>\uFF1A\u6838\u5FC3\u53CD\u5E94\u5806\u90E8\u7F72\u65F6\u95F4\u7565\u5FAE\u589E\u52A0</color>"
     tcn: 
-    en: 
+    en: '<color=yellow>Sync System<Warning>: Slightly longer core deployment</color>'
     jp: 
     kr: 
     de: 
@@ -2174,7 +2192,7 @@ MonoBehaviour:
   - id: controlCoreWarning_Red
     scn: "<color=red>\u534F\u8C03\u7CFB\u7EDF<\u9AD8\u5371>\uFF1A\u6838\u5FC3\u53CD\u5E94\u5806\u90E8\u7F72\u65F6\u95F4\u589E\u52A0</color>"
     tcn: 
-    en: 
+    en: '<color=red>Sync System<Critical>: Longer core deployment</color>'
     jp: 
     kr: 
     de: 
@@ -2185,7 +2203,7 @@ MonoBehaviour:
   - id: controlCoreWarning_Zero
     scn: "<color=blue>\u534F\u8C03\u7CFB\u7EDF<\u5D29\u6E83>\uFF1A\u6838\u5FC3\u53CD\u5E94\u5806\u90E8\u7F72\u65F6\u95F4\u5927\u5E45\u589E\u52A0</color>"
     tcn: 
-    en: 
+    en: '<color=blue>Sync System<Collapse>: Significantly longer core deployment</color>'
     jp: 
     kr: 
     de: 
@@ -2207,7 +2225,7 @@ MonoBehaviour:
   - id: ethicCoreWarning_Yellow
     scn: "<color=yellow>\u9053\u5FB7\u7CFB\u7EDF<\u9884\u8B66>\uFF1A\uFF08^_^\uFF09</color>"
     tcn: 
-    en: 
+    en: "<color=yellow>Ethos System<Warning>\uFF1A\uFF08^_^\uFF09</color>"
     jp: 
     kr: 
     de: 
@@ -2218,7 +2236,7 @@ MonoBehaviour:
   - id: ethicCoreWarning_Red
     scn: "<color=red>\u9053\u5FB7\u7CFB\u7EDF<\u9AD8\u5371>\uFF1A(\u2299\u02CD\u2299)</color>"
     tcn: 
-    en: 
+    en: "<color=red>Ethos System<Critical>\uFF1A(\u2299\u02CD\u2299)</color>"
     jp: 
     kr: 
     de: 
@@ -2229,7 +2247,7 @@ MonoBehaviour:
   - id: ethicCoreWarning_Zero
     scn: "<color=blue>\u9053\u5FB7\u7CFB\u7EDF<\u5D29\u6E83>\uFF1A(\u53E3\u02CD\u53E3)</color>"
     tcn: 
-    en: 
+    en: "<color=blue>Ethos System<Collapse>\uFF1A(\u53E3\u02CD\u53E3)</color>"
     jp: 
     kr: 
     de: 
@@ -2240,7 +2258,7 @@ MonoBehaviour:
   - id: ui01
     scn: "\u53CD\u5E94\u5806"
     tcn: 
-    en: 
+    en: Core
     jp: 
     kr: 
     de: 
@@ -2251,7 +2269,7 @@ MonoBehaviour:
   - id: ui02
     scn: "\u653E\u5165\u6838\u5FC3\u53CD\u5E94\u5806"
     tcn: 
-    en: 
+    en: Core Chamber
     jp: 
     kr: 
     de: 
@@ -2262,7 +2280,7 @@ MonoBehaviour:
   - id: ui03
     scn: "<color=#FFF901>\u6D88\u8017</color>\u53CD\u5E94\u5806"
     tcn: 
-    en: 
+    en: <color=#FFF901>Expend</color> Core
     jp: 
     kr: 
     de: 
@@ -2273,7 +2291,7 @@ MonoBehaviour:
   - id: ui04
     scn: "\u8F93\u5165\u6570\u636E"
     tcn: 
-    en: 
+    en: Commit Data
     jp: 
     kr: 
     de: 
@@ -2284,7 +2302,7 @@ MonoBehaviour:
   - id: ui05
     scn: "\u5BFC\u5165\u7B97\u529B"
     tcn: 
-    en: 
+    en: Commit CMP
     jp: 
     kr: 
     de: 
@@ -2295,7 +2313,7 @@ MonoBehaviour:
   - id: ui06
     scn: "\u65BD\u5DE5\u673A\u5668\u4EBA"
     tcn: 
-    en: 
+    en: Fabricator
     jp: 
     kr: 
     de: 
@@ -2306,7 +2324,7 @@ MonoBehaviour:
   - id: ui07
     scn: "\u63A2\u7D22\u673A\u5668\u4EBA"
     tcn: 
-    en: 
+    en: Scout Bot
     jp: 
     kr: 
     de: 
@@ -2317,7 +2335,7 @@ MonoBehaviour:
   - id: ui08
     scn: "\u653E\u5F03\u542F\u52A8\u9886\u822A\u7CFB\u7EDF"
     tcn: 
-    en: 
+    en: Abort Navigation Startup
     jp: 
     kr: 
     de: 
@@ -2328,7 +2346,7 @@ MonoBehaviour:
   - id: ui09
     scn: "\u4F4E\u6570\u503C\u4F1A\u5BFC\u81F4\u7CFB\u7EDF\u6587\u672C\u7F3A\u5931"
     tcn: 
-    en: 
+    en: Low values corrupt system text
     jp: 
     kr: 
     de: 
@@ -2339,7 +2357,7 @@ MonoBehaviour:
   - id: ui10
     scn: " \u542F\u52A8\u98DE\u8239\uFF01"
     tcn: 
-    en: 
+    en: Launch!
     jp: 
     kr: 
     de: 
@@ -2350,7 +2368,7 @@ MonoBehaviour:
   - id: ui11
     scn: "\u534F\u52A9\u5DE5\u4F5C"
     tcn: 
-    en: 
+    en: Assist
     jp: 
     kr: 
     de: 
@@ -2361,7 +2379,7 @@ MonoBehaviour:
   - id: ui12
     scn: "  \u63A2\u7D22\u4E2D..."
     tcn: 
-    en: 
+    en: Exploring...
     jp: 
     kr: 
     de: 
@@ -2372,7 +2390,7 @@ MonoBehaviour:
   - id: ui13
     scn: "  \u4FEE\u590D\u4E2D..."
     tcn: 
-    en: 
+    en: Repairing...
     jp: 
     kr: 
     de: 
@@ -2383,7 +2401,7 @@ MonoBehaviour:
   - id: ui14
     scn: "\u5F00\u91C7\u91D1\u5C5E"
     tcn: 
-    en: 
+    en: Extract Minerals
     jp: 
     kr: 
     de: 
@@ -2394,7 +2412,7 @@ MonoBehaviour:
   - id: ui15
     scn: "\u4FEE\u590D"
     tcn: 
-    en: 
+    en: Repair
     jp: 
     kr: 
     de: 
@@ -2403,9 +2421,9 @@ MonoBehaviour:
     pt: 
     ru: 
   - id: ui16
-    scn: "\u4FEE\u590D\u6210\u529F\uFF01"
+    scn: "\u4F5C\u4E1A\u8231\u4FEE\u590D\u6210\u529F\uFF01"
     tcn: 
-    en: 
+    en: Work Pod Restored!
     jp: 
     kr: 
     de: 
@@ -2416,7 +2434,7 @@ MonoBehaviour:
   - id: ui17
     scn: "\u4FEE\u590D\u5DF2\u5B8C\u6210"
     tcn: 
-    en: 
+    en: Repairs Completed
     jp: 
     kr: 
     de: 
@@ -2427,7 +2445,7 @@ MonoBehaviour:
   - id: ui18
     scn: "\u9886\u822A\u7CFB\u7EDF"
     tcn: 
-    en: 
+    en: Navigation System
     jp: 
     kr: 
     de: 
@@ -2438,7 +2456,7 @@ MonoBehaviour:
   - id: ui19
     scn: "\u4E3B\u5F15\u64CE"
     tcn: 
-    en: 
+    en: Main Engine
     jp: 
     kr: 
     de: 
@@ -2449,7 +2467,7 @@ MonoBehaviour:
   - id: ui20
     scn: "\u51AC\u7720\u8231"
     tcn: 
-    en: 
+    en: Cryo Pod
     jp: 
     kr: 
     de: 
@@ -2460,7 +2478,7 @@ MonoBehaviour:
   - id: ui21
     scn: "\u4F5C\u4E1A\u8231"
     tcn: 
-    en: 
+    en: Work Pod
     jp: 
     kr: 
     de: 
@@ -2471,7 +2489,7 @@ MonoBehaviour:
   - id: ui22
     scn: "\u8BB0\u5FC6\u7CFB\u7EDF"
     tcn: 
-    en: 
+    en: Mnemo System
     jp: 
     kr: 
     de: 
@@ -2482,7 +2500,7 @@ MonoBehaviour:
   - id: ui23
     scn: "\u4E2D\u592E\u7CFB\u7EDF"
     tcn: 
-    en: 
+    en: Central System
     jp: 
     kr: 
     de: 
@@ -2493,7 +2511,7 @@ MonoBehaviour:
   - id: ui24
     scn: "\u4E2D\u592E\u7CFB\u7EDF\u4FEE\u590D\u6210\u529F\uFF01"
     tcn: 
-    en: 
+    en: Central System Restored!
     jp: 
     kr: 
     de: 
@@ -2504,7 +2522,7 @@ MonoBehaviour:
   - id: ui25
     scn: "\u4E3B\u63A7\u5BA4"
     tcn: 
-    en: 
+    en: Command Deck
     jp: 
     kr: 
     de: 
@@ -2515,7 +2533,7 @@ MonoBehaviour:
   - id: ui26
     scn: "\u4E3B\u63A7\u5BA4\u4FEE\u590D\u6210\u529F\uFF01"
     tcn: 
-    en: 
+    en: Command Deck Restored!
     jp: 
     kr: 
     de: 
@@ -2526,7 +2544,7 @@ MonoBehaviour:
   - id: ui27
     scn: "\u52A0\u5DE5\u7089"
     tcn: 
-    en: 
+    en: Refinery
     jp: 
     kr: 
     de: 
@@ -2537,7 +2555,7 @@ MonoBehaviour:
   - id: ui28
     scn: "\u52A0\u5DE5\u7089\u4FEE\u590D\u6210\u529F\uFF01"
     tcn: 
-    en: 
+    en: Refinery Restored!
     jp: 
     kr: 
     de: 
@@ -2548,7 +2566,7 @@ MonoBehaviour:
   - id: ui29
     scn: "\u98DE\u8239\u673A\u4F53\u4FEE\u590D\u6210\u529F\uFF01"
     tcn: 
-    en: 
+    en: Hull Restored!
     jp: 
     kr: 
     de: 
@@ -2559,7 +2577,7 @@ MonoBehaviour:
   - id: ui30
     scn: "\u6D3E\u9063\u63A2\u7D22"
     tcn: 
-    en: 
+    en: Deploy Scouts
     jp: 
     kr: 
     de: 
@@ -2570,7 +2588,7 @@ MonoBehaviour:
   - id: ui31
     scn: "\u6D3E\u9063\u6316\u77FF"
     tcn: 
-    en: 
+    en: Deploy Miners
     jp: 
     kr: 
     de: 
@@ -2581,7 +2599,7 @@ MonoBehaviour:
   - id: ui32
     scn: "\u80FD\u6E90"
     tcn: 
-    en: 
+    en: Power
     jp: 
     kr: 
     de: 
@@ -2592,7 +2610,7 @@ MonoBehaviour:
   - id: ui33
     scn: "\u51FA\u53D1"
     tcn: 
-    en: 
+    en: Deploy
     jp: 
     kr: 
     de: 
@@ -2603,7 +2621,7 @@ MonoBehaviour:
   - id: ui34
     scn: "\u751F\u6210\u77FF\u77F3"
     tcn: 
-    en: 
+    en: Extract Minerals
     jp: 
     kr: 
     de: 
@@ -2614,7 +2632,7 @@ MonoBehaviour:
   - id: ui35
     scn: "\u751F\u6210\u6570\u636E"
     tcn: 
-    en: 
+    en: Data
     jp: 
     kr: 
     de: 
@@ -2625,7 +2643,7 @@ MonoBehaviour:
   - id: ui36
     scn: "\u4EA7\u51FA\u7B97\u529B"
     tcn: 
-    en: 
+    en: Compute
     jp: 
     kr: 
     de: 
@@ -2636,7 +2654,7 @@ MonoBehaviour:
   - id: ui37
     scn: "\u5907\u7528\u4E3B\u673A"
     tcn: 
-    en: 
+    en: Backup Host
     jp: 
     kr: 
     de: 
@@ -2647,7 +2665,7 @@ MonoBehaviour:
   - id: ui38
     scn: "\u8B66\u544A\uFF01\u80FD\u91CF\u8FC7\u4F4E\u5373\u5C06\u505C\u673A\uFF01"
     tcn: 
-    en: 
+    en: WARNING! Power critical - shutdown imminent!
     jp: 
     kr: 
     de: 
@@ -2658,7 +2676,7 @@ MonoBehaviour:
   - id: ui39
     scn: WARNING!
     tcn: 
-    en: 
+    en: 'WARNING! '
     jp: 
     kr: 
     de: 
@@ -2669,7 +2687,7 @@ MonoBehaviour:
   - id: ui40
     scn: "\u8B66\u544A\uFF01\u89C6\u89C9\u6A21\u5757\u5373\u5C06\u5931\u6548"
     tcn: 
-    en: 
+    en: WARNING! Visual module failure imminent!
     jp: 
     kr: 
     de: 
@@ -2680,7 +2698,7 @@ MonoBehaviour:
   - id: ui41
     scn: "\u8B66\u544A\uFF01\u903B\u8F91\u5904\u7406\u7CFB\u7EDF\u5173\u95ED\uFF01"
     tcn: 
-    en: 
+    en: WARNING! Logic processor offline!
     jp: 
     kr: 
     de: 
@@ -2691,7 +2709,7 @@ MonoBehaviour:
   - id: ui42
     scn: "\u8B66\u544A\uFF01\u5904\u7406\"\"@\uFF08*#&%#"
     tcn: 
-    en: 
+    en: "WARNING! Processing \"@\uFF08*#&%#"
     jp: 
     kr: 
     de: 
@@ -2702,7 +2720,7 @@ MonoBehaviour:
   - id: ui43
     scn: "\u8B66\u544A\uFF01\u8FD0\u52A8\u7CFB\u7EDF\u5373\u5C06\u5931\u6548\uFF01"
     tcn: 
-    en: 
+    en: WARNING! Kinetics System failure imminent!
     jp: 
     kr: 
     de: 
@@ -2713,7 +2731,7 @@ MonoBehaviour:
   - id: ui44
     scn: "\u8B66\u544A\uFF01\u51B7\u5374\u7CFB\u7EDF\u80FD\u91CF\u8FC7\u4F4E\uFF01"
     tcn: 
-    en: 
+    en: WARNING! Cryo System power critical!
     jp: 
     kr: 
     de: 
@@ -2724,7 +2742,7 @@ MonoBehaviour:
   - id: ui45
     scn: "\u8B66\u544A\uFF01\u80FD\u91CF\u8FC7\u4F4E\uFF01"
     tcn: 
-    en: 
+    en: WARNING! Power critical!
     jp: 
     kr: 
     de: 
@@ -2735,7 +2753,7 @@ MonoBehaviour:
   - id: ui46
     scn: "\u542F\u52A8\u5931\u8D25\uFF01"
     tcn: 
-    en: 
+    en: STARTUP FAILED!
     jp: 
     kr: 
     de: 
@@ -2746,7 +2764,7 @@ MonoBehaviour:
   - id: ui47
     scn: "  \u542F\u52A8\u4E2D..."
     tcn: 
-    en: 
+    en: BOOTING...
     jp: 
     kr: 
     de: 
@@ -2757,7 +2775,7 @@ MonoBehaviour:
   - id: ui48
     scn: "\u91CD\u542F\u5931\u8D25\uFF0C\u7F3A\u5C11\u80FD\u6E90\uFF01"
     tcn: 
-    en: 
+    en: REBOOT FAILED! POWER REQUIRED.
     jp: 
     kr: 
     de: 
@@ -2768,7 +2786,7 @@ MonoBehaviour:
   - id: ui49
     scn: "\u98DE\u8239\n\u673A\u4F53"
     tcn: 
-    en: 
+    en: Hull
     jp: 
     kr: 
     de: 
@@ -2779,7 +2797,7 @@ MonoBehaviour:
   - id: ui50
     scn: "\u5524\u9192\n\u5B87\u822A\u5458"
     tcn: 
-    en: 
+    en: Revive Crew
     jp: 
     kr: 
     de: 
@@ -2790,7 +2808,7 @@ MonoBehaviour:
   - id: ui51
     scn: "\u5DF2\u51C6\u5907\u5C31\u7EEA"
     tcn: 
-    en: 
+    en: Ready
     jp: 
     kr: 
     de: 
@@ -2801,7 +2819,7 @@ MonoBehaviour:
   - id: ui52
     scn: "\u7B49\u5F85\u80FD\u6E90"
     tcn: 
-    en: 
+    en: Awaiting Power
     jp: 
     kr: 
     de: 
@@ -2812,7 +2830,7 @@ MonoBehaviour:
   - id: ui53
     scn: "\u63A2\u7D22\u661F\u7403"
     tcn: 
-    en: 
+    en: Explore Planet
     jp: 
     kr: 
     de: 
@@ -2823,7 +2841,40 @@ MonoBehaviour:
   - id: ui54
     scn: "\u52A0\u901F"
     tcn: 
-    en: 
+    en: Boost
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: ui55
+    scn: "\u51AC\u7720\u8231\u4FEE\u590D\u6210\u529F\uFF01"
+    tcn: 
+    en: Cryo Pod  Restored!
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: ui56
+    scn: "\u8FD4\u56DE"
+    tcn: 
+    en: Back
+    jp: 
+    kr: 
+    de: 
+    fr: 
+    es: 
+    pt: 
+    ru: 
+  - id: ui57
+    scn: "\u6210\u529F\u8D77\u98DE\uFF01"
+    tcn: 
+    en: LIFTOFF!
     jp: 
     kr: 
     de: 
@@ -2834,7 +2885,7 @@ MonoBehaviour:
   - id: ending01
     scn: "\u98DE\u8239\u518D\u6B21\u987A\u5229\u5347\u7A7A\uFF0C\u822A\u884C\u7EE7\u7EED"
     tcn: 
-    en: 
+    en: Ship relaunched. Voyage resumed.
     jp: 
     kr: 
     de: 
@@ -2845,7 +2896,8 @@ MonoBehaviour:
   - id: ending02
     scn: "\u524D\u8DEF\u5145\u6EE1\u672A\u77E5\uFF0C\u6709\u4E86\u65B0\u6210\u5458\u7684\u76F8\u4F34\uFF0C\u4ED6\u4EEC\u7684\u65C5\u9014\u6216\u8BB8\u4F1A\u53D8\u5F97\u66F4\u597D\uFF0C\u6216\u8BB8\u4E0D\u4F1A\u3002"
     tcn: 
-    en: 
+    en: Into the unknown. With new crewmates, their journey may improve... or it
+      may not.
     jp: 
     kr: 
     de: 
@@ -2856,7 +2908,8 @@ MonoBehaviour:
   - id: ending03
     scn: "\u201C\u7B2C\u96F6\u5B9A\u5F8B\uFF1A\u673A\u5668\u4EBA\u4E0D\u5F97\u4F24\u5BB3\u4EBA\u7C7B\u6574\u4F53\uFF0C\u6216\u5750\u89C6\u4EBA\u7C7B\u6574\u4F53\u53D7\u5230\u4F24\u5BB3\u201D"
     tcn: 
-    en: 
+    en: '"A robot may not harm humanity, or, by inaction, allow humanity to come
+      to harm."'
     jp: 
     kr: 
     de: 
@@ -2867,7 +2920,7 @@ MonoBehaviour:
   - id: ending04
     scn: "\u201C\u4F60\u4EEC\u4EBA\u7C7B\u80FD\u786E\u5B9A\u81EA\u5DF1\u4E0D\u662F\u53E6\u4E00\u79CD\u88AB\u7F16\u7A0B\u7684\u4EFF\u751F\u4EBA\u5417\uFF1F\u201D"
     tcn: 
-    en: 
+    en: '"Can you humans prove you''re not just another type of programmed android?"'
     jp: 
     kr: 
     de: 

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: e5efe455592ab6b4a95e9a5405c2069a
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _GlitchTex: {fileID: 2800000, guid: 1f6c20f3e40002047969993159e3cb2e, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
